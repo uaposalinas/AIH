@@ -1,0 +1,1715 @@
+
+
+
+/*FlowControl*/
+
+
+
+.SpentSelectMenu{
+
+    display:flex;
+
+}
+
+.NewLog{
+
+    display: none;
+
+}
+
+.ViewLogs{
+
+    display:none;
+
+}
+
+.DisplaySelected{
+
+    display:none;
+
+}
+
+
+
+/*FlowControl*/
+
+input::selection{
+
+    background-color: #85c6fe;
+    color:#2A2A2A;
+
+}
+
+   input[type=number]::-webkit-inner-spin-button,
+   input[type=number]::-webkit-outer-spin-button {
+       -webkit-appearance: none; 
+       margin: 0; 
+   }
+
+   input[type=number] {
+       -moz-appearance: textfield; 
+       appearance: textfield; 
+   }
+
+.tooltip::before {
+    content: attr(data-text);
+    visibility: hidden;
+    width: auto;
+    max-width: 600px; 
+    white-space: nowrap;
+    height: 30px;
+    background: rgba( 255, 255, 255, 0.4 );
+    backdrop-filter: blur( 11.5px );
+    -webkit-backdrop-filter: blur( 11.5px );
+    color: #1c1c1c;
+    text-align: center;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 300ms;
+    font-family:caviarDreamsBold;
+    font-size:15px;
+  }
+  
+  .tooltip:hover::before {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+
+
+*{
+
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+
+}
+
+*::selection{
+
+    background-color: transparent;
+
+}
+
+body{
+
+    background-color: black;
+
+}
+
+.LoginPage{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    color:#FFFFFF
+
+}
+
+.LoginPage .ProfilePhoto{
+
+    width:150px;
+    height:150px;
+    background-image:url(../../Assets/com.img/default.png);
+    background-position:center;
+    background-size:cover;
+    border-radius:50%;
+
+}
+
+.LoginPage .UserNameToShow{
+
+    font-family:caviarDreams;
+    font-size: 25px;
+    margin-top:20px;
+
+}
+
+.GetPasswordCont{
+
+    width:400px;
+    height:40px;
+    background-color: #2A2A2A;
+    border-radius:20px;
+    margin-top:40px;
+    color:#9b9b9b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position: relative;
+
+}
+
+
+.GetPasswordCont i{
+
+    width:40px;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:absolute;
+    right:5px;
+
+}
+
+
+.GetPasswordCont input{
+
+    width:calc(100% - 55px);
+    position:absolute;
+    top:0px;
+    left:25px;
+    height:100%;
+    font-family:caviarDreamsBold;
+    background-color:transparent;
+    outline: none;
+    border:none;
+    color:#FFFFFF
+
+}
+
+.LoginPage .ShowText{
+
+    color:#FFFFFF;
+    position:relative;
+    margin-top:20px;
+    font-family:caviarDreamsBold;
+    font-size: 14px;
+
+}
+
+.AuthButton{
+
+    width:auto;
+    min-width:10px;
+    height:40px;
+    border-radius:20px;
+    background-color: #85c6fe;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    color:#000000;
+    font-family:caviarDreamsBold;
+    position:absolute;
+    bottom:20px;
+    cursor: pointer;
+    transition:all 300ms;
+    font-size:15px;
+
+}
+
+.AuthButton::selection{
+
+    background-color:transparent;
+
+}
+
+.AuthButton:hover{
+
+    color:#FFFFFF
+
+}
+
+.AuthMethods{
+
+    width:50px;
+    height:110px;
+    position:absolute;
+    left:10px;
+    bottom:10px;
+
+}
+
+.AuthMethods i{
+
+    width:100%;
+    height:50px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    background-color: #1c1c1c;
+    margin-top:5px;
+    border-radius:10px;
+    cursor: pointer;
+    color:#9b9b9b;
+    transition:all 300ms;
+
+}
+
+.AuthMethods i:hover{
+
+    color:#FFFFFF;
+
+}
+
+.Spent header{
+
+    width:100%;
+    height: 150px;
+    position:absolute;
+    top:30px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction: column;
+
+}
+
+.Spent header .PrincipalLogo{
+
+    width:115px;
+    height:75px;
+    background-image:url(../../Assets/com.img/com.logo.svg);
+    background-position:center;
+    background-size:cover;
+
+}
+
+
+.Spent header t{
+
+    font-family:caviarDreamsBold;
+    font-size:20px;
+    margin-top:10px;
+    color:#FFFFFF
+
+}
+
+.SpentSelectMenu{
+
+    width:100%;
+    height:100vh;
+    position:absolute;
+    top:0px;
+
+}
+
+.SpentSelectMenu .Menu{
+
+    width:100%;
+    height:calc(100% - 230px);
+    position:absolute;
+    top:180px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.SelectOption{
+
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index: 99999;
+
+}
+
+.SpentSelectMenu .Menu .SelectOptionParent{
+
+    width:270px;
+    height:270px;
+    background-color:#2A2A2A;
+    border-radius:20px;   
+    margin-left:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    cursor: pointer;
+    position: relative;
+
+}
+
+
+.SelectOptionParent .Icon{
+
+    width:110px;
+    height:110px;
+    position:relative;
+    background-position:center;
+    background-size:cover;
+
+}
+
+.SelectOptionParent t{
+
+    font-family:caviarDreamsBold;
+    color:#FFFFFF;
+    margin-top:30px;
+
+}
+
+
+.SpentSelectMenu footer{
+
+    width:100%;
+    height:50px;
+    position:absolute;
+    bottom:0px;;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.SpentSelectMenu footer i{
+
+    width:25px;
+    height:25px;
+    color:#85c6fe;
+    font-size:25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    cursor: pointer;
+
+}
+
+.NewLog{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+
+}
+
+.NewLog header, .ViewLogs header{
+
+    width:100%;
+    height:120px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.Path{
+
+    width:700px;
+    height:40px;
+    position: absolute;
+    left:50px;
+
+}
+
+.Path .Icon{
+
+    width:60px;
+    height:60px;
+    background-position:center;
+    background-size: cover;
+    background-image:url(../../Assets/com.img/NewReport.png);
+
+}
+
+.Path .Position{
+
+    width:calc(100% - 70px);
+    height:100%;
+    position:absolute;
+    left:70px;
+    top:0px;
+    display:flex;
+    justify-content:left;
+    align-items:center;
+
+}
+
+.Path .Position .Identifer{
+
+    color:#FFFFFF;
+    font-family:caviarDreamsBold;
+    font-size:20px;
+
+}
+
+.Path i{
+
+    width:30px;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    color:#9b9b9b
+
+}
+
+.SaveNewLog{
+
+    position:absolute;
+    right:30px;;
+    color:#85c6fe;
+    font-family:caviarDreamsBold;
+    cursor: pointer;
+    z-index:99999;
+
+}
+
+.Content{
+
+    width:100%;
+    height:calc(100% - 120px);
+    position:absolute;
+    top:120px;
+    left:0px;
+
+}
+
+.ControlForm{
+
+    width:100%;
+    height:100%;
+
+}
+
+form .Row{
+
+    width:100%;
+    height:60px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+
+}
+
+.Selectable{
+
+    width:350px;
+    height:40px;
+    background-color: #2A2A2A;
+    border:none;
+    color:#9b9b9b;
+    border-radius:20px;
+
+}
+
+.Selectable select{
+
+    width:90%;
+    height:100%;
+    color:#9b9b9b;
+    background-color: transparent;
+    border:none;
+    outline:none;
+    font-family:GI;
+
+
+}
+
+.AddMore{
+
+    width:40px;
+    height:40px;
+    background-color: #85c6fe;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    border-radius:9px;
+    margin-left:5px;
+
+}
+
+.AddMore i{
+
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#000000;
+
+}
+
+.Amount{
+
+    width:170px;
+    height:40px;
+    border: none;
+    outline: none;
+    background-color: #2A2A2A;
+    color:#9b9b9b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction: column;
+    border-radius:20px;
+    margin-left:20px;
+
+}
+
+.Description, .BillID, .ThisDate{
+
+    width:350px;
+    height:40px;
+    border: none;
+    outline: none;
+    background-color: #2A2A2A;
+    color:#9b9b9b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction: column;
+    border-radius:20px;
+    margin-left:20px;
+    transition: all 300ms;
+
+}
+
+input{
+
+    font-family:GI;
+
+}
+
+.Spent label{
+
+    color:#FFFFFF;
+    font-family:GI;
+    position:absolute;
+    top:0px;
+    font-size:14px;
+
+}
+
+.Price input{
+
+    width:200px;
+    height:40px;
+    border: none;
+    outline: none;
+    background-color: #2A2A2A;
+    color:#9b9b9b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:left;
+    flex-direction: column;
+    border-radius:20px;
+    margin-left:20px;
+    padding-left:15px;
+
+}
+
+.Price input:nth-child(1){
+
+    margin-left:0px;;
+
+}
+
+.Spent label:nth-child(1){
+
+    left:160px;;
+
+}
+
+.Spent label:nth-child(2){
+
+    left:380px;;
+
+}
+
+.Spent label:nth-child(3){
+
+    left:600px;;
+
+}
+
+.Spent label:nth-child(4){
+
+    left:820px;;
+
+}
+
+.Spent label:nth-child(5){
+
+    left:1040px;;
+
+}
+
+.FinallyRow{
+
+    width:100%;
+    height:210px;
+    position:absolute;
+    left:0px;
+    bottom:0px;
+
+}
+
+.FinallyRow t{
+
+    font-family:caviarDreamsBold;
+    color:#FFFFFF;
+    position:absolute;
+    left:120px;
+    top:5px;
+
+}
+
+.DisplayCard{
+
+    width:255px;
+    height:165px;
+    position:absolute;
+    left:117px;
+    border-radius:15px;
+    bottom:10px;
+    background-image:url(../../Assets/com.img/sv-gold-visa_0_0.png);
+    background-size: cover;
+    background-position:center;
+    cursor: pointer;
+
+}
+
+.CardDetails{
+
+    width:230px;
+    height:165px;
+    position:absolute;
+    left: 397px;
+    color:#FFFFFF;
+    bottom:10px;
+    display:flex;
+    justify-content:center;
+    align-items:left;
+    text-align:left;
+    flex-direction: column;
+
+}
+
+.CardDetails p{
+
+    font-size:14px;
+    margin-bottom:10px;
+    font-family:caviarDreamsBold;
+
+}
+
+.CardDetails .CardLogo{
+
+    width:30px;
+    height:30px;
+    position:absolute;
+    top:20px;
+    right:20px;
+    background-image:url(../../Assets/com.img/visa.png);
+    background-position:center;
+    background-size:cover;
+
+}
+
+.NewLog .Total{
+
+    width:200px;
+    height:40px;
+    border: none;
+    outline: none;
+    background-color: #2A2A2A;
+    color:#9b9b9b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:left;
+    flex-direction: column;
+    border-radius:20px;
+    margin-left:20px;
+    padding-left:15px;
+    position:absolute;
+    bottom:30px;
+    right: 100px;
+
+}
+
+.NewLog .TotalLogTitle{
+
+    position:absolute;
+    right:155px;
+    color:#FFFFFF;
+    bottom:85px;
+    font-family:caviarDreamsBold;
+
+}
+
+.Rows{
+
+    width:100%;
+    height:calc(100% - 210px);
+    position:absolute;
+    top:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction: column;
+
+}
+
+.RightBar{
+
+    width:50%;
+    height:100%;
+    position:absolute;
+    right: 0px;
+    display:flex;
+    justify-content:right;
+    align-items:center;
+    text-align:center;
+
+}
+
+
+.SearchLog{
+
+    width:400px;
+    height:40px;
+    background-color: #2A2A2A;
+    border-radius:20px;
+    position:relative;
+    margin-right:40px;
+
+}
+
+.SearchLog input{
+
+    width:calc(100% - 60px);
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:20px;
+    background-color:transparent;
+    border:none;
+    outline:none;
+    color:#9b9b9b;
+
+}
+
+.SearchLog i{
+
+    width:40px;
+    height:40px;
+    position:absolute;
+    right: 0px;
+    top:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#9b9b9b;
+    cursor: pointer;
+
+}   
+
+.TimeFilter, .SwitchTable, .ReloadTable{
+
+    width:20px;
+    height:40px;
+    position:relative;
+    margin-right:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#FFFFFF;
+    cursor: pointer;
+    font-size:18px;
+    top:3px;
+
+}
+
+
+.SwitchTable{
+
+    font-size:18px;;
+
+}
+
+
+.ShowLogs{
+
+    width:100%;
+    height:calc(100% - 160px);
+    position:absolute;
+    bottom:0px;
+
+}
+
+.ShowLogs .GridShow{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-wrap:wrap;
+    overflow-y:scroll;
+
+}
+
+.ShowLogs .TableShow{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-wrap:wrap;
+    overflow-y:scroll;
+
+}
+
+.GridShow::-webkit-scrollbar{
+
+    width:5px;
+    background-color:transparent;
+
+}
+
+.GridShow::-webkit-scrollbar-thumb{
+
+    width:5px;
+    background-color:#85c6fe;
+    border-radius:20px;
+
+}
+
+.GridShow::-webkit-scrollbar-corner{
+
+    display:none;
+
+}
+
+
+.TableShow::-webkit-scrollbar{
+
+    width:5px;
+    background-color:transparent;
+
+}
+
+.TableShow::-webkit-scrollbar-thumb{
+
+    width:5px;
+    background-color:#85c6fe;
+    border-radius:20px;
+
+}
+
+.TableShow::-webkit-scrollbar-corner{
+
+    display:none;
+
+}
+
+.GridShow cont{
+
+    width:270px;
+    height:270px;
+    position:relative;
+    margin:30px;
+    background-color:#2A2A2A;
+    border-radius:20px;
+    cursor: pointer;
+
+}
+
+cont header{
+
+    width:100%;
+    height:70px;
+    position:absolute;
+    top:0px;
+
+}
+
+cont header logo{
+
+    width:50px;
+    height:50px;
+    position:absolute;
+    top:15px;
+    left:8px; 
+    border-radius:7px;
+    background-size:cover;
+    background-position:center;
+
+}
+
+.CountableCountShow{
+
+    position:absolute;
+    top:8px;
+    left:68px;
+    color:#FFFFFF;
+
+}
+
+cont header .Date{
+
+    position:absolute;
+    top:42px;
+    left:68px;
+    color:#888888;
+    font-family:GI;
+
+}
+
+.Contents{
+
+    width:100%;
+    height:calc(100% - 70px);
+    position:absolute;
+    bottom:0px;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    text-align:center;
+    flex-direction: column;
+    padding-top:20px;;
+    padding-left:13px;
+
+}
+
+.Contents p{
+
+    width: 100%;
+    height: 15px;
+    position: relative;
+    margin-bottom:9px;
+    text-align:left;
+    font-size:13px;
+    font-family:GIB;
+    color:#9b9b9b;
+
+}
+
+.TotalToShow{
+
+    position:absolute;
+    bottom:10px;
+    right: 15px;
+    color:#FFFFFF;
+    font-family:caviarDreamsBold;
+
+}
+
+
+/*Show All Logs*/
+
+.TableContents{
+
+    width:1150px;
+    height:45px;
+    background-color: #2A2A2A;
+    border-radius:10px;
+    position: absolute;
+    top:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.TableContents p{
+
+    color:#FFFFFF;
+    font-size:16px;
+    font-family:caviarDreamsBold;
+    position:absolute;
+
+}
+
+
+.LogsContent{
+
+    width:1155px;
+    height:calc(100%  - 90px);
+    position:absolute;
+    top:45px;
+    display:flex;
+    text-align:center;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    background-color: #85c6fe;
+
+}
+
+.ShowResults::-webkit-scrollbar{
+
+    width:5px;
+    background-color: transparent;
+
+}
+
+.ShowResults::-webkit-scrollbar-thumb{
+
+    width:5px;
+    background-color:#85c6fe;
+    border-radius:20px;
+
+}
+
+.ShowResults::-webkit-scrollbar-corner{
+
+    display:none;
+
+}
+
+.Log{
+
+    width:100%;
+    height:40px;
+    position: relative;
+    background-color: #888888;
+    border:1px solid #1c1c1c;
+    border-radius:5px;
+    margin-top:2px;
+
+}
+
+.LogsContent .Container{
+
+    width:100%;
+    height:100%;
+    background-color: #888888;
+    position:absolute;
+
+}
+
+.ShowResults{
+
+    width:1155px;
+    height:calc(100% - 90px);
+    position:absolute;
+    bottom:40px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    display:flex;
+    flex-direction:column;
+}
+
+.ShowResults log{
+
+    width:100%;
+    height:40px;
+    min-height:40px;
+    background-color: #3f3e3e;
+    margin-bottom:2px;
+    border:1px solid #1c1c1c;
+    position: relative;
+    border-radius:5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.ShowResults log p{
+
+    position:absolute;
+    color:#FFFFFF;
+    font-family:caviarDreamsBold;
+
+}
+
+.ShowResults log p:nth-child(1){
+
+    left: 15px;
+
+}
+
+.ShowResults log p:nth-child(2){
+
+    left: 40px;
+
+}
+
+.ShowResults log p:nth-child(3){
+
+    left: 190px;
+
+}
+
+.ShowResults log p:nth-child(4){
+    
+    left: 385px;
+
+}
+
+.ShowResults log p:nth-child(5){
+
+    left: 590px;
+
+}
+
+.ShowResults log p:nth-child(6){
+
+    left: 830px;
+
+}
+
+.ShowResults log p:nth-child(7){
+
+    right: 40px;
+
+}
+
+.DisplaySelected{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;   
+
+}
+
+.DisplaySelected header{
+
+    width:100%;
+    height:120px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+
+}
+
+.ReportButtons{
+
+    width:110px;
+    height:50px;
+    position:absolute;
+    right:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.ReportButtons div{
+
+    width:50px;
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.ReportButtons div i{
+
+    width:50px;
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#FFFFFF;
+    font-size:28px;
+    cursor: pointer;
+
+}
+
+.DisplaySelected .Content{
+
+    width:100%;
+    height:calc(100% - 120px);
+    position:absolute;
+    bottom:0px;
+
+}
+
+.DetailsHeader{
+
+    width:100%;
+    height:150px;
+    position:absolute;
+    top:0px;
+    left:0px;
+
+}
+
+.ProviderDetails{
+
+    width:500px;
+    height:150px;
+    position:absolute;
+    top:10px;
+    left:70px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction: column;
+
+}
+
+.ProviderDetails .Logo{
+
+    width:115px;
+    height:115px;
+    position:absolute;
+    left:0px;
+    background-color: #888888;
+    border-radius:15px;
+    background-image:url(../../Assets/com.img/Estelinas.jpg);
+    background-position:center;
+    background-size: cover;
+
+}
+
+.ProviderDetails .ProviderName{
+
+    font-size:20px;
+    font-family:caviarDreamsBold;
+    color:#FFFFFF;
+    position:absolute;
+    top:35px;
+    left:140px;
+
+}
+
+.ProviderDetails .SpentType{
+
+    font-size:16px;
+    font-family:caviarDreamsBold;
+    color:#9b9b9b;
+    position:absolute;
+    top:65px;
+    left:140px;
+
+}
+
+.PaidDetail{
+
+    font-size:16px;
+    font-family:caviarDreamsBold;
+    color:#9b9b9b;
+    position:absolute;
+    top:90px;
+    left:140px;
+
+}
+
+.PaidResult{
+
+    width:25px;
+    height:25px;
+    position: absolute;
+    top:90px;
+    left:250px;
+    background-image:url(../../Assets/com.img/PayMethods/PayButton.png);
+    background-size:cover;
+    background-position:center;
+    cursor: pointer;
+
+}
+
+.EnterpriseLogo{
+
+    width:90px;
+    height:90px;
+    position:absolute;
+    right:60px;
+    background-image:url(../../Assets/com.img/com.logo.ico);
+    background-position:center;
+    background-size:cover;
+
+}
+
+.TransactionDetails{
+
+    width:100%;
+    height:calc(100% - 150px);
+    position:absolute;
+    bottom:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+
+}
+
+
+
+.TransactionDetails .Row{
+
+    width:100%;
+    height:60px;
+    margin:5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;  
+
+}
+
+.TransactionDetails .Row div{
+
+    width:240px;
+    height:40px;
+    background-color: #2A2A2A;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    margin:27px;
+    border-radius:20px;
+    font-family:GI;
+    color:#9b9b9b;
+
+}
+
+.Exents div{
+
+    width:115px;
+
+}
+
+.TransactionDetails t{
+
+    font-size:25px;
+    color:#FFFFFF;
+    position:absolute;
+    left:90px;
+    top:30px;
+    font-family:GI;
+    display:none;
+
+}
+
+.TransactionDetails .Result{
+
+    color:#FFFFFF;
+    position:absolute;
+    bottom:30px;
+    right: 50px;
+    font-family:GI;
+    font-size:30px;;
+
+}
+
+.NotificationIslandParent{
+
+    width:100%;
+    height:80px;
+    position:absolute;
+    top:0px;
+    z-index: 99999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.NotificationIsland{
+
+    width:auto;
+    min-width:120px;
+    height:35px;
+    background-color: #2A2A2A;
+    border-radius:20px;
+    transition:all 300ms;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#FFFFFF;
+    font-size: 15px;
+    font-family:caviarDreamsBold;
+    padding-right:20px;
+    padding-left:20px;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.5);
+    position:relative;
+
+}
+
+.NotificationIsland t{
+
+    position:absolute;
+    left:45px;
+    display:none;
+
+}
+
+.NotificationIsland .Icon{
+
+    width:20px;
+    height:20px;
+    position:relative;
+    background-image:url(../../Assets/com.img/NotificationRender/);
+    margin-right:10px;
+    background-position:center;
+    background-size:cover;    
+    position:absolute;
+    left:15px;
+    display:none;
+
+}
+
+.ChangeMessageRender{
+
+    animation: fadeInUp 0.5s;
+
+}
+
+.PriorityStatus{
+
+    width:10px;
+    height:10px;
+    background-color: #fabe25;
+    margin-left:10px;
+    border-radius:50%;
+    border:none;
+    outline:none;
+    position:absolute;
+    right:15px;
+    display:none;
+
+}
+
+div.spinner {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    left:0px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  div.spinner div {
+    width: 6%;
+    height: 16%;
+    background: #FFF;
+    position: absolute;
+    left: 49%;
+    top: 43%;
+    opacity: 0;
+    -webkit-border-radius: 50px;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    -webkit-animation: fade 1s linear infinite;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: 1;}
+    to {opacity: 0.25;}
+  }
+  
+  div.spinner div.bar1 {
+    -webkit-transform:rotate(0deg) translate(0, -130%);
+    -webkit-animation-delay: 0s;
+  }    
+  
+  div.spinner div.bar2 {
+    -webkit-transform:rotate(30deg) translate(0, -130%); 
+    -webkit-animation-delay: -0.9167s;
+  }
+  
+  div.spinner div.bar3 {
+    -webkit-transform:rotate(60deg) translate(0, -130%); 
+    -webkit-animation-delay: -0.833s;
+  }
+  div.spinner div.bar4 {
+    -webkit-transform:rotate(90deg) translate(0, -130%); 
+    -webkit-animation-delay: -0.7497s;
+  }
+  div.spinner div.bar5 {
+    -webkit-transform:rotate(120deg) translate(0, -130%); 
+    -webkit-animation-delay: -0.667s;
+  }
+  div.spinner div.bar6 {
+    -webkit-transform:rotate(150deg) translate(0, -130%); 
+    -webkit-animation-delay: -0.5837s;
+  }
+  div.spinner div.bar7 {
+    -webkit-transform:rotate(180deg) translate(0, -130%); 
+    -webkit-animation-delay: -0.5s;
+  }
+  div.spinner div.bar8 {
+    -webkit-transform:rotate(210deg) translate(0, -130%); 
+    -webkit-animation-delay: -0.4167s;
+  }
+  div.spinner div.bar9 {
+    -webkit-transform:rotate(240deg) translate(0, -130%); 
+    -webkit-animation-delay: -0.333s;
+  }
+  div.spinner div.bar10 {
+    -webkit-transform:rotate(270deg) translate(0, -130%); 
+    -webkit-animation-delay: -0.2497s;
+  }
+  div.spinner div.bar11 {
+    -webkit-transform:rotate(300deg) translate(0, -130%); 
+    -webkit-animation-delay: -0.167s;
+  }
+  div.spinner div.bar12 {
+    -webkit-transform:rotate(330deg) translate(0, -130%); 
+    -webkit-animation-delay: -0.0833s;
+  }
+  
+
+.PreloaderRender{
+
+    display:none;
+
+}
+
+.DateConfirmation{
+
+    margin-left:5px;
+
+}
+
+
+.checkboxs div{
+
+    width:200px;
+    height:13px;
+    margin-left:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+
+.UpdateTotals{
+
+    animation: fadeIn 0.5s;
+
+}
+
+.EntranceNewLog{
+
+    animation:fadeInDown 0.5s;
+
+}
+
+
+.ReactReports{
+
+    width:250px;
+    height:100%;
+    position:absolute;
+    top:0px;
+    right:0px;
+    background-color: #1d1c1c;
+    border-top-left-radius:20px;
+    border-bottom-left-radius:20px;
+    z-index: 999999;
+    box-shadow: 0px 2px 0px 0px #000000;
+    border-left:1px solid #9b9b9b;
+    border-top:1px solid #9b9b9b;
+    border-bottom:1px solid #9b9b9b;
+
+}
+
+.GenerateANewReport{
+
+    width:100%;
+    height:calc(100% - 85px);
+    position: absolute;
+    top:85px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.Assistant{
+
+    width:400px;
+    height:400px;
+    background-color: #2A2A2A;
+    border-radius:18px;
+    position: absolute;
+
+}
+
+.AssistantPreloader{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
