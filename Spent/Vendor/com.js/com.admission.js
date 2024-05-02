@@ -45,9 +45,9 @@ function GetGestID(){
 
         let Random = Math.floor(Math.random() * 10);
 
-        Value =+ Random;
+        Value += Random;
 
-        alert(Value);
+        console.log(Value)
 
         
 
