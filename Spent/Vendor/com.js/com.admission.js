@@ -45,13 +45,15 @@ function GetGestID(){
 
         let Random = Math.floor(Math.random() * 10);
 
-        Value += Random;
-
-        console.log(Value)
-
-        
+        Value += Random;        
 
     }
+
+    const CreateCode = `${Sub}-${DateSet.Year}-${DateSet.Year}${DateSet.Month}${DateSet.Day}${Value}`;
+
+    console.log("Se creó el codigo de gestión y es el siguiente:" + `(${CreateCode})`);
+
+    return `${Sub}-${DateSet.Year}-${DateSet.Year}${DateSet.Month}${DateSet.Day}${Value}`;
 
 }
 
