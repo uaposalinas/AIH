@@ -341,6 +341,8 @@ function PrepareToSaveTheNewLog(){
         const Year = document.querySelector('.Year');
 
         GestID.value = GetGestID();
+        Month.value = DateSet.Month;
+        Year.value = DateSet.Year;
 
         setTimeout(() => {
             
