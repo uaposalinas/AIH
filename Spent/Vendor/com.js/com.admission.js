@@ -32,6 +32,7 @@ const DateSet = {
 } 
 
 const TextPlaneDate = `${DateSet.Day}/${DateSet.Month}/${DateSet.Year}`;
+const FormattedDate = `${DateSet.Year}-${DateSet.Month}-${DateSet.Day}`;
 
 //ASC-2024-202405019875
 
@@ -344,6 +345,12 @@ function PrepareToSaveTheNewLog(){
         Month.value = DateSet.Month;
         Year.value = DateSet.Year;
 
+        if(DateConfirmation.checked == true){
+
+            ThisDate.value = FormattedDate;
+
+        }
+
         if(PayType.value == "Tarjeta de Crédito"){
 
             //Codigo de tarjeta seleccionada
@@ -369,6 +376,7 @@ function PrepareToSaveTheNewLog(){
                 ISV15.disabled = false;
                 ISV18.disabled = false;
                 Total.disabled = false;
+                ThisDate.disabled = false;
 
                 setTimeout(() => {
                     
