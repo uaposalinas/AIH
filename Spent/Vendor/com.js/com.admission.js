@@ -1,6 +1,3 @@
-//CurrentData
-
-
 //com.date
 
 const CurrentDate = new Date();
@@ -36,11 +33,26 @@ const DateSet = {
 
 const TextPlaneDate = `${DateSet.Day}/${DateSet.Month}/${DateSet.Year}`;
 
-//com.date
+//ASC-2024-202405019875
 
-//Pre Admission Default
+function GetGestID(){
 
-//DateSet
+    const Sub = "ASC";
+    const RandomLimit = 4;
+
+    for(let Aument = 0; Aument < RandomLimit; Aument++){
+
+        let Random = Math.floor(Math.Random() * 10);
+
+        let CreateRandom =+ Random;
+
+        alert(CreateRandom)
+
+    }
+
+}
+
+
 
 const ThisDate = document.querySelector('.ThisDate');
 const DateConfirmation = document.querySelector('.DateConfirmation');
@@ -318,6 +330,12 @@ function PrepareToSaveTheNewLog(){
     }else{
 
         SendPreloader("Preparando para guardar el nuevo registro", "400px");
+
+        const GestID = document.querySelector('.GestID');
+        const Month = document.querySelector('.Month');
+        const Year = document.querySelector('.Year');
+
+        GestID.value = GetGestID();
 
         setTimeout(() => {
             
