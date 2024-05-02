@@ -4,8 +4,6 @@
 
     $Connection = new mysqli($ServerName, $UserName, $Password, $DatabaseName);
 
-    echo $_POST["CardUsed"];
-
     if($Connection){
 
         if(isset($_POST["GestID"]) && isset($_POST["Month"]) && isset($_POST["Year"]) && isset($_POST["SendProvider"]) && isset($_POST["SendAmount"]) && isset($_POST["SendDescription"]) && isset($_POST["SendCountableCount"]) && isset($_POST["SendBuyType"])  && isset($_POST["SendPayType"]) && isset($_POST["Realice"])  && isset($_POST["SendDate"])  && isset($_POST["SendBillID"]) && isset($_POST["SendSubtotal"]) && isset($_POST["SendExempt"]) && isset($_POST["Other"]) && isset($_POST["ISV18"]) && isset($_POST["ISV15"]) && isset($_POST["SendTotal"]) && isset($_POST["CardUsed"])){
@@ -45,7 +43,7 @@
 
         }else{
 
-            echo "Error al obtener el Proveedor";
+            echo "<h1>Ocurrió un error al procesar uno o más datos.</h1> <br> <b>Error 400</b> <br> <p>Bad Request!</p>";
 
         }
 
