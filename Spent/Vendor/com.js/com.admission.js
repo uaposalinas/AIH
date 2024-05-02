@@ -344,6 +344,18 @@ function PrepareToSaveTheNewLog(){
         Month.value = DateSet.Month;
         Year.value = DateSet.Year;
 
+        if(PayType.value == "Tarjeta de Crédito"){
+
+            //Codigo de tarjeta seleccionada
+
+            alert('s')
+
+        }else{
+
+            document.querySelector('.CardUsedToPay').value = "N/A";
+
+        }
+
         setTimeout(() => {
             
             RemovePreloader();
