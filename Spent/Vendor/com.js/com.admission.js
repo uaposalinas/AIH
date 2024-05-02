@@ -39,14 +39,17 @@ function GetGestID(){
 
     const Sub = "ASC";
     const RandomLimit = 4;
+    let Value = '';
 
     for(let Aument = 0; Aument < RandomLimit; Aument++){
 
-        let Random = Math.floor(Math.Random() * 10);
+        let Random = Math.floor(Math.random() * 10);
 
-        let CreateRandom =+ Random;
+        Value =+ Random;
 
-        alert(CreateRandom)
+        alert(Value);
+
+        
 
     }
 
