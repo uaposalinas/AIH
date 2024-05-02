@@ -4,6 +4,11 @@
 /*FlowControl*/
 
 
+.NewLog input{
+
+    background-color: #2A2A2A;;
+
+}
 
 .SpentSelectMenu{
 
@@ -1725,3 +1730,4 @@ div.spinner {
     visibility:hidden;
 
 }
+
