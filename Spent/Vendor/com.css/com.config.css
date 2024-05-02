@@ -1713,3 +1713,15 @@ div.spinner {
     text-align:center;
 
 }
+
+.Hide{
+
+    display:none;
+    width:0px;
+    height:0px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    visibility:hidden;
+
+}
