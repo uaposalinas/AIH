@@ -105,3 +105,17 @@ const SwitchTable = document.querySelector('.SwitchTable');
 
 
 
+
+
+//Frames
+
+const CardUsed = document.querySelector('.SentCardUsed');
+const CardUsedConfirm = document.querySelector('.CardUsedConfirm');
+
+CardUsedConfirm.addEventListener('click', SendACardUsed);
+
+function SendACardUsed(){
+
+    document.querySelector('.CardUsedToPay').value = CardUsed.value;
+
+}
