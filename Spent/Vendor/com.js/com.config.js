@@ -117,5 +117,8 @@ CardUsedConfirm.addEventListener('click', SendACardUsed);
 function SendACardUsed(){
 
     document.querySelector('.CardUsedToPay').value = CardUsed.value;
+    BackModal.style.display = "none";
+    SoftModals.style.display = "none";
+    SelectCards.style.display = "none";
 
 }
