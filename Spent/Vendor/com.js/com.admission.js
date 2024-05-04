@@ -2,12 +2,16 @@
 
 const CurrentDate = new Date();
 const GetDay = CurrentDate.getDate();
+const GetWeekDay = CurrentDate.getDay();
 const GetMonth = CurrentDate.getMonth();
 const GetYear = CurrentDate.getFullYear();
 
 //FormatMonth
 
 const MonthFormatted = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+const FullMonth = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+const Week = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
 
 function DetectDayForFormat(){
 
@@ -33,6 +37,8 @@ const DateSet = {
 
 const TextPlaneDate = `${DateSet.Day}/${DateSet.Month}/${DateSet.Year}`;
 const FormattedDate = `${DateSet.Year}-${DateSet.Month}-${DateSet.Day}`;
+const FullDate = `${DateSet.Day} de ${FullMonth[GetMonth]} del ${DateSet.Year}`;
+
 
 //ASC-2024-202405019875
 
@@ -340,10 +346,14 @@ function PrepareToSaveTheNewLog(){
         const GestID = document.querySelector('.GestID');
         const Month = document.querySelector('.Month');
         const Year = document.querySelector('.Year');
+        const FullDates = document.querySelector('.FullDate');
+        const CurrentDay = document.querySelector('.CurrentDay');
 
         GestID.value = GetGestID();
         Month.value = DateSet.Month;
         Year.value = DateSet.Year;
+        FullDates.value = FullDate;
+        CurrentDay.value = Week[GetWeekDay]
 
         if(DateConfirmation.checked == true){
 
@@ -351,13 +361,7 @@ function PrepareToSaveTheNewLog(){
 
         }
 
-        if(PayType.value == "Tarjeta de Crédito"){
-
-            //Codigo de tarjeta seleccionada
-
-            alert('s')
-
-        }else{
+        if(PayType.value == "Tarjeta de Crédito"){}else{
 
             document.querySelector('.CardUsedToPay').value = "N/A";
 
@@ -367,7 +371,7 @@ function PrepareToSaveTheNewLog(){
             
             RemovePreloader();
 
-            SendNewMessage("Registro Validado, guardando...", "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/check.png", "Low", "370px")
+            SendNewMessage("Registro Validado, guardando...", "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/check.png", "Low", "350px")
 
             setTimeout(() => {
                 

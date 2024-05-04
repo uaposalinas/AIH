@@ -122,3 +122,39 @@ function SendACardUsed(){
     SelectCards.style.display = "none";
 
 }
+
+
+
+
+
+
+
+
+
+//Swith Table
+
+
+let State = false;
+
+SwitchTable.addEventListener('click', SwitchTableNow);
+
+function SwitchTableNow(){
+
+    const GridShow = document.querySelector('.GridShow');
+    const TableShow = document.querySelector('.TableShow');
+
+    if(State == false){
+
+        GridShow.style.display = "none"
+        TableShow.style.display = "flex";
+        State = true;
+
+    }else if(State == true){
+
+        GridShow.style.display = "flex"
+        TableShow.style.display = "none";
+        State = false;  
+
+    }
+
+}
