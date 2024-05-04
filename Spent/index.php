@@ -201,7 +201,7 @@
                                 <option value="Oki Poki">Oki Poki</option>
                                 <option value="Little Caesars">Little Caesars</option>
                                 <option value="Friday">Friday</option>
-                                <option value="Little Caesars">Quick Box</option>
+                                <option value="Quick Box">Quick Box</option>
                                 <option value="Costas Burger">Costas Burguer</option>
                                 <option value="Matambritas">Matambritas</option>
                                 <option value="Circle K">Circle K</option>
@@ -243,11 +243,11 @@
                                 <option value="Alimentación">Alimentación</option>
                                 <option value="Gasto">Gasto</option>
                                 <option value="Servicio">Servicio</option>
-                                <option value="Servicio">Medicamentos</option>
-                                <option value="Servicio">Insumos</option>
-                                <option value="Servicio">Combustible</option>
-                                <option value="Servicio">Alimentos</option>
-                                <option value="Servicio">Carga</option>
+                                <option value="Medicamentos">Medicamentos</option>
+                                <option value="Insumos">Insumos</option>
+                                <option value="Combustible">Combustible</option>
+                                <option value="Alimentos">Alimentos</option>
+                                <option value="Carga">Carga</option>
         
                             </select>
     
@@ -428,30 +428,66 @@
 
             <div class="GridShow" style="display:flex;">
 
-                <cont>
+                <?php
 
-                    <header>
+                require 'config/com.config.php';
 
-                        <logo class="ProviderLogo" style="background-image: url(Assets/com.img/Estelinas.jpg);"></logo>
-                        <t class="CountableCountShow" style="font-size:16px;">Alimentación</t>
-                        <p class="Date" style="font-size:13px;">Viernes • 15 de Marzo 2024</p>
+                $DoQuery = "SELECT * FROM logs WHERE 1";
+                $QueryResults = $Connection -> query($DoQuery);
 
-                    </header>
+                if($QueryResults -> num_rows > 0){
 
-                    <div class="Contents">
+                    while($Row = $QueryResults -> fetch_assoc()){
 
-                        <p>Realizado por: Alejandro Salinas</p>
-                        <p>Realizado el: 16 de Marzo de 2024</p>
-                        <p>NO. de Factura: 000-001-01-00068637</p>
-                        <p>Tipo de compra: Oficina</p>
-                        <p>Tipo de Pago: Tarjeta</p>
-                        <p>Tarjeta usada: 8951</p>
+                        $GestID = $Row["GestID"];
+                        $GetCountableCount = $Row["CountableCount"];
+                        $GetSaveDay = $Row["SavedDay"];
+                        $GetFullDate = $Row["FullDate"];
+                        $SpendedBy = $Row["SpendedBy"];
+                        $BillID = $Row["BillNumber"];
+                        $BuyType = $Row["BuyType"];
+                        $PayType = $Row["PayType"];
+                        $CardUsed = $Row["CardUsed"];
+                        $Total = $Row["Total"];
 
-                        <div class="TotalToShow">L 250.00</div>
+                        echo "<cont slot='Show' encode='$GestID' class='ShowInformation'>
 
-                    </div>
+                        <header>
+                    
+                            <logo class='ProviderLogo' style='background-image: url(Assets/com.img/Estelinas.jpg);'></logo>
+                    
+                    
+                            <t class='CountableCountShow' style='font-size:16px;'>$GetCountableCount</t>
+                            <p class='Date' style='font-size:13px;'>$GetSaveDay • $GetFullDate</p>
+                    
+                        </header>
+                    
+                        <div class='Contents'>
+                    
+                            <p>Realizado por: $SpendedBy</p>
+                            <p>Realizado el: $GetFullDate</p>
+                            <p>NO. de Factura: $BillID</p>
+                            <p>Tipo de compra: $BuyType</p>
+                            <p>Tipo de Pago: $PayType</p>
+                            <p>Tarjeta usada: $CardUsed</p>
+                    
+                            <div class='TotalToShow'>$Total</div>
+                    
+                        </div>
+                    
+                    </cont>
+                    ";
 
-                </cont>
+
+                    }
+
+                }else{
+
+                    echo "!OK";
+
+                }
+
+            ?>
 
             </div>
 
