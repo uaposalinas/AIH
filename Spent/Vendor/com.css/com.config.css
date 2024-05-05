@@ -1,6 +1,3 @@
-
-
-
 /*FlowControl*/
 
 
@@ -1861,5 +1858,36 @@ div.spinner {
     left:20px;
     font-size:25px;
     color:#FFFFFF;
+
+}
+
+.PrintReport{
+
+    width: 21.59cm;
+    height: 27.94cm;
+    background-image:url(../../Assets/com.img/defaults/Report.png);
+    background-position:center;
+    background-size:cover;
+
+}
+
+@media print{
+
+    body{
+
+        *{
+
+            visibility:hidden;
+
+        }
+
+        .PrintReport{
+
+            visibility: visible;
+            border:none;
+
+        }
+
+    }
 
 }

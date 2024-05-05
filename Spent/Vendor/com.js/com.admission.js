@@ -435,3 +435,28 @@ function PrepareToSaveTheNewLog(){
 
 
 }
+
+// Función para manejar el evento de presionar teclas
+document.addEventListener('keydown', function(event) {
+    // Verificar si se presiona Ctrl + P
+    if (event.ctrlKey && event.key === 'p') {
+        // Llamar a la función para imprimir el div
+        imprimirDiv('.PrintReport');
+    }
+});
+
+// Función para imprimir el div
+function imprimirDiv(divClass) {
+    // Obtener el div por su clase
+    var divToPrint = document.querySelector(divClass);
+    // Crear un contenedor para el div
+    var container = document.createElement('div');
+    container.appendChild(divToPrint.cloneNode(true));
+    // Agregar el contenedor a la página (fuera de la vista)
+    document.body.appendChild(container);
+    // Imprimir el contenido del contenedor
+    window.print();
+    // Eliminar el contenedor después de imprimir
+    document.body.removeChild(container);
+}
+

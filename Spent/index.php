@@ -58,6 +58,9 @@
 
 <body class="Spent">
 
+
+    <div class="PrintReport"></div>
+
     <div class="StartPreloader" style="display: none;">
 
 
@@ -449,12 +452,14 @@
                         $PayType = $Row["PayType"];
                         $CardUsed = $Row["CardUsed"];
                         $Total = $Row["Total"];
+                        $Provider = $Row["Provider"];
+                        $Image = "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.providers/$Provider.png";
 
                         echo "<cont slot='Show' encode='$GestID' class='ShowInformation'>
 
                         <header>
                     
-                            <logo class='ProviderLogo' style='background-image: url(Assets/com.img/Estelinas.jpg);'></logo>
+                            <logo class='ProviderLogo' style='background-image: url($Image);'></logo>
                     
                     
                             <t class='CountableCountShow' style='font-size:16px;'>$GetCountableCount</t>
