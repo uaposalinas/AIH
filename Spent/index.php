@@ -440,9 +440,9 @@
 
                 <?php
 
-                    header('Content-Type: text/html; charset=utf-8');
-
                 require 'config/com.config.php';
+
+                $Connection->set_charset("utf8");
 
                 $DoQuery = "SELECT * FROM logs WHERE 1";
                 $QueryResults = $Connection -> query($DoQuery);
