@@ -35,6 +35,8 @@
         header('Content-Type: text/html; charset=utf-8');
 
         require 'config/com.config.php';
+        $Connection->set_charset("utf8");
+
 
         $GestID = $_GET["GestID"];
 

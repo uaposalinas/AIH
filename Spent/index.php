@@ -525,6 +525,8 @@
 
                         require 'config/com.config.php';
 
+                        $Connection->set_charset("utf8");
+
                         $DoQuery = "SELECT GestID ,Provider, SpendedBy, Date, BuyType, CardUsed, Total FROM logs WHERE 1";
                         $QueryResults = $Connection -> query($DoQuery);
 
