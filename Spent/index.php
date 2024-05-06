@@ -100,7 +100,7 @@
         <header style="position:absolute; top:70px;">
 
             <div class="PrincipalLogo"></div>
-            <t>Sistema de Gestión de Finanzas AIH S DE RL</t>
+            <t>Sistema de Gestión de Finanzas</t>
     
         </header>
 
