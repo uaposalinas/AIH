@@ -995,6 +995,7 @@ cont header logo{
     border-radius:7px;
     background-size:cover;
     background-position:center;
+    background-image:url(../../Assets/com.img/defaults/nologo.png);
 
 }
 
@@ -1868,8 +1869,10 @@ div.spinner {
     background-image:url(../../Assets/com.img/defaults/Report.png);
     background-position:center;
     background-size:cover;
+    display: none;
 
 }
+
 
 @media print{
 
@@ -1889,5 +1892,12 @@ div.spinner {
         }
 
     }
+
+}
+
+
+.ThisLog{
+
+    cursor: pointer;
 
 }

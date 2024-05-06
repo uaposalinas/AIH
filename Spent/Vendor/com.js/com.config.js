@@ -46,6 +46,8 @@ for(let Aument = 0; Aument < SelectOptionTotalElements; Aument++){
             SpentSelectMenu.style.display = "none";
             ViewLogs.style.display = "flex";
 
+            SetLogosInLogs()
+
         }else if(IndexOf == 2){
 
             SpentSelectMenu.style.display = "none";
@@ -154,6 +156,27 @@ function SwitchTableNow(){
         GridShow.style.display = "flex"
         TableShow.style.display = "none";
         State = false;  
+
+    }
+
+}
+
+
+
+function SetLogosInLogs(){
+
+    const ThisProviderLogo = document.querySelectorAll('.ProviderLogo');
+    const Limit = ThisProviderLogo.length;
+
+    for(let Aument = 0; Aument < Limit; Aument++){
+
+        const Logos = ThisProviderLogo[Aument];
+        
+        const GetAttr = Logos.getAttribute('slot');
+
+        const ImageForSend = GetAttr.replace(/ /g, "%20");
+
+        Logos.style.backgroundImage = `url(${ImageForSend})`;
 
     }
 

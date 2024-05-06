@@ -459,7 +459,7 @@
 
                         <header>
                     
-                            <logo class='ProviderLogo' style='background-image: url($Image);'></logo>
+                            <logo class='ProviderLogo' slot='$Image'></logo>
                     
                     
                             <t class='CountableCountShow' style='font-size:16px;'>$GetCountableCount</t>
@@ -500,7 +500,7 @@
 
                 <div class="TableContents">
 
-                    <p style="left:15px; font-family:GIB;">#</p>
+                    <p style="left:15px; font-family:GIB;"></p>
                     <p style="left:40px;">Proveedor</p>
                     <p style="left:190px;">Comprado por</p>
                     <p style="left:370px;">Comprado el</p>
@@ -512,43 +512,48 @@
 
                 <divs class="ShowResults">
 
-                    <log>
+                    <?php
 
-                        <p class="ListNumber">1</p>
-                        <p class="Provider">Estelinas</p>
-                        <p class="BuyedBy">Alejandro Salinas</p>
-                        <p class="BuyedIn">15/03/24</p>
-                        <p class="BuyType" >Personal</p>
-                        <p class="CardUsed">8951</p>
-                        <p class="Total">L 130.00</p>
+                        require 'config/com.config.php';
 
-                    </log>
+                        $DoQuery = "SELECT GestID ,Provider, SpendedBy, Date, BuyType, CardUsed, Total FROM logs WHERE 1";
+                        $QueryResults = $Connection -> query($DoQuery);
+
+                        if($QueryResults -> num_rows > 0){
+
+                            while($Row = $QueryResults -> fetch_assoc()){
+
+                                $GestID = $Row["GestID"];
+                                $Provider = $Row["Provider"];
+                                $SpendedBy = $Row["SpendedBy"];
+                                $Date = $Row["Date"];
+                                $BuyType = $Row["BuyType"];
+                                $CardUsed = $Row["CardUsed"];
+                                $Total = $Row["Total"];
+
+                                echo "
+                                
+                                <log class='ThisLog' GestID='$GestID'>
+
+                                    <p class='ListNumber'></p>
+                                    <p class='Provider'>$Provider</p>
+                                    <p class='BuyedBy'>$SpendedBy</p>
+                                    <p class='BuyedIn'>$Date</p>
+                                    <p class='BuyType'>$BuyType</p>
+                                    <p class='CardUsed'>$CardUsed</p>
+                                    <p class='Total'>$Total</p>
+                            
+                                </log>
+                            
+
+                                ";
+
+                            }
+
+                        }
+
+                    ?>
                  
-                    <log>
-
-                        <p class="ListNumber" style="left:15px; font-family:GIB;">2</p>
-                        <p class="Provider" style="left:40px;">Estelinas</p>
-                        <p class="BuyedBy" style="left:190px;">Alejandro Salinas</p>
-                        <p class="BuyedIn" style="left:385px;">15/03/24</p>
-                        <p class="BuyType" style="left:590px;">Personal</p>
-                        <p class="CardUsed" style="left:830px;">8951</p>
-                        <p class="Total" style="right:40px;">L 130.00</p>
-
-                    </log>
-
-                    <log>
-
-                        <p class="ListNumber">1</p>
-                        <p class="Provider">Estelinas</p>
-                        <p class="BuyedBy">Alejandro Salinas</p>
-                        <p class="BuyedIn">15/03/24</p>
-                        <p class="BuyType" >Personal</p>
-                        <p class="CardUsed">8951</p>
-                        <p class="Total">L 130.00</p>
-
-                    </log>
-                 
-
                 </div>
 
             </div>
