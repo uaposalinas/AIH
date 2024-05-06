@@ -440,6 +440,8 @@
 
                 <?php
 
+                    header('Content-Type: text/html; charset=utf-8');
+
                 require 'config/com.config.php';
 
                 $DoQuery = "SELECT * FROM logs WHERE 1";
