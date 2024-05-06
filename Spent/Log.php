@@ -12,10 +12,7 @@
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">    
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    
-        <?php
-            header('Content-Type: text/html; charset=utf-8');
-        ?>
+
     
         <script>
     
@@ -31,10 +28,11 @@
     
         <title>AIH's Expenses</title>
     </head>
-<body style="overflow: hidden; color:#FFFFFF">
+<body style="overflow: hidden;">
     
     <?php
 
+        header('Content-Type: text/html; charset=utf-8');
 
         require 'config/com.config.php';
 
