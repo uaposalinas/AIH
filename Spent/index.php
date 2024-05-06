@@ -58,15 +58,6 @@
 
 <body class="Spent" style="overflow:hidden">
 
-
-    <div class="PrintReport"></div>
-
-    <div class="StartPreloader" style="display: none;">
-
-
-
-    </div>
-
     <div class="NotificationIslandParent">
 
         <div class="NotificationIsland">
@@ -104,7 +95,7 @@
 
     </div>
     
-    <div class="SpentSelectMenu">
+    <div class="SpentSelectMenu" style="animation:fadeInUp 0.5s">
 
         <header style="position:absolute; top:70px;">
 
@@ -383,7 +374,7 @@
 
     </div>
 
-    <div class="ViewLogs">
+    <div class="ViewLogs" style="animation:fadeIn 0.5s">
 
     <div class="BackButtonPack BackToHome">
 
@@ -475,7 +466,7 @@
 
                         <header>
                     
-                            <logo class='ProviderLogo' slot='$Image'></logo>
+                            <logo class='ProviderLogo' slot='$Image' style='background-image:url(Assets/com.img/defaults/nologo.png)'></logo>
                     
                     
                             <t class='CountableCountShow' style='font-size:16px;'>$GetCountableCount</t>
@@ -576,113 +567,27 @@
 
     </div>
 
-    <div class="DisplaySelected">
+    <div class="ShowInfo" style="display:none;">
 
-<header style="height:105px; top:25px;">
+    <div class="BackButtonPack BackToLogs">
 
-    <div class="Path">
-
-        <div class="Icon" style="background-image:url(Assets/com.img/report.png);"></div>
-        <t class="Position">
-
-            <p class="Identifer">AIH</p>
-            <i class="fi fi-br-angle-small-right"></i>
-            <p class="Identifer">Sistema de gastos</p>
-            <i class="fi fi-br-angle-small-right"></i>
-            <p class="Identifer">Detalles del Gasto</p>
-
-        </t>
-
+        <i class="fi fi-sr-angle-left"></i>
+        <p>Registros</p>
 
     </div>
 
-    <div class="ReportButtons">
-
-        <div class="ShareReport" title="Compartir reporte"> <i class="fi fi-rr-send-money"></i></div>
-        <div class="PrintReport" title="Imprimir Reporte Individual"><i class="fi fi-rr-print"></i></div>
+        <iframe src="Log.php" frameborder="0" style="width:100%; height:95%; position:absolute; bottom:0px;" class="ShowLogsFrame"></iframe>
 
     </div>
 
-</header>
+    <div class="GenerateANewReport" style="display: none; position:absolute; top:0px; height:100vh">
 
-<div class="Content">
+    <div class="BackButtonPack BackToHome">
 
-    <div class="DetailsHeader">
-
-        <div class="ProviderDetails">
-
-            <div class="Logo"></div>
-            <div class="ProviderName">Gasto realizado en Estelinas</div>
-            <div class="SpentType">Gasto Alimetario</div>
-            <div class="PaidDetail">Pagado con:</div>
-            <div class="PaidResult tooltip" data-text="Botón de Pago"></div>
-
-        </div>
-        
-        <div class="EnterpriseLogo"></div>
+        <i class="fi fi-sr-angle-left BackToHome"></i>
+        <p>Inicio</p>
 
     </div>
-
-    
-    <div class="TransactionDetails">
-
-        <t>Detalles de la transacción</t>
-
-            <div class="Row">
-
-                <div class="GestID">ID  : ASC-2024-041001</div>
-                <div class="Date">Fecha: 01/01/2024</div>
-                <div class="Provider">Proveedor: Estelinas</div>
-                <div class="SpentedBy" style="width:360px;">Gastado por: Alejandro Salinas</div>
-
-            </div>
-            <div class="Row">
-
-                <div class="PayType" style="width:270px;">Tipo de pago: Botón de Pago</div>
-                <div class="PayUsed">Tarjeta usada: 8951</div>
-                <div class="CountableCount" style="width:270px">Cuenta Contable: Alimentación</div>
-                <div class="BuyType">Tipo de compra: Personal</div>
-
-            </div>
-            <div class="Row Price Exents" style="margin-top:20px; height:80px; position:relative;">
-
-                <label for="1" style="color:#9b9b9b; font-family: GI; position:absolute; left:80px;">Descripción del gasto:</label>
-                <label for="2" style="color:#9b9b9b; font-family: GI; position:absolute; left:520px;">NO. de Factura: </label>
-                <label for="3" style="color:#9b9b9b; font-family: GI; position:absolute; left:958px;">Cantidad</label>
-                <label for="4" style="color:#9b9b9b; font-family: GI; position:absolute; left:1110px;">Exento</label>
-
-                <div style="width:385px; display:flex; justify-content:left; padding-left:15px; ">Compra de almuerzo</div>
-                <div style="width:385px; display:flex; justify-content:left; padding-left:15px;">000-001-01-01466628</div>
-                <div style="width:105px;">3</div>
-                <div style="width:215px; display:flex; justify-content:left; padding-left:15px;">L 36.52</div>
-
-
-            </div>
-            <div class="Row Price Exents" style="margin-top:20px; height:80px; position:relative; display:flex; justify-content:left; padding-left:30px;">
-
-                <label for="1" style="color:#9b9b9b; font-family: GI; position:absolute; left:80px;">Subtotal 18%</label>
-                <label for="2" style="color:#9b9b9b; font-family: GI; position:absolute; left:350px;">Subtotal</label>
-                <label for="3" style="color:#9b9b9b; font-family: GI; position:absolute; left:620px;">ISV 18%</label>
-                <label for="4" style="color:#9b9b9b; font-family: GI; position:absolute; left:885px;">ISV 15%</label>
-
-                <div style="width:215px;">L 0.00</div>
-                <div style="width:215px;">L 243.00</div>
-                <div style="width:215px;">L 0.00</div>
-                <div style="width:215px;">L 36.52</div>
-
-
-            </div>
-
-            <div class="Result" style="font-size:28px">L. 350.00</div>
-
-    </div>
-
-
-</div>
-
-</div>
-
-    <div class="GenerateANewReport" style="display: none;">
 
         <div class="Assistant">
 

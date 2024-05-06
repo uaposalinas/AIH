@@ -156,7 +156,9 @@ function SetLogosInLogs(){
 
         const ImageForSend = GetAttr.replace(/ /g, "%20");
 
-        Logos.style.backgroundImage = `url(${ImageForSend})`;
+            
+            Logos.style.backgroundImage = `url(${ImageForSend})`;
+
 
     }
 
@@ -165,7 +167,8 @@ function SetLogosInLogs(){
 
 const ThisLog = document.querySelectorAll('.ThisLog');
 const Limit = ThisLog.length;
-const DisplaySelected = document.querySelector('.DisplaySelected');
+const DisplaySelected = document.querySelector('.ShowInfo');
+const ShowLogsFrame = document.querySelector('.ShowLogsFrame');
 
 for(let Aument = 0; Aument < Limit; Aument++){
 
@@ -182,6 +185,12 @@ for(let Aument = 0; Aument < Limit; Aument++){
         ViewLogs.style.display = "none";
         DisplaySelected.style.display = "flex";
 
+        const FrameSRC = `${window.location.origin}${window.location.pathname}/Log.php`;
+
+     ShowLogsFrame.src = `${FrameSRC}?GestID=${GetGestID}`;
+
+
+       
     }
 
 }

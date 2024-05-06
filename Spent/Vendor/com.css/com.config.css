@@ -1226,7 +1226,7 @@ cont header .Date{
 
 }
 
-.DisplaySelected{
+.DisplaySelected, .ShowInfo{
 
     width:100%;
     height:100%;
@@ -1444,6 +1444,7 @@ cont header .Date{
 .Exents div{
 
     width:115px;
+    justify-content:left;
 
 }
 
@@ -1931,5 +1932,18 @@ div.spinner {
     margin-left:5px;
     position:relative;
     bottom:2px;
+
+}
+
+.Price .Labels{
+
+    position:absolute;
+    top:0px;
+
+}
+
+.Price .Labels label{
+
+    position:relative;
 
 }
