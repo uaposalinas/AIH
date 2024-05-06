@@ -51,7 +51,6 @@
 
     <?php
 
-        header('Content-Type: text/html; charset=utf-8');
 
         require 'config/com.config.php';
         $Connection->set_charset("utf8");
@@ -83,6 +82,8 @@
             $OtherISV = $Row["OtherISV"];
             $Total = $Row["Total"];
             $Image = "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.providers/$Provider.png";
+
+            $Connection->set_charset("utf8");
 
             
             echo "
@@ -139,6 +140,9 @@
             
                     <t>Detalles de la transacción</t>
             
+
+                    $Connection->set_charset('utf8');
+
                         <div class='Row'>
             
                             <div class='GestID' style='width:300px;'>ID : $GestID</div>
