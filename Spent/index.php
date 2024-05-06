@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="Fonts/IndexFontsGlacialIndifference.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">    
-
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 
 
     <script>
@@ -56,7 +56,7 @@
 
 </Modals>
 
-<body class="Spent">
+<body class="Spent" style="overflow:hidden">
 
 
     <div class="PrintReport"></div>
@@ -153,9 +153,18 @@
 
     <div class="NewLog" style="overflow: hidden;">
 
+    <div class="BackButtonPack BackToHome">
+
+        <i class="fi fi-sr-angle-left BackToHome"></i>
+        <p>Inicio</p>
+
+    </div>
+
         <header style="height:105px; top:25px;">
 
             <div class="Path">
+
+
 
                 <div class="Icon"></div>
                 <t class="Position">
@@ -376,6 +385,13 @@
 
     <div class="ViewLogs">
 
+    <div class="BackButtonPack BackToHome">
+
+        <i class="fi fi-sr-angle-left BackToHome"></i>
+        <p>Inicio</p>
+
+    </div>
+
         
         <header style="height:105px; top:35px;">
 
@@ -455,7 +471,7 @@
                         $Provider = $Row["Provider"];
                         $Image = "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.providers/$Provider.png";
 
-                        echo "<cont slot='Show' encode='$GestID' class='ShowInformation'>
+                        echo "<cont slot='Show' GestID='$GestID' class='ShowInformation ThisLog'>
 
                         <header>
                     
@@ -562,109 +578,109 @@
 
     <div class="DisplaySelected">
 
-        <header style="height:105px; top:25px;">
+<header style="height:105px; top:25px;">
 
-            <div class="Path">
+    <div class="Path">
 
-                <div class="Icon" style="background-image:url(Assets/com.img/report.png);"></div>
-                <t class="Position">
+        <div class="Icon" style="background-image:url(Assets/com.img/report.png);"></div>
+        <t class="Position">
 
-                    <p class="Identifer">AIH</p>
-                    <i class="fi fi-br-angle-small-right"></i>
-                    <p class="Identifer">Sistema de gastos</p>
-                    <i class="fi fi-br-angle-small-right"></i>
-                    <p class="Identifer">Detalles del Gasto</p>
+            <p class="Identifer">AIH</p>
+            <i class="fi fi-br-angle-small-right"></i>
+            <p class="Identifer">Sistema de gastos</p>
+            <i class="fi fi-br-angle-small-right"></i>
+            <p class="Identifer">Detalles del Gasto</p>
 
-                </t>
-    
+        </t>
 
-            </div>
-
-            <div class="ReportButtons">
-
-                <div class="ShareReport" title="Compartir reporte"> <i class="fi fi-rr-send-money"></i></div>
-                <div class="PrintReport" title="Imprimir Reporte Individual"><i class="fi fi-rr-print"></i></div>
-
-            </div>
-
-        </header>
-
-        <div class="Content">
-
-            <div class="DetailsHeader">
-
-                <div class="ProviderDetails">
-
-                    <div class="Logo"></div>
-                    <div class="ProviderName">Gasto realizado en Estelinas</div>
-                    <div class="SpentType">Gasto Alimetario</div>
-                    <div class="PaidDetail">Pagado con:</div>
-                    <div class="PaidResult tooltip" data-text="Botón de Pago"></div>
-
-                </div>
-                
-                <div class="EnterpriseLogo"></div>
-
-            </div>
-
-            
-            <div class="TransactionDetails">
-
-                <t>Detalles de la transacción</t>
-
-                    <div class="Row">
-
-                        <div class="GestID">ID  : ASC-2024-041001</div>
-                        <div class="Date">Fecha: 01/01/2024</div>
-                        <div class="Provider">Proveedor: Estelinas</div>
-                        <div class="SpentedBy" style="width:360px;">Gastado por: Alejandro Salinas</div>
-
-                    </div>
-                    <div class="Row">
-
-                        <div class="PayType" style="width:270px;">Tipo de pago: Botón de Pago</div>
-                        <div class="PayUsed">Tarjeta usada: 8951</div>
-                        <div class="CountableCount">Cuenta Contable: Alimentación</div>
-                        <div class="BuyType">Tipo de compra: Personal</div>
-
-                    </div>
-                    <div class="Row Price Exents" style="margin-top:20px; height:80px; position:relative;">
-    
-                        <label for="1" style="color:#9b9b9b; font-family: GI; position:absolute; left:80px;">Descripción del gasto:</label>
-                        <label for="2" style="color:#9b9b9b; font-family: GI; position:absolute; left:520px;">NO. de Factura: </label>
-                        <label for="3" style="color:#9b9b9b; font-family: GI; position:absolute; left:958px;">Cantidad</label>
-                        <label for="4" style="color:#9b9b9b; font-family: GI; position:absolute; left:1110px;">Exento</label>
-    
-                        <div style="width:385px; display:flex; justify-content:left; padding-left:15px; ">Compra de almuerzo</div>
-                        <div style="width:385px; display:flex; justify-content:left; padding-left:15px;">000-001-01-01466628</div>
-                        <div style="width:105px;">3</div>
-                        <div style="width:215px; display:flex; justify-content:left; padding-left:15px;">L 36.52</div>
-
-    
-                    </div>
-                    <div class="Row Price Exents" style="margin-top:20px; height:80px; position:relative; display:flex; justify-content:left; padding-left:30px;">
-    
-                        <label for="1" style="color:#9b9b9b; font-family: GI; position:absolute; left:80px;">Subtotal 18%</label>
-                        <label for="2" style="color:#9b9b9b; font-family: GI; position:absolute; left:350px;">Subtotal</label>
-                        <label for="3" style="color:#9b9b9b; font-family: GI; position:absolute; left:620px;">ISV 18%</label>
-                        <label for="4" style="color:#9b9b9b; font-family: GI; position:absolute; left:885px;">ISV 15%</label>
-    
-                        <div style="width:215px;">L 0.00</div>
-                        <div style="width:215px;">L 243.00</div>
-                        <div style="width:215px;">L 0.00</div>
-                        <div style="width:215px;">L 36.52</div>
-
-    
-                    </div>
-
-                    <div class="Result">L. 350.00</div>
-
-            </div>
-
-
-        </div>
 
     </div>
+
+    <div class="ReportButtons">
+
+        <div class="ShareReport" title="Compartir reporte"> <i class="fi fi-rr-send-money"></i></div>
+        <div class="PrintReport" title="Imprimir Reporte Individual"><i class="fi fi-rr-print"></i></div>
+
+    </div>
+
+</header>
+
+<div class="Content">
+
+    <div class="DetailsHeader">
+
+        <div class="ProviderDetails">
+
+            <div class="Logo"></div>
+            <div class="ProviderName">Gasto realizado en Estelinas</div>
+            <div class="SpentType">Gasto Alimetario</div>
+            <div class="PaidDetail">Pagado con:</div>
+            <div class="PaidResult tooltip" data-text="Botón de Pago"></div>
+
+        </div>
+        
+        <div class="EnterpriseLogo"></div>
+
+    </div>
+
+    
+    <div class="TransactionDetails">
+
+        <t>Detalles de la transacción</t>
+
+            <div class="Row">
+
+                <div class="GestID">ID  : ASC-2024-041001</div>
+                <div class="Date">Fecha: 01/01/2024</div>
+                <div class="Provider">Proveedor: Estelinas</div>
+                <div class="SpentedBy" style="width:360px;">Gastado por: Alejandro Salinas</div>
+
+            </div>
+            <div class="Row">
+
+                <div class="PayType" style="width:270px;">Tipo de pago: Botón de Pago</div>
+                <div class="PayUsed">Tarjeta usada: 8951</div>
+                <div class="CountableCount" style="width:270px">Cuenta Contable: Alimentación</div>
+                <div class="BuyType">Tipo de compra: Personal</div>
+
+            </div>
+            <div class="Row Price Exents" style="margin-top:20px; height:80px; position:relative;">
+
+                <label for="1" style="color:#9b9b9b; font-family: GI; position:absolute; left:80px;">Descripción del gasto:</label>
+                <label for="2" style="color:#9b9b9b; font-family: GI; position:absolute; left:520px;">NO. de Factura: </label>
+                <label for="3" style="color:#9b9b9b; font-family: GI; position:absolute; left:958px;">Cantidad</label>
+                <label for="4" style="color:#9b9b9b; font-family: GI; position:absolute; left:1110px;">Exento</label>
+
+                <div style="width:385px; display:flex; justify-content:left; padding-left:15px; ">Compra de almuerzo</div>
+                <div style="width:385px; display:flex; justify-content:left; padding-left:15px;">000-001-01-01466628</div>
+                <div style="width:105px;">3</div>
+                <div style="width:215px; display:flex; justify-content:left; padding-left:15px;">L 36.52</div>
+
+
+            </div>
+            <div class="Row Price Exents" style="margin-top:20px; height:80px; position:relative; display:flex; justify-content:left; padding-left:30px;">
+
+                <label for="1" style="color:#9b9b9b; font-family: GI; position:absolute; left:80px;">Subtotal 18%</label>
+                <label for="2" style="color:#9b9b9b; font-family: GI; position:absolute; left:350px;">Subtotal</label>
+                <label for="3" style="color:#9b9b9b; font-family: GI; position:absolute; left:620px;">ISV 18%</label>
+                <label for="4" style="color:#9b9b9b; font-family: GI; position:absolute; left:885px;">ISV 15%</label>
+
+                <div style="width:215px;">L 0.00</div>
+                <div style="width:215px;">L 243.00</div>
+                <div style="width:215px;">L 0.00</div>
+                <div style="width:215px;">L 36.52</div>
+
+
+            </div>
+
+            <div class="Result" style="font-size:28px">L. 350.00</div>
+
+    </div>
+
+
+</div>
+
+</div>
 
     <div class="GenerateANewReport" style="display: none;">
 
@@ -731,7 +747,7 @@
 </script>
 
 <script src="Vendor/com.js/com.island.config.js"></script>
-<script src="Vendor/com.js/com.frames.js"></script>
+<script src="Vendor/com.js/com.navigation.js"></script>
 
 <style>
 

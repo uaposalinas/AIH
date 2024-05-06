@@ -416,6 +416,12 @@ body{
 
 }
 
+.ViewLog{
+
+    animation:fadeInRight 0.5s;
+
+}
+
 .NewLog header, .ViewLogs header{
 
     width:100%;
@@ -1227,6 +1233,7 @@ cont header .Date{
     position:absolute;
     top:0px;
     left:0px;   
+    animation: fadeInUp 0.5s;
 
 }
 
@@ -1862,16 +1869,6 @@ div.spinner {
 
 }
 
-.PrintReport{
-
-    width: 21.59cm;
-    height: 27.94cm;
-    background-image:url(../../Assets/com.img/defaults/Report.png);
-    background-position:center;
-    background-size:cover;
-    display: none;
-
-}
 
 
 @media print{
@@ -1899,5 +1896,40 @@ div.spinner {
 .ThisLog{
 
     cursor: pointer;
+
+}
+
+.BackButtonPack{
+
+    width:250px;
+    height:50px;
+    cursor: pointer;
+    left:20px;
+    top:10px;
+    position: absolute;
+    display:flex;
+    justify-content:left;
+    align-items:center;
+    text-align:center;
+    padding-left:15px;
+    z-index:9999999999999999999999999999999999999999999999999999999;
+
+}
+
+.BackButtonPack i{
+
+    position:relative;
+    color:#85c6fe;
+    font-size:15px;
+
+}
+
+.BackButtonPack p{
+
+    font-family:caviarDreamsBold;
+    color:#85c6fe;
+    margin-left:5px;
+    position:relative;
+    bottom:2px;
 
 }

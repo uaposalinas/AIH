@@ -69,16 +69,10 @@ for(let Aument = 0; Aument < SelectOptionTotalElements; Aument++){
 
 }
 
-//Select an option from the spents menu
-
-//ViewLogsPage
-
 const ReloadTable = document.querySelector('.ReloadTable');
 const TimeFilter = document.querySelector('.TimeFilter');
 const SwitchTable = document.querySelector('.SwitchTable');
 
-    /*ReloadTable*/
-    
         ReloadTable.addEventListener('click', ReloadTableNow);
 
         function ReloadTableNow(){
@@ -86,11 +80,6 @@ const SwitchTable = document.querySelector('.SwitchTable');
             window.location.reload()
 
         }
-
-    /*ReloadTable*/
-    
-
-    /*Time Filter*/
 
         TimeFilter.addEventListener('click', ShowFilterFromDate);
 
@@ -100,16 +89,7 @@ const SwitchTable = document.querySelector('.SwitchTable');
 
         }
 
-    /*Time Filter*/
 
-
-//ViewLogsPage
-
-
-
-
-
-//Frames
 
 const CardUsed = document.querySelector('.SentCardUsed');
 const CardUsedConfirm = document.querySelector('.CardUsedConfirm');
@@ -177,6 +157,30 @@ function SetLogosInLogs(){
         const ImageForSend = GetAttr.replace(/ /g, "%20");
 
         Logos.style.backgroundImage = `url(${ImageForSend})`;
+
+    }
+
+}
+
+
+const ThisLog = document.querySelectorAll('.ThisLog');
+const Limit = ThisLog.length;
+const DisplaySelected = document.querySelector('.DisplaySelected');
+
+for(let Aument = 0; Aument < Limit; Aument++){
+
+    const Logs = ThisLog[Aument];
+
+    Logs.addEventListener('click', ExecuteThisLog);
+
+    function ExecuteThisLog(){
+
+        SendNewMessage("Acá están los detalles de ese registro", "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/Show.png", "Low", "400px")
+
+        const GetGestID = Logs.getAttribute('GestID');
+
+        ViewLogs.style.display = "none";
+        DisplaySelected.style.display = "flex";
 
     }
 
