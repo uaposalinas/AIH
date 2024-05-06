@@ -1947,3 +1947,18 @@ div.spinner {
     position:relative;
 
 }
+
+.ShowLogPreloader{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+
+}
