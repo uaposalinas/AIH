@@ -1960,5 +1960,7 @@ div.spinner {
     align-items:center;
     text-align:center;
     flex-direction:column;
+    background-color: #000000;
+    z-index: 999999999999999999999999999999999999999999999999999;
 
 }
