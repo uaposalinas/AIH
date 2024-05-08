@@ -87,22 +87,28 @@
             if($PayType === "Efectivo"){
 
                 $PayTypeImage = "Assets/com.img/PayMethods/Money.png";
+                $PayMethod = "Pago en efectivo";
 
             }else if($PayType === "Transferencia"){
 
                 $PayTypeImage = "Assets/com.img/PayMethods/Transference.png";
+                $PayMethod = "Pago con Transferencia";
 
             }else if($PayType === "Botón de Pago"){
 
                 $PayTypeImage = "Assets/com.img/PayMethods/PayButton.png";   
+                $PayMethod = "Realizado con botón de pago";
 
             }else if($PayType === "Pago en Linea"){
 
                 $PayTypeImage = "Assets/com.img/PayMethods/OnlinePay.png";
+                $PayMethod = "Pagado en linea";
 
             }else if($PayType === "Tarjeta de Crédito"){
 
                 $PayTypeImage = "Assets/com.img/PayMethods/atm-card.png";
+                $PayMethod = "Realizado con tarjeta de crédito";
+
 
             }
 
@@ -150,7 +156,7 @@
                         <div class='ProviderName'>Gasto realizado en $Provider</div>
                         <div class='SpentType'>$CountableCount</div>
                         <div class='PaidDetail'>Pagado con:</div>
-                        <div class='PaidResult tooltip' data-text='Botón de Pago' style='background-image:url($PayTypeImage)'></div>
+                        <div class='PaidResult tooltip' data-text='$PayMethod' style='background-image:url($PayTypeImage)'></div>
             
                     </div>
                     
