@@ -497,7 +497,7 @@
 
                 }else{
 
-                    echo "!OK";
+                    echo "Error!";
 
                 }
 
