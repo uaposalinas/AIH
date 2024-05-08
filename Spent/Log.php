@@ -84,6 +84,28 @@
             $Total = $Row["Total"];
             $Image = "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.providers/$Provider.png";
 
+            if($PayType === "Efectivo"){
+
+                $PayTypeImage = "Assets/com.img/PayMethods/Money.png";
+
+            }else if($PayType === "Transferencia"){
+
+                $PayTypeImage = "Assets/com.img/PayMethods/Transference.png";
+
+            }else if($PayType === "Botón de Pago"){
+
+                $PayTypeImage = "Assets/com.img/PayMethods/PayButton.png";   
+
+            }else if($PayType === "Pago en Linea"){
+
+                $PayTypeImage = "Assets/com.img/PayMethods/OnlinePay.png";
+
+            }else if($PayType === "Tarjeta de Crédito"){
+
+                $PayTypeImage = "Assets/com.img/PayMethods/atm-card.png";
+
+            }
+
             $Connection->set_charset("utf8");
 
             
@@ -128,7 +150,7 @@
                         <div class='ProviderName'>Gasto realizado en $Provider</div>
                         <div class='SpentType'>$CountableCount</div>
                         <div class='PaidDetail'>Pagado con:</div>
-                        <div class='PaidResult tooltip' data-text='Botón de Pago'></div>
+                        <div class='PaidResult tooltip' data-text='Botón de Pago' style='background-image:url($PayTypeImage)'></div>
             
                     </div>
                     
