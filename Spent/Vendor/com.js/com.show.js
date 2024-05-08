@@ -1,3 +1,5 @@
+
+
 window.addEventListener('load', StartFirmware);
 
 function StartFirmware(){
@@ -19,6 +21,4 @@ function StartFirmware(){
     Logo.style.backgroundImage = `url(${ReplaceLevelOne})`
 
 }
-
-
 

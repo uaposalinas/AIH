@@ -573,6 +573,8 @@
 
     <div class="ShowInfo" style="display:none;">
 
+    <div class="DetectShare tooltip" data-text="Compartir Registro"></div>
+
     <div class="BackButtonPack BackToLogs">
 
         <i class="fi fi-sr-angle-left"></i>

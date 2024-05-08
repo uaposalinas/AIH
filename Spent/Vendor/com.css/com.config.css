@@ -908,6 +908,7 @@ input{
     text-align:center;
     flex-wrap:wrap;
     overflow-y:scroll;
+    flex-direction:row-reverse !important;
 
 }
 
@@ -1962,5 +1963,18 @@ div.spinner {
     flex-direction:column;
     background-color: #000000;
     z-index: 9999;
+
+}
+
+
+.DetectShare{
+
+    width:50px;
+    height:50px;
+    z-index:99999999;
+    top:80px;
+    right: 100px;
+    position:absolute;
+    cursor: pointer;
 
 }

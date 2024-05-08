@@ -12,6 +12,7 @@
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">    
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css'>
 
     
         <script>
@@ -110,7 +111,7 @@
             
                 <div class='ReportButtons'>
             
-                    <div class='ShareReport tooltip' data-text='Compartir reporte'> <i class='fi fi-rr-send-money'></i></div>
+                    <div class='ShareReport tooltip' data-text='Compartir reporte'> <i class='fi fi-ss-refer'></i> </div>
                     <div class='PrintReport tooltip' data-text='Imprimir Reporte'><i class='fi fi-rr-print'></i></div>
             
                 </div>

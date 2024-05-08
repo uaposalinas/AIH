@@ -194,3 +194,25 @@ for(let Aument = 0; Aument < Limit; Aument++){
     }
 
 }
+
+const DetectShare = document.querySelector('.DetectShare');
+
+DetectShare.addEventListener('click', CopyGestIDLink);
+
+function CopyGestIDLink() {
+
+    const GestIDParams = document.querySelector('.ShowLogsFrame').src;
+
+    const Code = document.createElement('textarea');
+    Code.value = GestIDParams;
+    document.body.appendChild(Code);
+
+    Code.select();
+    Code.setSelectionRange(0, 99999); 
+
+    document.execCommand('copy');
+    document.body.removeChild(Code);
+
+    SendNewMessage('Enlace copiado en el portapapeles', 'https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/link.png', "Low", "360px")
+
+}
