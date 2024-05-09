@@ -199,37 +199,34 @@
                             <select name="SendProvider" class="Provider ThisValue SelectValue">
     
                                 <option value="default">Proveedor</option>
-                                <option value="Estelinas">Estelinas</option>
-                                <option value="Gasolinera Uno">Gasolinera Uno</option>
-                                <option value="Oki Poki">Oki Poki</option>
-                                <option value="Little Caesars">Little Caesars</option>
-                                <option value="Friday">Friday</option>
-                                <option value="Quick Box">Quick Box</option>
-                                <option value="Costas Burger">Costas Burguer</option>
-                                <option value="Matambritas">Matambritas</option>
-                                <option value="Circle K">Circle K</option>
-                                <option value="PriceSmart">PriceSmart</option>
-                                <option value="Texaco">Texaco</option>
-                                <option value="Gasolinera Puma">Gasolinera Puma</option>
-                                <option value="Gasolinera Shell">Gasolinera Shell</option>
-                                <option value="Larach y cia">Larach y cia</option>
-                                <option value="La Mundial">La Mundial</option>
-                                <option value="Los Andes">Los Andes</option>
-                                <option value="La Colonia">La Colonia</option>
-                                <option value="La Moderna">La Moderna</option>
-                                <option value="Taco Pollo">Taco Pollo</option>
-                                <option value="Claro">Claro</option>
-                                <option value="Tigo">Tigo</option>
-                                <option value="ACOSA">ACOSA</option>
-                                <option value="Útiles de Honduras">Útiles de Honduras</option>
-                                <option value="Burger King">Burger King</option>
+
+                                <?php
+
+                                    require 'config/com.config.php';
+
+                                    $DoQuery = "SELECT Provider FROM Providers WHERE 1";
+                                    $QueryResults = $Connection -> query($DoQuery);
+
+                                    if($QueryResults -> num_rows > 0){
+
+                                        while($Row = $QueryResults -> fetch_assoc()){
+
+                                            $Provider = $Row["Provider"];
+
+                                            echo "<option value='$Provider'>$Provider</option>";
+
+                                        }
+
+                                    }
+
+                                ?>
                                 
 
                             </select>
     
                         </div>
     
-                        <div class="AddMore"><i class="fi fi-rr-plus-small"></i></div>
+                        <div class="AddMore AddAnotherProvider" style="cursor:pointer;"><i class="fi fi-rr-plus-small"></i></div>
     
                         <input type="number" name="SendAmount" class="Amount ThisValue" placeholder="Cantidad">
                         <input type="text" name="SendDescription" class="Description LogDescription ThisValue" placeholder="Descripción del gasto">

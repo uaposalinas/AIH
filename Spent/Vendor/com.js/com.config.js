@@ -216,3 +216,13 @@ function CopyGestIDLink() {
     SendNewMessage('Enlace copiado en el portapapeles', 'https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/link.png', "Low", "360px")
 
 }
+
+const AddAnotherProvider = document.querySelector('.AddAnotherProvider');
+
+AddAnotherProvider.addEventListener('click', NewProvider);
+
+function NewProvider(){
+
+    window.open("com.new/Provider/", "NewWindowForAddProvider", "width=500,height=400")
+
+}
