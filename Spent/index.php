@@ -46,7 +46,29 @@
         <t>Selecciona la tarjeta que se utilizó</t>
         <select class="SentCardUsed">
 
-            <option value="0851">0851</option>
+        <option value="0851">0851</option>
+
+        <?php
+
+            require 'config/com.config.php';
+
+            $DoQuery = "SELECT ID FROM Cards WHERE 1";
+            $QueryResults = $Connection -> query($DoQuery);
+
+            if($QueryResults -> num_rows > 0){
+
+                while($Row = $QueryResults -> fetch_assoc()){
+
+                    $ID = $Row["ID"];
+
+                    echo "<option value='$ID'>$ID</option>";
+                  
+
+                }
+
+            }
+
+        ?>
 
         </select>
 
@@ -356,8 +378,8 @@
                         <div class="CardLogo"></div>
                         <p class="Brand">Selecciona una tarjeta</p>
                         <p class="CardID">Terminación: 0000</p>
-                        <p class="FailCard">Fecha de Vencimiento: 00/00</p>
-                        <p class="CVV">CVV: 0000 </p>
+                        <p class="FailCard"> </p>
+                        <p class="CVV"> </p>
 
                     </div>
 
@@ -657,6 +679,7 @@
 
 <script src="Vendor/com.js/com.island.config.js"></script>
 <script src="Vendor/com.js/com.navigation.js"></script>
+<script src="Vendor/com.js/com.frames.js"></script>
 
 <style>
 
