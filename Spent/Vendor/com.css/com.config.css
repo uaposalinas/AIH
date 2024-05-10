@@ -895,6 +895,7 @@ input{
 
 }
 
+
 .ShowLogs .GridShow{
 
     width:100%;
@@ -1312,7 +1313,7 @@ cont header .Date{
 
 .ProviderDetails{
 
-    width:500px;
+    width:calc(100% - 70px);
     height:150px;
     position:absolute;
     top:10px;
@@ -1976,5 +1977,108 @@ div.spinner {
     right: 100px;
     position:absolute;
     cursor: pointer;
+
+}
+
+
+.ShowBarResults{
+
+    width:100%;
+    height:calc(100% - 160px);
+    position:absolute;
+    bottom:0px;
+    background-color: #000000;
+    z-index:99999999999;
+    display: none;
+    animation:fadeInUp 0.5s;
+
+}
+
+.SearchBarIndex{
+
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    color:#FFF;
+}
+
+.SearchBarIndex .Icon{
+
+    width:100px;
+    height:100px;
+    background-image:url(../../Assets/com.img/Searcher.png);
+    background-position:center;
+    background-size:cover;  
+    margin-bottom:40px;
+
+}
+
+.SearchBarIndex t{
+
+    font-family:caviarDreamsBold;
+    font-size:20px; 
+
+}
+
+.RemoveSearcher{
+
+    animation: fadeOutDownBig 0.5s;
+
+}
+
+.SpentSelectMenu header .ThisNotificationsRender{
+
+    width:100%;
+    height: 50px;
+    position:absolute;
+    bottom:-40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.SpentSelectMenu header .ThisNotificationsRender .Notification{
+
+    width:980px;
+    height:50px;
+    background-color: #162955;
+    border:1px solid #1c49b1;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+
+}
+
+.SpentSelectMenu header .ThisNotificationsRender .Notification .Icon{
+
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#5eaffc;
+    font-size:20px;
+    position:absolute;
+    left:0px;
+
+}
+
+.SpentSelectMenu header .ThisNotificationsRender .Notification .Message{
+
+    position: absolute;
+    left: 60px;
+    color:#FFFFFF;
+    font-family:caviarDreamsBold;
+    font-size:14px;
 
 }

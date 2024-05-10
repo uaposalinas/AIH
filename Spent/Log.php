@@ -176,7 +176,7 @@
             
                             <div class='GestID' style='width:300px;'>ID : $GestID</div>
                             <div class='Date'>Fecha: $Date</div>
-                            <div class='Provider'>Proveedor: $Provider</div>
+                            <div class='Provider' style='width:300px;'>Proveedor: $Provider</div>
                             <div class='SpentedBy' style='width:360px;'>Gastado por: $SpendedBy</div>
             
                         </div>

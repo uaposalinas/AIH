@@ -3,6 +3,9 @@
     const ViewLogs = document.querySelector('.ViewLogs');
     const NotificationIsland = document.querySelector('.NotificationIsland');
     const GenerateANewReport = document.querySelector('.GenerateANewReport');
+    const SearchByLog = document.querySelector('.SearchByLog');
+    const ShowBarResults = document.querySelector('.ShowBarResults');
+
 
 //Select an option from the spents menu
 
@@ -102,6 +105,10 @@ function SendACardUsed(){
     BackModal.style.display = "none";
     SoftModals.style.display = "none";
     SelectCards.style.display = "none";
+
+    document.querySelector('.CardID').innerHTML = "Termincación: "+CardUsed.value;
+    document.querySelector('.CardBrand').innerHTML = "Visa";
+    DisplayCard.style.backgroundImage = "url(Assets/com.img/PayMethods/card.png)"
 
 }
 
@@ -226,3 +233,32 @@ function NewProvider(){
     window.open("com.new/Provider/", "NewWindowForAddProvider", "width=500,height=400")
 
 }
+
+SearchByLog.addEventListener('click', InitIndexator);
+
+function InitIndexator(){
+
+    ShowBarResults.style.display = "flex";
+
+}
+
+window.addEventListener('keydown', DetectIfKeyIsESC);
+
+function DetectIfKeyIsESC(e){
+
+    const KeyPressed = e.keyCode;
+
+    if(KeyPressed == 27 && ShowBarResults.style.display == "flex"){
+
+        ShowBarResults.classList.add('RemoveSearcher');
+
+        setTimeout(() => {
+            
+            ShowBarResults.style.display = "none";
+            ShowBarResults.classList.remove('RemoveSearcher')
+
+        }, 300);
+
+    }
+
+}   

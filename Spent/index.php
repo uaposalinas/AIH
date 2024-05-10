@@ -74,6 +74,18 @@
 
             <div class="PrincipalLogo"></div>
             <t>Sistema de Gestión de Gastos</t>
+
+            <div class="ThisNotificationsRender">
+
+                <div class="Notification">
+
+                    <i class="fi fi-rr-refresh Icon"></i>
+                    <div class="Message">Ya realizé la última actualización acumulativa, el software es estable, todo en el software funciona correctamente.</div>
+                    <div class="Close"></div>
+
+                </div>
+
+            </div>
     
         </header>
 
@@ -327,7 +339,7 @@
                     <div class="CardDetails">
 
                         <div class="CardLogo"></div>
-                        <p class="Brand">Selecciona una tarjeta</p>
+                        <p class="CardBrand">Selecciona una tarjeta</p>
                         <p class="CardID">Terminación: 0000</p>
                         <p class="FailCard"> </p>
                         <p class="CVV"> </p>
@@ -396,7 +408,7 @@
                 
                 <div class="SearchLog">
 
-                    <input type="text" class="SearchByLog" placeholder="Escribe el ID de Gestión o NO. de Factura para buscar.">
+                    <input type="text" class="SearchByLog" placeholder="Escribe el ID de Gestión para buscar.">
                     <i class="fi fi-br-search"></i>
 
                 </div>             
@@ -404,6 +416,17 @@
             </div>
 
         </header>
+
+        <div class="ShowBarResults">
+
+            <div class="SearchBarIndex">
+
+                <div class="Icon"></div>
+                <t>Escribe en la barra para buscar</t>
+                                    
+            </div>
+
+        </div>
 
         <div class="ShowLogs">
 
@@ -618,8 +641,6 @@
 
         <t>Selecciona la tarjeta que se utilizó</t>
         <select class="SentCardUsed">
-
-        <option value="0851">0851</option>
 
         <?php
 
