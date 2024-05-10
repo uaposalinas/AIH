@@ -4,6 +4,7 @@
 
 const BackToHome = document.querySelectorAll('.BackToHome');
 const BackToLogs = document.querySelectorAll('.BackToLogs');
+const BackToNewLog = document.querySelectorAll('.BackToNewLog');
 
 //Actions
 
@@ -36,6 +37,21 @@ for(let Aument = 0; Aument < BackToLogs.length; Aument++){
 
         document.querySelector('.ShowInfo').style.display = "none";
         ViewLogs.style.display = "flex";
+
+    }
+
+}
+
+for(let Aument = 0; Aument < BackToNewLog.length; Aument++){
+
+    const BackToNewLogButton = BackToNewLog[Aument];
+
+    BackToNewLogButton.addEventListener('click', BackToNewLogNow);
+
+    function BackToNewLogNow(){
+
+        document.querySelector('.SoftModals').style.display = "none";
+        document.querySelector('.BackModal').style.display = "none";
 
     }
 

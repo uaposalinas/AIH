@@ -29,55 +29,6 @@
     <title>AIH's Expenses</title>
 </head>
 
-<div class="BackModal" style="display: none;"></div>
-
-<Modals class="SoftModals" style="display: none;">
-
-    <div class="SelectCards">
-
-        <i class="fi fi-rr-credit-card CardIcon"></i>
-
-        <div class="AddCardsButton tooltip" data-text="Agregar tarjeta nueva">
-
-            <i class="fi fi-br-plus"></i>
-
-        </div>
-
-        <t>Selecciona la tarjeta que se utilizó</t>
-        <select class="SentCardUsed">
-
-        <option value="0851">0851</option>
-
-        <?php
-
-            require 'config/com.config.php';
-
-            $DoQuery = "SELECT ID FROM Cards WHERE 1";
-            $QueryResults = $Connection -> query($DoQuery);
-
-            if($QueryResults -> num_rows > 0){
-
-                while($Row = $QueryResults -> fetch_assoc()){
-
-                    $ID = $Row["ID"];
-
-                    echo "<option value='$ID'>$ID</option>";
-                  
-
-                }
-
-            }
-
-        ?>
-
-        </select>
-
-        <div class="CardUsedConfirm">Siguiente</div>
-
-    </div>
-
-</Modals>
-
 <body class="Spent" style="overflow:hidden">
 
     <div class="NotificationIslandParent">
@@ -643,6 +594,63 @@
 
     </div>
 
+    <div class="BackModal" style="display: none;"></div>
+
+<Modals class="SoftModals" style="display: none; z-index:9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;">
+
+    <div class="BackButtonPack BackToNewLog">
+
+        <i class="fi fi-sr-angle-left BackToHome"></i>
+        <p>Nuevo Registro</p>
+
+    </div>
+
+
+    <div class="SelectCards">
+
+        <i class="fi fi-rr-credit-card CardIcon"></i>
+
+        <div class="AddCardsButton tooltip" data-text="Agregar tarjeta nueva">
+
+            <i class="fi fi-br-plus"></i>
+
+        </div>
+
+        <t>Selecciona la tarjeta que se utilizó</t>
+        <select class="SentCardUsed">
+
+        <option value="0851">0851</option>
+
+        <?php
+
+            require 'config/com.config.php';
+
+            $DoQuery = "SELECT ID FROM Cards WHERE 1";
+            $QueryResults = $Connection -> query($DoQuery);
+
+            if($QueryResults -> num_rows > 0){
+
+                while($Row = $QueryResults -> fetch_assoc()){
+
+                    $ID = $Row["ID"];
+
+                    echo "<option value='$ID'>$ID</option>";
+                  
+
+                }
+
+            }
+
+        ?>
+
+        </select>
+
+        <div class="CardUsedConfirm">Siguiente</div>
+
+    </div>
+
+</Modals>
+
 </body>
 
 <script>
@@ -690,3 +698,4 @@
     }
 
 </style>
+
