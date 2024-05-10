@@ -4,8 +4,6 @@
     const NotificationIsland = document.querySelector('.NotificationIsland');
     const GenerateANewReport = document.querySelector('.GenerateANewReport');
     const SearchByLog = document.querySelector('.SearchByLog');
-    const ShowBarResults = document.querySelector('.ShowBarResults');
-
 
 //Select an option from the spents menu
 
@@ -234,31 +232,3 @@ function NewProvider(){
 
 }
 
-SearchByLog.addEventListener('click', InitIndexator);
-
-function InitIndexator(){
-
-    ShowBarResults.style.display = "flex";
-
-}
-
-window.addEventListener('keydown', DetectIfKeyIsESC);
-
-function DetectIfKeyIsESC(e){
-
-    const KeyPressed = e.keyCode;
-
-    if(KeyPressed == 27 && ShowBarResults.style.display == "flex"){
-
-        ShowBarResults.classList.add('RemoveSearcher');
-
-        setTimeout(() => {
-            
-            ShowBarResults.style.display = "none";
-            ShowBarResults.classList.remove('RemoveSearcher')
-
-        }, 300);
-
-    }
-
-}   

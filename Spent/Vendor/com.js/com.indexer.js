@@ -1,7 +1,19 @@
 const ShowInformationJust = document.querySelector('.ShowInformationJust');
 const ShowInformation = document.querySelectorAll('.ShowInformation');
 const SearchByLogs = document.querySelector('.SearchByLog');
+const ShowBarResults = document.querySelector('.ShowBarResults');
+const SearchBarIndex = document.querySelector('.SearchBarIndex');
 const NoResults = document.querySelector('.NoResults');
+
+SearchByLogs.addEventListener('click', InitIndex);
+
+function InitIndex(){
+
+    ShowBarResults.style.display = "flex";
+    NoResults.style.display = "none";
+    SearchBarIndex.style.display = "flex";
+
+}
 
 SearchByLogs.addEventListener('keyup', SearchNow);
 
@@ -11,26 +23,63 @@ function SearchNow(){
 
         const AllLogs = ShowInformation[Aument];    
         const SearchKey = AllLogs.getAttribute('GestID');
-        AllLogs.style.display = "none";
+        ShowInformation[Aument].style.display = "none";
+        NoResults.style.display = "none";
 
-        if(SearchByLogs.value === SearchKey){
+        if(SearchByLogs.value.length <= 25 && SearchByLogs.value == SearchKey){
 
+            AllLogs.style.display = "flex";
+            ShowBarResults.style.display = "none";
             AllLogs.classList.add('ShowSearchResult');
 
             setTimeout(() => {
-
-                AllLogs.classList.remove('ShowSearchResult');
                 
+                AllLogs.classList.remove('ShowSearchResult');
+
             }, 300);
+            
+            break
 
-            AllLogs.style.display = "flex";
+        }else if(SearchByLogs.value.length <= 25 && SearchByLogs.value != SearchKey){
 
-        }else{
-
-            NoResults.style.display = "none";
+            console.log('No se encontro un resultado');
+            ShowBarResults.style.display = "flex";
             SearchBarIndex.style.display = "none";
+            NoResults.style.display = "flex";
+
+        }else if(SearchByLogs.value.length < 25 || SearchByLogs.value.length > 25 || SearchByLogs.value.trim() === ''){
+
+            console.log("La solicitud no cumple con los parametros");
+            ShowBarResults.style.display = "flex";
+            SearchBarIndex.style.display = "flex";
+            NoResults.style.display = "none";
 
         }
+
+    }
+
+}
+
+
+window.addEventListener('keydown', ExitToSearcher);
+
+function ExitToSearcher(e){
+
+    const KeyPressed = e.keyCode;
+
+    if(KeyPressed == 27 && SearchBarIndex.style.display === "flex"){
+
+        SearchByLogs.blur();
+
+        ShowBarResults.classList.add('RemoveSearcher');
+
+        setTimeout(() => {
+            
+            ShowBarResults.classList.remove('RemoveSearcher');
+            ShowBarResults.style.display = "none";
+            ViewLogs.style.display = "flex";
+
+        }, 300);
 
     }
 

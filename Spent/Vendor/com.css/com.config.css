@@ -892,6 +892,7 @@ input{
     height:calc(100% - 160px);
     position:absolute;
     bottom:0px;
+    background-color: #000000;
 
 }
 
@@ -1994,7 +1995,7 @@ div.spinner {
 
 }
 
-.SearchBarIndex, .NoResults{
+.SearchBarIndex{
 
     width:100%;
     height:100%;
@@ -2007,7 +2008,21 @@ div.spinner {
     position:absolute;
 }
 
-.SearchBarIndex .Icon, .NoResults .Icon{
+.NoResults{
+
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    color:#FFF;
+    position:absolute;  
+
+}
+
+.SearchBarIndex .Icon{
 
     width:100px;
     height:100px;
@@ -2020,14 +2035,29 @@ div.spinner {
 
 .NoResults .Icon{
 
+    width:100px;
+    height:100px;
     background-image:url(../../Assets/com.img/noresults.png) !important;
+    background-position:center;
+    background-size:cover;  
+    margin-bottom:40px;
+
 
 }
 
-.SearchBarIndex t, .NoResults t{
+
+.SearchBarIndex t{
 
     font-family:caviarDreamsBold;
     font-size:20px; 
+
+}
+
+.NoResults t{
+
+    font-family:caviarDreamsBold;
+    font-size:20px; 
+
 
 }
 
@@ -2109,5 +2139,24 @@ div.spinner {
 .ShowSearchResult{
 
     animation: fadeInUp 0.5s;
+
+}
+
+
+.ShowBarResults{
+
+    display:none;
+
+}
+
+.SearchBarIndex{
+
+    display:none;
+
+}
+
+.NoResults{
+
+    display:none;
 
 }
