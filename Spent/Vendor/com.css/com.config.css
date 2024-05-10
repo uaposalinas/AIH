@@ -1994,7 +1994,7 @@ div.spinner {
 
 }
 
-.SearchBarIndex{
+.SearchBarIndex, .NoResults{
 
     width:100%;
     height:100%;
@@ -2004,9 +2004,10 @@ div.spinner {
     text-align:center;
     flex-direction:column;
     color:#FFF;
+    position:absolute;
 }
 
-.SearchBarIndex .Icon{
+.SearchBarIndex .Icon, .NoResults .Icon{
 
     width:100px;
     height:100px;
@@ -2017,7 +2018,13 @@ div.spinner {
 
 }
 
-.SearchBarIndex t{
+.NoResults .Icon{
+
+    background-image:url(../../Assets/com.img/noresults.png) !important;
+
+}
+
+.SearchBarIndex t, .NoResults t{
 
     font-family:caviarDreamsBold;
     font-size:20px; 
@@ -2099,3 +2106,8 @@ div.spinner {
 
 }
 
+.ShowSearchResult{
+
+    animation: fadeInUp 0.5s;
+
+}

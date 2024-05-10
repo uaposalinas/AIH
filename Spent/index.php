@@ -427,6 +427,13 @@
                                     
             </div>
 
+            <div class="NoResults" style="display:none;">
+
+                <div class="Icon"></div>
+                <t>No hay resultados para este ID de gestión</t>
+
+            </div>
+
         </div>
 
         <div class="ShowLogs">
@@ -710,6 +717,8 @@
 <script src="Vendor/com.js/com.island.config.js"></script>
 <script src="Vendor/com.js/com.navigation.js"></script>
 <script src="Vendor/com.js/com.frames.js"></script>
+<script src="Vendor/com.js/com.indexer.js"></script>
+
 
 <style>
 
