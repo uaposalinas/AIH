@@ -2077,8 +2077,25 @@ div.spinner {
 
     position: absolute;
     left: 60px;
-    color:#FFFFFF;
+    color:#FAFAFA;
     font-family:caviarDreamsBold;
     font-size:14px;
 
 }
+
+.SpentSelectMenu header .ThisNotificationsRender .Notification .Close{
+
+    width:60px;
+    height:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color: #9b9b9b;
+    position:absolute;
+    right: 0px;
+    cursor: pointer;
+    z-index:99999;
+
+}
+

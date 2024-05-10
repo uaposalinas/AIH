@@ -12,7 +12,8 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">    
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css'>
 
     <script>
 
@@ -75,13 +76,13 @@
             <div class="PrincipalLogo"></div>
             <t>Sistema de Gestión de Gastos</t>
 
-            <div class="ThisNotificationsRender">
+            <div class="ThisNotificationsRender" style="display:none">
 
                 <div class="Notification">
 
-                    <i class="fi fi-rr-refresh Icon"></i>
-                    <div class="Message">Ya realizé la última actualización acumulativa, el software es estable, todo en el software funciona correctamente.</div>
-                    <div class="Close"></div>
+                    <i class="fi fi-ts-newspaper Icon"></i>
+                    <div class="Message">Es hora de hacer el cierre del mes de abril, ve a "Ver Reportes" y pulsa en cierre de mes.</div>
+                    <i class="fi fi-rs-circle-xmark Close"></i>
 
                 </div>
 
