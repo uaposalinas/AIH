@@ -401,6 +401,8 @@
 
                 </div>
 
+                <input type="date" class="FilterByDate">
+
                 <div class="SwitchTable tooltip" data-text="Ver como tabla">
 
                     <i class="fi fi-rr-table-list"></i>
@@ -433,6 +435,12 @@
                 <t>No hay resultados para este ID de gestión</t>
 
             </div>
+
+        </div>
+
+        <div class="FilterFrame">
+
+            <iframe src="com.filter.php" class="ShowFilterFrame"></iframe>
 
         </div>
 

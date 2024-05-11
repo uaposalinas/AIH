@@ -1013,6 +1013,7 @@ cont header logo{
     top:8px;
     left:68px;
     color:#FFFFFF;
+    font-family:GI;
 
 }
 
@@ -2160,3 +2161,49 @@ div.spinner {
 
 }
 
+
+.FilterByDate{
+
+    width:350px;
+    height:40px;
+    border: none;
+    outline: none;
+    background-color: #2A2A2A;
+    color:#9b9b9b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction: column;
+    border-radius:20px;
+    margin-left:5px;
+    margin-right:10px;
+    transition: all 300ms;
+    position: relative;
+    top:2px;
+    animation: fadeInUp 0.5s;
+    display:none;
+
+}
+
+.FilterFrame{
+
+    width:100%;
+    height:calc(100vh - 150px);
+    position:absolute;
+    top:150px;
+    background-color: #000000;
+    z-index:9999999999999999999;
+
+}
+
+.FilterFrame iframe{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    overflow:hidden;
+
+}

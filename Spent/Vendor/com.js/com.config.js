@@ -3,7 +3,9 @@
     const ViewLogs = document.querySelector('.ViewLogs');
     const NotificationIsland = document.querySelector('.NotificationIsland');
     const GenerateANewReport = document.querySelector('.GenerateANewReport');
+    const FilterByDate = document.querySelector('.FilterByDate');
     const SearchByLog = document.querySelector('.SearchByLog');
+    const ShowFilterFrame = document.querySelector('.ShowFilterFrame');
 
 //Select an option from the spents menu
 
@@ -232,3 +234,31 @@ function NewProvider(){
 
 }
 
+let ActivateFilter = false
+
+TimeFilter.addEventListener('click', InitFilter);
+
+function InitFilter(){
+
+    if(ActivateFilter == false){
+
+        FilterByDate.style.display = "flex";
+        ActivateFilter = true;
+
+    }else if(ActivateFilter == true){
+
+        FilterByDate.style.display = "none";
+        ActivateFilter = false;
+
+    }
+
+
+}
+
+FilterByDate.addEventListener('change', SaveFilter);
+
+function SaveFilter(){
+
+    ShowFilterFrame.src = "com.filter.php?Filter="+FilterByDate.value;
+
+}
