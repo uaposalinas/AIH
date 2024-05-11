@@ -188,7 +188,7 @@
 
                                 <?php
 
-                                    require 'config/com.config.php';
+                                    require 'config/com.server.config.php';
 
                                     $DoQuery = "SELECT Provider FROM Providers WHERE 1";
                                     $QueryResults = $Connection -> query($DoQuery);
