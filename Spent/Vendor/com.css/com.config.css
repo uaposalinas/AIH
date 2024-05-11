@@ -910,7 +910,6 @@ input{
     text-align:center;
     flex-wrap:wrap;
     overflow-y:scroll;
-    flex-direction:row-reverse !important;
 
 }
 
@@ -2160,3 +2159,4 @@ div.spinner {
     display:none;
 
 }
+

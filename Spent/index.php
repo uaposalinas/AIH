@@ -358,7 +358,7 @@
 
     </div>
 
-    <div class="ViewLogs" style="animation:fadeIn 0.5s">
+    <div class="ViewLogs" style="animation:fadeIn 0.5s;">
 
     <div class="BackButtonPack BackToHome">
 
@@ -438,6 +438,8 @@
 
         <div class="ShowLogs">
 
+        
+
             <div class="GridShow" style="display:flex;">
 
                 <?php
@@ -499,7 +501,7 @@
 
                 }else{
 
-                    echo "Error!";
+                    echo "<NFC style='width:100%; height:100%; position:absolute; display:flex; justify-content:center; align-items:center;text-align:center;color:#FFFFFF; font-family:caviarDreamsBold; font-size:20px;animation:fadeInUp 0.5s'>Hmm... No hay nada por aquí</NFC>";
 
                 }
 

@@ -258,9 +258,9 @@ function DetectKeyPressed(e){
             Exempt.value = `L 0.00`;
             ISV15.value = "L 0.00";
         
-            const SetTotal = parseInt(RoundOut) + GetINT;
+            const SetTotal = parseFloat(RoundOut) + GetINT;
 
-            Total.value = "L." +SetTotal;
+            Total.value = "L." +Math.round(SetTotal);
 
             Total.classList.add('UpdateTotals');
     
@@ -291,7 +291,7 @@ function DetectKeyPressed(e){
 
             const SetTotal = parseFloat(RoundOut) + GetINT;
 
-            Total.value = "L. " + SetTotal;
+            Total.value = "L. " + Math.round(SetTotal);
 
             Total.classList.add('UpdateTotals');
     

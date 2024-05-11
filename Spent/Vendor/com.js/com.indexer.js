@@ -65,9 +65,16 @@ window.addEventListener('keydown', ExitToSearcher);
 
 function ExitToSearcher(e){
 
+    for(let Logs = 0; Logs < ShowInformation.length; Logs++){
+
+        const Log = ShowInformation[Logs];
+        Log.style.display = "flex";
+
+    }
+
     const KeyPressed = e.keyCode;
 
-    if(KeyPressed == 27 && SearchBarIndex.style.display === "flex"){
+    if(KeyPressed == 27 && ShowBarResults.style.display == "flex"){
 
         SearchByLogs.blur();
 
@@ -78,6 +85,7 @@ function ExitToSearcher(e){
             ShowBarResults.classList.remove('RemoveSearcher');
             ShowBarResults.style.display = "none";
             ViewLogs.style.display = "flex";
+   
 
         }, 300);
 
