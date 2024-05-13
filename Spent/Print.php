@@ -32,17 +32,71 @@
 
         </div>
 
-        <t class="GestIDData">ASC-2024-202405019875</t>
-        <t class="Date">2024-05-13</t>
+        <?php
 
-        <div class="Provider">Little Caesars</div>
-        <div class="PayType">Tarjeta de crédito</div>
-        <div class="CountableCount">Alimentación</div>
-        <div class="BuyType">Personal</div>
-        <div class="BillID">000-001-01-01466628</div>
-        <div class="Amount">1</div>
-        <div class="CardUsed">8951</div>
-        <div class="SpendedBy">Alejandro Salinas</div>
+            if(isset($_GET["GestID"]) && isset($_GET["From"])){
+
+                $GetGestID = $_GET["GestID"];
+                $From = $_GET["From"];
+
+            }
+
+            require 'config/com.config.php';
+
+            $DoQuery = "SELECT * FROM logs WHERE GestID = '$GetGestID'";
+            $QueryResults = $Connection -> query($DoQuery);
+
+            if($QueryResults -> num_rows > 0){
+
+                $Row = $QueryResults -> fetch_assoc();
+
+                $Date = $Row["Date"];
+                $Provider = $Row["Provider"];
+                $PayType = $Row["PayType"];
+                $CountableCount = $Row["CountableCount"];
+                $BuyType = $Row["BuyType"];
+                $BillID = $Row["BillNumber"];
+                $Amount = $Row["Amount"];
+                $CardUsed = $Row["CardUsed"];
+                $SpendedBy = $Row["SpendedBy"];
+                $Subtotal = $Row["Subtotal"];
+                $ISV18 = $Row["ISV18"];
+                $ISV15 = $Row["ISV15"];
+                $Exempt = $Row["Exempt"];
+                $Total = $Row["Total"];
+
+                echo "
+
+                    <t class='GestIDData'>$GetGestID</t>
+                    <t class='Date'>$Date</t>
+                    
+                    <div class='Provider'>$Provider</div>
+                    <div class='PayType'>$PayType</div>
+                    <div class='CountableCount'>$CountableCount</div>
+                    <div class='BuyType'>$BuyType</div>
+                    <div class='BillID'>$BillID</div>
+                    <div class='Amount'>$Amount</div>
+                    <div class='CardUsed'>$CardUsed</div>
+                    <div class='SpendedBy'>$SpendedBy</div>
+                    
+                    <div class='Subtotal'>L. $Subtotal</div>
+                    <div class='ISV18'>$ISV18</div>
+                    <div class='ISV15'>$ISV15</div>
+                    <div class='Exempt'>$Exempt</div>
+                    <div class='Total'>$Total</div>
+                    
+                    <div class='PrintProcessor'>Procesador de impresion: com.devprint.dpf</div>
+                    <div class='PrintDate'>Fecha de impresion: 27 de Abril de 2024</div>
+                    <div class='PrintHour'>Hora de impresión: 15:06</div>
+                    <div class='PrintFormat'>Formato de impresión: PDF (RAW)</div>
+                    <div class='PrintedBy'>Impreso por: $From</div>
+                
+                
+                ";
+
+            }
+
+        ?>
 
     </div>
 

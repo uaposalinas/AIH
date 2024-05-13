@@ -24,3 +24,53 @@ for(let Aument = 0; Aument < Images.length; Aument++){
     AllImages.style.display = "none";
 
 }
+
+
+const PrintDate = document.querySelector('.PrintDate');
+const PrintHour = document.querySelector('.PrintHour');
+const PrintedBy = document.querySelector('.PrintedBy');
+
+const CurrentDate = new Date();
+const GetDate = CurrentDate.getDate();
+const GetMonth = CurrentDate.getMonth();
+const GetYear = CurrentDate.getFullYear();
+const GetHour = CurrentDate.getHours();
+const GetMinutes = CurrentDate.getMinutes();
+
+const ArrayMonths = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+function DetectHourForFormat(){
+
+    if(GetHour < 10){
+
+        return "0"+GetHour;
+
+    }else if(GetHour > 9){
+
+        return GetHour;
+
+    }
+
+}
+
+
+function DetectMinuteForFormat(){
+
+    if(GetMinutes < 10){
+
+        return "0"+GetMinutes;
+
+    }else if(GetMinutes > 9){
+
+        return GetMinutes;
+
+    }
+
+}
+
+
+const TextHour = `${DetectHourForFormat()}:${DetectMinuteForFormat()}`
+const TextDate = `${GetDate} de ${ArrayMonths[GetMonth]} de ${GetYear}`;
+
+PrintDate.innerHTML = "Fecha de impresion: "+TextDate;
+PrintHour.innerHTML = "Hora de impresion: "+TextHour;

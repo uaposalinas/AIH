@@ -44,9 +44,9 @@
 
     font-family:caviarDreamsBold;
     position:absolute;
-    right:200px;
-    font-size:14px;
-    top:227px;
+    right:220px;
+    font-size:12px;
+    top:225px;
 
 }
 
@@ -54,9 +54,9 @@
 
     font-family:caviarDreamsBold;
     position:absolute;
-    right:365px;
+    right:360px;
     font-size:12px;
-    top:255px;
+    top:253px;
 
 
 }
@@ -124,5 +124,92 @@
 .SpendedBy{
 
     right: 26px;
+
+}
+
+.Subtotal,
+.ISV18,
+.ISV15,
+.Exempt,
+.Total{
+
+    font-family:caviarDreamsBold;
+    font-size:12px;;
+    position:absolute;
+    right:105px;;
+    bottom:10px;
+
+}
+
+.Subtotal{
+
+    bottom:315px;
+
+}
+
+.ISV18{
+
+    bottom:290px;
+
+}
+
+.ISV15{
+
+    bottom:270px;   
+
+}
+
+.Exempt{
+
+    bottom:249px;
+
+}
+
+.Total{
+
+    bottom:225px;
+
+}
+
+.PrintProcessor,
+.PrintDate,
+.PrintHour,
+.PrintFormat,
+.PrintedBy{
+
+    font-family:caviarDreams;
+    font-size:12px;;
+    position:absolute;
+    left:155px;;
+    bottom:10px;
+}
+
+.PrintProcessor{
+
+    bottom:235px;
+
+}
+
+.PrintDate{
+
+    bottom:215px;
+
+}
+
+.PrintHour{
+
+    bottom:195px;
+
+}
+
+.PrintFormat{
+
+    bottom:175px
+
+}
+
+.PrintedBy{
+
+    bottom:155px;
 
 }
