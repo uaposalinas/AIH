@@ -321,11 +321,15 @@
     
                     <div class="Row Price" style="margin-top:20px; height:90px;">
     
-                        <label for="1">Subtotal</label>
-                        <label for="2">Exento </label>
-                        <label for="3">Otros impuestos</label>
-                        <label for="4">ISV 18%</label>
-                        <label for="5">ISV 15%</label>
+                        <div class="GitLabels">
+
+                        <label for="1" style="position:relative; left:0px;">Subtotal</label>
+                        <label for="2" style="position:relative; left:0px;">Exento </label>
+                        <label for="3" style="position:relative; left:0px;">Otros impuestos</label>
+                        <label for="4" style="position:relative; left:0px;">ISV 18%</label>
+                        <label for="5" style="position:relative; left:0px;">ISV 15%</label>
+
+                        </div>
     
                         <input type="number" name="SendSubtotal" class="Subtotal ThisValue" placeholder="L 0.00" id="2" style="margin-left:0px;">
                         <input type="text" name="SendExempt" class="Exempt" placeholder="L 0.00" id="1" style="background-color: #141414;" value="L 0.00" disabled>
