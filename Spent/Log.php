@@ -99,7 +99,7 @@
                 $PayTypeImage = "Assets/com.img/PayMethods/PayButton.png";   
                 $PayMethod = "Realizado con botón de pago";
 
-            }else if($PayType === "Pago en Linea"){
+            }else if($PayType ===  "Pago en línea"){
 
                 $PayTypeImage = "Assets/com.img/PayMethods/OnlinePay.png";
                 $PayMethod = "Pagado en linea";
