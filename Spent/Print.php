@@ -43,6 +43,8 @@
 
             require 'config/com.config.php';
 
+            $Connection->set_charset("utf8");
+
             $DoQuery = "SELECT * FROM logs WHERE GestID = '$GetGestID'";
             $QueryResults = $Connection -> query($DoQuery);
 
