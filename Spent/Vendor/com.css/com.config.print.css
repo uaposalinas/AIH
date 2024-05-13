@@ -1,0 +1,128 @@
+*{
+
+
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+
+}
+
+.PrintArea{
+
+    width:21.59cm;
+    height:27.94cm;
+    background-image:url(../../Assets/com.img/defaults/Printable.png);
+    background-size:cover;
+    background-position:center;
+    position:relative;
+
+}
+
+.QrContainer{
+
+    width:92px;
+    height:92px;
+    position:absolute;
+    left:100px;
+    top:269px;
+
+}
+
+
+.BarCodeContainer{
+
+    width:300px;
+    height:40px;
+    position:absolute;
+    top:320px;
+    right: 200px;
+    overflow: hidden;
+
+}
+
+.GestIDData{
+
+    font-family:caviarDreamsBold;
+    position:absolute;
+    right:200px;
+    font-size:14px;
+    top:227px;
+
+}
+
+.Date{
+
+    font-family:caviarDreamsBold;
+    position:absolute;
+    right:365px;
+    font-size:12px;
+    top:255px;
+
+
+}
+
+
+.Provider,
+.PayType,
+.CountableCount,
+.BuyType,
+.BillID,
+.Amount,
+.CardUsed,
+.SpendedBy{
+
+    font-family: caviarDreams;
+    font-size:10px;
+    position:absolute;
+    top:455px;
+    right: 0px;
+
+}
+
+.Provider{
+
+    left: 40px;
+
+}
+
+.PayType{
+
+    left:123px;
+
+}
+
+.CountableCount{
+
+    left:250px;
+
+}
+
+.BuyType{
+
+    left:360px;
+
+}
+
+.BillID{
+
+    left:425px;;
+
+}
+
+.Amount{
+
+    left:561px;
+
+}
+
+.CardUsed{
+
+    left:635px;
+
+}
+
+.SpendedBy{
+
+    right: 26px;
+
+}

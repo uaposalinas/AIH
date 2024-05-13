@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Reporte</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Assets/com.img/com.icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="Fonts/IndexFontsCaviarDreams.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-thin-straight/css/uicons-thin-straight.css'>  
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="Fonts/IndexFontsGlacialIndifference.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">    
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel="stylesheet" href="Vendor/com.css/com.prints.devlabsco.css">
+    <link rel="stylesheet" href="Vendor/com.css/com.config.print.css">
+
+</head>
+<body>
+    
+    <div class="PrintArea">
+
+        <div class="QrContainer"></div>
+        <div class="BarCodeContainer">
+
+            <svg id="barcode"></svg>
+
+        </div>
+
+        <t class="GestIDData">ASC-2024-202405019875</t>
+        <t class="Date">2024-05-13</t>
+
+        <div class="Provider">Little Caesars</div>
+        <div class="PayType">Tarjeta de crédito</div>
+        <div class="CountableCount">Alimentación</div>
+        <div class="BuyType">Personal</div>
+        <div class="BillID">000-001-01-01466628</div>
+        <div class="Amount">1</div>
+        <div class="CardUsed">8951</div>
+        <div class="SpendedBy">Alejandro Salinas</div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js" integrity="sha512-is1ls2rgwpFZyixqKFEExPHVUUL+pPkBEPw47s/6NDQ4n1m6T/ySeDW3p54jp45z2EJ0RSOgilqee1WhtelXfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="Vendor/com.js/com.printer.js" defer></script>
+    <script src="Lib/JsBarcode.all.min.js"></script>
+
+    <script>
+
+        const GetGestIDKey2 = window.location.search;
+        const FormatGestID2 = GetGestIDKey2.substr(8, 10000000);
+
+        JsBarcode("#barcode", FormatGestID2);
+
+    </script>
+
+</body>
+</html>

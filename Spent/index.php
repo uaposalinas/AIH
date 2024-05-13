@@ -674,6 +674,8 @@
         <t>Selecciona la tarjeta que se utilizó</t>
         <select class="SentCardUsed">
 
+        <option value="N/A">N/A</option>
+
         <?php
 
             require 'config/com.config.php';
