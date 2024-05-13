@@ -57,6 +57,7 @@ for(let Aument = 0; Aument < Limit; Aument++){
         if(GetUserPassword.value == GetPass){
 
             sessionStorage.setItem('AuthStatus', 'Allowed');
+            sessionStorage.setItem('UserName', UserNameToShow.innerHTML)
             window.location.href = "../";
 
         }else if(GetUserPassword.value.trim() === ''){

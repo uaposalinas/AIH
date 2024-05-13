@@ -175,6 +175,15 @@
                         <div class='Row'>
             
                             <div class='GestID' style='width:300px;'>ID : $GestID</div>
+
+                            <form action='Print.php' method='get' class='PrintForm' hidden>
+
+                                <input type='text' name='GestID' value='$GestID' class='GestIDs'>
+                                <input type='text' name='From' class='PrinterUser'>
+
+                            </form>
+
+
                             <div class='Date'>Fecha: $Date</div>
                             <div class='Provider' style='width:300px;'>Proveedor: $Provider</div>
                             <div class='SpentedBy' style='width:360px;'>Gastado por: $SpendedBy</div>
@@ -258,6 +267,14 @@
 
 </body>
 
-<script src="Vendor/com.js/com.show.js"></script>
+<script>
+
+    const LocationFileForShow = "Vendor/com.js/com.show.js";
+    const NewShow = document.createElement("script");
+    NewShow.src = LocationFileForShow+"?v="+Math.random();
+    document.body.appendChild(NewShow);
+
+</script>
 
 </html>
+
