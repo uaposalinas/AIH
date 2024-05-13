@@ -1753,6 +1753,7 @@ div.spinner {
     backdrop-filter:blur(10px);
     -webkit-backdrop-filter:blur(10px);
     background-color:rgba(9, 18, 27, 0.527);
+    animation:fadeIn 0.5s;
 
 }
 

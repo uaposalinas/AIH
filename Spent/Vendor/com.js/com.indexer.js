@@ -1,5 +1,5 @@
 const ShowInformationJust = document.querySelector('.ShowInformationJust');
-const ShowInformation = document.querySelectorAll('.ShowInformation');
+const ShowInformation = document.querySelectorAll('.ThisLog');
 const SearchByLogs = document.querySelector('.SearchByLog');
 const ShowBarResults = document.querySelector('.ShowBarResults');
 const SearchBarIndex = document.querySelector('.SearchBarIndex');
@@ -13,6 +13,14 @@ function InitIndex(){
     NoResults.style.display = "none";
     SearchBarIndex.style.display = "flex";
 
+    for(let Hide = 0; Hide < ShowInformation.length; Hide++){
+
+        const Hides = ShowInformation[Hide];
+
+        Hides.style.display = "none";
+
+    }
+
 }
 
 SearchByLogs.addEventListener('keyup', SearchNow);
@@ -20,6 +28,7 @@ SearchByLogs.addEventListener('keyup', SearchNow);
 function SearchNow(){
 
     for(let Aument = 0; Aument < ShowInformation.length; Aument++){
+
 
         const AllLogs = ShowInformation[Aument];    
         const SearchKey = AllLogs.getAttribute('GestID');
