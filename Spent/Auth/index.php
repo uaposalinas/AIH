@@ -182,6 +182,7 @@
 </script>
 
 <script src="../Vendor/com.js/com.island.config.js"></script>
+<script src="../Vendor/com.js/com.versions.js"></script>
 
 
 </html>
