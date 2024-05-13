@@ -1,5 +1,6 @@
 const QrContainer = document.querySelector('.QrContainer');
 const GetGestIDKey = window.location.search;
+const PrintRightNow = document.querySelector('.PrintRightNow');
 
 const FormatGestID = GetGestIDKey.substr(8, 10000000);
 
@@ -74,3 +75,13 @@ const TextDate = `${GetDate} de ${ArrayMonths[GetMonth]} de ${GetYear}`;
 
 PrintDate.innerHTML = "Fecha de impresion: "+TextDate;
 PrintHour.innerHTML = "Hora de impresion: "+TextHour;
+
+
+
+PrintRightNow.addEventListener('click', PrintNowSoft);
+
+function PrintNowSoft(){
+
+    window.print()
+
+}

@@ -22,6 +22,15 @@
 
 </head>
 <body>
+
+    <div class="ConfirmArea">
+
+        <div class="Icon"></div>
+        <t>Imprimir Reporte <?php  if(isset($_GET["GestID"])){echo $GestID = $_GET["GestID"];"$GestID";} ?></t>
+
+        <div class="PrintRightNow">Imprimir Ahora</div>
+
+    </div>
     
     <div class="PrintArea">
 
