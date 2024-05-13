@@ -223,7 +223,7 @@
                         </div>
 
 
-                        <div class='Row Price Exents' style='margin-top:20px; height:80px; position:relative; display:flex; justify-content:left; padding-left:30px;'>
+                        <div class='Row Price Exents' style='width:90%; margin-top:20px; height:80px; position:relative; display:flex; justify-content:left; padding-left:30px;'>
                     
                             <div style='width:215px; position:relative; justify-content:left; padding-left:20px;'>
                             <label for='1' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>Subtotal</label>
