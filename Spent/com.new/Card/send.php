@@ -3,11 +3,11 @@
     require '../../config/com.config.php';
     $Connection->set_charset("utf8");
 
-    if(isset($_POST["Provider"])){
+    if(isset($_POST["Card"])){
 
-         $ProviderValue = $_POST["Provider"];
+         $CardValue = $_POST["Card"];
 
-        $DoSave = "INSERT INTO `providers`(`Provider`) VALUES ('$ProviderValue')";
+        $DoSave = "INSERT INTO `cards`(`ID`) VALUES ('$CardValue')";
         $SaveNow = $Connection -> query($DoSave);
 
         if($SaveNow){

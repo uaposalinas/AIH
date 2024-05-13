@@ -5,6 +5,7 @@
     const GenerateANewReport = document.querySelector('.GenerateANewReport');
     const SearchByLog = document.querySelector('.SearchByLog');
     const ShowFilterFrame = document.querySelector('.ShowFilterFrame');
+    const AddCardsButton = document.querySelector('.AddCardsButton')
 
 //Select an option from the spents menu
 
@@ -230,6 +231,14 @@ AddAnotherProvider.addEventListener('click', NewProvider);
 function NewProvider(){
 
     window.open("com.new/Provider/", "NewWindowForAddProvider", "width=500,height=400")
+
+}
+
+AddCardsButton.addEventListener('click', NewCard);
+
+function NewCard(){
+
+    window.open("com.new/Card/", "NewWindowForAddCard", "width=500,height=400")
 
 }
 
