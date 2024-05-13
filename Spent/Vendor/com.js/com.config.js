@@ -3,7 +3,6 @@
     const ViewLogs = document.querySelector('.ViewLogs');
     const NotificationIsland = document.querySelector('.NotificationIsland');
     const GenerateANewReport = document.querySelector('.GenerateANewReport');
-    const FilterByDate = document.querySelector('.FilterByDate');
     const SearchByLog = document.querySelector('.SearchByLog');
     const ShowFilterFrame = document.querySelector('.ShowFilterFrame');
 
@@ -252,13 +251,5 @@ function InitFilter(){
 
     }
 
-
-}
-
-FilterByDate.addEventListener('change', SaveFilter);
-
-function SaveFilter(){
-
-    ShowFilterFrame.src = "com.filter.php?Filter="+FilterByDate.value;
 
 }

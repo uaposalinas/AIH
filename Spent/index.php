@@ -27,7 +27,22 @@
 
     </script>
 
-    <title>AIH's Expenses</title>
+    <script>
+
+    
+        if(sessionStorage.getItem('AuthStatus') === 'Allowed'){
+
+            console.log('Session Iniciada');
+
+        }else{
+
+            window.location.href = "Auth/"
+
+        }
+
+    </script>
+
+    <title>AIH's Bills</title>
 </head>
 
 <body class="Spent" style="overflow:hidden">
@@ -188,9 +203,9 @@
 
                                 <?php
 
-                                    require 'config/com.server.config.php';
+                                    require 'config/com.config.php';
 
-                                    $DoQuery = "SELECT Provider FROM Providers WHERE 1";
+                                    $DoQuery = "SELECT Provider FROM providers WHERE 1";
                                     $QueryResults = $Connection -> query($DoQuery);
 
                                     if($QueryResults -> num_rows > 0){
@@ -277,6 +292,9 @@
                                 <option value="default">¿Quién realizó el gasto?</option>
                                 <option value="AIH S DE RL">AIH S DE RL</option>
                                 <option value="Alejandro Salinas">Alejandro Salinas</option>
+                                <option value="Marjorie Santos">Marjorie Santos</option>
+                                <option value="Paola Rivera">Paola Rivera</option>
+                                <option value="Gary Rivera">Gary Rivera</option>
                                 <option value="Mario Castellanos">Mario Castellanos</option>
                                 <option value="Yenelin Manchamé">Yenelin Manchamé</option>
                                 <option value="David Castellón">David Castellón</option>
@@ -438,12 +456,6 @@
 
         </div>
 
-        <div class="FilterFrame">
-
-            <iframe src="com.filter.php" class="ShowFilterFrame"></iframe>
-
-        </div>
-
         <div class="ShowLogs">
 
         
@@ -465,6 +477,7 @@
 
                         $GestID = $Row["GestID"];
                         $GetCountableCount = $Row["CountableCount"];
+                        $GetDate = $Row["Date"];
                         $GetSaveDay = $Row["SavedDay"];
                         $GetFullDate = $Row["FullDate"];
                         $SpendedBy = $Row["SpendedBy"];
@@ -476,7 +489,7 @@
                         $Provider = $Row["Provider"];
                         $Image = "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.providers/$Provider.png";
 
-                        echo "<cont slot='Show' GestID='$GestID' class='ShowInformation ThisLog'>
+                        echo "<cont slot='Show' GestID='$GestID' class='ShowInformation ThisLog' date='$GetDate'>
 
                         <header>
                     
@@ -664,7 +677,7 @@
 
             require 'config/com.config.php';
 
-            $DoQuery = "SELECT ID FROM Cards WHERE 1";
+            $DoQuery = "SELECT ID FROM cards WHERE 1";
             $QueryResults = $Connection -> query($DoQuery);
 
             if($QueryResults -> num_rows > 0){
@@ -692,16 +705,6 @@
 
 </body>
 
-<script>
-
-    const FileLocation = "Vendor/com.js/com.auth.js?v="+Math.random();
-    const NewScript = document.createElement('script');
-    NewScript.type = "text/javascript";
-    NewScript.src = FileLocation;
-    document.body.appendChild(NewScript)
-
-</script>
-
 </html>
 
 <script>
@@ -728,7 +731,7 @@
 <script src="Vendor/com.js/com.navigation.js"></script>
 <script src="Vendor/com.js/com.frames.js"></script>
 <script src="Vendor/com.js/com.indexer.js"></script>
-
+<script src="Vendor/com.js/com.filter.js"></script>
 
 <style>
 
@@ -739,4 +742,5 @@
     }
 
 </style>
+
 
