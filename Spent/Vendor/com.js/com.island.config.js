@@ -3,6 +3,7 @@ function SendNewMessage(MessageData, SelectedIcon, NotificationTypeData, WidthDa
     const Notification = document.querySelector('.Notification');
     const Icon = document.querySelector('.Icon');
     const PriorityStatus = document.querySelector('.PriorityStatus');
+    const NotificationIsland = document.querySelector('.NotificationIsland');
 
     class NewNotificationRender {
 

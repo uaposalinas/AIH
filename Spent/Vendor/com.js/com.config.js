@@ -184,7 +184,7 @@ for(let Aument = 0; Aument < Limit; Aument++){
 
     function ExecuteThisLog(){
 
-        SendNewMessage("Acá están los detalles de ese registro", "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/Show.png", "Low", "400px")
+        SendNewMessage("Acá están los detalles de ese registro", "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/Show.png", "Low", "360px")
 
         const GetGestID = Logs.getAttribute('GestID');
 

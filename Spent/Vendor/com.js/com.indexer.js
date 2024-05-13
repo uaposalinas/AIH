@@ -29,13 +29,13 @@ function SearchNow(){
 
     for(let Aument = 0; Aument < ShowInformation.length; Aument++){
 
-
         const AllLogs = ShowInformation[Aument];    
         const SearchKey = AllLogs.getAttribute('GestID');
         ShowInformation[Aument].style.display = "none";
         NoResults.style.display = "none";
 
-        if(SearchByLogs.value.length <= 25 && SearchByLogs.value == SearchKey){
+        if(SearchByLogs.value.length <= 25 && SearchByLogs.value === SearchKey){
+
 
             AllLogs.style.display = "flex";
             ShowBarResults.style.display = "none";
@@ -74,13 +74,6 @@ window.addEventListener('keydown', ExitToSearcher);
 
 function ExitToSearcher(e){
 
-    for(let Logs = 0; Logs < ShowInformation.length; Logs++){
-
-        const Log = ShowInformation[Logs];
-        Log.style.display = "flex";
-
-    }
-
     const KeyPressed = e.keyCode;
 
     if(KeyPressed == 27 && ShowBarResults.style.display == "flex"){
@@ -97,6 +90,13 @@ function ExitToSearcher(e){
    
 
         }, 300);
+
+        for(let Logs = 0; Logs < ShowInformation.length; Logs++){
+
+            const Log = ShowInformation[Logs];
+            Log.style.display = "flex";
+    
+        }
 
     }
 
