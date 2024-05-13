@@ -131,6 +131,14 @@
                 <div class="SelectOption"></div>
 
             </div>
+            <div class="SelectOptionParent">
+
+                <div class="Icon" style="background-image:url(https://cdn-icons-png.flaticon.com/512/839/839374.png);"></div>
+                <t>Configuración</t>
+
+                <div class="SelectOption"></div>
+
+            </div>
 
         </div>
     
@@ -734,24 +742,13 @@
 
 </script>
 
+<script src="Vendor/com.js/com.island.config.js"></script>
 <script src="Vendor/com.js/com.navigation.js"></script>
 <script src="Vendor/com.js/com.frames.js"></script>
 <script src="Vendor/com.js/com.indexer.js"></script>
 <script src="Vendor/com.js/com.filter.js"></script>
-<script src="Vendor/com.js/com.return.js"></script>
-
+<script src="Vendor/com.js/com.return.js" defer></script>
 <script src="Vendor/com.js/com.versions.js"></script>
-
-<script>
-
-    const IslandFileLoc = "Vendor/com.js/com.island.config.js?v="+Math.random();
-    const IslandScript = document.createElement('script');
-    IslandScript.type = "text/javascript";
-    IslandScript.src = IslandFileLoc;
-    document.body.appendChild(IslandScript)
-
-</script>
-
 
 
 <style>

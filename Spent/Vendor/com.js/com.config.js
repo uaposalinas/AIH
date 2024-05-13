@@ -66,6 +66,10 @@ for(let Aument = 0; Aument < SelectOptionTotalElements; Aument++){
 
             }, 3000);
 
+        }else if(IndexOf == 3){
+
+            SendError('Esta caracterisitica no está disponible para usuarios comúnes aún.', "560px")
+
         }
 
     }

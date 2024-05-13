@@ -15,7 +15,7 @@ for(let Aument = 0; Aument < Scripts.length; Aument++){
 for(let Aument = 0; Aument < Links.length; Aument++){
 
     const AllLinks = Links[Aument];
-    const GetLocation = Links.getAttribute("href");
+    const GetLocation = AllLinks.getAttribute('href')
 
     const NewLocation = `${GetLocation}?v=${Math.random()}`;
 
