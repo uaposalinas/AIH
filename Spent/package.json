@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "express": "^4.19.2",
     "jsbarcode": "^3.11.6"
   }
 }

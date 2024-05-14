@@ -173,9 +173,17 @@ function SetLogosInLogs(){
 
         const ImageForSend = GetAttr.replace(/ /g, "%20");
 
+         try {
             
+               
             Logos.style.backgroundImage = `url(${ImageForSend})`;
 
+
+         } catch (error) {
+
+            alert(0)
+
+         }
 
     }
 
