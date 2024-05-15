@@ -47,6 +47,87 @@
 
 <body class="Spent" style="overflow:hidden">
 
+    <div class="ProvidersPopup" style="display:none">
+
+    <div class="BackButtonPack BackToNewLog">
+
+        <i class="fi fi-sr-angle-left"></i>
+        <p>Nuevo Registro</p>
+
+        </div>
+
+        <div class="PopupContent">
+
+            <header>
+
+                <t>Proveedores</t>
+                <div class="SearchLog" style="position:relative; right:0px; left:0px; margin-left:0px; margin-right:0px; margin-top:20px">
+
+                    <input type="text" class="SearchByProvider" placeholder="Escribe una palabra clave para buscar">
+                    <i class="fi fi-br-search"></i>
+
+                </div>
+
+            </header>
+
+            <content class="Scroll">
+
+            <div class="NoResults2" style="display:none;">
+
+                <div class="NoResultsIcon2"></div>
+                <t>Este proveedor no existe, debes crearlo tú.</t>
+
+            </div>
+
+
+
+                <?php
+
+                    require 'config/com.config.php';
+                    $Connection -> set_charset("utf8");
+
+                    $DoQuery = "SELECT Provider FROM providers WHERE 1";
+                    $QueryResults = $Connection -> query($DoQuery);
+
+                    if($QueryResults -> num_rows > 0){
+
+                        while($Row = $QueryResults -> fetch_assoc()){
+
+                            $GetProvider = $Row["Provider"];
+
+
+                            $Image = "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.providers/$GetProvider.png";
+
+                            echo "
+                                
+                                <provider class='ThisProvider' provider='$GetProvider'>
+
+                                    <div class='ShowProviderLogoToSearch' slot='$Image'></div>
+                                    <div class='Name'>$GetProvider</div>
+                            
+                                </provider>
+                        
+
+
+                            ";
+
+                        }
+
+                    }else{
+
+                        echo "!OK";
+
+                    }
+
+                ?>
+
+
+            </content>
+
+        </div>
+
+    </div>
+
     <div class="NotificationIslandParent">
 
         <div class="NotificationIsland">
@@ -91,12 +172,12 @@
             <div class="PrincipalLogo"></div>
             <t>Sistema de Gestión de Gastos</t>
 
-            <div class="ThisNotificationsRender" style="display:none">
+            <div class="ThisNotificationsRender" style="display:flex">
 
                 <div class="Notification">
 
-                    <i class="fi fi-ts-newspaper Icon"></i>
-                    <div class="Message">Es hora de hacer el cierre del mes de abril, ve a "Ver Reportes" y pulsa en cierre de mes.</div>
+                <i class="fi fi-rr-file-medical-alt Icon"></i>
+                    <div class="Message">Agregué la funcionalidad de seleccionar proveedores por búsqueda y arregle la tardanza al guardar los registros.</div>
                     <i class="fi fi-rs-circle-xmark Close"></i>
 
                 </div>
@@ -153,7 +234,7 @@
 
     <div class="NewLog" style="overflow: hidden;">
 
-    <div class="BackButtonPack BackToHome">
+    <div class="BackButtonPack BackToHome HideWhileSelectProvider">
 
         <i class="fi fi-sr-angle-left BackToHome"></i>
         <p>Inicio</p>
@@ -205,36 +286,8 @@
 
                         <div class="ProviderCont Selectable">
     
-                            <select name="SendProvider" class="Provider ThisValue SelectValue">
-    
-                                <option value="default">Proveedor</option>
+                            <input type="text" name="SendProvider" class="Provider ThisValue ProviderValue" style="width:100%; height:100%" placeholder="Proveedor">
 
-                                <?php
-
-                                    require 'config/com.config.php';
-                                    $Connection->set_charset("utf8");
-
-
-                                    $DoQuery = "SELECT Provider FROM providers WHERE 1";
-                                    $QueryResults = $Connection -> query($DoQuery);
-
-                                    if($QueryResults -> num_rows > 0){
-
-                                        while($Row = $QueryResults -> fetch_assoc()){
-
-                                            $Provider = $Row["Provider"];
-
-                                            echo "<option value='$Provider'>$Provider</option>";
-
-                                        }
-
-                                    }
-
-                                ?>
-                                
-
-                            </select>
-    
                         </div>
     
                         <div class="AddMore AddAnotherProvider" style="cursor:pointer;"><i class="fi fi-rr-plus-small"></i></div>

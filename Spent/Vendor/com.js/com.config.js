@@ -189,6 +189,36 @@ function SetLogosInLogs(){
 
 }
 
+window.addEventListener('load', SetLogosInLogsForProvider)
+
+function SetLogosInLogsForProvider(){
+
+    const ThisProviderLogo = document.querySelectorAll('.ShowProviderLogoToSearch');
+    const Limit = ThisProviderLogo.length;
+
+    for(let Aument = 0; Aument < Limit; Aument++){
+
+        const Logos = ThisProviderLogo[Aument];
+        
+        const GetAttr = Logos.getAttribute('slot');
+
+        const ImageForSend = GetAttr.replace(/ /g, "%20");
+
+         try {
+            
+               
+            Logos.style.backgroundImage = `url(${ImageForSend})`;
+
+
+         } catch (error) {
+
+            alert(0)
+
+         }
+
+    }
+
+}
 
 const ThisLog = document.querySelectorAll('.ThisLog');
 const Limit = ThisLog.length;
@@ -278,5 +308,39 @@ function InitFilter(){
 
     }
 
+
+}
+
+
+const PressProvider = document.querySelector('.Provider');
+
+PressProvider.addEventListener('click', OpenPopupProvider);
+
+function OpenPopupProvider(e){
+
+    e.preventDefault();
+    this.blur();
+    document.querySelector('.HideWhileSelectProvider').style.display = "none";
+    document.querySelector('.ProvidersPopup').style.display = "flex";
+
+}
+
+const ThisProvider = document.querySelectorAll('.ThisProvider');
+
+for(let Aument = 0; Aument < ThisProvider.length; Aument++){
+
+    const Provider = ThisProvider[Aument];
+    const GetAttr = Provider.getAttribute('provider');
+
+    Provider.addEventListener('click', SelectThisProvider);
+
+
+    function SelectThisProvider(){
+
+        PressProvider.value = GetAttr;
+        document.querySelector('.ProvidersPopup').style.display = "none";
+
+
+    }
 
 }

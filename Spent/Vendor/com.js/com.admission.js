@@ -329,7 +329,7 @@ function PrepareToSaveTheNewLog(){
     const BillID = document.querySelector('.BillID');
     const Subtotal = document.querySelector('.Subtotal');
 
-    if(Provider.value == "default" || Amount.value.trim() === '' || Description.value.trim() === '' || CountableCount.value == "default" || BuyType.value == "default" || PayType.value == "default" || Realice.value == "default" || BillID.value.trim() === '' || Subtotal.value.trim() === ''){
+    if(Provider.value.trim() === "" || Amount.value.trim() === '' || Description.value.trim() === '' || CountableCount.value == "default" || BuyType.value == "default" || PayType.value == "default" || Realice.value == "default" || BillID.value.trim() === '' || Subtotal.value.trim() === ''){
 
         SendError('Debes llenar todos los campos que están en rojo.', '450px');
 
@@ -388,9 +388,9 @@ function PrepareToSaveTheNewLog(){
 
                 }, 1000);
 
-            }, 6000);
+            }, 2000);
 
-        }, 2000);
+        }, 1000);
 
     }
 
@@ -399,6 +399,12 @@ function PrepareToSaveTheNewLog(){
 
     const GetAllSelectables = document.querySelectorAll('.SelectValue');
     const LimitSelect = GetAllSelectables.length;
+
+    if(document.querySelector('.ProviderValue').value.trim() === ''){
+
+        document.querySelector('.ProviderCont').style.backgroundColor = "#980721";
+
+    }
 
     for(let InputsAument = 0; InputsAument < LimitInputs; InputsAument++){
 

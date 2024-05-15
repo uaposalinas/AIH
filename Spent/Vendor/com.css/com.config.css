@@ -1,3 +1,24 @@
+.Scroll::-webkit-scrollbar{
+
+    width:5px;
+    background-color:transparent;
+
+}
+
+.Scroll::-webkit-scrollbar-thumb{
+
+    width:5px;
+    background-color:#85c6fe;
+    border-radius:20px;
+
+}
+
+.Scroll::-webkit-scrollbar-corner{
+
+    display:none;
+
+}
+
 /*FlowControl*/
 
 
@@ -2026,6 +2047,21 @@ div.spinner {
 
 }
 
+.NoResults2{
+
+    width:100%;
+    height:90%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    color:#FFF;
+    position:absolute;  
+
+
+}
+
 .SearchBarIndex .Icon{
 
     width:100px;
@@ -2037,7 +2073,7 @@ div.spinner {
 
 }
 
-.NoResults .Icon{
+.NoResults .Icon, .NoResults2 .NoResultsIcon2{
 
     width:100px;
     height:100px;
@@ -2057,7 +2093,7 @@ div.spinner {
 
 }
 
-.NoResults t{
+.NoResults t, .NoResults2 t{
 
     font-family:caviarDreamsBold;
     font-size:20px; 
@@ -2076,7 +2112,7 @@ div.spinner {
     width:100%;
     height: 50px;
     position:absolute;
-    bottom:-40px;
+    bottom:-60px;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -2431,5 +2467,144 @@ div.spinner {
     position:absolute;
     top:0px;
     right: 0px;
+
+}
+
+.ProvidersPopup{
+
+    animation:fadeInUp 0.5s;
+    width:100%;
+    height:100vh;
+    position: absolute;
+    top:0px;
+    left:0px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    background-color:rgba(9, 18, 27, 0.527);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.PopupContent{
+
+    width:500px;
+    height:100%;
+    position:absolute;
+
+}
+
+.PopupContent header{
+
+    width:100%;
+    height:120px;
+    position:absolute;
+    top:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+
+}
+
+.PopupContent header t{
+
+    font-size:20px;
+    font-family:caviarDreamsBold;   
+    color:#FFFFFF;
+
+}
+
+.PopupContent content{
+
+    width:100%;
+    height:calc(100% - 150px);
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    padding-top:10px;
+    padding-bottom:10px;
+
+}
+
+
+.PopupContent content provider{
+
+    width:97%;
+    height:60px;
+    background-color:#2A2A2A;
+    position: relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    border-radius:10px;
+    margin-bottom:10px;
+    cursor: pointer;
+
+}
+
+provider .ShowProviderLogoToSearch{
+
+    width:45px;
+    height:45px;
+    background-color: #1c1c1c;
+    position:absolute;
+    top:7.5px;
+    left:10px;
+    border-radius:10px;
+    background-position:center;
+    background-size:cover;
+
+}
+
+provider .Name{
+
+    font-size:15px;
+    font-family:caviarDreamsBold;
+    color:#FFFFFF;
+    position: absolute;
+    left:70px;
+
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+.HideProviders{
+
+    animation: fadeOutDownBig 0.5s;
+
+}
+
+.ProviderCont input{
+
+    width:100%;
+    height:100%;
+    color:#9b9b9b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction: column;
+
+
+}
+
+.ProviderCont{
+
+    overflow:hidden;
 
 }

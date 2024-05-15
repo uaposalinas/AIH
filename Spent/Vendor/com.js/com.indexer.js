@@ -101,3 +101,28 @@ function ExitToSearcher(e){
     }
 
 }
+
+
+
+
+
+//Proveedores
+
+document.querySelector('.SearchByProvider').addEventListener('keyup', function() {
+    const filter = this.value.toLowerCase();
+    const providers = document.querySelectorAll('.ThisProvider');
+    
+    providers.forEach(provider => {
+        const providerName = provider.getAttribute('provider').toLowerCase();
+        if (providerName.includes(filter)) {
+            provider.style.display = "flex";
+            document.querySelector('.NoResults2').style.display = "none";
+
+        } else {
+
+            provider.style.display = "none";
+            document.querySelector('.NoResults2').style.display = "flex";
+
+        }
+    });
+});
