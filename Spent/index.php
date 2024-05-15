@@ -805,7 +805,15 @@
 <script src="Vendor/com.js/com.indexer.js"></script>
 <script src="Vendor/com.js/com.filter.js"></script>
 <script src="Vendor/com.js/com.return.js" defer></script>
-<script src="Vendor/com.js/com.versions.js"></script>
+
+<script>
+
+    const Location = "Vendor/com.js/com.versions.js";
+    const Versions = document.createElement("script");
+    Versions.src = Location+"?v="+Math.random();
+    document.body.appendChild(Versions);
+
+</script>
 
 
 <style>
