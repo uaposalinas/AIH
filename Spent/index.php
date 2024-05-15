@@ -212,6 +212,8 @@
                                 <?php
 
                                     require 'config/com.config.php';
+                                    $Connection->set_charset("utf8");
+
 
                                     $DoQuery = "SELECT Provider FROM providers WHERE 1";
                                     $QueryResults = $Connection -> query($DoQuery);
@@ -691,6 +693,8 @@
         <?php
 
             require 'config/com.config.php';
+            $Connection->set_charset("utf8");
+
 
             $DoQuery = "SELECT ID FROM cards WHERE 1";
             $QueryResults = $Connection -> query($DoQuery);

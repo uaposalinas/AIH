@@ -2412,3 +2412,24 @@ div.spinner {
     text-align:left;
     margin-left:20px;
 }
+
+/*com.reports*/
+
+.ReportsBody{
+
+    background-color: #FFFFFF !important;
+
+}
+
+.HeaderDecoration{
+
+    width:206.20px;
+    height:150px;
+    background-image:url(../../Assets/com.img/header.png);
+    background-position:center;
+    background-size: cover;
+    position:absolute;
+    top:0px;
+    right: 0px;
+
+}
