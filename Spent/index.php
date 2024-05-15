@@ -799,12 +799,22 @@
 
 </script>
 
-<script src="Vendor/com.js/com.island.config.js"></script>
-<script src="Vendor/com.js/com.navigation.js"></script>
-<script src="Vendor/com.js/com.frames.js"></script>
-<script src="Vendor/com.js/com.indexer.js"></script>
-<script src="Vendor/com.js/com.filter.js"></script>
-<script src="Vendor/com.js/com.return.js" defer></script>
+<script>
+        const files = [
+            "Vendor/com.js/com.island.config.js",
+            "Vendor/com.js/com.navigation.js",
+            "Vendor/com.js/com.frames.js",
+            "Vendor/com.js/com.indexer.js",
+            "Vendor/com.js/com.filter.js",
+            "Vendor/com.js/com.return.js"
+        ];
+
+        files.forEach(file => {
+            const script = document.createElement("script");
+            script.src = `${file}?v=${Math.random()}`;
+            document.body.appendChild(script);
+        });
+    </script>
 
 <script>
 
