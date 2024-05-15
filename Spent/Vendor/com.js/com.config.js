@@ -322,6 +322,12 @@ function OpenPopupProvider(e){
     this.blur();
     document.querySelector('.HideWhileSelectProvider').style.display = "none";
     document.querySelector('.ProvidersPopup').style.display = "flex";
+    
+    setTimeout(() => {
+        
+        document.querySelector('.SearchByProvider').focus()
+
+    }, 1000);
 
 }
 
