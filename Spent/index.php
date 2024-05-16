@@ -177,7 +177,7 @@
                 <div class="Notification">
 
                 <i class="fi fi-rr-file-medical-alt Icon"></i>
-                    <div class="Message">Agregué la funcionalidad de sumar los "otros impuestos".</div>
+                    <div class="Message">Agregué la funcionalidad seleccionar exento y Tax simultaneamente.</div>
                     <i class="fi fi-rs-circle-xmark Close"></i>
 
                 </div>
