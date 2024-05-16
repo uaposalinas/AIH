@@ -499,16 +499,36 @@ function PrepareToSaveTheNewLog(){
 
 }
 
+let Siml = false;
 
 Exempt.addEventListener('contextmenu', e=>{
 
-    Exempt.disabled = false;
-    e.preventDefault();
-    Exempt.focus();
-    Exempt.value = "";
-    localStorage.setItem('LogMutant', true);
-    Exempt.style.backgroundColor = "#2A2A2A";
-    Exempt.style.border = "1px solid #1ED761";
-    ExentStatus.checked = true;
+    if(Siml == false){
+
+        Exempt.disabled = false;
+        e.preventDefault();
+        Exempt.focus();
+        Exempt.value = "";
+        localStorage.setItem('LogMutant', true);
+        Exempt.style.backgroundColor = "#2A2A2A";
+        Exempt.style.border = "1px solid #1ED761";
+        ExentStatus.checked = true;
+
+        Siml = true;
+
+    }else{
+
+        Exempt.disabled = true;
+        e.preventDefault();
+        Exempt.blur();
+        Exempt.value = "L 0.00";
+        localStorage.removeItem('LogMutant');
+        Exempt.style.backgroundColor = "#141414";
+        Exempt.style.border = "none";
+        ExentStatus.checked = false;
+
+        Siml = false
+
+    }
 
 })
