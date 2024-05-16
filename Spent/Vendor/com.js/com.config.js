@@ -1,3 +1,11 @@
+    /* Reset */
+
+        localStorage.removeItem('NewTax');
+        localStorage.removeItem('NewTaxValue')
+
+    /* Reset */
+
+
     const SpentSelectMenu = document.querySelector('.SpentSelectMenu');
     const NewLog = document.querySelector('.NewLog');
     const ViewLogs = document.querySelector('.ViewLogs');
@@ -345,6 +353,70 @@ for(let Aument = 0; Aument < ThisProvider.length; Aument++){
 
         PressProvider.value = GetAttr;
         document.querySelector('.ProvidersPopup').style.display = "none";
+
+
+    }
+
+}
+
+
+let OtherISV = false;
+
+document.querySelector('.OtherStatus').addEventListener('change', SwitchAttemp);
+
+function SwitchAttemp(){
+
+    if(OtherISV == false){
+
+        Others.disabled = false;
+        OtherISV = true;
+        Others.focus();
+        Others.value = "";
+
+        const NewTax = localStorage.getItem('NewTax');
+
+        if(NewTax){
+
+            const TaxValue = parseFloat(localStorage.getItem('NewTaxValue'));
+            const TotalString = Total.value.substr(3, 100000);
+            const GetTotalINT = parseFloat(TotalString);
+            const Operation = GetTotalINT - TaxValue;
+
+            Total.value = `L. ${Operation}`;
+
+        }
+
+    }else{
+
+        OtherISV.disabled = true;
+        OtherISV = false;
+
+    }
+
+}
+
+
+
+document.querySelector('.Others').addEventListener('keyup', SendOthers);
+
+function SendOthers(e){
+
+    const KeyPressed = e.keyCode;
+
+    if(KeyPressed == 13){
+
+            const Cut = Total.value.substr(3,1000000);
+            const INT = parseFloat(Cut);
+            const Taxes = parseFloat(Others.value);
+            const Operation = INT + Taxes;
+
+            Total.value = `L. ${Operation}`;
+
+            Others.disabled = true;
+
+
+            localStorage.setItem('NewTax', true);
+            localStorage.setItem('NewTaxValue', Taxes);
 
 
     }

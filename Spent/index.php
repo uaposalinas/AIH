@@ -177,7 +177,7 @@
                 <div class="Notification">
 
                 <i class="fi fi-rr-file-medical-alt Icon"></i>
-                    <div class="Message">Agregué la funcionalidad de seleccionar proveedores por búsqueda y arregle la tardanza al guardar los registros.</div>
+                    <div class="Message">Agregué la funcionalidad de sumar los "otros impuestos".</div>
                     <i class="fi fi-rs-circle-xmark Close"></i>
 
                 </div>
@@ -396,7 +396,7 @@
     
                         <input type="number" name="SendSubtotal" class="Subtotal ThisValue" placeholder="L 0.00" id="2" style="margin-left:0px;">
                         <input type="text" name="SendExempt" class="Exempt" placeholder="L 0.00" id="1" style="background-color: #141414;" value="L 0.00" disabled>
-                        <input type="text" name="Other" class="Others" placeholder="L 0.00" id="3" disabled value="L 0.00">
+                        <input type="number" name="Other" class="Others" placeholder="L 0.00" id="3" disabled value="L 0.00">
                         <input type="text" name="ISV18" class="ISV18" placeholder="L 0.00" id="4" disabled value="L 0.00">
                         <input type="text" name="ISV15" class="ISV15" placeholder="L 0.00" id="5" disabled value="L 0.00">
     
@@ -811,19 +811,11 @@
 
         files.forEach(file => {
             const script = document.createElement("script");
-            script.src = `${file}?v=${Math.random()}`;
+            script.src = `${file}?v=${Math.random() * Math.random() * Math.random()}`;
             document.body.appendChild(script);
         });
     </script>
 
-<script>
-
-    const Location = "Vendor/com.js/com.versions.js";
-    const Versions = document.createElement("script");
-    Versions.src = Location+"?v="+Math.random();
-    document.body.appendChild(Versions);
-
-</script>
 
 
 <style>
