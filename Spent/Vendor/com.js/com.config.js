@@ -1,7 +1,8 @@
     /* Reset */
 
         localStorage.removeItem('NewTax');
-        localStorage.removeItem('NewTaxValue')
+        localStorage.removeItem('NewTaxValue');
+        localStorage.removeItem('LogMutant')
 
     /* Reset */
 
@@ -422,3 +423,4 @@ function SendOthers(e){
     }
 
 }
+
