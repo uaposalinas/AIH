@@ -209,19 +209,27 @@ function DetectKeyPressed(e){
           
 
             let Tax = 0;
+            let OtherTax = 0;
 
             if(ISV15Status.checked == true){
 
                 Tax = GetSubtotalINT * 0.15;
+                ISV15.value = "L. "+Tax;
 
             }else if(ISV18Status.checked == true){
 
-                Tax =  GetSubtotalINT * 0.18
+                Tax =  GetSubtotalINT * 0.18.toFixed(2);
+                ISV18.value = "L. "+Tax;
+          
+            }
+
+            if(OtherStatus.checked == true){
+
+                OtherTax = parseFloat(Others.value);
 
             }
 
-
-            const Operation = GetSubtotalINT + GetExentINT + Tax;
+            const Operation = GetSubtotalINT + GetExentINT + Tax + OtherTax;
 
             Total.value = `L. ${Operation}`
 
@@ -498,6 +506,9 @@ Exempt.addEventListener('contextmenu', e=>{
     e.preventDefault();
     Exempt.focus();
     Exempt.value = "";
-    localStorage.setItem('LogMutant', true)
+    localStorage.setItem('LogMutant', true);
+    Exempt.style.backgroundColor = "#2A2A2A";
+    Exempt.style.border = "1px solid #1ED761";
+    ExentStatus.checked = true;
 
 })

@@ -2609,3 +2609,16 @@ provider .Name{
     overflow:hidden;
 
 }
+
+.NewAvailable{
+
+    color:#2A2A2A;
+    border:1px solid #1ED761;
+
+}
+
+.Exempt{
+
+    transition:all 300ms;
+
+}
