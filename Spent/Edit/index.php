@@ -39,7 +39,7 @@
 
         }else{
 
-            echo "<script> window.location.href = 'https://partners.devlabsco.space/AIH/Gateway/Spent/' </script>";
+           // echo "<script> window.location.href = 'https://partners.devlabsco.space/AIH/Gateway/Spent/' </script>";
 
         }
 
@@ -75,6 +75,11 @@
             echo "
             
             <div class='NewLog' style='overflow: hidden; display:flex;'>
+            
+            <div class='bar SendPreloader' style='width:100%'>
+            <div></div>
+            </div>
+
 
             <header style='height:105px; top:25px;'>
         
@@ -99,7 +104,9 @@
         
             <div class='Content'>
         
-                <form action='com.save.php' method='post' class='ControlForm'>
+                <form action='com.save.php' method='get' class='ControlForm'>
+
+                <input type='text' name='GestID' value='$GestID' hidden>
         
                     <div class='Rows'>
         
@@ -212,11 +219,11 @@
         
                             </div>
         
-                            <input type='number' name='SendSubtotal' class='Subtotal ThisValue' placeholder='$Subtotal' id='2' style='margin-left:0px;'>
-                            <input type='text' name='SendExempt' class='Exempt' placeholder='L 0.00' id='1' value='$Exempt'>
-                            <input type='number' name='Other' class='Others' placeholder='L 0.00' id='3' value='$OtherISV'>
-                            <input type='text' name='ISV18' class='ISV18' placeholder='L 0.00' id='4' value='$ISV18'>
-                            <input type='text' name='ISV15' class='ISV15' placeholder='L 0.00' id='5' value='$ISV15'>
+                            <input type='number' name='SendSubtotal' class='Subtotal ThisValue' value='$Subtotal' id='2' style='margin-left:0px;'>
+                            <input type='text' name='SendExempt' class='Exempt ThisValue' placeholder='L 0.00' id='1' value='$Exempt'>
+                            <input type='text' name='Other' class='Others ThisValue' placeholder='L 0.00' id='3' value='$OtherISV'>
+                            <input type='text' name='ISV18' class='ISV18 ThisValue' placeholder='L 0.00' id='4' value='$ISV18'>
+                            <input type='text' name='ISV15' class='ISV15 ThisValue' placeholder='L 0.00' id='5' value='$ISV15'>
         
                         </div>
         
@@ -260,7 +267,7 @@
 <script>
     const files = [
       
-
+        "../Vendor/com.js/com.edit.config.js"
 
     ];
 

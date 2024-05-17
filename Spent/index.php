@@ -177,7 +177,7 @@
                 <div class="Notification">
 
                 <i class="fi fi-rr-file-medical-alt Icon"></i>
-                    <div class="Message">Agregué la funcionalidad seleccionar exento y Tax simultaneamente.</div>
+                    <div class="Message">Agregué la funcionalidad editar registros y eliminarlos, redondeo de decimales a los últimos digitos y validación de total antes de enviar para evitar enviar sin total.</div>
                     <i class="fi fi-rs-circle-xmark Close"></i>
 
                 </div>

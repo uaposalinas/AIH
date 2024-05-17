@@ -139,6 +139,8 @@
             
                 <div class='ReportButtons'>
             
+                    <div class='RemoveReport tooltip' data-text='Eliminar'> <i class='fi fi-rr-trash'></i> </div>
+                    <div class='EditReport tooltip' data-text='Editar Registro'> <i class='fi fi-rr-pencil'></i> </div>       
                     <div class='ShareReport tooltip' data-text='Compartir reporte'> <i class='fi fi-ss-refer'></i> </div>
                     <div class='PrintReport tooltip' data-text='Imprimir Reporte'><i class='fi fi-rr-print'></i></div>
             

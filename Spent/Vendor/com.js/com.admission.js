@@ -213,7 +213,7 @@ function DetectKeyPressed(e){
 
             if(ISV15Status.checked == true){
 
-                Tax = GetSubtotalINT * 0.15;
+                Tax = GetSubtotalINT * 0.15.toFixed(2);
                 ISV15.value = "L. "+Tax;
 
             }else if(ISV18Status.checked == true){
@@ -230,8 +230,9 @@ function DetectKeyPressed(e){
             }
 
             const Operation = GetSubtotalINT + GetExentINT + Tax + OtherTax;
+            const Round = Math.round(Operation)
 
-            Total.value = `L. ${Operation}`
+            Total.value = `L. ${Round}`
 
 
         }else{
@@ -326,8 +327,10 @@ function DetectKeyPressed(e){
                     ISV18.value = "L 0.00";
         
                     const SetTotal = parseFloat(RoundOut) + GetINT;
+
+                    const Parse = Math.round(SetTotal)
         
-                    Total.value = "L. " + Math.round(SetTotal);
+                    Total.value = "L. " + Parse;
         
                     Total.classList.add('UpdateTotals');
             

@@ -53,3 +53,47 @@ function PrintReportNow(){
     window.open(Route)
 
 }
+
+document.querySelector('.EditReport').addEventListener('click', EditReportNow);
+
+function EditReportNow(){
+
+    function Statement(){
+
+        if(window.location.hostname == "localhost"){
+
+            Routes = "http://localhost/AIH/Spent/Edit/";
+            return Routes;
+
+        }else{
+
+            Routes = window.location.origin + "/AIH/Gateway/Spent/Edit/";
+            return Routes
+
+        }
+    }
+
+    const Route = `${Statement()}?GestID=${GestID.value}`;
+    window.open(Route, "NewWindowForEdit", "width=1700,height=864");
+
+    
+
+}
+
+document.querySelector('.RemoveReport').addEventListener('click', RemoveReportNow);
+
+function RemoveReportNow(){
+
+    const ConfirmAction = confirm('¿Estás seguro que quieres eliminar este registro?');
+
+    if(ConfirmAction == true){
+
+        window.open(`com.delete/?GestID=${GestID.value}`, "none", "width=5px, height=5px");
+
+    }else{
+
+        alert('no')
+
+    }
+
+}

@@ -14,7 +14,8 @@
     const GenerateANewReport = document.querySelector('.GenerateANewReport');
     const SearchByLog = document.querySelector('.SearchByLog');
     const ShowFilterFrame = document.querySelector('.ShowFilterFrame');
-    const AddCardsButton = document.querySelector('.AddCardsButton')
+    const AddCardsButton = document.querySelector('.AddCardsButton');
+    const EditReport = document.querySelector('.EditReport');
 
 //Select an option from the spents menu
 
@@ -415,3 +416,57 @@ function SendOthers(e){
 
 }
 
+
+
+
+
+setInterval(() => {
+        
+    const Key = localStorage.getItem('EditKey');
+
+    if(Key && Key === "true"){
+
+        localStorage.removeItem('EditKey');
+
+        SendNewMessage("Se editó el registro con éxito", "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/check.png", "Low", "320px")
+
+        setTimeout(() => {
+            
+            window.location.reload();
+
+        }, 6000);
+
+    }else if(Key && Key === 'false'){
+
+        SendError("No se editó el registro", "230px")
+
+    }
+
+}, 1000);
+
+
+setInterval(() => {
+        
+    const DeleteKey = localStorage.getItem('DeleteKey');
+
+    console.log(DeleteKey)
+
+    if(DeleteKey && DeleteKey === "true"){
+
+        localStorage.removeItem('DeleteKey');
+
+        SendNewMessage("Se eliminó el registro con éxito", "https://cdn-icons-png.flaticon.com/512/7625/7625624.png", "Low", "320px")
+
+        setTimeout(() => {
+            
+            window.location.reload();
+
+        }, 6000);
+
+    }else if(DeleteKey && DeleteKey === 'false'){
+
+        SendError("No se eliminó el registro", "230px")
+
+    }
+
+}, 1000);
