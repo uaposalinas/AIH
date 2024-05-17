@@ -21,15 +21,6 @@
 const SelectOption = document.querySelectorAll('.SelectOption');
 const SelectOptionTotalElements = SelectOption.length;
 
-const GetHelp = document.querySelector('.GetHelp');
-
-GetHelp.addEventListener('click', GetHelpNow);
-
-function GetHelpNow(){
-
-    
-
-}
 
 for(let Aument = 0; Aument < SelectOptionTotalElements; Aument++){
 
