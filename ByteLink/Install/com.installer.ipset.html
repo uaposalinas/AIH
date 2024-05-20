@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>com.installer.ipset</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1183/1183657.png" type="image/x-icon">
+
+</head>
+<body>
+    
+    <div class="PreloadPage">Preparando</div>
+
+    <div class="GETIP">
+
+        <p>Ingresa la IP del Host</p>
+
+        <input type="number" class="GetIP1" min="2" max="3"><pt>.</pt>
+        <input type="number" class="GetIP2" minlength="3" maxlength="3"><pt>.</pt>
+        <input type="number" class="GetIP3"><pt>.</pt>
+        <input type="number" class="GetIP4">
+
+        <div class="IconsContainer">
+            <div class="Preload Preload1">
+              <div class="overlay">
+                <div class="spinner center">
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                </div>
+              </div>
+            </div>
+            <div class="Passed Passed1"></div>
+            <div class="Error Error1" title="El servidor que estás intentando utilizar no esta registrado en el DSIS o los parámetros de las directivas no son correctos."></div>
+          </div>
+
+        <div class="Comprobate">Conectar</div>
+    </div>
+
+    <script src="com.manifest.js"></script>
+
+    <script>
+
+      
+        const GetIP1s = document.querySelector('.GetIP1');
+        const GetIP2s = document.querySelector('.GetIP2');
+        const GetIP3s = document.querySelector('.GetIP3');
+        const GetIP4s = document.querySelector('.GetIP4');
+
+        GetIP1s.addEventListener('keydown', e=>{
+
+            if(GetIP1s.value.length > 1){
+
+                setTimeout(() => {
+
+                    
+                GetIP1s.blur();
+                GetIP2s.focus();
+
+                }, 500);
+
+            }
+
+        })
+
+
+        GetIP2s.addEventListener('keydown', e=>{
+
+        if(GetIP2s.value.length > 1){
+
+            setTimeout(() => {
+
+                
+            GetIP2s.blur();
+            GetIP3s.focus();
+
+            }, 500);
+
+        }
+
+        })
+
+        
+        GetIP3s.addEventListener('keydown', e=>{
+
+        if(GetIP3s.value.length > 0){
+
+            setTimeout(() => {
+
+                
+            GetIP3s.blur();
+            GetIP4s.focus();
+
+            }, 500);
+
+        }
+
+        })
+
+        
+        GetIP4s.addEventListener('keydown', e=>{
+
+        if(GetIP4s.value.length > 0){
+
+            setTimeout(() => {
+
+                
+            GetIP4s.blur();
+            document.querySelector('.Comprobate').click()
+
+            }, 500);
+
+        }
+
+        })
+
+    </script>
+
+    <script>
+
+        
+
+        const GetIP1 = document.querySelector('.GetIP1');
+        const GetIP2 = document.querySelector('.GetIP2');
+        const GetIP3 = document.querySelector('.GetIP3');
+        const GetIP4 = document.querySelector('.GetIP4');
+        const Comprobate = document.querySelector('.Comprobate');
+        const Exit = document.querySelector('.Exit');
+
+        Comprobate.addEventListener('click', e=>{
+
+            document.querySelector('.Comprobate').style.color = "#9b9b9b";
+            document.querySelector('.IconsContainer').style.display = "flex";
+            const Preload = document.querySelector('.Preload').style.display = "flex";
+            const Passed = document.querySelector('.Passed').style.display = "none";
+                const Error = document.querySelector('.Error').style.display = "none";
+
+            setTimeout(() => {
+                
+                class GenerateIP{
+
+            constructor(GetValue1, GetValue2, GetValue3, GetValue4){
+
+                this.char1 = GetValue1;
+                this.char2 = GetValue2;
+                this.char3 = GetValue3;
+                this.char4 = GetValue4;
+
+            }
+
+            }
+
+            const GetIP = new GenerateIP(GetIP1.value, GetIP2.value, GetIP3.value, GetIP4.value);
+
+            IPGetted = "http://"+GetIP.char1+"."+GetIP.char2+"."+GetIP.char3+"."+GetIP.char4;
+
+            const Create = IPGetted+"/NetworkHub/security/User_Node_Protect/com.availability.com.js";
+
+            const CreatedElement = document.createElement('script');
+            CreatedElement.src = Create;
+            document.body.appendChild(CreatedElement);  
+
+            setTimeout(() => {
+
+            try {
+                
+                if(ServerStatus == "Active"){
+
+                    
+                    const Preload = document.querySelector('.Preload').style.display = "none";
+                    const Passed = document.querySelector('.Passed').style.display = "flex";
+                    const Error = document.querySelector('.Error').style.display = "none";
+
+                    setTimeout(() => {
+                        
+                        window.location.href = window.location.origin + "/NetworkHub/" + URLs+"/install";
+
+                    }, 3000);
+
+                }
+
+            } catch (error) {
+
+                const Preload = document.querySelector('.Preload').style.display = "none";
+                const Passed = document.querySelector('.Passed').style.display = "none";
+                const Error = document.querySelector('.Error').style.display = "flex";
+
+                GetIP1.classList.add('ErrorState');
+                GetIP1.style.border = "2px solid #FF0000";
+                GetIP1.value = "";
+                
+                GetIP2.classList.add('ErrorState');
+                GetIP2.style.border = "2px solid #FF0000";
+                GetIP2.value = "";
+
+                GetIP3.classList.add('ErrorState');
+                GetIP3.style.border = "2px solid #FF0000";
+                GetIP3.value = "";
+                
+                GetIP4.classList.add('ErrorState');
+                GetIP4.style.border = "2px solid #FF0000";
+                GetIP4.value = "";
+
+                setTimeout(() => {
+                    
+                    GetIP1.classList.remove('ErrorState');
+                    GetIP2.classList.remove('ErrorState');
+                    GetIP3.classList.remove('ErrorState');
+                    GetIP4.classList.remove('ErrorState');
+
+                    GetIP1.style.border = "2px solid #7668AF";
+                    GetIP2.style.border = "2px solid #7668AF";
+                    GetIP3.style.border = "2px solid #7668AF";
+                    GetIP4.style.border = "2px solid #7668AF";
+
+                    
+                document.querySelector('.Comprobate').style.color = "#7668AF";
+
+                }, 2000);
+                
+            }
+
+            }, 200);
+
+            }, 3000);
+
+        })
+  
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

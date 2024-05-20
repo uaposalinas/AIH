@@ -1,0 +1,1664 @@
+
+/* Oculta las flechas en los campos de entrada de tipo number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0; /* Puedes ajustar este valor según tus necesidades */
+}
+
+
+*{
+
+    margin:0px;
+    padding: 0px;
+    box-sizing:border-box;
+    font-family: caviarDreams;
+
+}
+
+.button{
+
+    width:auto;
+    height:30px;
+    color:#1c1c1c;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-family:robotoMedium;
+    border-radius:20px;
+    cursor: pointer;
+    outline:none;
+    background:transparent;
+    border:none;
+
+}
+
+.loader {
+    position: relative;
+
+    width: 100px;
+  }
+  .loader:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+  
+  .circular {
+    -webkit-animation: rotate 2s linear infinite;
+            animation: rotate 2s linear infinite;
+    height: 100%;
+    transform-origin: center center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+  .path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+            animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    stroke-linecap: round;
+  }
+  
+  @-webkit-keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes dash {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35px;
+    }
+    100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -124px;
+    }
+  }
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35px;
+    }
+    100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -124px;
+    }
+  }
+  @-webkit-keyframes color {
+    100%, 0% {
+      stroke: #d62d20;
+    }
+    40% {
+      stroke: #0057e7;
+    }
+    66% {
+      stroke: #008744;
+    }
+    80%, 90% {
+      stroke: #ffa700;
+    }
+  }
+  @keyframes color {
+    100%, 0% {
+      stroke: #d62d20;
+    }
+    40% {
+      stroke: #0057e7;
+    }
+    66% {
+      stroke: #008744;
+    }
+    80%, 90% {
+      stroke: #ffa700;
+    }
+  }
+
+/*UNIVERSAL VARS*/
+
+.pre{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index: 99999;
+
+}
+
+.hide{
+
+    width:0px;
+    height:0px;
+    position:absolute;
+    display:none;
+    visibility:hidden;
+    opacity: 0;
+
+}
+
+body{
+
+    background-color:#000000;
+    overflow:hidden;
+
+
+}
+
+
+.PreloaderPage{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.SettingsPage{
+
+    width:100%;
+    height:100vh;
+    position:absolute;
+    top:0px;
+    left:0px;
+    animation: fadeInRight 0.5s;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+
+}
+
+.SettingsPage .LogoContainer{
+
+    width:150px;
+    height:150px;
+    position:relative;
+    bottom:150px;
+    border-radius:50%;
+    background-position:center;
+    background-size:cover;
+    background-color: #1c1c1d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.SettingsPage .LogoContainer .logo{
+
+    width: 80px;
+    height:80px;
+    position: relative;
+    background-image:url(../../../root/testIcon.png);
+    background-position:center;
+    background-size:cover;
+
+}
+
+.SettingsPage t{
+
+    color:transparent;
+    font-family:caviarDreamsBold;
+    font-size:25px;
+    position:relative;
+    bottom:120px;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    background-clip:text;
+
+}
+
+
+.TestOptions{
+
+    width:70%;
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    flex-wrap:wrap;
+
+}
+
+.TestOptions div{
+
+    width:auto;
+    height:30px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color:#1c1c1d;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#9b9b9b;
+    font-family:caviarDreamsBold;
+    margin:10px;
+    cursor: pointer;
+
+}
+
+
+
+.TestUsers::-webkit-scrollbar{
+
+    height:7px;
+    background-color:transparent;
+
+}
+
+.TestUsers::-webkit-scrollbar-thumb{
+
+    height:7px;
+    background-color:#9b9b9b;
+    border-radius:20px;
+
+}
+
+.TestUsers::-webkit-scrollbar-corner{
+
+    display:none;
+
+}
+
+.TestUsers {
+    width: 700px;
+    height: auto;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow-x: auto; 
+    overflow-y: hidden;
+    margin-top: 80px;
+}
+
+.TestUsersContainer {
+    display: flex;
+    flex-wrap: nowrap; 
+}
+
+.TestUsers div {
+    width: 50px;
+    height: 50px;
+    background-color: #1c1c1d;
+    border-radius: 50%;
+    margin: 10px;
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+    background-position:center;
+    background-size:cover;
+}
+
+.FirstFormError{
+
+    width:100%;
+    height:30px;
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-family:interBlack;
+    color:#dc3545;
+    opacity: 0;
+    transition:all 300ms;
+    bottom:30px;
+
+}
+
+
+.Tests{
+
+    width:100%;
+    height:100vh;
+    position:absolute;
+    top:0px;
+    left:0px;
+    background-color:#000000;
+    z-index: 9;
+    display:flex;
+    animation: fadeInRight 0.5s;
+}
+
+.TestsHeader{
+
+    width:100%;
+    height:40px;
+    position:absolute;
+    top:0px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.Notch{
+
+    width:240px;
+    height:35px;
+    position:absolute;
+    top:0px;
+    background-color:#1c1c1c;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+    transition:all 600ms;
+
+}
+
+.TestBody{
+
+    width:100%;
+    height:calc(100% - 35px);
+    position:absolute;
+    top:35px;
+    left:0px
+
+}
+
+.DetectDevice{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+
+}
+
+.WhileScan{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    color:#FFFFFF;
+
+}
+
+.WhileScan t{
+
+    font-size:25px;
+
+}
+
+.PrivacyDeclaration{
+
+    width:300px;
+    height:90px;
+    position:absolute;
+    bottom:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+
+}
+
+.PrivacyDeclaration .icon{
+
+    width:50px;
+    height:50px;
+    background-image:url(../Assets/UI/handshake.png);
+    background-position:center;
+    background-size:cover;
+
+}
+
+.PrivacyDeclaration p{
+
+    font-size:13px;
+    font-family:robotoLight;
+
+}
+
+.ShowNotch001{
+
+    background-color:#FFFFFF;
+    width: 130px;
+    height: 130px;
+    top: 20px;
+    border-radius: 20px;
+    background-position:center;
+    background-size:cover;
+
+
+}
+
+.Results001{
+
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  flex-direction:column;
+
+}
+
+.PcInformation{
+
+  width:90%;
+  height:208px;
+  position:absolute;
+  top:50px;
+  background-color: #1c1c1d;
+  border-radius:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+}
+
+.OtheSystemInformation{
+
+  width:90%;
+  height:208px;
+  position:absolute;
+  top:278px;
+  background-color: #1c1c1d;
+  border-radius:20px;
+  display:flex;
+  justify-content:center;
+  text-align:start;
+  flex-direction: column;
+
+}
+
+.Image{
+
+  width: 100px;;
+  height:100px;
+  position:absolute;
+  left:30px;
+  background-image:url(../Assets/Products/Brand/unknown.png);
+  background-position:center;
+  background-size:cover;
+
+}
+
+.DetectionError{
+
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#FFFFFF;
+  animation:fadeInRight 0.5s;
+
+}
+
+
+.GetDeviceInformation{
+
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  animation: fadeInRight 0.5s;
+
+}
+
+div.Form{
+
+  width:350px;
+  height:300px;
+  background-color: #1c1c1d;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  flex-direction:column;
+  border-radius:20px;
+  color:#FFFFFF;
+  position: relative;;
+
+}
+
+div.Form input{
+
+  width:80%;
+  height:30px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#FFFFFF;
+  background-color:transparent;
+  border:1px solid #7668AF;
+  border-radius:20px;
+  outline:none;
+  margin:10px;
+
+}
+
+.AllInfo{
+
+  font-size:28px;
+  font-family:caviarDreamsBold;
+  position:absolute;
+  top:50px;
+  left:200px;
+  color:#FFFFFF;
+
+}
+
+.OtherInfo{
+
+  width:auto;
+  min-width: 270px;
+  height:30px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:absolute;
+  left:190px;
+
+}
+
+.OtherInfo st{
+
+  color:#FFFFFF;
+  font-size:20px;;
+
+}
+
+.OtherInfo{
+
+  color:#FFFFFF;
+
+}
+
+.BrandStyles{
+
+  position:absolute;
+  left:200px;
+  color:#FFFFFF;
+  top:125px;
+
+}
+
+.SystemIcon{
+
+  width:60px;
+  height:60px;
+  position:absolute;
+  right:50px;
+  background-image:url(../Assets/Products/OS/unknown.png);
+  background-size:cover;
+  background-position:center  ;
+  border-radius:10px;
+
+}
+
+.OtheSystemInformation p{
+
+  color:#FFFFFF;
+  font-family:robotoMedium;
+  margin-left:30px;
+  margin-top:10px;
+
+}
+
+.LinksBar{
+
+  width:90%;
+  height:50px;
+  position:absolute;
+  bottom:20px;
+  background-color: #1c1c1d;
+  border-radius:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center; 
+
+}
+
+.ScreenTest{
+
+  width:100%;
+  height:100%;
+
+}
+
+.IconPage{
+
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  text-align:center;
+  flex-direction:column;
+
+}
+
+.IconPage icon{
+
+  width: 150px;
+  height:150px;
+  background-image:url(../Assets/UI/screenTest.png);
+  background-size:cover;
+  background-position: center;
+
+
+}
+
+.testUniformity, .testColorDistance, .testGradient, .testSharpness, .testViewAngle, .testResponseTime {
+  display: none; /* Las ocultamos al inicio */
+  height: 100vh;
+  width: 100vw;
+}
+
+.movingBox {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  animation: moveBox 1s infinite alternate;
+}
+
+@keyframes moveBox {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(100vw - 100px)); }
+}
+
+
+.ScreenTest {
+  display: none;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.screenInfo {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background-color: rgba(255,255,255,0.7); /* Un fondo blanco semi-transparente para hacer el texto legible */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.IconScreenTest{
+
+  transition:all 300ms;
+
+}
+
+.ScreenTest div{
+
+  transition:all 3000ms;
+
+}
+
+.FormErrorScreenTest{
+
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  flex-direction:column;
+  background-color: #000000;
+  z-index: 99999999999999999999999999999999999999999 ;
+  display:none;
+
+}
+
+.FormErrorScreenTest .Form{
+
+  width:300px;
+  height:300px;
+  position:absolute;
+  background-color:#1c1c1d;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  animation:fadeInRight 0.5s;
+
+
+}
+
+.SelectWhereAreTheError{
+
+  background-color:transparent;
+  border-radius:20px;
+  border:1px solid #7668AF;
+  padding-left:20px;
+  padding-top:10px;
+  padding-bottom:10px;
+  color:#FFFFFF;
+  position:absolute;
+  top:90px;
+  outline:none;
+
+}
+
+.GetUserInformationForScreenError{
+
+  padding-left:10px;
+  padding-right:10px;
+
+}
+
+.SelectWhereAreTheError:focus{
+
+  color:#000000;
+  font-family:caviarDreamsBold;
+
+}
+
+#circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  color:#FFFFFF;
+  background-color: #7668AF;
+  text-align:center;
+}
+
+#instruction {
+  display: none;
+  text-align: center;
+  color:#FFFFFF;
+}
+
+.TouchPadTest{
+
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+
+}
+
+#touchCircle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  background-color: #7668AF;
+
+}
+
+#touchInfo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+
+.TouchScreenTest{
+
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#FFFFFF;
+
+}
+
+#keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.key-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.key {
+  width:50px;
+  height:50px;
+  padding: 10px;
+  border: 1px solid #9b9b9b;
+  border-radius: 10px;
+  text-align: center;
+  font-size:13px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.key.selected {
+  background-color:#7668AF;
+  color: #1c1c1d;
+  border:none;
+  font-family:caviarDreamsBold;
+}
+
+.key[data-key="Espacio"] {
+  flex-grow: 2;
+  width: 200px;
+}
+
+.key[data-key="BACKSPACE"] {
+  flex-grow: 2;
+  width: 150px;
+}
+
+.key[data-key="UP"]{
+
+  position:relative;
+
+}
+
+
+.key[data-key="ENTER"]{
+
+  position:relative;
+  width:80px;
+
+}
+
+
+.key[data-key="DOWN"]{
+
+  position:relative;
+  left:15px;
+
+}
+
+
+.key[data-key="RIGHT"]{
+
+  position:relative;
+  left:15px;
+
+}
+
+.key[data-key="LEFT"]{
+
+  position:relative;
+  left:15px;
+
+}
+
+
+.key.arrow {
+  font-size: 1.5em;
+}
+
+#generatedText {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.KeyboardTest{
+
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#FFFFFF;
+
+}
+
+.SpeakersTest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.speakers {
+  display: flex;
+  width:100%;
+  height:50px;
+
+}
+
+.speaker-img {
+  width: 100px;
+  height: 100px;
+  margin:100px;
+
+}
+
+
+.labels{
+
+  width: 100%;
+
+
+}
+
+.labels p{
+
+  margin:50px;
+
+}
+
+.SpeakerIDN{
+
+  width:100px;
+  height:100px;
+  position:absolute;
+  background-image:url(../Assets/UI/Muted.gif);
+  border-radius:20px;
+  background-position:center;
+  background-size:cover;
+  margin:30px;
+  background-color: #FFFFFF;
+
+}
+
+.LeftSpeaker{
+
+  bottom:50px;
+  left:150px
+
+}
+
+.RightSpeaker{
+
+  bottom:50px;
+  right:150px;
+
+}
+
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  width: 210px;
+  margin-top: 10px;
+}
+
+.jump {
+  animation: jump 0.6s ease;
+}
+
+@keyframes jump {
+  50% {transform: translateY(-10px);}
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+#userCheck {
+  margin-top: 20px;
+}
+
+
+.SpeakersTest{
+
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  flex-direction:column;
+  color:#FFFFFF;
+
+}
+
+
+.ChooseButton{
+
+  background-color:#1c1c1d;
+  color:#FFFFFF;
+  outline:none;
+  border:none;
+  border-radius:20px;
+  cursor: pointer;
+
+}
+
+.status {
+  margin-top: 20px;
+}
+
+.ConnectionTest{
+
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  flex-direction: column;
+  position:absolute;
+  top:0px;
+  left:0px;
+  color:#FFFFFF;
+
+}
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
+}
+
+.USBPORTSTEST {
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  flex-direction:column;
+
+}
+
+label,
+button {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+input[type="number"] {
+
+  width:250px;
+  height:30px;
+  border-radius:20px;
+  border:1px solid #7668AF;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#FFFFFF;
+  outline:none;
+  background-color:transparent;
+  margin-top:20px;
+
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label.fileLabel {
+  display: none; /* Initially all are hidden */
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #9b9b9b;
+  text-align: center;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+
+#fileInputs {
+  margin-top: 20px;
+}
+
+.HDMIPORTTEST {
+  
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  flex-direction:column;
+
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+label {
+  display: block;
+  margin: 20px 0;
+  color: #555;
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 1px solid #7668AF;
+  background-color:transparent;
+  color:#FFFFFF;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+}
+
+p {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.hidden {
+  display: none;
+}
+
+
+button, input {
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#iframeDisplay {
+  width: 60%;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius:20px;
+  float: left;
+  position:relative;
+  left:20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la sección del formulario */
+.form-section {
+  background-color: transparent;
+  color:#FFFFFF;
+  width: 35%;
+  float: right;
+  padding: 20px;
+  border-radius: 20px;
+  border:1px solid #9b9b9b;
+  position:relative;
+  right:15px;
+}
+
+.form-section p {
+  font-weight: bold;
+  margin-top: 20px;
+  color:#FFFFFF
+}
+
+#result {
+  font-size: 15px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.BatteryTest{
+
+  width:100%;
+  height:90%;
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  display:block;
+
+}
+
+.SelectFileButton{
+
+  width:300px;
+  height:30px;
+  position:absolute;
+  bottom:100px;
+  right:30px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border:1px solid #9b9b9b;
+  border-radius:20px;
+  cursor: pointer;
+
+}
+
+.SelectFileButton p{
+
+  position:absolute;
+  color:#FFFFFF;
+  bottom:5px;
+
+}
+
+.SelectFileButton input{
+
+  opacity:0;
+  z-index:99999;
+  cursor: pointer;
+
+}
+
+.ChargeTest{
+
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  flex-direction:column;
+  color:#FFFFFF;
+  position:absolute;
+  top:0px;
+
+}
+
+.ChargeTest p{
+
+  color:#FFFFFF;
+
+}
+
+.success-checkmark {
+width: 80px;
+height: 115px;
+margin: 0 auto;
+}
+
+.check-icon {
+width: 80px;
+height: 80px;
+position: relative;
+border-radius: 50%;
+box-sizing: content-box;
+border: 4px solid #4caf50;
+}
+
+.check-icon::before,
+.check-icon::after {
+content: "";
+height: 100px;
+position: absolute;
+transform: rotate(-45deg);
+}
+
+.check-icon::before {
+top: 3px;
+left: -2px;
+width: 30px;
+transform-origin: 100% 50%;
+border-radius: 100px 0 0 100px;
+}
+
+.check-icon::after {
+top: 0;
+left: 30px;
+width: 60px;
+transform-origin: 0 50%;
+border-radius: 0 100px 100px 0;
+animation: rotate-circle 4.25s ease-in;
+}
+
+.icon-line {
+height: 5px;
+background-color: #4caf50;
+display: block;
+border-radius: 2px;
+position: absolute;
+z-index: 10;
+}
+
+.icon-line.line-tip {
+top: 46px;
+left: 14px;
+width: 25px;
+transform: rotate(45deg);
+animation: icon-line-tip 0.75s;
+}
+
+.icon-line.line-long {
+top: 38px;
+right: 8px;
+width: 47px;
+transform: rotate(-45deg);
+animation: icon-line-long 0.75s;
+}
+
+.icon-circle {
+top: -4px;
+left: -4px;
+z-index: 10;
+width: 80px;
+height: 80px;
+border-radius: 50%;
+position: absolute;
+box-sizing: content-box;
+border: 4px solid rgba(76, 175, 80, 0.5);
+}
+
+.icon-fix {
+top: 8px;
+width: 5px;
+left: 26px;
+z-index: 1;
+height: 85px;
+position: absolute;
+transform: rotate(-45deg);
+
+}
+
+@keyframes rotate-circle {
+0%, 5% {
+  transform: rotate(-45deg);
+}
+12%, 100% {
+  transform: rotate(-405deg);
+}
+}
+
+@keyframes icon-line-tip {
+0%, 54% {
+  width: 0;
+  left: 1px;
+  top: 19px;
+}
+70% {
+  width: 50px;
+  left: -8px;
+  top: 37px;
+}
+84% {
+  width: 17px;
+  left: 21px;
+  top: 48px;
+}
+100% {
+  width: 25px;
+  left: 14px;
+  top: 45px;
+}
+}
+
+@keyframes icon-line-long {
+0%, 65% {
+  width: 0;
+  right: 46px;
+  top: 54px;
+}
+84% {
+  width: 55px;
+  right: 0px;
+  top: 35px;
+}
+100% {
+  width: 47px;
+  right: 8px;
+  top: 38px;
+}
+}
+
+
+.OpenChargerTest{
+
+  width:2;
+
+}
+
+.DetectDevice{
+
+  animation:fadeInRight 0.5s;
+
+}
+.ScreenTest{
+
+  animation:fadeInRight 0.5s;
+
+}
+.FormErrorScreenTest{
+
+  animation:fadeInRight 0.5s;
+
+}
+.TouchPadTest{
+
+  animation:fadeInRight 0.5s;
+
+}
+.TouchScreenTest{
+
+  animation:fadeInRight 0.5s;
+
+}
+.KeyboardTest{
+
+  animation:fadeInRight 0.5s;
+
+}
+.SpeakersTest{
+
+  animation:fadeInRight 0.5s;
+
+}
+.USBPORTSTEST{
+
+  animation:fadeInRight 0.5s;
+
+}
+.HDMIPORTTEST{
+
+  animation:fadeInRight 0.5s;
+
+}
+.BatteryTest{
+
+  animation:fadeInRight 0.5s;
+
+}
+.ChargeTest{
+
+  animation:fadeInRight 0.5s;
+
+}
+.MicTest{
+
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  flex-direction:column;
+}
+
+.CameraTest{
+
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  flex-direction:column; 
+
+}
+
+
+.ProjectsPage{
+
+  width:100%;
+  height:100%;
+  background-color: #0056b3;
+
+}
+
+.OpenProjects{
+
+  cursor: pointer;
+
+
+}
+.ControlAccess{
+
+  cursor: pointer;
+
+
+}
+.DataBasesControl{
+
+  cursor: pointer;
+
+
+}
+.AddUsers{
+
+  cursor: pointer;
+
+
+}
+.ManageUsers{
+
+  cursor: pointer;
+
+
+}

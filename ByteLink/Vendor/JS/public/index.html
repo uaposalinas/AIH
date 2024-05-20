@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejecutar Comando</title>
+</head>
+<body>
+  <button id="lockWorkstation">Bloquear la estación de trabajo</button><br><br>
+  <button id="showEcho">Mostrar texto</button><br><br>
+  <button id="openChrome">Abrir Chrome</button><br><br>
+
+
+  <pre id="output"></pre>
+
+  <script>
+    document.getElementById('lockWorkstation').addEventListener('click', () => {
+      fetch('/lockworkstation')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('output').textContent = data;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+    document.getElementById('showEcho').addEventListener('click', () => {
+      fetch('/lockworkstations')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('output').textContent = data;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+
+    document.getElementById('openChrome').addEventListener('click', () => {
+      fetch('/open')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('output').textContent = data;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+
+  </script>
+</body>
+</html>

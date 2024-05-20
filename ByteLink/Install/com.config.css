@@ -1,0 +1,470 @@
+
+
+
+.overlay {
+ 
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  .spinner {
+    font-size: 30px;
+    position: relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+  }
+  .spinner.center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  .spinner-blade {
+    position: absolute;
+    left: 0.4629em;
+    bottom: 0;
+    width: 0.074em;
+    height: 0.2777em;
+    border-radius: 0.5em;
+    background-color: transparent;
+    transform-origin: center -0.2222em;
+    -webkit-animation: spinner-fade 1s infinite linear;
+            animation: spinner-fade 1s infinite linear;
+  }
+  .spinner-blade:nth-child(1) {
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+    transform: rotate(0deg);
+  }
+  .spinner-blade:nth-child(2) {
+    -webkit-animation-delay: 0.083s;
+            animation-delay: 0.083s;
+    transform: rotate(30deg);
+  }
+  .spinner-blade:nth-child(3) {
+    -webkit-animation-delay: 0.166s;
+            animation-delay: 0.166s;
+    transform: rotate(60deg);
+  }
+  .spinner-blade:nth-child(4) {
+    -webkit-animation-delay: 0.249s;
+            animation-delay: 0.249s;
+    transform: rotate(90deg);
+  }
+  .spinner-blade:nth-child(5) {
+    -webkit-animation-delay: 0.332s;
+            animation-delay: 0.332s;
+    transform: rotate(120deg);
+  }
+  .spinner-blade:nth-child(6) {
+    -webkit-animation-delay: 0.415s;
+            animation-delay: 0.415s;
+    transform: rotate(150deg);
+  }
+  .spinner-blade:nth-child(7) {
+    -webkit-animation-delay: 0.498s;
+            animation-delay: 0.498s;
+    transform: rotate(180deg);
+  }
+  .spinner-blade:nth-child(8) {
+    -webkit-animation-delay: 0.581s;
+            animation-delay: 0.581s;
+    transform: rotate(210deg);
+  }
+  .spinner-blade:nth-child(9) {
+    -webkit-animation-delay: 0.664s;
+            animation-delay: 0.664s;
+    transform: rotate(240deg);
+  }
+  .spinner-blade:nth-child(10) {
+    -webkit-animation-delay: 0.747s;
+            animation-delay: 0.747s;
+    transform: rotate(270deg);
+  }
+  .spinner-blade:nth-child(11) {
+    -webkit-animation-delay: 0.83s;
+            animation-delay: 0.83s;
+    transform: rotate(300deg);
+  }
+  .spinner-blade:nth-child(12) {
+    -webkit-animation-delay: 0.913s;
+            animation-delay: 0.913s;
+    transform: rotate(330deg);
+  }
+  
+  @-webkit-keyframes spinner-fade {
+    0% {
+      background-color: #69717d;
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+  
+  @keyframes spinner-fade {
+    0% {
+      background-color: #69717d;
+    }
+    100% {
+      background-color: transparent;
+    }
+  } 
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    transition:all 300ms;
+
+}
+
+
+body{
+
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background-image:url(wp9983504.jpg);
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+}
+
+.InstallerBody{
+
+    width:500px;
+    height:500px;
+    background-color: #FFFFFF;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    position:absolute;
+    overflow:hidden;
+
+}
+
+.WelcomePreloaderPage{
+
+    width: 100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+}
+
+.WelcomePreloaderPage .Icon{
+
+    width:145px;
+    height:145px;
+    position:absolute;
+    top:136px;
+    background-image:url(https://devlabscorporation.github.io/dvprojects/team.png);
+    background-size:cover;
+    background-position:center;
+
+}
+
+.WelcomePreloaderPage .BundleName{
+
+    position:absolute;
+    color:#9b9b9b;
+    font-family:caviarDreamsBold;
+    font-size:28px;
+    bottom:150px;
+
+}
+
+.Privacy{
+
+    width: 100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+}
+
+.Privacy .Icon{
+
+    width:150px;
+    height:150px;
+    position:absolute;
+    top:50px;
+    background-image:url(../Assets/UI/handshake.png);
+    background-size:cover;
+    background-position:center;
+
+}
+
+.Privacy t{
+
+    position:absolute;
+    color:#9b9b9b;
+    font-family:caviarDreamsBold;
+    font-size:28px;
+    top:230px;
+
+}
+
+.Declarate{
+
+    width:450px;
+    height:340px;
+    border-radius:20px;
+    background-color: #1c1c1c;
+    position:absolute;
+    top:300px
+
+}
+
+.NextToSettings{
+
+    font-size:15.8px;
+    color:#7668AF;
+    font-family: interBlack;
+    position:absolute;
+    bottom:20px;
+    right: 30px;    
+    cursor: pointer;
+
+}
+
+.Content{
+
+    width:98%;
+    height:85%;
+    color:#FFFFFF;
+    overflow-y:scroll;
+    position:absolute;
+    right:1px;;
+    top:45px;
+    font-family:caviarDreams;
+
+}
+
+.Content::-webkit-scrollbar{
+
+    width:7px;
+    background-color:transparent;
+
+}
+
+.Content::-webkit-scrollbar-thumb{
+
+    width:7px;
+    background-color:#7668AF;
+    border-radius:20px;
+
+}
+
+.Content::-webkit-scrollbar-corner{
+
+    display:none;
+
+}
+
+.SetFiles{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0px;
+    top:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+
+}
+
+.SetFiles .Icon{
+
+    width:100px;
+    height:100px;
+    background-image:url(settings.png);
+    background-size:cover;
+    background-position:center;
+    position:absolute;
+    top:70px;
+
+}
+
+.SetFiles t{
+
+    
+    position:absolute;
+    color:#9b9b9b;
+    font-family:caviarDreamsBold;
+    font-size:23px;
+    top:230px;
+
+}
+
+.SetFilesContent{
+
+    width:100%;
+    height:170px;
+    position:absolute;
+    bottom:150px;
+
+}
+
+.SetFilesContent .setting{
+
+    width:100%;
+    height:58px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+
+}
+
+.SetFilesContent .setting .IconsContainer{
+
+    width:58px;
+    height:58px;
+    position:absolute;
+    left:30px;
+    top:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.SetFilesContent .setting .IconsContainer .Passed, .SetFilesContent .setting .IconsContainer .Error{
+
+    animation:flip 0.5s
+
+
+}
+
+
+.SetFilesContent .setting .IconsContainer .Passed{
+
+    width:30px;
+    height:30px;
+    background-image:url(check.png);
+    background-size:cover;
+    background-position:center;
+    display:none;
+
+}
+
+
+.SetFilesContent .setting .IconsContainer .Error{
+
+    width:35px;
+    height:35px;
+    background-image:url(warning.png);
+    background-size:cover;
+    background-position:center;
+    display:none;
+
+}
+
+.SetFilesContent .setting p{
+
+    position:absolute;
+    left:90px;
+    font-size:18px;
+    font-family:caviarDreamsBold;
+    color:#4d4d4d
+
+}
+
+.InstallProcess{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.InstallProcess .Icon{
+
+    width:160px;
+    height:160px;
+    position:absolute;
+    top:120px;
+    background-image:url(comprobate.gif);
+    background-position:center;
+    background-size:cover;
+
+}
+
+.InstallProcess p{
+
+    font-size:20px;
+    font-family:caviarDreamsBold;
+    position:absolute;
+    bottom:150px;
+
+}
+
+.FinishedButton, .FinishedButtonIns{
+
+    font-family:interBlack;
+    color:#7668AF;
+    position:absolute;
+    bottom:20px;
+    cursor: pointer;
+    display:none;
+
+}
+
+.FinishedButton::selection{
+
+    background-color:transparent;
+
+}
+
+.ChangeInstallProcess{
+
+    animation:fadeInUp 0.5s
+
+}
+
+.WelcomePreloaderPage,
+.Privacy,
+.SetFiles,
+.InstallProcess{
+
+    animation:fadeInRight 0.5s; 
+
+}

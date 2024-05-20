@@ -1,0 +1,228 @@
+
+.button{
+
+    width:auto;
+    height:30px;
+    color:#1c1c1c;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-family:caviarDreamsBold;
+    border-radius:20px;
+    cursor: pointer;
+    outline:none;
+    background:transparent;
+    border:none;
+
+}
+
+
+.hide{
+
+    width:0px;
+    height:0px;
+    position:absolute;
+    top:0px;
+    left:0px;;
+    z-index:0;
+    visibility:hidden;
+    opacity:0;
+    display:none;
+
+}
+
+body {
+    width:100%;
+    height:100vh;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    color: #fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+
+}
+
+h1 {
+    text-align: center;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px;
+    margin: 0;
+    display:none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    background-color: #444;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+tr td{
+
+    transition:all 300ms;
+    padding-left:40px;
+    padding-right:40px;
+
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+
+    background-color:#7668AF;
+    height:40px;
+    padding-left:40px;
+    padding-right:40px;
+
+}
+
+
+tr:nth-child(even) {
+    
+    height:60px;
+
+}
+
+tr:hover{
+
+    background-color: #2e2d2d;
+
+}
+
+select, input[type="text"] {
+    padding: 10px;
+    margin: 20px auto;
+    display: block;
+    border: 1px solid #007BFF;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.TableContainer{
+
+    width:960px;
+    height:535px;
+    background-color:#1c1c1c;
+    overflow:scroll;
+    position: relative;
+    border-radius:20px;
+
+}
+
+.TableContainer table tbody{
+
+    position:absolute;
+    top:0px;
+    left:0px;
+
+}
+
+
+.TableContainer::-webkit-scrollbar{
+
+    width:7px;
+    height:7px;
+    background-color: transparent;
+
+}
+
+.TableContainer::-webkit-scrollbar-thumb{
+
+    width:7px;
+    height:7px;
+    background-color:#7668AF;
+    border-radius:20px;
+
+}
+
+
+.TableContainer::-webkit-scrollbar-corner{
+
+    display:none;
+
+}
+
+.SearchBox{
+
+    width:500px;
+    height:40px;
+    background-color: #1c1c1c;
+    position:absolute;
+    top:30px;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    border-radius:20px;
+
+}
+
+.SearchBox input{
+
+    background-color: transparent;
+    border:none ;
+    position: absolute;
+    left:35px;
+    outline:none;
+    color:#fff;
+
+}
+
+.SearchBox::selection{
+
+    background-color:transparent;
+
+}
+
+.SearchBox ion-icon:nth-child(1){
+
+    position:absolute;
+    left:15px;
+
+}
+
+.SendSearchIcon{
+
+    position:absolute;
+    right:15px;
+    cursor: pointer;
+
+}
+
+.SelectFilter{
+
+    position:absolute;
+    top:30px;
+    left:20px;
+    display:flex;
+    align-items:center;
+
+}
+
+.SelectFilter select {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #1c1c1c;
+    border: none;
+    color: #fff;
+    -webkit-appearance: none; /* Para navegadores WebKit (Safari, Chrome) */
+    appearance: none;
+}
+
+

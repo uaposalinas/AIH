@@ -1,0 +1,20 @@
+inst Project = [Dell Devices Tester];
+inst Version = [0110202301];
+inst Owner = [DevLabs Co, AIH TECHNOLOGIES after singature];
+inst (c) = [2023 - 2025];
+
+//Project Information
+
+Developer =  [Alejandro Salinas];
+First Save Date = [01/10/2023];
+Base = [Web_App];
+LangsAvailables = [Spanish (Español)];
+Programming Languages = [=> HTML => CSS => JavaScript => PHP];
+Other Requires = [=> Batch => NodeJs => Phyton];
+FrameWorks = [none];
+
+
+//Company Information
+
+Owner = [Alejandro Salinas];
+EMAIL = [contact@devlabscorporation.es]

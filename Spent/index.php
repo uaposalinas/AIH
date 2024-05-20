@@ -177,7 +177,7 @@
                 <div class="Notification">
 
                 <i class="fi fi-rr-file-medical-alt Icon"></i>
-                    <div class="Message">Agregué la funcionalidad editar registros y eliminarlos, redondeo de decimales a los últimos digitos y validación de total antes de enviar para evitar enviar sin total.</div>
+                    <div class="Message">No se han realizado cambios en las ultimas 72 Hrs, si tienes errores puedes usar el feedback haciendo click en el signo de abajo.</div>
                     <i class="fi fi-rs-circle-xmark Close"></i>
 
                 </div>

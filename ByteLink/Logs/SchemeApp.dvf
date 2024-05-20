@@ -1,0 +1,65 @@
+Root
+    | 
+        Auth
+            | 
+                Admin
+                     | Create
+                     | Delete
+              
+            |   Common 
+                     |Login   
+                     | Use (Execute)
+
+
+Access == true => then {
+
+    [ORDER] ? = {
+
+        Boot
+            | Request Device Model
+                                  | Request Service Tag
+                                                       | Start Service
+                                                                      | [RUN TEST] => {
+
+                                                                        => Screen Test                                FFF
+                                                                        => TouchPad Test                              FFF
+                                                                        => TouchScreen Test                           FFF 
+                                                                        => Keyboard Test                              FFF
+                                                                        => Microphone Test                            OO
+                                                                        => Camera Test                                OO
+                                                                        => Speaker Test                               FF
+                                                                        => Ports Test [HDMI, USB, Charge]             FF   
+                                                                        => Battery Test                               PP
+                                                                        => Charger Present                            PP
+
+                                                                      }
+
+                                                        | Finish The Test
+                                                                        | [Show] => {
+
+                                                                            => Show the results at the tester
+                                                                            => Save information in Database
+                                                                            => Ask if you want to print the test certificate
+                                                                           
+
+                                                                        }
+
+    }
+
+}
+
+Access.Admin == true => then {
+
+    Can =>{
+
+        => View Devices tested
+        => Review the test applicated to this Device
+        => Manage the devices (Lock, Shutdown, Hermetic Mode, anything more in console).
+
+    }
+
+}
+
+[Scheme created by DevLabs Corporation LLC, managed by DevLabs Projects Ltd, in this time: 01/10/2023 - 09:13:19 PM]
+
+(c) All Rights Reserved, DevLabs Co. 2023 - 2025.

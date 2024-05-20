@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jetstereo • Cuenta nueva</title>
+    <link rel="shortcut icon" href="../../../Assets/Images/Logos/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../Assets/CSS/config.css">
+    <link rel="stylesheet" href="../../../Assets/CSS/newAccount.css">
+    <link rel="stylesheet" href="../../../Fonts/IndexFontsRoboto.css">
+    <link rel="stylesheet" href="../../../Fonts/IndexFontsCaviarDreams.css">
+    <link rel="stylesheet" href="../../../Fonts/IndexFontsInter.css">
+    <link rel="stylesheet" href="../../../Vendor/cdnjs.cloudflare.com_ajax_libs_animate.css_4.1.1_animate.min.css">
+</head>
+<body>
+
+    <div class="FormContent">
+
+        <div class="LeftInformation">
+
+            <div class="Logo"></div>
+
+            <p class="WelcomeText">Te damos la bienvenida</p>
+            <p class="Description">Una cuenta, todo Jetstereo a tu despocisión</p>
+
+            <div class="LogInButton">
+
+                <p class="TitleGoTo">¿Ya tienes una cuenta?</p>
+                <p class="GoToLogin">Inicia sesión</p>
+
+            </div>
+
+        </div>
+
+        <form action="../../../Includes/CompleteLog/index.php" class="SignupForm" method="post">
+
+            <h1>Nueva Cuenta</h1>
+            <p>Crea una cuenta para sincronizar tus productos y hacer pagos</p>
+            <div class="input-container input001">
+                <label for="GetUserName">Nombre</label>
+                <input type="text" name="GetUserName" class="GetUserName">
+              </div>
+              
+              <div class="input-container input002">
+                <label for="GetUserMail">Email</label>
+                <input type="email" name="GetUserMail" class="GetUserName">
+              </div>
+              
+              <div class="input-container input003">
+                <label for="GetUserPassword">Contraseña</label>
+                <input type="password" name="GetUserPassword" class="GetUserPassword">
+              </div>
+              
+              <div class="input-container input004">
+                <input type="file" name="GetProfilePhoto" class="GetProfilePhoto" style="opacity: 0;">
+                <p>Cargar foto de perfil</p>
+                <div></div>
+                <input type="text" name="ExitProfilePhotoProcesed" class="ExitProfilePhotoProcesed" style="display:none;">
+              </div>
+              
+            <button>Crear Cuenta</button>
+
+        </form>
+
+    </div>
+    
+</body>
+</html>
