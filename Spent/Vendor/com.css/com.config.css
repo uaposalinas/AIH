@@ -3044,7 +3044,7 @@ p2 b{
 
 @media print{
 
-    .ThisRes:nth-child(9){
+    .ThisRes:nth-child(9n){
 
         margin-top:30px;
 
