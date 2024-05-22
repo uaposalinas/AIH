@@ -36,6 +36,9 @@
 </head>
 <body style="overflow:hidden;">
 
+<p class="SelectedUser" hidden>none</p>
+<p class="UserName" hidden>none</p>
+
 <div class="NotificationIslandParent">
 
 <div class="NotificationIsland">

@@ -1911,28 +1911,6 @@ div.spinner {
 
 
 
-@media print{
-
-    body{
-
-        *{
-
-            visibility:hidden;
-
-        }
-
-        .PrintReport{
-
-            visibility: visible;
-            border:none;
-
-        }
-
-    }
-
-}
-
-
 .ThisLog{
 
     cursor: pointer;
@@ -2473,6 +2451,25 @@ div.spinner {
 
 }
 
+.ReportsBody header{
+
+    width:100%;
+    height:300px;
+    position:absolute;
+    top:0px;
+    left:0px;
+
+}
+
+.ReportsBody footer{
+
+    width:100%;
+    height:150px;
+    position:absolute;
+    bottom:0px;
+    left:0px; 
+
+}
 .HeaderDecoration{
 
     width:206.20px;
@@ -2483,6 +2480,19 @@ div.spinner {
     position:absolute;
     top:0px;
     right: 0px;
+
+}
+
+.FooterDecoration{
+
+    width:170.49px;
+    height:150px;
+    background-image:url(../../Assets/com.img/footer.png);
+    background-position:center;
+    background-size: cover;
+    position:absolute;
+    bottom:0px;
+    left: 0px;
 
 }
 
@@ -2717,3 +2727,329 @@ provider .Name{
     display:none;
 
 }
+
+
+.LeftZoneHeader{
+
+    width:40%;
+    height:300px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction: column;
+
+}
+
+.LeftZoneHeader t{
+
+    font-family:caviarDreams;
+    font-size:30px;
+    position:absolute;
+    left:40px;
+    top:20px;
+
+
+}
+
+.LeftZoneHeader p{
+
+    font-family:caviarDreamsBold;
+    font-size:18px;
+    position:absolute;
+    left:40px;
+    top:65px;
+
+}
+
+.QrCode{
+
+    width:110px;
+    height:110px;
+    background-color: #1c49b1;
+    position:absolute;
+    top:90px;
+    right:140px;
+    background-image:url(data:image/png;base64,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);
+    background-position:center;
+    background-size: cover;
+
+}
+
+
+.LeftZoneHeader t2{
+
+    font-family:CaviarDreamsBold;
+    font-size:20px;
+    left:40px;
+    top:130px;
+    margin-bottom:20px;
+
+}
+
+.LeftZoneHeader p2{
+
+    font-family:CaviarDreams;
+    font-size:17px;
+    left:40px;
+    top:130px;
+    margin-bottom:10px;
+
+
+}
+
+.ReportDetails{
+
+    width:100%;
+    height:260px;
+    display:flex;
+    align-items:start;
+    text-align:center;
+    flex-direction: column;
+    padding-left:50px;
+    position:absolute;
+    top:150px;
+
+}
+
+p2 b{
+
+    position:relative;
+    font-size:18px;
+
+}
+
+
+.ShowReportsPerMonth{
+
+    width:100%;
+    height:auto;
+    min-height:100vh;
+    position:relative;
+    top:320px;
+    left:0px;
+    padding:20px;
+    padding-left:30px;
+
+}
+
+.PerMonthsLogTitle{
+
+    font-family:caviarDreamsBold;
+
+}
+
+.TitleBorder{
+
+    width:80px;
+    height:5px;
+    background-color: #85c6fe;
+    margin-top:7px;
+
+}
+
+.ShowReportsPerMonth .Table{
+
+    width:100%;
+    height:auto;
+    min-height:50px;
+    border:2px solid #000000;
+    margin-top:0px;
+    position:relative;
+    top:20px;
+    border-radius:10px;
+
+}
+
+.ShowReportsPerMonth .Table .Identifers{
+
+    width:100%;
+    height:50px;
+    background-color: #85c6fe;
+    position:relative;
+    top:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+
+}
+
+.ShowReportsPerMonth .Table .Identifers columns{
+
+    width:auto;
+    min-width:10px;
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    border-right:1px solid #FFFFFF;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-family:caviarDreams;
+
+}
+
+.ShowReportsPerMonth .Table .Identifers columns:last-child{
+
+    border: none;
+
+}
+
+.ShowReportsPerMonth .Table .Logs{
+
+    width:100%;
+    height:calc(100% - 50px);
+    position:relative;
+
+}
+
+.ThisRes{
+
+    width:100%;
+    height:50px;
+    position: relative;
+    display:flex;
+    border:1px solid #000000;
+    border-left:0px;
+    border-right:0px;
+
+}
+
+.ThisRes divs{
+
+    width:50px;
+    height:50px;
+    border-right:1px solid #000000;;
+    overflow: hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.ThisRes divs p{
+
+    font-size:11px;
+    font-family:robotoMedium;
+
+}
+
+.ThisRes divs n{
+
+    font-size:15px;
+    font-family:caviarDreamsBold;
+
+}
+
+.ThisRes divs:nth-child(1){
+
+    width:68.13px !important;
+
+}
+
+.ThisRes divs:nth-child(2){
+
+    width:114.16px !important;
+
+}
+
+.ThisRes divs:nth-child(3){
+
+    width:84.63px !important;
+
+}
+
+.ThisRes divs:nth-child(4){
+
+    width:110.99px !important;
+
+}
+
+.ThisRes divs:nth-child(5){
+
+    width:166.71px !important;
+
+}
+
+.ThisRes divs:nth-child(6){
+
+    width:167.21px !important;
+
+}
+
+.ThisRes divs:nth-child(7){
+
+    width:156.6px !important;
+
+}
+
+.ThisRes divs:nth-child(8){
+
+    width:100.79px !important;
+
+}
+
+.ThisRes divs:nth-child(9){
+
+    width:87.63px !important;
+
+}
+
+.ThisRes divs:nth-child(10){
+
+    width:80.76px !important;
+
+}
+
+.ThisRes divs:nth-child(11){
+
+    width:95.64px !important;
+
+}
+
+.ThisRes divs:nth-child(12){
+
+    width:95.64px !important;
+
+}
+
+.ThisRes divs:nth-child(13){
+
+    width:149.65px !important;
+    border: none;
+
+}
+
+.ShowAllResults{
+
+    width:100%;
+    height:100vh;
+    position: relative;
+    background-color: #1c49b1;
+    display: none;
+
+}
+
+
+@media print{
+
+    .ThisRes:nth-child(9){
+
+        margin-top:30px;
+
+    }
+
+
+}
+

@@ -359,7 +359,7 @@
                                 <option value="Paola Rivera">Paola Rivera</option>
                                 <option value="Gary Rivera">Gary Rivera</option>
                                 <option value="Mario Castellanos">Mario Castellanos</option>
-                                <option value="Yenelin Manchamé">Yenelin Manchamé</option>
+                                <option value="Yenilin Manchamé">Yenilin Manchamé</option>
                                 <option value="David Castellón">David Castellón</option>
                                 <option value="Brandon Zelaya">Brandon Zelaya</option>
                                 <option value="Nicolle Artica">Nicolle Artica</option>
