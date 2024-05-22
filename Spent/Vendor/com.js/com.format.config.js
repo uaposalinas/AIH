@@ -61,8 +61,6 @@ for(let Aument = 0; Aument < Totals.length; Aument++){
 
 const Subtotals = document.querySelectorAll('.Subtotals');
 
-console.log(Subtotals)
-
 for(let Aument = 0; Aument < Subtotals.length; Aument++){
 
     const Subtotal = Subtotals[Aument];
@@ -93,7 +91,6 @@ for(let Aument = 0; Aument < Exempts.length; Aument++){
     
         const FinallyFormat = `L. ${Formated}.00`;
     
-        console.log(Exempt)
     
         Exempt.innerHTML = FinallyFormat;
     
@@ -111,12 +108,12 @@ for(let Aument = 0; Aument < ISV15s.length; Aument++){
     if(ISV15.innerHTML == "L 0.00"){}else{
 
         const GetISV15 = ISV15.innerHTML;
-        console.log(GetISV15)
         const RemoveLetters = GetISV15.substring(3, 1000);
         const Numbers = parseFloat(RemoveLetters);
-        const Formated = FormatNumberNow(Numbers);
+        const RoundOut = Numbers.toFixed(2);
+        const Formated = FormatNumberNow(RoundOut);
     
-        const FinallyFormat = `L. ${Formated}.00`;
+        const FinallyFormat = `L. ${Formated}`;
     
         ISV15.innerHTML = FinallyFormat;
     
@@ -135,7 +132,6 @@ for(let Aument = 0; Aument < ISV18s.length; Aument++){
     if(ISV18.innerHTML == "L 0.00"){}else{
 
         const GetISV18 = ISV18.innerHTML;
-        console.log(GetISV18)
         const RemoveLetters = GetISV18.substring(3, 1000);
         const Numbers = parseFloat(RemoveLetters);
         const Formated = FormatNumberNow(Numbers);
@@ -159,7 +155,6 @@ for(let Aument = 0; Aument < Others.length; Aument++){
     if(Other.innerHTML == "L 0.00"){}else{
 
         const GetOther = Other.innerHTML;
-        console.log(GetOther)
         const RemoveLetters = GetOther.substring(3, 1000);
         const Numbers = parseFloat(RemoveLetters);
         const Formated = FormatNumberNow(Numbers);
@@ -172,3 +167,4 @@ for(let Aument = 0; Aument < Others.length; Aument++){
     }
 
 }
+

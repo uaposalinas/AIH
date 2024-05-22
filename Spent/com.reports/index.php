@@ -195,6 +195,7 @@
 
 <script src="../Vendor/com.js/com.versions.js"></script>
 <script src="../Vendor/com.js/com.reports.js"></script>
+<script src="../Vendor/com.js/com.totalizate.js"></script>
 <script src="../Vendor/com.js/com.format.config.js"></script>
 
 </html>

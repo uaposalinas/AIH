@@ -201,6 +201,8 @@ function DetectKeyPressed(e){
     if(KeyPressed == 13){
 
         const LogMutant = localStorage.getItem('LogMutant');
+
+        Exempt.value = Exempt.value
         
         if(LogMutant){
 
@@ -230,7 +232,8 @@ function DetectKeyPressed(e){
             }
 
             const Operation = GetSubtotalINT + GetExentINT + Tax + OtherTax;
-            const Round = Math.round(Operation)
+            const Round = Math.round(Operation);
+
 
             Total.value = `L. ${Round}`
 
