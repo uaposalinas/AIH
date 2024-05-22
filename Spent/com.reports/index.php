@@ -46,19 +46,19 @@
 
                 
                 <columns>NO.</columns>
-                <columns>Proveedor</columns>
                 <columns>Fecha</columns>
-                <columns>Cantidad</columns>
-                <columns>Método de Pago</columns>
+                <columns>No. Factura</columns>
+                <columns>Proveedor</columns>
+                <columns>Cnt.</columns>
                 <columns>Cuenta Contable</columns>
-                <columns>Tipo de compra</columns>
                 <columns>Subtotal</columns>
                 <columns>Exento</columns>
-                <columns>Otros</columns>
                 <columns>ISV 15%</columns>
                 <columns>ISV 18%</columns>
+                <columns>Otros</columns>
                 <columns>Total de Gasto</columns>
-
+                <columns>Método de Pago</columns>
+                <columns>Tipo de compra</columns>
             </div>
 
             <div class="Logs">
@@ -81,6 +81,7 @@
                             $Date = $Row["Date"];
                             $Amount = $Row["Amount"];
                             $PayType = $Row["PayType"];
+                            $BillNumber = $Row["BillNumber"];
                             $CountableCount = $Row["CountableCount"];
                             $BuyType = $Row["BuyType"];
                             $Subtotal = $Row["Subtotal"];
@@ -91,23 +92,52 @@
                             $Total = $Row["Total"];
                             $Number++;
 
+
+                            //FormattedValues 
+
+                            if($PayType == "Efectivo"){
+
+                                $PayType = "Efc";
+
+                            }else if($PayType == "Transferencia"){
+
+                                $PayType = "Trans.";
+
+                            }else if($PayType == "Tarjeta de Crédito"){
+
+                                $PayType = "T/C";
+
+                            }else if($PayType == "Pago en línea"){
+
+                                $PayType = "Online";
+
+                            }else if($PayType == "Botón de Pago"){
+
+                                $PayType = "BDP";
+
+                            }
+
                             echo "
 
                                 <div class='ThisRes'>
 
                                 <divs><n>$Number</n></divs>
-                                <divs><p>$Provider</p></divs>
                                 <divs><p>$Date</p></divs>
+                                <divs><p>$BillNumber</p></divs>
+                                <divs><p>$Provider</p></divs>           
                                 <divs><p>$Amount</p></divs>
-                                <divs><p>$PayType</p></divs>
                                 <divs><p>$CountableCount</p></divs>
-                                <divs><p>$BuyType</p></divs>
                                 <divs><p>$Subtotal</p></divs>
                                 <divs><p>$Exempt</p></divs>
-                                <divs><p>$OtherISV</p></divs>
                                 <divs><p>$ISV15</p></divs>
                                 <divs><p>$ISV18</p></divs>
+                                <divs><p>$OtherISV</p></divs>
                                 <divs><p>$Total</p></divs>
+                                <divs><p>$PayType</p></divs>
+                                <divs><p>$BuyType</p></divs>
+                                
+                             
+                                
             
                             </div>
                             
