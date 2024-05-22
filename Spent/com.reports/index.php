@@ -136,6 +136,12 @@
 
                             }
 
+                            if($OtherISV == ''){
+
+                                $OtherISV = "L 0.00";
+
+                            }
+
                             echo "
 
                                 <div class='ThisRes'>
