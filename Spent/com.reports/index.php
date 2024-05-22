@@ -193,9 +193,21 @@
 
 </body>
 
-<script src="../Vendor/com.js/com.versions.js"></script>
-<script src="../Vendor/com.js/com.reports.js"></script>
-<script src="../Vendor/com.js/com.totalizate.js"></script>
-<script src="../Vendor/com.js/com.format.config.js"></script>
 
 </html>
+
+<script>
+        const files = [
+            "../Vendor/com.js/com.versions.js",
+            "../Vendor/com.js/com.reports.js",
+            "../Vendor/com.js/com.totalizate.js",
+            "../Vendor/com.js/com.format.config.js"
+
+        ];
+
+        files.forEach(file => {
+            const script = document.createElement("script");
+            script.src = `${file}?v=${Math.random() * Math.random() * Math.random()}`;
+            document.body.appendChild(script);
+        });
+    </script>
