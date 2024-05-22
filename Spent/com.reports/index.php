@@ -50,15 +50,15 @@
                 <columns style="137.4px !important">No. de Factura</columns>
                 <columns style="width:164.36px">Nombre de Proveedor</columns>
                 <columns>Cnt.</columns>
-                <columns>Cuenta Contable</columns>
+                <columns>Cuenta Cont.</columns>
                 <columns>Subtotal</columns>
                 <columns>Exento</columns>
                 <columns>ISV 15%</columns>
                 <columns>ISV 18%</columns>
                 <columns>Otros</columns>
                 <columns>Total de Gasto</columns>
-                <columns>Método de Pago</columns>
-                <columns>Tipo de compra</columns>
+                <columns>Pago</columns>
+                <columns>Fin</columns>
             </div>
 
             <div class="Logs">
@@ -152,10 +152,10 @@
                                 <divs><p>$Amount</p></divs>
                                 <divs><p>$CountableCount</p></divs>
                                 <divs><p class='Subtotals'>$Subtotal</p></divs>
-                                <divs><p>$Exempt</p></divs>
-                                <divs><p >$ISV15</p></divs>
-                                <divs><p>$ISV18</p></divs>
-                                <divs><p>$OtherISV</p></divs>
+                                <divs><p class='Exempts'>$Exempt</p></divs>
+                                <divs><p class='ISV15'>$ISV15</p></divs>
+                                <divs><p class='ISV18'>$ISV18</p></divs>
+                                <divs><p class='Others'>$OtherISV</p></divs>
                                 <divs><p class='Totals'>$Total</p></divs>
                                 <divs><p>$PayType</p></divs>
                                 <divs><p>$BuyType</p></divs>
@@ -195,6 +195,6 @@
 
 <script src="../Vendor/com.js/com.versions.js"></script>
 <script src="../Vendor/com.js/com.reports.js"></script>
-<script src="../Vendor/com.js/com.reports.config.js"></script>
+<script src="../Vendor/com.js/com.format.config.js"></script>
 
 </html>

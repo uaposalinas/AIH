@@ -1,3 +1,5 @@
+
+
 .Scroll::-webkit-scrollbar{
 
     width:5px;
@@ -2954,24 +2956,24 @@ p2 b{
 
 .ThisRes divs:nth-child(1){
 
-    width:65.50px !important;
+    width:87.5px !important;
 
 }
 
 .ThisRes divs:nth-child(2){
 
-    width:81.72px !important;
+    width:85.71px !important;
 
 }
 
 .ThisRes divs:nth-child(3){
 
-    width:137.4px !important;
+    width:151.45px !important;
 }
 
 .ThisRes divs:nth-child(4){
 
-    width:170.99px !important;
+    width:164.35px !important;
     display:flex;
     justify-content:start;
     align-items:center;
@@ -2982,13 +2984,13 @@ p2 b{
 
 .ThisRes divs:nth-child(5){
 
-    width:66.px !important;
+    width:69.84px !important;
 
 }
 
 .ThisRes divs:nth-child(6){
 
-    width:155.51px !important;
+    width:139.82px !important;
     display:flex;
     justify-content:start;
     align-items:center;
@@ -2998,7 +3000,7 @@ p2 b{
 
 .ThisRes divs:nth-child(7){
 
-    width:95.24px !important;
+    width:102.28px !important;
     display:flex;
     justify-content:end;
     align-items:center;
@@ -3007,7 +3009,7 @@ p2 b{
 
 .ThisRes divs:nth-child(8){
 
-    width:83px !important;
+    width:88.79px !important;
     display:flex;
     justify-content:end;
     align-items:center;
@@ -3017,7 +3019,7 @@ p2 b{
 
 .ThisRes divs:nth-child(9){
 
-    width:90.56px !important;
+    width:96.99px !important;
     display:flex;
     justify-content:end;
     align-items:center;
@@ -3026,7 +3028,7 @@ p2 b{
 
 .ThisRes divs:nth-child(10){
 
-    width:90.56px !important;
+    width:96.99px !important;
     display:flex;
     justify-content:end;
     align-items:center;
@@ -3036,7 +3038,7 @@ p2 b{
 
 .ThisRes divs:nth-child(11){
 
-    width:77px !important;
+    width:81.75px !important;
     display:flex;
     justify-content:end;
     align-items:center;
@@ -3046,7 +3048,7 @@ p2 b{
 
 .ThisRes divs:nth-child(12){
 
-    width:140.3px !important;
+    width:153.16px !important;
     display:flex;
     justify-content:end;
     align-items:center;
@@ -3057,7 +3059,7 @@ p2 b{
 
 .ThisRes divs:nth-child(13){
 
-    width:155.06px !important;
+    width:80.58px !important;
     display:flex;
     justify-content:start;
     align-items:center;
@@ -3067,7 +3069,7 @@ p2 b{
 
 .ThisRes divs:nth-child(14){
 
-    width:144.6px !important;
+    width:50px !important;
     border: none;
     display:flex;
     justify-content:start;
