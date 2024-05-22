@@ -448,6 +448,12 @@ function PrepareToSaveTheNewLog(){
 
                 }
 
+                if(Others.value.trim() === ''){
+
+                    Others.value = "L 0.00";
+
+                }
+
             }, 2000);
 
         }, 1000);

@@ -47,8 +47,8 @@
                 
                 <columns>NO.</columns>
                 <columns>Fecha</columns>
-                <columns>No. Factura</columns>
-                <columns>Proveedor</columns>
+                <columns style="137.4px !important">No. de Factura</columns>
+                <columns style="width:164.36px">Nombre de Proveedor</columns>
                 <columns>Cnt.</columns>
                 <columns>Cuenta Contable</columns>
                 <columns>Subtotal</columns>
@@ -116,23 +116,42 @@
                                 $PayType = "BDP";
 
                             }
+                            
+
+                            if($BuyType == "Personal"){
+
+                                $BuyType = "Prs";
+
+                            }else if($BuyType == "Oficina"){
+
+                                $BuyType = "Ofc";
+
+                            }
+
+                            $AmountInt = intval($Amount);
+
+                            if($Amount < 10){
+
+                                $Amount = '0'. $Amount;
+
+                            }
 
                             echo "
 
                                 <div class='ThisRes'>
 
                                 <divs><n>$Number</n></divs>
-                                <divs><p>$Date</p></divs>
+                                <divs><p class='MountDate'>$Date</p></divs>
                                 <divs><p>$BillNumber</p></divs>
                                 <divs><p>$Provider</p></divs>           
                                 <divs><p>$Amount</p></divs>
                                 <divs><p>$CountableCount</p></divs>
-                                <divs><p>$Subtotal</p></divs>
+                                <divs><p class='Subtotals'>$Subtotal</p></divs>
                                 <divs><p>$Exempt</p></divs>
-                                <divs><p>$ISV15</p></divs>
+                                <divs><p >$ISV15</p></divs>
                                 <divs><p>$ISV18</p></divs>
                                 <divs><p>$OtherISV</p></divs>
-                                <divs><p>$Total</p></divs>
+                                <divs><p class='Totals'>$Total</p></divs>
                                 <divs><p>$PayType</p></divs>
                                 <divs><p>$BuyType</p></divs>
                                 
@@ -171,5 +190,6 @@
 
 <script src="../Vendor/com.js/com.versions.js"></script>
 <script src="../Vendor/com.js/com.reports.js"></script>
+<script src="../Vendor/com.js/com.reports.config.js"></script>
 
 </html>

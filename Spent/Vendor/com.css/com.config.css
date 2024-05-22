@@ -2947,7 +2947,7 @@ p2 b{
 
 .ThisRes divs n{
 
-    font-size:15px;
+    font-size:11px;
     font-family:caviarDreamsBold;
 
 }
@@ -2966,60 +2966,91 @@ p2 b{
 
 .ThisRes divs:nth-child(3){
 
-    width:116.34px !important;
+    width:137.4px !important;
 }
 
 .ThisRes divs:nth-child(4){
 
-    width:107.38px !important;
+    width:170.99px !important;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    padding-left:10px;
+    text-align:left;
 
 }
 
 .ThisRes divs:nth-child(5){
 
-    width:66.79px !important;
+    width:66.px !important;
 
 }
 
 .ThisRes divs:nth-child(6){
 
     width:155.51px !important;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    padding-left:10px;
 
 }
 
 .ThisRes divs:nth-child(7){
 
     width:95.24px !important;
-
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    padding-right:10px;
 }
 
 .ThisRes divs:nth-child(8){
 
     width:83px !important;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    padding-right:10px;
 
 }
 
 .ThisRes divs:nth-child(9){
 
     width:90.56px !important;
-
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    padding-right:10px;
 }
 
 .ThisRes divs:nth-child(10){
 
     width:90.56px !important;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    padding-right:10px;
 
 }
 
 .ThisRes divs:nth-child(11){
 
     width:77px !important;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    padding-right:10px;
 
 }
 
 .ThisRes divs:nth-child(12){
 
     width:140.3px !important;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    padding-right:10px;
 
 
 }
@@ -3027,6 +3058,10 @@ p2 b{
 .ThisRes divs:nth-child(13){
 
     width:155.06px !important;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    padding-left:10px;
 
 }
 
@@ -3034,6 +3069,10 @@ p2 b{
 
     width:144.6px !important;
     border: none;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    padding-left:10px;  
 
 }
 
