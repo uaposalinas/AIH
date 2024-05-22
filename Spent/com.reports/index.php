@@ -136,11 +136,10 @@
 
                             }
 
-                            if($OtherISV == ''){
-
+                            if ($OtherISV === '') {
                                 $OtherISV = "L 0.00";
-
                             }
+                            
 
                             echo "
 
