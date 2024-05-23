@@ -48,8 +48,7 @@ for(let Aument = 0; Aument < Totals.length; Aument++){
     const Total = Totals[Aument];
 
     const GetTotals = Total.innerHTML;
-    const RemoveLetters = GetTotals.substring(3, 1000);
-    const Numbers = parseFloat(RemoveLetters);
+    const Numbers = parseFloat(GetTotals);
     
     const Formated = FormatNumberNow(Numbers);
 
@@ -82,20 +81,16 @@ for(let Aument = 0; Aument < Exempts.length; Aument++){
 
     const Exempt = Exempts[Aument];
 
-    if(Exempt.innerHTML == "L 0.00"){}else{
+    const GetExempts = Exempt.innerHTML;
 
-        const GetExempts = Exempt.innerHTML;
-        const RemoveLetters = GetExempts.substring(3, 1000);
-        const Numbers = parseFloat(RemoveLetters);
-        const Formated = FormatNumberNow(Numbers);
-    
-        const FinallyFormat = `L. ${Formated}.00`;
-    
-    
-        Exempt.innerHTML = FinallyFormat;
-    
+    const Numbers = parseFloat(GetExempts);
+    const Formated = FormatNumberNow(Numbers);
 
-    }
+    const FinallyFormat = `L. ${Formated}`;
+
+
+    Exempt.innerHTML = FinallyFormat;
+
 
 }
 
@@ -108,8 +103,7 @@ for(let Aument = 0; Aument < ISV15s.length; Aument++){
     if(ISV15.innerHTML == "L 0.00"){}else{
 
         const GetISV15 = ISV15.innerHTML;
-        const RemoveLetters = GetISV15.substring(3, 1000);
-        const Numbers = parseFloat(RemoveLetters);
+        const Numbers = parseFloat(GetISV15);
         const RoundOut = Numbers.toFixed(2);
         const Formated = FormatNumberNow(RoundOut);
     
@@ -132,8 +126,7 @@ for(let Aument = 0; Aument < ISV18s.length; Aument++){
     if(ISV18.innerHTML == "L 0.00"){}else{
 
         const GetISV18 = ISV18.innerHTML;
-        const RemoveLetters = GetISV18.substring(3, 1000);
-        const Numbers = parseFloat(RemoveLetters);
+        const Numbers = parseFloat(GetISV18);
         const Formated = FormatNumberNow(Numbers);
     
         const FinallyFormat = `L. ${Formated}.00`;
@@ -155,8 +148,7 @@ for(let Aument = 0; Aument < Others.length; Aument++){
     if(Other.innerHTML == "L 0.00"){}else{
 
         const GetOther = Other.innerHTML;
-        const RemoveLetters = GetOther.substring(3, 1000);
-        const Numbers = parseFloat(RemoveLetters);
+        const Numbers = parseFloat(GetOther);
         const Formated = FormatNumberNow(Numbers);
     
         const FinallyFormat = `L. ${Formated}.00`;

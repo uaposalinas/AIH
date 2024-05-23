@@ -203,12 +203,167 @@
 
         <div class="Scapes">
 
-            <res>L 0.00</res>
-            <res>L 0.00</res>
-            <res>L 0.00</res>
-            <res>L 0.00</res>
-            <res class="AllTotals">L 0.00</res>
+        <!--Exentos-->
 
+        <?php
+
+            require '../config/com.config.php';
+
+            $DoQuery = "SELECT Exempt FROM logs";
+
+            $QueryResults = $Connection->query($DoQuery);
+
+            $ExemptAdd = 0;
+
+            if ($QueryResults->num_rows > 0) {
+                
+                while($row = $QueryResults->fetch_assoc()) {
+                
+                    $ExemptAdd += intval($row["Exempt"]);
+                }
+                
+                echo "<res class='ScapeExempt'>$ExemptAdd</res>";
+
+            } else {
+
+                echo "<res class='ScapeExempt'>$ExemptAdd</res>";
+
+            }
+
+            $Connection->close();
+
+            ?>
+
+            <!--Exentos-->
+
+
+            <!--ISV 15-->
+
+            <?php
+
+                require '../config/com.config.php';
+
+                $DoQuery = "SELECT ISV15 FROM logs";
+
+                $QueryResults = $Connection->query($DoQuery);
+
+                $ISV15Add = 0;
+
+                if ($QueryResults->num_rows > 0) {
+                    
+                    while($row = $QueryResults->fetch_assoc()) {
+                    
+                        $ISV15Add += intval($row["ISV15"]);
+                    }
+                    
+                    echo "<res class='ScapeISV15'>$ISV15Add</res>";
+
+                } else {
+
+                    echo "<res class='ScapeISV15'>$ISV15Add</res>";
+
+                }
+
+                $Connection->close();
+
+                ?>
+
+            <!--ISV15-->
+
+
+            <!--ISV 18-->
+
+                <?php
+
+                    require '../config/com.config.php';
+
+                    $DoQuery = "SELECT ISV18 FROM logs";
+
+                    $QueryResults = $Connection->query($DoQuery);
+
+                    $ISV18Add = 0;
+
+                    if ($QueryResults->num_rows > 0) {
+                        
+                        while($row = $QueryResults->fetch_assoc()) {
+                        
+                            $ISV18Add += intval($row["ISV18"]);
+                        }
+                        
+                        echo "<res class='ScapeISV18'>$ISV18Add</res>";
+
+                    } else {
+
+                        echo "<res class='ScapeISV18'>$ISV18Add</res>";
+
+                    }
+
+                    $Connection->close();
+
+                    ?>
+
+            <!--ISV18-->
+
+            <!--OtherISV-->
+
+            <?php
+
+                require '../config/com.config.php';
+
+                $DoQuery = "SELECT OtherISV FROM logs";
+
+                $QueryResults = $Connection->query($DoQuery);
+
+                $OtherISVAdd = 0;
+
+                if ($QueryResults->num_rows > 0) {
+                    
+                    while($row = $QueryResults->fetch_assoc()) {
+                    
+                        $OtherISVAdd += intval($row["OtherISV"]);
+                    }
+                    
+                    echo "<res class='ScapeOtherISV'>$OtherISVAdd</res>";
+
+                } else {
+
+                    echo "<res class='ScapeOtherISV'></res>";
+
+                }
+
+                $Connection->close();
+
+        ?>
+
+        <!--OtherISV-->
+
+            <?php
+
+            require '../config/com.config.php';
+
+            $DoQuery = "SELECT Total FROM logs";
+
+            $QueryResults = $Connection->query($DoQuery);
+
+            $TotalAdd = 0;
+
+            if ($QueryResults->num_rows > 0) {
+                
+                while($row = $QueryResults->fetch_assoc()) {
+                
+                    $TotalAdd += intval($row["Total"]);
+                }
+                
+                echo "<res class='ScapeTotal'>$TotalAdd</res>";
+
+            } else {
+
+                echo "<res class='ScapeTotal'>$TotalAdd</res>";
+
+            }
+
+            $Connection->close();
+            ?>
         </div>
 
         </div>
