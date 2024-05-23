@@ -327,7 +327,7 @@
 
                 } else {
 
-                    echo "<res class='ScapeOtherISV'></res>";
+                    echo "<res class='ScapeOtherISV'>0</res>";
 
                 }
 
