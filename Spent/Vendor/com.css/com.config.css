@@ -2844,12 +2844,24 @@ p2 b{
 
 }
 
-.TitleBorder{
+.TitleBorder, .TitleBorder2{
 
     width:80px;
     height:5px;
     background-color: #85c6fe;
     margin-top:7px;
+    position:relative;
+
+}
+
+.TitleBorder2{
+    
+    width:80px;
+    height:5px;
+    background-color: #85c6fe;
+    margin-top:7px;
+    top:40px;
+    position:absolute;
 
 }
 
@@ -3084,11 +3096,102 @@ p2 b{
     width:100%;
     height:100vh;
     position: relative;
-    background-color: #1c49b1;
-    display: none;
+  
+    display: flex;
+    top:350px;
+    padding:20px;
+
+}
+
+
+.Totalizate{
+
+    width:1230px;
+    height:100px;
+    background-color:100px;
+    position:absolute;
+    left:calc(50%  - 615px);
+    top:100px;
+    border:1px solid #000000;
+    border-radius:20px;
+    overflow:hidden;
+
+}
+
+
+.Totalizate .Identifers{
+
+    width:100%;
+    height:50px;
+    position:absolute;
+    top:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background-color: #85c6fe;
+
+}
+
+.Totalizate .Identifers columns{
+
+    width:calc(100% / 4);
+    height:100%;
+    position:relative;
+    border:1px solid #000000;
+    border-top:0px;
+    border-left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    font-family:calibri;
+
+}
+
+.Totalizate .Identifers columns:last-child{
+
+    border-right:0px;
 
 }
 
 
 
+.Scapes{
 
+    width:100%;
+    height:50px;
+    position:absolute;
+    bottom:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+
+}
+
+.Totalizate .Scapes res{
+
+    width:calc(100% / 4);
+    height:100%;
+    position:relative;
+    border:1px solid #000000;
+    border-top:0px;
+    border-left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    font-family:calibri;
+    border-bottom:0px;
+
+}
+
+.Totalizate .Scapes res:last-child{
+
+    border-right:0px;
+
+}

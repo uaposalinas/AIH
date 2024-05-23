@@ -1,13 +1,23 @@
+
+
+
+const AllTotals = document.querySelector('.AllTotals');
+
 const Totalss = document.querySelectorAll('.Totals');
-let totalSum = 0;
+let TotalAdd = 0;
 
 for(let Aument = 0; Aument < Totalss.length; Aument++){
     const Total = Totalss[Aument];
     const GetTotal = Total.innerHTML;
-    const RemoveLetters = GetTotal.substring(3,1000); // Asume que los valores están precedidos por un símbolo (e.g., '$')
+    const RemoveLetters = GetTotal.substring(3,1000);
     const Parse = parseInt(RemoveLetters);
 
-    totalSum += Parse;
+    TotalAdd += Parse;
+
+
+    AllTotals.innerHTML = `L. ${FormatNumberNow(TotalAdd)}`;
+
+
 }
 
-console.log(totalSum);
+

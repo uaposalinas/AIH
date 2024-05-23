@@ -183,7 +183,37 @@
 
     </div>
 
-    <div class="ShowAllResults"></div>
+    <div class="ShowAllResults">
+
+    
+     <t class="PerMonthsLogTitle" style="width: 10000px;">Totalizaciones mes de mayo</t>
+        <div class="TitleBorder2"></div>
+
+        <div class="Totalizate">
+
+            <div class="Identifers">
+
+                    <columns>Exentos</columns>
+                    <columns>ISV 15%</columns>
+                    <columns>ISV 18%</columns>
+                    <columns>Otros Impuestos</columns>
+                    <columns>Total de Registros</columns>
+
+            </div>
+
+        <div class="Scapes">
+
+            <res>L 0.00</res>
+            <res>L 0.00</res>
+            <res>L 0.00</res>
+            <res>L 0.00</res>
+            <res class="AllTotals">L 0.00</res>
+
+        </div>
+
+        </div>
+                    
+    </div>
 
     <footer style="display: none;">
 
@@ -200,8 +230,9 @@
         const files = [
             "../Vendor/com.js/com.versions.js",
             "../Vendor/com.js/com.reports.js",
-            "../Vendor/com.js/com.totalizate.js",
-            "../Vendor/com.js/com.format.config.js"
+            "../Vendor/com.js/com.format.config.js",
+            "../Vendor/com.js/com.totalizate.js"
+
 
         ];
 
