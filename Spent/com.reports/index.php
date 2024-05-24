@@ -70,7 +70,7 @@
                     require '../config/com.config.php';
                     $Connection -> set_charset("utf8");
 
-                    $DoQuery = "SELECT * FROM logs WHERE 1";
+                    $DoQuery = "SELECT * FROM logs WHERE Month = '05'";
                     $QueryResults = $Connection -> query($DoQuery);
 
                     if($QueryResults){
@@ -109,7 +109,7 @@
 
                             }else if($PayType == "Pago en línea"){
 
-                                $PayType = "Online";
+                                $PayType = "BDP";
 
                             }else if($PayType == "Botón de Pago"){
 
@@ -128,7 +128,7 @@
 
                             }
 
-                            $AmountInt = intval($Amount);
+                            $AmountInt = floatval($Amount);
 
                             if($Amount < 10){
 
@@ -209,7 +209,7 @@
 
             require '../config/com.config.php';
 
-            $DoQuery = "SELECT Exempt FROM logs";
+            $DoQuery = "SELECT Exempt FROM logs WHERE Month = '05'";
 
             $QueryResults = $Connection->query($DoQuery);
 
@@ -219,7 +219,7 @@
                 
                 while($row = $QueryResults->fetch_assoc()) {
                 
-                    $ExemptAdd += intval($row["Exempt"]);
+                    $ExemptAdd += floatval($row["Exempt"]);
                 }
                 
                 echo "<res class='ScapeExempt'>$ExemptAdd</res>";
@@ -243,7 +243,7 @@
 
                 require '../config/com.config.php';
 
-                $DoQuery = "SELECT ISV15 FROM logs";
+                $DoQuery = "SELECT ISV15 FROM logs WHERE Month = '05'";
 
                 $QueryResults = $Connection->query($DoQuery);
 
@@ -253,7 +253,7 @@
                     
                     while($row = $QueryResults->fetch_assoc()) {
                     
-                        $ISV15Add += intval($row["ISV15"]);
+                        $ISV15Add += floatval($row["ISV15"]);
                     }
                     
                     echo "<res class='ScapeISV15'>$ISV15Add</res>";
@@ -277,7 +277,7 @@
 
                     require '../config/com.config.php';
 
-                    $DoQuery = "SELECT ISV18 FROM logs";
+                    $DoQuery = "SELECT ISV18 FROM logs WHERE Month = '05'";
 
                     $QueryResults = $Connection->query($DoQuery);
 
@@ -287,7 +287,7 @@
                         
                         while($row = $QueryResults->fetch_assoc()) {
                         
-                            $ISV18Add += intval($row["ISV18"]);
+                            $ISV18Add += floatval($row["ISV18"]);
                         }
                         
                         echo "<res class='ScapeISV18'>$ISV18Add</res>";
@@ -310,7 +310,7 @@
 
                 require '../config/com.config.php';
 
-                $DoQuery = "SELECT OtherISV FROM logs";
+                $DoQuery = "SELECT OtherISV FROM logs WHERE Month = '05'";
 
                 $QueryResults = $Connection->query($DoQuery);
 
@@ -320,7 +320,7 @@
                     
                     while($row = $QueryResults->fetch_assoc()) {
                     
-                        $OtherISVAdd += intval($row["OtherISV"]);
+                        $OtherISVAdd += floatval($row["OtherISV"]);
                     }
                     
                     echo "<res class='ScapeOtherISV'>$OtherISVAdd</res>";
@@ -341,7 +341,7 @@
 
             require '../config/com.config.php';
 
-            $DoQuery = "SELECT Total FROM logs";
+            $DoQuery = "SELECT Total FROM logs WHERE Month = '05'";
 
             $QueryResults = $Connection->query($DoQuery);
 
@@ -351,7 +351,7 @@
                 
                 while($row = $QueryResults->fetch_assoc()) {
                 
-                    $TotalAdd += intval($row["Total"]);
+                    $TotalAdd += floatval($row["Total"]);
                 }
                 
                 echo "<res class='ScapeTotal'>$TotalAdd</res>";
@@ -370,6 +370,214 @@
                     
     </div>
 
+    <div class="ShowReportsPerMonth ShowExempts">
+
+        <t class="PerMonthsLogTitle" style="width: 10px;">Registros exentos del mes de Mayo</t>
+        <div class="TitleBorder"></div>
+
+        <div class="Table" style="position:relative; left:calc(50% - 37%)">
+
+            <div class="Identifers">
+
+                
+                <columns>NO.</columns>
+                <columns>Fecha</columns>
+                <columns style="137.4px !important">No. de Factura</columns>
+                <columns style="width:164.36px">Nombre de Proveedor</columns>
+                <columns>Cnt.</columns>
+                <columns>Cuenta Cont.</columns>
+                <columns>Subtotal</columns>
+                <columns>Exento</columns>
+                <columns>Total de Gasto</columns>
+                <columns>Pago</columns>
+                <columns>Fin</columns>
+            </div>
+
+            <div class="Logs">
+                
+                <?php
+
+                    $Number = 0;
+
+                    require '../config/com.config.php';
+                    $Connection -> set_charset("utf8");
+
+                    $DoQuery = "SELECT * FROM logs WHERE Month = '05'";
+                    $QueryResults = $Connection -> query($DoQuery);
+
+                    if($QueryResults){
+
+                        while($Row = $QueryResults -> fetch_assoc()){
+
+                            $Provider = $Row["Provider"];
+                            $Date = $Row["Date"];
+                            $Amount = $Row["Amount"];
+                            $PayType = $Row["PayType"];
+                            $BillNumber = $Row["BillNumber"];
+                            $CountableCount = $Row["CountableCount"];
+                            $BuyType = $Row["BuyType"];
+                            $Subtotal = $Row["Subtotal"];
+                            $Exempt = $Row["Exempt"];
+                            $OtherISV = $Row["OtherISV"];
+                            $ISV15 = $Row["ISV15"];
+                            $ISV18 = $Row["ISV18"];
+                            $Total = $Row["Total"];
+
+                            //FormattedValues 
+
+                            if($PayType == "Efectivo"){
+
+                                $PayType = "Efc";
+
+                            }else if($PayType == "Transferencia"){
+
+                                $PayType = "Trans.";
+
+                            }else if($PayType == "Tarjeta de Crédito"){
+
+                                $PayType = "T/C";
+
+                            }else if($PayType == "Pago en línea"){
+
+                                $PayType = "Online";
+
+                            }else if($PayType == "Botón de Pago"){
+
+                                $PayType = "BDP";
+
+                            }
+                            
+
+                            if($BuyType == "Personal"){
+
+                                $BuyType = "Prs";
+
+                            }else if($BuyType == "Oficina"){
+
+                                $BuyType = "Ofc";
+
+                            }
+
+                            $AmountInt = floatval($Amount);
+
+                            if($Amount < 10){
+
+                                $Amount = '0'. $Amount;
+
+                            }
+
+                            if ($OtherISV === '') {
+                                $OtherISV = "L 0.00";
+                            }
+                            
+
+                            if($Exempt == "0.00"){
+
+                             
+
+                            }else{
+
+                                $Number++;
+
+                                echo "
+
+                                <div class='ThisRes ThisResExempts'>
+
+                                <divs><n>$Number</n></divs>
+                                <divs><p class='MountDate'>$Date</p></divs>
+                                <divs><p>$BillNumber</p></divs>
+                                <divs><p>$Provider</p></divs>           
+                                <divs><p>$Amount</p></divs>
+                                <divs><p>$CountableCount</p></divs>
+                                <divs><p class='Subtotals'>$Subtotal</p></divs>
+                                <divs><p class='ExemptsNow'>$Exempt</p></divs>
+                                <divs><p class='Totals GetExentTotals'>$Exempt</p></divs>
+                                <divs><p>$PayType</p></divs>
+                                <divs><p>$BuyType</p></divs>    
+                                
+                             
+                                
+            
+                            </div>
+                            
+                            ";
+
+                            }
+
+
+
+                        }
+
+                    }else{
+                        
+                        echo "Ocurrió un error.";
+
+                    }
+
+                ?>
+                   
+            </div>
+
+        </div>
+
+    </div>
+    
+    <div class="ShowAllResults">
+
+    
+<t class="PerMonthsLogTitle" style="width: 10000px;">Totalizaciones exentos mes de mayo</t>
+   <div class="TitleBorder2"></div>
+
+   <div class="Totalizate" style="width:300px; top:70px; left:20px;">
+
+       <div class="Identifers">
+
+               <columns>Exentos</columns>
+               <columns>Total de Registros</columns>
+
+       </div>
+
+   <div class="Scapes">
+
+   <!--Exentos-->
+
+   <?php
+
+       require '../config/com.config.php';
+
+       $DoQuery = "SELECT Exempt FROM logs WHERE Month = '05'";
+
+       $QueryResults = $Connection->query($DoQuery);
+
+       $ExemptAdd = 0;
+
+       if ($QueryResults->num_rows > 0) {
+           
+           while($row = $QueryResults->fetch_assoc()) {
+           
+               $ExemptAdd += floatval($row["Exempt"]);
+           }
+           
+           echo "<res class='ScapeExempts'>$ExemptAdd</res>";
+           echo "<res class='ScapeExemptS'>$ExemptAdd</res>";
+
+       } else {
+
+           echo "<res class='ScapeExempts'>$ExemptAdd</res>";
+
+       }
+
+       $Connection->close();
+
+       ?>
+
+       <!--Exentos-->
+
+   </div>
+
+   </div>
+               
+</div>
     <footer style="display: none;">
 
         <div class="FooterDecoration"></div>    

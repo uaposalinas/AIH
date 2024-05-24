@@ -46,12 +46,9 @@ const Totals = document.querySelectorAll('.Totals');
 for(let Aument = 0; Aument < Totals.length; Aument++){
 
     const Total = Totals[Aument];
-
     const GetTotals = Total.innerHTML;
     const Numbers = parseFloat(GetTotals);
-    
     const Formated = FormatNumberNow(Numbers);
-
     const FinallyFormat = `L. ${Formated}.00`;
 
     Total.innerHTML = FinallyFormat

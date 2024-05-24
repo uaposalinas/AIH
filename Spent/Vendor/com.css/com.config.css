@@ -2838,6 +2838,19 @@ p2 b{
 
 }
 
+.ShowExempts{
+
+    width: 79%;
+    height:auto;
+    min-height:100vh;
+    position:relative;
+    top:320px;
+    left:0px;
+    padding:20px;
+    padding-left:30px;
+
+}
+
 .PerMonthsLogTitle{
 
     font-family:caviarDreamsBold;
@@ -3094,9 +3107,8 @@ p2 b{
 .ShowAllResults{
 
     width:100%;
-    height:100vh;
+    height:300px;
     position: relative;
-  
     display: flex;
     top:350px;
     padding:20px;
@@ -3107,13 +3119,13 @@ p2 b{
 .Totalizate{
 
     width:1230px;
-    height:100px;
+    height:50px;
     background-color:100px;
     position:absolute;
     left:calc(50%  - 615px);
     top:100px;
     border:1px solid #000000;
-    border-radius:20px;
+    border-radius:10px;
     overflow:hidden;
 
 }
@@ -3122,7 +3134,7 @@ p2 b{
 .Totalizate .Identifers{
 
     width:100%;
-    height:50px;
+    height:25px;
     position:absolute;
     top:0px;
     display:flex;
@@ -3135,7 +3147,7 @@ p2 b{
 
 .Totalizate .Identifers columns{
 
-    width:calc(100% / 4);
+    width:calc(100% / 2);
     height:100%;
     position:relative;
     border:1px solid #000000;
@@ -3161,7 +3173,7 @@ p2 b{
 .Scapes{
 
     width:100%;
-    height:50px;
+    height:25px;
     position:absolute;
     bottom:0px;
     display:flex;
@@ -3174,7 +3186,7 @@ p2 b{
 
 .Totalizate .Scapes res{
 
-    width:calc(100% / 4);
+    width:calc(100% / 2);
     height:100%;
     position:relative;
     border:1px solid #000000;
@@ -3182,16 +3194,150 @@ p2 b{
     border-left:0px;
     display:flex;
     justify-content:center;
-    align-items:center;
-    text-align:center;
+    align-items:end;
+    text-align:right;
     flex-direction:column;
     font-family:calibri;
     border-bottom:0px;
+    padding-right:20px;
 
 }
 
 .Totalizate .Scapes res:last-child{
 
     border-right:0px;
+
+}
+
+.ThisRes:last-child{
+
+    border-bottom:0px;
+
+}
+
+
+.ThisResExempts divs:nth-child(1){
+
+    width:68.5px !important;
+
+
+}
+
+.ThisResExempts divs:nth-child(2){
+
+    width:85.71px !important;
+
+}
+
+.ThisResExempts divs:nth-child(3){
+
+    width:150.26px !important;
+}
+
+.ThisResExempts divs:nth-child(4){
+
+    width:163.3px !important;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    padding-left:10px;
+    text-align:left;
+
+}
+
+.ThisResExempts divs:nth-child(5){
+
+    width:69.53px !important;
+
+}
+
+.ThisResExempts divs:nth-child(6){
+
+    width:138.76px !important;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    padding-left:10px;
+
+}
+
+.ThisResExempts divs:nth-child(7){
+
+    width:101.61px !important;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    padding-right:10px;
+}
+
+.ThisResExempts divs:nth-child(8){
+
+    width:88.28px !important;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    padding-right:10px;
+
+}
+
+.ThisResExempts divs:nth-child(9){
+
+    width:151.96px !important;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    padding-right:10px;
+}
+
+.ThisResExempts divs:nth-child(10){
+
+    width:80.15px !important;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    padding-right:10px;
+
+}
+
+.ThisResExempts divs:nth-child(11){
+
+    width:59.14px !important;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    padding-right:10px;
+    border-right:0px;
+
+}
+
+.ThisResExempts divs:nth-child(12){
+
+    width:153.16px !important;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    padding-right:10px;
+
+
+}
+
+.ThisResExempts divs:nth-child(13){
+
+    width:80.58px !important;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    padding-left:10px;
+
+}
+
+.ThisResExempts divs:nth-child(14){
+
+    width:50px !important;
+    border: none;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    padding-left:10px;  
 
 }
