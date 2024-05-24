@@ -49,9 +49,18 @@ for(let Aument = 0; Aument < Totals.length; Aument++){
     const GetTotals = Total.innerHTML;
     const Numbers = parseFloat(GetTotals);
     const Formated = FormatNumberNow(Numbers);
-    const FinallyFormat = `L. ${Formated}.00`;
+    
+    if (Number.isInteger(Numbers)) {
+        const FinallyFormat = `L. ${Formated}.00`;
+        Total.innerHTML = FinallyFormat
+    } else {
+        const FinallyFormat = `L. ${Formated}`;
+        Total.innerHTML = FinallyFormat
+    }
 
-    Total.innerHTML = FinallyFormat
+
+    
+
 
 }
 

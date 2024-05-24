@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver reporte mes de Mayo</title>
+    <link rel="shortcut icon" href="Assets/com.img/com.icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../Vendor/com.css/com.config.css">
+    <link rel="stylesheet" href="../Vendor/com.css/com.reports.print.css">
     <link rel="stylesheet" href="../Fonts/IndexFontsCaviarDreams.css">
     <link rel="stylesheet" href="../Fonts/IndexFontsRoboto.css">
 </head>

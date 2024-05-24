@@ -129,7 +129,7 @@ function SetValueExempt(){
         ISV15Status.checked = false;
         ISV18Status.checked = false;
 
-        Exempt.placeholder = "L "+GetINT;
+        Exempt.placeholder = GetINT;
 
     }else if(this.checked == false){
 
@@ -216,12 +216,12 @@ function DetectKeyPressed(e){
             if(ISV15Status.checked == true){
 
                 Tax = GetSubtotalINT * 0.15.toFixed(2);
-                ISV15.value = "L. "+Tax;
+                ISV15.value = Tax;
 
             }else if(ISV18Status.checked == true){
 
                 Tax =  GetSubtotalINT * 0.18.toFixed(2);
-                ISV18.value = "L. "+Tax;
+                ISV18.value = Tax;
           
             }
 
@@ -235,7 +235,7 @@ function DetectKeyPressed(e){
             const Round = Math.round(Operation);
 
 
-            Total.value = `L. ${Round}`
+            Total.value = ` ${Round}`
 
 
         }else{
@@ -264,13 +264,13 @@ function DetectKeyPressed(e){
                     }, 300);
         
         
-                    Exempt.value = `L ${GetINT}`;
-                    ISV15.value = "L 0.00";
-                    ISV18.value = "L 0.00";
+                    Exempt.value = `${GetINT}`;
+                    ISV15.value = " 0.00";
+                    ISV18.value = " 0.00";
         
                     const SetTotal = GetINT;
         
-                    Total.value = "L. " + Math.round(SetTotal);
+                    Total.value = " " + Math.round(SetTotal);
         
                     Total.classList.add('UpdateTotals');
             
@@ -294,13 +294,13 @@ function DetectKeyPressed(e){
                     const Operation = GetINT * 0.18;
                     const RoundOut = Operation.toFixed(2);
         
-                    ISV18.value = `L ${RoundOut}`
-                    Exempt.value = `L 0.00`;
-                    ISV15.value = "L 0.00";
+                    ISV18.value = `${RoundOut}`
+                    Exempt.value = `0.00`;
+                    ISV15.value = " 0.00";
                 
                     const SetTotal = parseFloat(RoundOut) + GetINT;
         
-                    Total.value = "L." +Math.round(SetTotal);
+                    Total.value = "" +Math.round(SetTotal);
         
                     Total.classList.add('UpdateTotals');
             
@@ -325,15 +325,15 @@ function DetectKeyPressed(e){
                     const Operation = GetINT * 0.15;
                     const RoundOut = Operation.toFixed(2);
                 
-                    ISV15.value = `L. ${RoundOut}`
-                    Exempt.value = `L 0.00`;
-                    ISV18.value = "L 0.00";
+                    ISV15.value = ` ${RoundOut}`
+                    Exempt.value = ` 0.00`;
+                    ISV18.value = " 0.00";
         
                     const SetTotal = parseFloat(RoundOut) + GetINT;
 
                     const Parse = Math.round(SetTotal)
         
-                    Total.value = "L. " + Parse;
+                    Total.value = " " + Parse;
         
                     Total.classList.add('UpdateTotals');
             
@@ -453,7 +453,7 @@ function PrepareToSaveTheNewLog(){
 
                 if(Others.value.trim() === ''){
 
-                    Others.value = "L 0.00";
+                    Others.value = " 0.00";
 
                 }
 
@@ -533,7 +533,7 @@ Exempt.addEventListener('contextmenu', e=>{
         Exempt.disabled = true;
         e.preventDefault();
         Exempt.blur();
-        Exempt.value = "L 0.00";
+        Exempt.value = " 0.00";
         localStorage.removeItem('LogMutant');
         Exempt.style.backgroundColor = "#141414";
         Exempt.style.border = "none";

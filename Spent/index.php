@@ -177,7 +177,7 @@
                 <div class="Notification">
 
                 <i class="fi fi-rr-file-medical-alt Icon"></i>
-                    <div class="Message">No se han realizado cambios en las ultimas 72 Hrs, si tienes errores puedes usar el feedback haciendo click en el signo de abajo.</div>
+                    <div class="Message">Se compagino el activo "reporte" en el directorio (protocol)(host)/{com.reports}</div>
                     <i class="fi fi-rs-circle-xmark Close"></i>
 
                 </div>
@@ -394,11 +394,11 @@
 
                         </div>
     
-                        <input type="number" name="SendSubtotal" class="Subtotal ThisValue" placeholder="L 0.00" id="2" style="margin-left:0px;">
-                        <input type="text" name="SendExempt" class="Exempt" placeholder="L 0.00" id="1" style="background-color: #141414;" value="L 0.00" disabled>
-                        <input type="text" name="Other" class="Others" placeholder="L 0.00" id="3" disabled value="L 0.00">
-                        <input type="text" name="ISV18" class="ISV18" placeholder="L 0.00" id="4" disabled value="L 0.00">
-                        <input type="text" name="ISV15" class="ISV15" placeholder="L 0.00" id="5" disabled value="L 0.00">
+                        <input type="number" name="SendSubtotal" class="Subtotal ThisValue" placeholder=" 0.00" id="2" style="margin-left:0px;">
+                        <input type="text" name="SendExempt" class="Exempt" placeholder=" 0.00" id="1" style="background-color: #141414;" value=" 0.00" disabled>
+                        <input type="text" name="Other" class="Others" placeholder=" 0.00" id="3" disabled value=" 0.00">
+                        <input type="text" name="ISV18" class="ISV18" placeholder=" 0.00" id="4" disabled value=" 0.00">
+                        <input type="text" name="ISV15" class="ISV15" placeholder=" 0.00" id="5" disabled value=" 0.00">
     
                     </div>
 
@@ -433,7 +433,7 @@
                     </div>
 
                     <p class="TotalLogTitle">Total del registro</p>
-                    <input type="text" name="SendTotal" class="Total" placeholder="L 0.00" disabled>
+                    <input type="text" name="SendTotal" class="Total" placeholder=" 0.00" disabled>
 
                 </div>
             

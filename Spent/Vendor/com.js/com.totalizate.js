@@ -40,21 +40,6 @@ function FormatNumberNows(Number){
 
     ScapeOtherISV.innerHTML = `L ${FormatNumberNows(ScapeOtherISVINT)}`
 
-    const GetExentTotals = document.querySelectorAll('.GetExentTotals');
-
-    let Add = 0;
-
-    for(let Aument = 0; Aument < GetExentTotals.length; Aument ++){
-
-        const Total = GetExentTotals[Aument];
-        const GetTotal = Total.innerHTML;
-        const RemoveLetters = GetTotal.substring(2, 1000)
-        const Parse = parseFloat(RemoveLetters);
-
-        console.log(Parse);
-
-    }
-
     
     const ScapeExempts = document.querySelector('.ScapeExempts');
     const GetScapeExempts = ScapeExempts.innerHTML;
@@ -68,3 +53,19 @@ function FormatNumberNows(Number){
     const ScapeExemptSINT = parseFloat(GetScapeExemptS).toFixed(2);
 
     ScapeExemptS.innerHTML = `L ${FormatNumberNows(ScapeExemptSINT)}`;
+
+
+    const ExemptsNows = document.querySelectorAll('.ExemptsNow');
+
+    for(let Aument = 0; Aument <  ExemptsNows.length; Aument++){
+
+        const Exempt = ExemptsNows[Aument];
+        const GetExempts = Exempt.innerHTML;
+        const INT = parseFloat(GetExempts);
+      
+        const Formatted = FormatNumberNows(INT)
+        const FormatComplete = `L. ${Formatted}`;
+
+        Exempt.innerHTML = FormatComplete;
+
+    }

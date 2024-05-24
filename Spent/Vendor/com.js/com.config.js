@@ -371,11 +371,10 @@ function SwitchAttemp(){
         if(NewTax){
 
             const TaxValue = parseFloat(localStorage.getItem('NewTaxValue'));
-            const TotalString = Total.value.substr(3, 100000);
-            const GetTotalINT = parseFloat(TotalString);
+            const GetTotalINT = parseFloat(Total.value);
             const Operation = GetTotalINT - TaxValue;
 
-            Total.value = `L. ${Operation}`;
+            Total.value = `${Operation}`;
 
         }
 
@@ -398,12 +397,11 @@ function SendOthers(e){
 
     if(KeyPressed == 13){
 
-            const Cut = Total.value.substr(3,1000000);
-            const INT = parseFloat(Cut);
+            const INT = parseFloat(Total.value);
             const Taxes = parseFloat(Others.value);
             const Operation = INT + Taxes;
 
-            Total.value = `L. ${Operation}`;
+            Total.value = `${Operation}`;
 
             Others.disabled = true;
 

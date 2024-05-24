@@ -1,5 +1,11 @@
 @media print{
 
+    body{
+
+        margin-top:20px;
+
+    }
+
     *{
 
         margin:0px;
