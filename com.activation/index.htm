@@ -13,8 +13,25 @@
         <div></div>
         </div>
 
-        <t>Preparando para la Activación</t>
+        <t class="ActivationStatus">Preparando para la Activación, no cierres está pantalla</t>
 
+        <script>
+
+            const ActivationStatus = document.querySelector('.ActivationStatus');
+
+            setTimeout(() => {
+                
+                ActivationStatus.innerHTML = "Activando..."
+
+            }, 2500);
+
+            setTimeout(() => {
+                
+                window.close()
+
+            }, 5000);
+
+        </script>
 
 </body>
 </html>
