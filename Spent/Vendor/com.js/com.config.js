@@ -509,3 +509,14 @@ setInterval(() => {
     }
 
 }, 1000);
+
+
+const AllInputs = document.getElementsByName("input");
+
+for(let Aument = 0; Aument < AllInputs.length; Aument++){
+
+    const Input = AllInputs[Aument];
+    
+    Input.setAttribute("autocomplete", "off");
+
+}
