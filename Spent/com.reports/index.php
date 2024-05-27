@@ -72,10 +72,20 @@
                     require '../config/com.config.php';
                     $Connection -> set_charset("utf8");
 
-                    $DoQuery = "SELECT * FROM logs WHERE Month = '05'";
+                    if(isset($_GET["MonthID"])){
+
+                        $Month = $_GET["MonthID"];
+
+                    }else{
+
+                        echo "<script> window.location.href = '../' </script>";
+
+                    }
+
+                    $DoQuery = "SELECT * FROM logs WHERE Month = '$Month'";
                     $QueryResults = $Connection -> query($DoQuery);
 
-                    if($QueryResults){
+                    if($QueryResults -> num_rows > 0){
 
                         while($Row = $QueryResults -> fetch_assoc()){
 
@@ -173,7 +183,8 @@
 
                     }else{
                         
-                        echo "Ocurrió un error.";
+                        echo "<script> try {window.close(); localStorage.setItem('NoLogKey', 'true') } catch (error) {window.location.href = '../';} </script>";
+
 
                     }
 
@@ -211,7 +222,18 @@
 
             require '../config/com.config.php';
 
-            $DoQuery = "SELECT Exempt FROM logs WHERE Month = '05'";
+            if(isset($_GET["MonthID"])){
+
+                $Month = $_GET["MonthID"];
+
+            }else{
+
+                echo "<script> window.location.href = '../' </script>";
+
+            }
+
+
+            $DoQuery = "SELECT Exempt FROM logs WHERE Month = '$Month'";
 
             $QueryResults = $Connection->query($DoQuery);
 
@@ -245,7 +267,18 @@
 
                 require '../config/com.config.php';
 
-                $DoQuery = "SELECT ISV15 FROM logs WHERE Month = '05'";
+                if(isset($_GET["MonthID"])){
+
+                    $Month = $_GET["MonthID"];
+
+                }else{
+
+                    echo "<script> window.location.href = '../' </script>";
+
+                }
+
+
+                $DoQuery = "SELECT ISV15 FROM logs WHERE Month = '$Month'";
 
                 $QueryResults = $Connection->query($DoQuery);
 
@@ -279,7 +312,18 @@
 
                     require '../config/com.config.php';
 
-                    $DoQuery = "SELECT ISV18 FROM logs WHERE Month = '05'";
+                    if(isset($_GET["MonthID"])){
+
+                        $Month = $_GET["MonthID"];
+
+                    }else{
+
+                        echo "<script> window.location.href = '../' </script>";
+
+                    }
+
+
+                    $DoQuery = "SELECT ISV18 FROM logs WHERE Month = '$Month'";
 
                     $QueryResults = $Connection->query($DoQuery);
 
@@ -312,7 +356,18 @@
 
                 require '../config/com.config.php';
 
-                $DoQuery = "SELECT OtherISV FROM logs WHERE Month = '05'";
+                if(isset($_GET["MonthID"])){
+
+                    $Month = $_GET["MonthID"];
+
+                }else{
+
+                    echo "<script> window.location.href = '../' </script>";
+
+                }
+
+
+                $DoQuery = "SELECT OtherISV FROM logs WHERE Month = '$Month'";
 
                 $QueryResults = $Connection->query($DoQuery);
 
@@ -343,7 +398,18 @@
 
             require '../config/com.config.php';
 
-            $DoQuery = "SELECT Total FROM logs WHERE Month = '05'";
+            if(isset($_GET["MonthID"])){
+
+                $Month = $_GET["MonthID"];
+
+            }else{
+
+                echo "<script> window.location.href = '../' </script>";
+
+            }
+
+
+            $DoQuery = "SELECT Total FROM logs WHERE Month = '$Month'";
 
             $QueryResults = $Connection->query($DoQuery);
 
@@ -404,10 +470,22 @@
                     require '../config/com.config.php';
                     $Connection -> set_charset("utf8");
 
-                    $DoQuery = "SELECT * FROM logs WHERE Month = '05'";
+                    if(isset($_GET["MonthID"])){
+
+                        $Month = $_GET["MonthID"];
+
+                    }else{
+
+                    echo "<script> try {window.close();} catch (error) {window.location.href = '../';} </script>";
+
+
+                    }
+
+
+                    $DoQuery = "SELECT * FROM logs WHERE Month = '$Month'";
                     $QueryResults = $Connection -> query($DoQuery);
 
-                    if($QueryResults){
+                    if($QueryResults -> num_rows > 0){
 
                         while($Row = $QueryResults -> fetch_assoc()){
 
@@ -512,7 +590,7 @@
 
                     }else{
                         
-                        echo "Ocurrió un error.";
+                        echo "try {window.close();} catch (error) {window.location.href = '../';}";
 
                     }
 
@@ -547,7 +625,18 @@
 
        require '../config/com.config.php';
 
-       $DoQuery = "SELECT Exempt FROM logs WHERE Month = '05'";
+       if(isset($_GET["MonthID"])){
+
+        $Month = $_GET["MonthID"];
+
+    }else{
+
+        echo "<script> window.location.href = '../' </script>";
+
+    }
+
+
+       $DoQuery = "SELECT Exempt FROM logs WHERE Month = '$Month'";
 
        $QueryResults = $Connection->query($DoQuery);
 

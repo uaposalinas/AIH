@@ -447,8 +447,6 @@ setInterval(() => {
         
     const DeleteKey = localStorage.getItem('DeleteKey');
 
-    console.log(DeleteKey)
-
     if(DeleteKey && DeleteKey === "true"){
 
         localStorage.removeItem('DeleteKey');
@@ -464,6 +462,49 @@ setInterval(() => {
     }else if(DeleteKey && DeleteKey === 'false'){
 
         SendError("No se eliminó el registro", "230px")
+
+    }
+
+}, 1000);
+
+
+
+const ReportOptions = document.querySelectorAll('.ReportOptions');
+
+for(let Aument = 0; Aument < ReportOptions.length; Aument++){
+
+    const Reports = ReportOptions[Aument];
+    Reports.addEventListener('click', SelectOptionInReport);
+
+    function SelectOptionInReport(e){
+
+        const IndexOf = Array.from(ReportOptions).indexOf(e.target);
+
+        console.log(IndexOf)
+
+    }
+    
+}
+
+
+
+
+
+setInterval(() => {
+        
+    const NoLogKey = localStorage.getItem('NoLogKey');
+
+    if(NoLogKey && NoLogKey === "true"){
+
+        localStorage.removeItem('NoLogKey');
+
+        SendError("No se encontró el reporte", "250px");
+
+        setTimeout(() => {
+            
+            RemoveError()
+
+        }, 3000);
 
     }
 

@@ -2835,6 +2835,7 @@ p2 b{
     padding:20px;
     padding-left:30px;
 
+
 }
 
 .ShowExempts{
@@ -2879,7 +2880,7 @@ p2 b{
 
 .ShowReportsPerMonth .Table{
 
-    width:100%;
+    width:1481.2px;
     height:auto;
     min-height:50px;
     border:2px solid #000000;
@@ -3338,5 +3339,352 @@ p2 b{
     justify-content:start;
     align-items:center;
     padding-left:10px;  
+
+}
+
+.ReportsPrincipalPage{
+
+    width:100%;
+    height:calc(100vh - 100px);
+    position:absolute;
+    bottom:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    background-color: #000000;
+
+}
+
+
+.ReportsPrincipalPage .Icon{
+
+    width:80px;
+    height:80px;
+    position:absolute;
+    top:30px;
+    background-image:url(../../Assets/com.img/report.png);
+    background-position:center;
+    background-size:cover;
+
+}
+
+.ReportsPrincipalPage t{
+
+    font-size:20px;
+    font-family:caviarDreamsBold;
+    color:#FFFFFF;
+    position: absolute;
+    top:130px;
+    
+}
+
+.Options{
+
+    width:100%;
+    height:calc(100% - 160px);
+    position:absolute;
+    bottom:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.Options div{
+
+    width:250px;
+    height:250px;
+    position:relative;
+    background-color:#2A2A2A;
+    border-radius:20px;
+    cursor: pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction: column;
+    margin:20px;
+
+}
+
+.Options div .Icons{
+
+    width:80px;
+    height:80px;
+    background-size:cover;
+    background-position:center;
+
+}
+
+.Options div p{
+
+    font-size:17px;
+    font-family:caviarDreamsBold;
+    color:#FFFFFF;
+    margin-top:20px;
+
+}
+
+.Options div .Icons:nth-child(1){
+
+    background-image:url(../../Assets/com.img/reports.png);
+
+}
+
+
+.CreateReport .Icon{
+
+    background-image:url(../../Assets/com.img/reports.png);
+
+}
+
+.ReportAnimationLeft{
+
+    animation:fadeInLeft 0.5s;
+
+}
+
+.ReportAnimationRight{
+
+    animation:fadeInLeft 0.5s;
+
+}
+
+.SelectMonth{
+
+    width:100%;
+    height:70%;
+    background-color: #000000;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    text-align:center;
+    flex-wrap:wrap;
+    position:absolute;
+    bottom:0px;
+
+}
+
+.SelectMonth div{
+
+    width:200px;
+    height:200px;
+    background-color: #2A2A2A;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    border-radius:20px;
+    margin:20px;
+    position:relative;
+    cursor: pointer;
+
+}
+
+
+.SelectMonth div:nth-child(8), .SelectMonth div:nth-child(9), .SelectMonth div:nth-child(10), .SelectMonth div:nth-child(11), .SelectMonth div:nth-child(12){
+
+    margin-bottom:20px;
+
+}
+
+.Icn{
+
+    width:60px;
+    height:60px;
+    position:absolute;
+    top:40px;
+    background-size:cover;
+    background-position:center;
+
+}
+
+.MonthID{
+
+    position:absolute;
+    bottom:40px;
+    color:#FFFFFF;
+    font-family:caviarDreamsBold;
+    font-size:20px;
+
+}
+
+.Month{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:99999;
+    background-color: none !important;
+
+}
+
+.CustomForm{
+
+    width:100%;
+    height:90%;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background-color: #000000;
+
+}
+
+.CustomFormAssistant{
+
+    width:350px;
+    height:450px;
+    background-color: #2A2A2A;
+    border-radius:15px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    text-align:center;
+
+}
+
+.SelectForCustomReport{
+
+    width:350px;
+    height:390px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+.SelectForCustomReport t{
+
+    font-size:16px;
+    font-family:caviarDreamsBold;
+    color:#9b9b9b;
+    position:absolute;
+    top:15px;
+
+
+}
+
+.SelectForCustomReport .Options{
+
+    width:100%; 
+    height:calc(100% - 60px);
+    position:absolute;
+    bottom:0px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+
+}
+
+.SelectForCustomReport .Options div{
+
+    width:90%;
+    height:calc(100% / 3);
+    border:1px solid #807e7e;
+    margin:10px;
+    border-radius:15px !important;
+    padding-left:20px;
+    padding-top:20px;
+    cursor: pointer;
+    transition:all 300ms;
+
+}
+
+.SelectForCustomReport .Options div i{
+
+    width:30px;
+    height:30px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    font-size:23px;
+    position:absolute;
+    top:10px;
+    left:10px;
+    color:#ccc6c6;
+
+}
+
+
+.SelectForCustomReport .Options div .Chev{
+
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    font-size:15px;
+    position:absolute;
+    right:15px !important;
+    color:#ccc6c6;
+    top:calc(50% - 7.5px)
+
+}
+
+.NextButton{
+
+    position:absolute;
+    bottom:10px;
+    width:auto;
+    min-width:10px;
+    height:40px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius:20px;
+    background-color: #85c6fe;
+    font-family:caviarDreamsBold;
+    cursor: pointer;
+    font-size:14px;
+
+}
+
+
+.SelectForCustomReport .Options div p1{
+
+    color:#FFFFFF;
+    font-family:caviarDreamsBold;
+    top:15px;
+    left:50px;
+    position:absolute;
+
+}
+
+.SelectForCustomReport .Options div p2{
+
+    color:#9b9b9b;
+    font-family:caviarDreams;
+    top:45px;
+    left:20px;
+    position:absolute;
+    font-size:14px;
+
+}
+
+.ClickOption{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:999999;
 
 }

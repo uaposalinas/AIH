@@ -709,6 +709,204 @@
 
             </div>
 
+            <div class="ReportsPrincipalPage">
+
+                <div class="Icon"></div>
+                <t>Reporte de Gastos</t>
+
+                <div class="Options">
+
+                    <div class="CreateANewReport ReportOptions">
+
+                        <ic class="Icons"></ic>
+                        <p>Crear Reporte</p>
+
+                    </div>
+                    <div class="ViewOldReports ReportOptions">
+
+                        <ic style="background-image:url(Assets/com.img/metric.png) !important;" class="Icons"></ic>
+                        <p>Ver los reportes</p>
+
+                    </div>
+
+                </div>
+            
+            </div>
+
+            <div class="ReportsPrincipalPage CreateReport ReportAnimationLeft" style="display:none !important">
+
+                <div class="Icon" ></div>
+                <t>Nuevo Reporte</t>
+
+                <div class="Options">
+
+                    <div class="CreateANewReport ReportOptions MensualReport">
+
+                    <ic style="background-image:url(Assets/com.img/Month.png) !important;" class="Icons"></ic>
+                        <p>Reporte Mensual</p>
+
+                    </div>
+                    <div class="ViewOldReports ReportOptions">
+
+                        <ic style="background-image:url(Assets/com.img/custom.png) !important;" class="Icons"></ic>
+                        <p>Reporte Personalizado</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="SelectMonth ReportAnimationLeft" style="display:none;">
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/1.png)"></divs>
+                    <t class="MonthID">Enero</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/2.png)"></divs>
+                    <t class="MonthID">Febrero</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/3.png)"></divs>
+                    <t class="MonthID">Marzo</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/5.png)"></divs>
+                    <t class="MonthID">Abril</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/5.png)"></divs>
+                    <t class="MonthID">Mayo</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/6.png)"></divs>
+                    <t class="MonthID">Junio</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/7.png)"></divs>
+                    <t class="MonthID">Julio</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/8.png)"></divs>
+                    <t class="MonthID">Agosto</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/9.png)"></divs>
+                    <t class="MonthID">Septiembre</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/10.png)"></divs>
+                    <t class="MonthID">Octubre</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/11.png)"></divs>
+                    <t class="MonthID">Noviembre</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/12.png)"></divs>
+                    <t class="MonthID">Diciembre</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+            </div>
+
+            <div class="CustomForm">
+
+                <div class="CustomFormAssistant">
+
+                    <div class="SelectForCustomReport">
+
+                        <t>Selecciona una opción para el reporte</t>
+
+                        <div class="Options">
+
+                            <div class="SelectProvider">
+
+                                <i class="fi fi-rr-shop"></i>
+                                <ion-icon name="chevron-forward-outline" class="Chev"></ion-icon>
+                                <p1>Reportar por proveedor</p1>
+                                <p2>Selecciona un proveedor especifico</p2>
+                                <click class="ClickOption"></click>
+
+                            </div>
+                            <div class="SelectDate">
+
+                                <i class="fi fi-rr-clock-three"></i>
+                                <ion-icon name="chevron-forward-outline" class="Chev"></ion-icon>
+                                <p1>Reportar por Fecha</p1>
+                                <p2>Selecciona una entre fecha</p2>
+                                <click class="ClickOption"></click>
+
+                            </div>
+                            <div class="SelectUser">
+
+                                <i class="fi fi-rr-circle-user"></i>
+                                <ion-icon name="chevron-forward-outline" class="Chev"></ion-icon>
+                                <p1>Reportar por Comprador</p1>
+                                <p2>Filtra las compras por comprador</p2>
+                                <click class="ClickOption"></click>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="NextButton">Siguiente</div>
+
+                
+                </div>
+
+            </div>
+            
+
         </div>
 
     </div>
@@ -806,7 +1004,9 @@
             "Vendor/com.js/com.frames.js",
             "Vendor/com.js/com.indexer.js",
             "Vendor/com.js/com.filter.js",
-            "Vendor/com.js/com.return.js"
+            "Vendor/com.js/com.return.js",
+            "Vendor/com.js/com.do.month.js",
+            "vendor/com.js/com.custom.report.js"
         ];
 
         files.forEach(file => {
@@ -816,6 +1016,9 @@
         });
     </script>
 
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 
 <style>
@@ -827,5 +1030,6 @@
     }
 
 </style>
+
 
 
