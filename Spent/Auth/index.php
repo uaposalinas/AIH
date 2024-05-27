@@ -154,7 +154,7 @@
 
         <div class="GetPasswordCont">
 
-            <input type="password" class="GetUserPassword" placeholder="Ingresa tu contraseña de Acceso">
+            <input autocomplete="off" type="password" class="GetUserPassword" placeholder="Ingresa tu contraseña de Acceso">
             <i class="fi fi-br-angle-small-right"></i>
 
         </div>
