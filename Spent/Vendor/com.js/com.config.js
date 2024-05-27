@@ -520,3 +520,10 @@ for(let Aument = 0; Aument < AllInputs.length; Aument++){
     Input.setAttribute("autocomplete", "off");
 
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach(function(input) {
+        input.setAttribute("autocomplete", "off");
+    });
+});
