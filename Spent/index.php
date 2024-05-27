@@ -861,7 +861,7 @@
 
                 <div class="CustomFormAssistant">
 
-                    <div class="SelectForCustomReport">
+                    <div class="SelectForCustomReport" style="display:none;">
 
                         <t>Selecciona una opción para el reporte</t>
 
@@ -899,7 +899,13 @@
 
                     </div>
 
-                    <div class="NextButton">Siguiente</div>
+                    <div class="NextButton" style="display:none">Siguiente</div>
+
+                    <div class="SelectProviderForCustomReport">
+
+                        <t>Selecciona un proveedor</t>
+
+                    </div>
 
                 
                 </div>
