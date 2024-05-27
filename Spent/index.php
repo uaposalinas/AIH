@@ -63,7 +63,7 @@
                 <t>Proveedores</t>
                 <div class="SearchLog" style="position:relative; right:0px; left:0px; margin-left:0px; margin-right:0px; margin-top:20px">
 
-                    <input type="text" class="SearchByProvider" placeholder="Escribe una palabra clave para buscar">
+                    <input autocomplete="off" type="text" class="SearchByProvider" placeholder="Escribe una palabra clave para buscar">
                     <i class="fi fi-br-search"></i>
 
                 </div>
@@ -271,12 +271,12 @@
 
                 <div class="ExternalInputs" hidden>
 
-                    <input type="text" name ="GestID" class="GestID" slot="Private">
-                    <input type="text" name="Month" class="Month">
-                    <input type="text" name="Year" class="Year">
-                    <input type="text" name="CardUsed" class="CardUsedToPay">
-                    <input type="text" name="FullDate" class="FullDate">
-                    <input type="text" name="CurrentDay" class="CurrentDay">
+                    <input autocomplete="off" type="text" name ="GestID" class="GestID" slot="Private">
+                    <input autocomplete="off" type="text" name="Month" class="Month">
+                    <input autocomplete="off" type="text" name="Year" class="Year">
+                    <input autocomplete="off" type="text" name="CardUsed" class="CardUsedToPay">
+                    <input autocomplete="off" type="text" name="FullDate" class="FullDate">
+                    <input autocomplete="off" type="text" name="CurrentDay" class="CurrentDay">
 
                 </div>
                 
@@ -286,14 +286,14 @@
 
                         <div class="ProviderCont Selectable">
     
-                            <input type="text" name="SendProvider" class="Provider ThisValue ProviderValue" style="width:100%; height:100%" placeholder="Proveedor">
+                            <input autocomplete="off" type="text" name="SendProvider" class="Provider ThisValue ProviderValue" style="width:100%; height:100%" placeholder="Proveedor">
 
                         </div>
     
                         <div class="AddMore AddAnotherProvider" style="cursor:pointer;"><i class="fi fi-rr-plus-small"></i></div>
     
-                        <input type="number" name="SendAmount" class="Amount ThisValue" placeholder="Cantidad">
-                        <input type="text" name="SendDescription" class="Description LogDescription ThisValue" placeholder="Descripción del gasto">
+                        <input autocomplete="off" type="number" name="SendAmount" class="Amount ThisValue" placeholder="Cantidad">
+                        <input autocomplete="off" type="text" name="SendDescription" class="Description LogDescription ThisValue" placeholder="Descripción del gasto">
                         
                     </div>
     
@@ -376,9 +376,9 @@
     
                         </div>
 
-                        <input type="text" name="SendDate" class="ThisDate" placeholder="Fecha, ¿Es la de hoy? (00/00/0000)" style="display:flex; justify-content:left; text-align:left; padding-left:15px;" disabled>
-                        <input type="checkbox" name="SendDateConfirmation" class="DateConfirmation" checked="true">
-                        <input type="text" name="SendBillID" class="BillID ThisValue" placeholder="NO. de Factura"> 
+                        <input autocomplete="off" type="text" name="SendDate" class="ThisDate" placeholder="Fecha, ¿Es la de hoy? (00/00/0000)" style="display:flex; justify-content:left; text-align:left; padding-left:15px;" disabled>
+                        <input autocomplete="off" type="checkbox" name="SendDateConfirmation" class="DateConfirmation" checked="true">
+                        <input autocomplete="off" type="text" name="SendBillID" class="BillID ThisValue" placeholder="NO. de Factura"> 
     
                     </div>
     
@@ -394,21 +394,21 @@
 
                         </div>
     
-                        <input type="number" name="SendSubtotal" class="Subtotal ThisValue" placeholder=" 0.00" id="2" style="margin-left:0px;">
-                        <input type="text" name="SendExempt" class="Exempt" placeholder=" 0.00" id="1" style="background-color: #141414;" value=" 0.00" disabled>
-                        <input type="text" name="Other" class="Others" placeholder=" 0.00" id="3" disabled value=" 0.00">
-                        <input type="text" name="ISV18" class="ISV18" placeholder=" 0.00" id="4" disabled value=" 0.00">
-                        <input type="text" name="ISV15" class="ISV15" placeholder=" 0.00" id="5" disabled value=" 0.00">
+                        <input autocomplete="off" type="number" name="SendSubtotal" class="Subtotal ThisValue" placeholder=" 0.00" id="2" style="margin-left:0px;">
+                        <input autocomplete="off" type="text" name="SendExempt" class="Exempt" placeholder=" 0.00" id="1" style="background-color: #141414;" value=" 0.00" disabled>
+                        <input autocomplete="off" type="text" name="Other" class="Others" placeholder=" 0.00" id="3" disabled value=" 0.00">
+                        <input autocomplete="off" type="text" name="ISV18" class="ISV18" placeholder=" 0.00" id="4" disabled value=" 0.00">
+                        <input autocomplete="off" type="text" name="ISV15" class="ISV15" placeholder=" 0.00" id="5" disabled value=" 0.00">
     
                     </div>
 
                     <div class="Row checkboxs" style="height:13px;">
 
                         <div></div>
-                        <div style="margin:0px;"><input type="checkbox" class="ExentStatus"></div>
-                        <div><input type="checkbox" class="OtherStatus"></div>
-                        <div><input type="checkbox" class="ISV18Status"></div>
-                        <div><input type="checkbox" class="ISV15Status" checked></div>
+                        <div style="margin:0px;"><input autocomplete="off" type="checkbox" class="ExentStatus"></div>
+                        <div><input autocomplete="off" type="checkbox" class="OtherStatus"></div>
+                        <div><input autocomplete="off" type="checkbox" class="ISV18Status"></div>
+                        <div><input autocomplete="off" type="checkbox" class="ISV15Status" checked></div>
 
 
                     </div>
@@ -433,7 +433,7 @@
                     </div>
 
                     <p class="TotalLogTitle">Total del registro</p>
-                    <input type="text" name="SendTotal" class="Total" placeholder=" 0.00" disabled>
+                    <input autocomplete="off" type="text" name="SendTotal" class="Total" placeholder=" 0.00" disabled>
 
                 </div>
             
@@ -486,7 +486,7 @@
 
                 </div>
 
-                <input type="date" class="FilterByDate">
+                <input autocomplete="off" type="date" class="FilterByDate">
 
                 <div class="SwitchTable tooltip" data-text="Ver como tabla">
 
@@ -496,7 +496,7 @@
                 
                 <div class="SearchLog">
 
-                    <input type="text" class="SearchByLog" placeholder="Escribe el ID de Gestión para buscar.">
+                    <input autocomplete="off" type="text" class="SearchByLog" placeholder="Escribe el ID de Gestión para buscar.">
                     <i class="fi fi-br-search"></i>
 
                 </div>             
