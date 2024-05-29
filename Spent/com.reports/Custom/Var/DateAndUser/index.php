@@ -4,37 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver reporte mes de Mayo</title>
-    <link rel="shortcut icon" href="../../../../Assets/com.img/com.icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../../../Vendor/com.css/com.config.css">
-    <link rel="stylesheet" href="../../../../Vendor/com.css/com.reports.print.css">
-    <link rel="stylesheet" href="../../../../Fonts/IndexFontsCaviarDreams.css">
-    <link rel="stylesheet" href="../../../../Fonts/IndexFontsRoboto.css">
+    <link rel="shortcut icon" href=" ../../../Assets/com.img/com.icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../Vendor/com.css/com.config.css">
+    <link rel="stylesheet" href="../../../Vendor/com.css/com.reports.print.css">
+    <link rel="stylesheet" href="../../../Fonts/IndexFontsCaviarDreams.css">
+    <link rel="stylesheet" href="../../../Fonts/IndexFontsRoboto.css">
 </head>
 <body class="ReportsBody Scroll">
 
-    <header>
+<header>
 
-        <div class="HeaderDecoration"></div>
+<div class="HeaderDecoration"></div>
 
-            <div class="QrCode"></div>
+    <div class="QrCode"></div>
 
 
-        <div class="LeftZoneHeader">
+<div class="LeftZoneHeader">
 
-            <t>Reporte Personalizado de Gastos</t>
-            <p>Comprador y Fecha</p>
+    <t>Reporte Personalizado de Gastos</t>
+    <p>Filtrar por Fecha</p>
 
-            <div class="ReportDetails">
+    <div class="ReportDetails">
 
-                <t2>Detalles del reporte</t2>
-                <p2> <b>Realizado el:</b> 31 de Mayo de 2024</p2>
-                <p2> <b>ID de reporte:</b> ASC-2024-041001MR</p2>
-                <p2> <b>Generado por:</b> Alejandro Salinas</p2>
-            </div>
+        <t2>Detalles del reporte</t2>
+        <p2> <b>Realizado el:</b> 31 de Mayo de 2024</p2>
+        <p2> <b>ID de reporte:</b> ASC-2024-041001MR</p2>
+        <p2> <b>Generado por:</b> Alejandro Salinas</p2>
+    </div>
 
-        </div>
+</div>
 
-    </header>
+</header>
 
 
     <div class="ShowReportsPerMonth">
@@ -69,22 +69,23 @@
 
                     $Number = 0;
 
-                    require '../../../../config/com.config.php';
+                    require '../../../config/com.config.php';
                     $Connection -> set_charset("utf8");
 
-                    if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["User"])){
-
+                    if(isset($_GET["From"]) && isset($_GET["Until"])){
+                
                         $From = $_GET["From"];
                         $Until = $_GET["Until"];
-                        $User = $_GET["User"];
-
+                
                     }else{
-
+                
                         ////echo "<script> window.location.href = '../' </script>";
-
+                
                     }
+                
+                
 
-                    $DoQuery = "SELECT * FROM logs WHERE  Date BETWEEN '$From' AND '$Until' AND SpendedBy = '$User';";
+                    $DoQuery = "SELECT * FROM logs WHERE Date BETWEEN '$From' AND '$Until'";
                     $QueryResults = $Connection -> query($DoQuery);
 
                     if($QueryResults -> num_rows > 0){
@@ -185,7 +186,7 @@
 
                     }else{
                         
-                    //    echo "<script> try {window.close(); localStorage.setItem('NoLogKey', 'true') } catch (error) {window.location.href = '../';} </script>";
+                        //echo "<script> try {window.close(); localStorage.setItem('NoLogKey', 'true') } catch (error) {window.location.href = '../../../';} </script>";
 
 
                     }
@@ -222,22 +223,22 @@
 
         <?php
 
-            require '../../../../config/com.config.php';
+            require '../../../config/com.config.php';
 
-            if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["User"])){
+            if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["Provider"])){
                 
                 $From = $_GET["From"];
-                $Until = $_GET["Until"];
-                $User = $_GET["User"];
-
+                $User = $_GET["Until"];
+                $Provider = $_GET["Provider"];
+        
             }else{
-
+        
                 ////echo "<script> window.location.href = '../' </script>";
-
+        
             }
 
 
-            $DoQuery = "SELECT Exempt FROM logs WHERE Date BETWEEN '$From' AND '$Until' AND SpendedBy = '$User';";
+            $DoQuery = "SELECT Exempt FROM logs WHERE Date BETWEEN '$From' AND '$Until'";
 
             $QueryResults = $Connection->query($DoQuery);
 
@@ -269,22 +270,22 @@
 
             <?php
 
-                require '../../../../config/com.config.php';
+                require '../../../config/com.config.php';
 
-                if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["User"])){
+                if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["Provider"])){
                 
                     $From = $_GET["From"];
-                    $Until = $_GET["Until"];
-                    $User = $_GET["User"];
-    
+                    $User = $_GET["Until"];
+                    $Provider = $_GET["Provider"];
+            
                 }else{
-    
+            
                     ////echo "<script> window.location.href = '../' </script>";
-    
+            
                 }
 
 
-                $DoQuery = "SELECT ISV15 FROM logs WHERE Date BETWEEN '$From' AND '$Until' AND SpendedBy = '$User';";
+                $DoQuery = "SELECT ISV15 FROM logs WHERE Date BETWEEN '$From' AND '$Until'";
 
                 $QueryResults = $Connection->query($DoQuery);
 
@@ -316,22 +317,21 @@
 
                 <?php
 
-                    require '../../../../config/com.config.php';
+                    require '../../../config/com.config.php';
 
-                    if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["User"])){
+                    if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["Provider"])){
                 
                         $From = $_GET["From"];
-                        $Until = $_GET["Until"];
-                        $User = $_GET["User"];
-        
+                        $User = $_GET["Until"];
+                        $Provider = $_GET["Provider"];
+                
                     }else{
-        
+                
                         ////echo "<script> window.location.href = '../' </script>";
-        
+                
                     }
 
-
-                    $DoQuery = "SELECT ISV18 FROM logs WHERE Date BETWEEN '$From' AND '$Until' AND SpendedBy = '$User';";
+                    $DoQuery = "SELECT ISV18 FROM logs WHERE Date BETWEEN '$From' AND '$Until'";
 
                     $QueryResults = $Connection->query($DoQuery);
 
@@ -362,21 +362,22 @@
 
             <?php
 
-                require '../../../../config/com.config.php';
+                require '../../../config/com.config.php';
 
-                if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["User"])){
+                if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["Provider"])){
                 
                     $From = $_GET["From"];
-                    $Until = $_GET["Until"];
-                    $User = $_GET["User"];
-    
+                    $User = $_GET["Until"];
+                    $Provider = $_GET["Provider"];
+            
                 }else{
-    
+            
                     ////echo "<script> window.location.href = '../' </script>";
-    
+            
                 }
 
-                $DoQuery = "SELECT OtherISV FROM logs WHERE Date BETWEEN '$From' AND '$Until' AND SpendedBy = '$User';";
+
+                $DoQuery = "SELECT OtherISV FROM logs WHERE Date BETWEEN '$From' AND '$Until'";
 
                 $QueryResults = $Connection->query($DoQuery);
 
@@ -405,22 +406,22 @@
 
             <?php
 
-            require '../../../../config/com.config.php';
+            require '../../../config/com.config.php';
 
-            if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["User"])){
+            if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["Provider"])){
                 
                 $From = $_GET["From"];
-                $Until = $_GET["Until"];
-                $User = $_GET["User"];
-
+                $User = $_GET["Until"];
+                $Provider = $_GET["Provider"];
+        
             }else{
-
+        
                 ////echo "<script> window.location.href = '../' </script>";
-
+        
             }
 
 
-            $DoQuery = "SELECT Total FROM logs WHERE Date BETWEEN '$From' AND '$Until' AND SpendedBy = '$User';";
+            $DoQuery = "SELECT Total FROM logs WHERE Date BETWEEN '$From' AND '$Until'";
 
             $QueryResults = $Connection->query($DoQuery);
 
@@ -450,12 +451,9 @@
     </div>
 
 
+    
     <div class="ShowAllResults">
 
-    
-
-               
-</div>
     <footer style="display: none;">
 
         <div class="FooterDecoration"></div>    
@@ -469,10 +467,10 @@
 
 <script>
         const files = [
-            "../../../../Vendor/com.js/com.versions.js",
-            "../../../../Vendor/com.js/com.reports.js",
-            "../../../../Vendor/com.js/com.format.config.js",
-            "../../../../Vendor/com.js/com.totalizate.js"
+            "../../../Vendor/com.js/com.versions.js",
+            "../../../Vendor/com.js/com.reports.js",
+            "../../../Vendor/com.js/com.format.config.js",
+            "../../../Vendor/com.js/com.totalizate.js"
 
 
         ];
@@ -483,3 +481,4 @@
             document.body.appendChild(script);
         });
     </script>
+
