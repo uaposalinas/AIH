@@ -861,7 +861,7 @@
 
                 <div class="CustomFormAssistant">
 
-                    <div class="SelectForCustomReport ReportAnimationLeft" style="display:none">
+                    <div class="SelectForCustomReport ReportAnimationLeft" style="display:flex">
 
                         <t>Selecciona una opción para el reporte</t>
 
@@ -899,9 +899,9 @@
 
                     </div>
 
-                    <div class="NextButton" style="display:none;">Siguiente</div>
+                    <div class="NextButton ActivateButton" style="display:flex;">Siguiente</div>
 
-                    <div class="SelectProviderForCustomReport" style="display:none">
+                    <div class="SelectProviderForCustomReport ReportAnimationLeft" style="display:none">
 
                         <div class="Icon"></div>
 
@@ -911,10 +911,11 @@
 
                         <div class="SelectProviderNows">Buscar Proveedores</div>
 
+                        <div class="ReportNextPosition ThisPulseProvider"></div>
 
                     </div>
 
-                    <div class="SelectDateForCustomReport" style="display:none">
+                    <div class="SelectDateForCustomReport ReportAnimationLeft" style="display:none">
 
                         <div class="Icon"></div>
 
@@ -926,12 +927,12 @@
                         <input type="date" class="SendSecondDate">
 
 
-                        <div class="SendTimeForCustomReport">Siguiente</div>
+                        <div class="SendTimeForCustomReport ReportNextPosition">Siguiente</div>
 
 
                     </div>
 
-                    <div class="SelectUserForCustomReport" style="">
+                    <div class="SelectUserForCustomReport ReportAnimationLeft" style="display:none">
 
                         <div class="Icon"></div>
 
@@ -965,7 +966,7 @@
 
                     </div>
 
-                        <div class="SelectUserNows">Siguiente</div>
+                        <div class="SelectUserNows ReportNextPosition">Siguiente</div>
 
 
                     </div>

@@ -371,6 +371,7 @@ for(let Aument = 0; Aument < ThisProvider.length; Aument++){
         PressProvider.value = GetAttr;
         document.querySelector('.SendProviderForCustomReport').value = GetAttr;
         document.querySelector('.ProvidersPopup').style.display = "none";
+        document.querySelector('.ThisPulseProvider').click()
         document.querySelector('.SelectProviderForCustomReport').style.display = "none";
 
 

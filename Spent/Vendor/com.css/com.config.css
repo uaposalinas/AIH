@@ -3551,6 +3551,7 @@ p2 b{
     display:flex;
     justify-content:center;
     text-align:center;
+    overflow: hidden;
 
 }
 

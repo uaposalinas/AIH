@@ -106,6 +106,8 @@ function CompileToSend(){
 }
 
 
+let Stat = 0; 
+
 function GetLocalData(){
 
     if(ProviderStatus == true && DateStatus == true && UserStatus == true){
@@ -113,15 +115,23 @@ function GetLocalData(){
         //Todos
 
         const Route = `com.reports/Custom/All?`;
-        localStorage.setItem('Destination', Route);
+        localStorage.setItem('DestinationName', "All");
+        Stat = 1;
+        document.querySelector('.SelectForCustomReport').style.display = "none";
+        document.querySelector('.ActivateButton').style.display = "none";
+        document.querySelector('.SelectProviderForCustomReport').style.display = "flex";
 
 
     }else if(ProviderStatus == false && DateStatus == true && UserStatus == true){
 
         //Fecha y Comprador
         const Route = `com.reports/Custom/Var/DateAndUser`;
+        localStorage.setItem('DestinationName', "DateAndUser");
+        Stat = 2;
+        document.querySelector('.SelectForCustomReport').style.display = "none";
+        document.querySelector('.ActivateButton').style.display = "none";
+        document.querySelector('.SelectDateForCustomReport').style.display = "flex";
 
-        window.open(Route)
 
     }else if(ProviderStatus == true && DateStatus == true && UserStatus == false){
 
@@ -129,15 +139,24 @@ function GetLocalData(){
 
         const Route = `com.reports/Custom/Var/ProviderAndDate`;
 
-        window.open(Route);
+        localStorage.setItem('DestinationName', "ProviderAndDate");
+        Stat = 3;
+
+        document.querySelector('.SelectForCustomReport').style.display = "none";
+        document.querySelector('.ActivateButton').style.display = "none";
+        document.querySelector('.SelectProviderForCustomReport').style.display = "flex";
 
     }else if(ProviderStatus == true && DateStatus == false && UserStatus == true){
 
         //Proveedor y Comprador
 
         const Route = `com.reports/Custom/Var/ProviderAndUser`;
+        localStorage.setItem('DestinationName', "ProviderAndUser");
+        Stat = 4;
+        document.querySelector('.SelectForCustomReport').style.display = "none";
+        document.querySelector('.ActivateButton').style.display = "none";
+        document.querySelector('.SelectProviderForCustomReport').style.display = "flex";
 
-        window.open(Route)
 
     }else if(ProviderStatus == true){
 
@@ -145,7 +164,13 @@ function GetLocalData(){
 
         const Route = `com.reports/Custom/Provider`;
 
-        window.open(Route)
+        localStorage.setItem('DestinationName', "Provider");
+
+        Stat = 5;
+
+        document.querySelector('.SelectForCustomReport').style.display = "none";
+        document.querySelector('.ActivateButton').style.display = "none";
+        document.querySelector('.SelectProviderForCustomReport').style.display = "flex";
 
     }else if(DateStatus == true){
 
@@ -153,7 +178,13 @@ function GetLocalData(){
 
         const Route = `com.reports/Custom/Date`;
 
-        window.open(Route)
+        localStorage.setItem('DestinationName', "Date");
+
+        Stat = 6;
+
+        document.querySelector('.SelectForCustomReport').style.display = "none";
+        document.querySelector('.ActivateButton').style.display = "none";
+        document.querySelector('.SelectDateForCustomReport').style.display = "flex";
 
     }else if(UserStatus == true){
 
@@ -161,7 +192,12 @@ function GetLocalData(){
 
         const Route = `com.reports/Custom/User`;
 
-        window.open(Route)
+        localStorage.setItem('DestinationName', "User");
+        Stat = 7;
+        document.querySelector('.SelectForCustomReport').style.display = "none";
+        document.querySelector('.ActivateButton').style.display = "none";
+        document.querySelector('.SelectUserForCustomReport').style.display = "flex";
+
 
     }else{
 
@@ -182,7 +218,6 @@ function GetLocalData(){
     
 }
 
-//Report Engine
 
 function SendCustomReport(){
 
@@ -205,3 +240,155 @@ function ShowProvidersForCustomReport(){
     document.querySelector('.ProvidersPopup').style.display = "flex";
 
 }
+
+
+
+//Report Engine
+
+const DestinationName = localStorage.getItem('DestinationName');
+const ReportNextPosition = document.querySelectorAll('.ReportNextPosition');
+
+let MustBe = 0;
+let GetReportDataPosition = 0;
+
+if(DestinationName == "All"){
+
+    MustBe = 3;
+    Stat = 1;
+
+}else if(DestinationName == "DateAndUser"){
+
+    MustBe = 2;
+    Stat = 2;
+
+}else if(DestinationName == "ProviderAndDate"){
+
+    MustBe = 2;
+    Stat = 3;
+
+}else if(DestinationName == "ProviderAndUser"){
+
+    MustBe = 2;
+    Stat = 4;
+
+}else if(DestinationName == "Provider"){
+
+    MustBe = 1;
+    Stat = 5;
+
+}else if(DestinationName == "Date"){
+
+    MustBe = 1;
+    Stat = 6;
+
+}else if(DestinationName == "User"){
+
+    MustBe = 1;
+    Stat = 7;
+
+}
+
+for(let Aument = 0; Aument < ReportNextPosition.length; Aument++){
+
+    const Buttons = ReportNextPosition[Aument];
+
+    Buttons.addEventListener('click', SelectThisClick);
+
+    //0 Provider
+    //1 Date
+    //2 User
+
+    function SelectThisClick(e){
+
+        const IndexOf = Array.from(ReportNextPosition).indexOf(e.target)
+
+        if(Stat == 1){
+
+            if(IndexOf == 0){
+
+                document.querySelector('.SelectProviderForCustomReport').style.display = "none";
+                document.querySelector('.SelectDateForCustomReport').style.display = "flex";
+
+            }else if(IndexOf == 1){
+
+                document.querySelector('.SelectDateForCustomReport').style.display = "none";
+                document.querySelector('.SelectUserForCustomReport').style.display = "flex";
+
+            }else if(IndexOf == 2){
+
+                console.log('ya');
+
+            }
+
+        }else if(Stat == 2){
+
+            if(IndexOf == 1){
+
+                document.querySelector('.SelectDateForCustomReport').style.display = "none";
+                document.querySelector('.SelectUserForCustomReport').style.display = "flex";
+
+            }else if(IndexOf == 2){
+
+                console.log('ya');
+                alert('')
+
+            }
+
+        }else if(Stat == 3){
+
+            if(IndexOf == 0){
+
+                document.querySelector('.SelectProviderForCustomReport').style.display = "none";
+                document.querySelector('.SelectDateForCustomReport').style.display = "flex";
+
+            }else if(IndexOf == 1){
+
+                console.log('ya');
+
+            }
+
+        }else if(Stat == 4){
+           
+            if(IndexOf == 0){
+
+                document.querySelector('.SelectProviderForCustomReport').style.display = "none";
+                document.querySelector('.SelectUserForCustomReport').style.display = "flex";
+
+            }else if(IndexOf == 2){
+
+                console.log('ya');
+
+            }
+
+        }else if(Stat == 5){
+
+            if(IndexOf == 0){
+
+                console.log('ya');
+
+
+            }
+        }else if(Stat == 6){
+
+            if(IndexOf == 1){
+
+                console.log('ya');
+
+            }
+        }else if(Stat == 7){
+
+            if(IndexOf == 2){
+
+                console.log('ya');
+
+            }
+        }
+
+
+
+
+    }
+
+}
+
+
