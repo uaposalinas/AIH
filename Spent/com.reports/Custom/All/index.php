@@ -12,29 +12,29 @@
 </head>
 <body class="ReportsBody Scroll">
 
-    <header>
+<header>
 
-        <div class="HeaderDecoration"></div>
+<div class="HeaderDecoration"></div>
 
-            <div class="QrCode"></div>
+    <div class="QrCode"></div>
 
 
-        <div class="LeftZoneHeader">
+<div class="LeftZoneHeader">
 
-            <t>Reporte Mensual de Gastos</t>
-            <p>Mayo 2024</p>
+    <t>Reporte Personalizado de Gastos</t>
+    <p>Comprador y Fecha</p>
 
-            <div class="ReportDetails">
+    <div class="ReportDetails">
 
-                <t2>Detalles del reporte</t2>
-                <p2> <b>Fecha de cierre de mes:</b> 31 de Mayo de 2024</p2>
-                <p2> <b>ID de reporte:</b> ASC-2024-041001MR</p2>
-                <p2> <b>Generado por:</b> Alejandro Salinas</p2>
-            </div>
+        <t2>Detalles del reporte</t2>
+        <p2> <b>Realizado el:</b> 31 de Mayo de 2024</p2>
+        <p2> <b>ID de reporte:</b> ASC-2024-041001MR</p2>
+        <p2> <b>Generado por:</b> Alejandro Salinas</p2>
+    </div>
 
-        </div>
+</div>
 
-    </header>
+</header>
 
 
     <div class="ShowReportsPerMonth">
@@ -470,10 +470,10 @@
 
 <script>
         const files = [
-            "../Vendor/com.js/com.versions.js",
-            "../Vendor/com.js/com.reports.js",
-            "../Vendor/com.js/com.format.config.js",
-            "../Vendor/com.js/com.totalizate.js"
+            "../../../Vendor/com.js/com.versions.js",
+            "../../../Vendor/com.js/com.reports.js",
+            "../../../Vendor/com.js/com.format.config.js",
+            "../../../Vendor/com.js/com.totalizate.js"
 
 
         ];
