@@ -193,3 +193,15 @@ function SendCustomReport(){
     
 
 }
+
+
+const SelectProviderNows = document.querySelector('.SelectProviderNows');
+
+SelectProviderNows.addEventListener('click', ShowProvidersForCustomReport);
+
+function ShowProvidersForCustomReport(){
+
+    document.querySelector('.SoftModals')
+    document.querySelector('.ProvidersPopup').style.display = "flex";
+
+}

@@ -4,6 +4,8 @@ const ReportsPrincipalPage = document.querySelector('.ReportsPrincipalPage');
 const CreateReport = document.querySelector('.CreateReport');
 const MensualReport = document.querySelector('.MensualReport');
 const SelectMonth = document.querySelector('.SelectMonth');
+const CustomForm = document.querySelector('.CustomForm');
+const CustomReportForm = document.querySelector('.CustomReportForm');
 
 CreateANewReport.addEventListener('click', GetFormForReport);
 
@@ -66,3 +68,12 @@ for(let Aument = 0; Aument < Month.length; Aument++){
 }
 
 
+
+CustomReportForm.addEventListener('click', RunCustomReportNow);
+
+function RunCustomReportNow(){
+
+    ReportsPrincipalPage.style.display = "none";
+    CustomForm.style.display = "flex";
+
+}

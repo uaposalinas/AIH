@@ -746,7 +746,7 @@
                         <p>Reporte Mensual</p>
 
                     </div>
-                    <div class="ViewOldReports ReportOptions">
+                    <div class="CustomReportForm ReportOptions">
 
                         <ic style="background-image:url(Assets/com.img/custom.png) !important;" class="Icons"></ic>
                         <p>Reporte Personalizado</p>
@@ -861,7 +861,7 @@
 
                 <div class="CustomFormAssistant">
 
-                    <div class="SelectForCustomReport" style="display:none;">
+                    <div class="SelectForCustomReport ReportAnimationLeft" style="display:none">
 
                         <t>Selecciona una opción para el reporte</t>
 
@@ -899,14 +899,76 @@
 
                     </div>
 
-                    <div class="NextButton" style="display:none">Siguiente</div>
+                    <div class="NextButton" style="display:none;">Siguiente</div>
 
-                    <div class="SelectProviderForCustomReport">
+                    <div class="SelectProviderForCustomReport" style="display:none">
+
+                        <div class="Icon"></div>
 
                         <t>Selecciona un proveedor</t>
 
+                        <input type="text" class="SendProviderForCustomReport" hidden>
+
+                        <div class="SelectProviderNows">Buscar Proveedores</div>
+
+
                     </div>
 
+                    <div class="SelectDateForCustomReport" style="display:none">
+
+                        <div class="Icon"></div>
+
+                        <t>Selecciona un entre que fechas quieres filtrar</t>
+
+                        <p style="margin-top:30px;">Desde:</p>
+                        <input type="date" class="SendFirstDate">
+                        <p>Hasta:</p>
+                        <input type="date" class="SendSecondDate">
+
+
+                        <div class="SendTimeForCustomReport">Siguiente</div>
+
+
+                    </div>
+
+                    <div class="SelectUserForCustomReport" style="">
+
+                        <div class="Icon"></div>
+
+                        <t>Selecciona quien lo compro:</t>
+
+                        <div class="CountableCount Selectable ThisNas" style="background-color:#4b4848; color:#1c1c1c; width:90%; position:relative; margin:20px;">
+        
+                            <select name="Realice" class="Realice ThisValue SelectValue">
+
+                                <option value="default">¿Quién realizó el gasto?</option>
+                                <option value="AIH S DE RL">AIH S DE RL</option>
+                                <option value="Alejandro Salinas">Alejandro Salinas</option>
+                                <option value="Marjorie Santos">Marjorie Santos</option>
+                                <option value="Paola Rivera">Paola Rivera</option>
+                                <option value="Gary Rivera">Gary Rivera</option>
+                                <option value="Mario Castellanos">Mario Castellanos</option>
+                                <option value="Yenilin Manchamé">Yenilin Manchamé</option>
+                                <option value="David Castellón">David Castellón</option>
+                                <option value="Brandon Zelaya">Brandon Zelaya</option>
+                                <option value="Nicolle Artica">Nicolle Artica</option>
+                                <option value="Alejandra Castro">Alejandra Castro</option>
+                                <option value="Delman Gallardo">Delman Gallardo</option>
+                                <option value="José Rogel">José Rogel</option>
+                                <option value="Jussely Serrano">Jussely Serrano</option>
+                                <option value="Nelly Ramirez">Nelly Ramirez</option>
+                                <option value="Kimberly Quiroz">Kimberly Quiroz</option>
+                                <option value="Victoria Rodriguez">Victoria Rodriguez</option>
+                                <option value="Josue Argueta">Josue Argueta</option>
+
+                            </select>
+
+                    </div>
+
+                        <div class="SelectUserNows">Siguiente</div>
+
+
+                    </div>
                 
                 </div>
 

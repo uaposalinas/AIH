@@ -13,7 +13,7 @@ function openCenteredWindow(url, title, width, height) {
     const windowParams = `width=${width},height=${height},top=${top},left=${left}`;
 
     // Abrir la nueva ventana centrada
-    window.open(url, title, windowParams);
+   // window.open(url, title, windowParams);
 }
 
 // Llamar a la función para abrir la ventana centrada
@@ -369,7 +369,9 @@ for(let Aument = 0; Aument < ThisProvider.length; Aument++){
     function SelectThisProvider(){
 
         PressProvider.value = GetAttr;
+        document.querySelector('.SendProviderForCustomReport').value = GetAttr;
         document.querySelector('.ProvidersPopup').style.display = "none";
+        document.querySelector('.SelectProviderForCustomReport').style.display = "none";
 
 
     }
@@ -544,7 +546,6 @@ for(let Aument = 0; Aument < AllInputs.length; Aument++){
     Input.setAttribute("autocomplete", "off");
 
 }
-pa
 document.addEventListener("DOMContentLoaded", function() {
     const inputs = document.querySelectorAll("input");
     inputs.forEach(function(input) {

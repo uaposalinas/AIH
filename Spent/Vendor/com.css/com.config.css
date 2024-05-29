@@ -3531,7 +3531,7 @@ p2 b{
     width:100%;
     height:90%;
     position:absolute;
-    bottom:0px;
+    top:0px;
     left:0px;
     display:flex;
     justify-content:center;
@@ -3657,6 +3657,7 @@ p2 b{
 }
 
 
+
 .SelectForCustomReport .Options div p1{
 
     color:#FFFFFF;
@@ -3689,6 +3690,26 @@ p2 b{
 
 }
 
+
+.SelectProviderNows{
+
+    position:absolute;
+    bottom:40px;
+    width:auto;
+    min-width:10px;
+    height:40px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius:20px;
+    background-color: #85c6fe;
+    font-family:caviarDreamsBold;
+    cursor: pointer;
+    font-size:14px;
+
+}
+
 .SelectProviderForCustomReport{
 
     width:100%;
@@ -3701,8 +3722,160 @@ p2 b{
 
 }
 
-.CustomForm{
 
-    display: none !important;
+.SelectProviderForCustomReport .Icon{
+
+    width:80px;
+    height:80px;
+    position: relative;
+    margin-bottom:20px;
+    background-image:url(../../Assets/com.img/shop.png);
+    background-size:cover;
+    background-position:center;
 
 }
+
+
+.SelectProviderForCustomReport t{
+
+    color:#FFFFFF;
+    font-size:20px;
+    font-family:caviarDreams;
+
+}
+
+.SelectDateForCustomReport{
+
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+
+}
+
+
+.SelectDateForCustomReport .Icon{
+
+    width:80px;
+    height:80px;
+    position: relative;
+    margin-bottom:20px;
+    background-image:url(../../Assets/com.img/Time.png);
+    background-size:cover;
+    background-position:center;
+
+}
+
+
+.SelectDateForCustomReport t{
+
+    color:#FFFFFF;
+    font-size:20px;
+    font-family:caviarDreams;
+
+}
+
+.SendTimeForCustomReport{
+
+    position:absolute;
+    bottom:10px;
+    width:auto;
+    min-width:10px;
+    height:40px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius:20px;
+    background-color: #85c6fe;
+    font-family:caviarDreamsBold;
+    cursor: pointer;
+    font-size:14px;
+
+}
+
+.SelectDateForCustomReport input[type="date"]{
+
+    width:80%;
+    height:30px;
+    background-color: #9b9b9b;
+    border-radius:20px;
+    margin:5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
+.SelectDateForCustomReport p{
+
+    position:relative;
+    right:110px;
+    color:#FFFFFF;
+    font-family:caviarDreamsBold;
+
+}
+
+.SelectDateForCustomReport p:first-child{
+
+    margin-top:40px;
+
+}
+
+.SelectUserForCustomReport{
+
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+
+}
+
+
+.SelectUserForCustomReport .Icon{
+
+    width:80px;
+    height:80px;
+    position: relative;
+    margin-bottom:20px;
+    background-image:url(../../Assets/com.img/Buyer.png);
+    background-size:cover;
+    background-position:center;
+
+}
+
+
+.SelectUserForCustomReport t{
+
+    color:#FFFFFF;
+    font-size:20px;
+    font-family:caviarDreams;
+
+}
+
+.SelectUserNows{
+
+    position:absolute;
+    bottom:40px;
+    width:auto;
+    min-width:10px;
+    height:40px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius:20px;
+    background-color: #85c6fe;
+    font-family:caviarDreamsBold;
+    cursor: pointer;
+    font-size:14px;
+
+}
+
