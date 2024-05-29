@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver reporte mes de Mayo</title>
+    <title>Reporte Personalizado</title>
     <link rel="shortcut icon" href="../../../Assets/com.img/com.icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../../../Vendor/com.css/com.config.css">
     <link rel="stylesheet" href="../../../Vendor/com.css/com.reports.print.css">
@@ -39,7 +39,7 @@
 
     <div class="ShowReportsPerMonth">
 
-        <t class="PerMonthsLogTitle" style="width: 10px;">Registros completos del mes de Mayo</t>
+        <t class="PerMonthsLogTitle" style="width: 10px;">Registros del Reporte Personalizado</t>
         <div class="TitleBorder"></div>
 
         <div class="Table">
@@ -204,7 +204,7 @@
     <div class="ShowAllResults">
 
     
-     <t class="PerMonthsLogTitle" style="width: 10000px;">Totalizaciones mes de mayo</t>
+     <t class="PerMonthsLogTitle" style="width: 10000px;">Totalizaciones de Registros del Reporte Personalizado</t>
         <div class="TitleBorder2"></div>
 
         <div class="Totalizate">
