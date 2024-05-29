@@ -682,10 +682,10 @@
 
 <script>
         const files = [
-            "../Vendor/com.js/com.versions.js",
-            "../Vendor/com.js/com.reports.js",
-            "../Vendor/com.js/com.format.config.js",
-            "../Vendor/com.js/com.totalizate.js"
+            "../../../../Vendor/com.js/com.versions.js",
+            "../../../../Vendor/com.js/com.reports.js",
+            "../../../../Vendor/com.js/com.format.config.js",
+            "../../../../Vendor/com.js/com.totalizate.js"
 
 
         ];
@@ -696,3 +696,4 @@
             document.body.appendChild(script);
         });
     </script>
+

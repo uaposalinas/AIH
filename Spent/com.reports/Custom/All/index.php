@@ -22,7 +22,7 @@
 <div class="LeftZoneHeader">
 
     <t>Reporte Personalizado de Gastos</t>
-    <p>Comprador y Fecha</p>
+    <p>Filtrar Fecha</p>
 
     <div class="ReportDetails">
 
