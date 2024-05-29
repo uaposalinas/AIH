@@ -316,7 +316,30 @@ for(let Aument = 0; Aument < ReportNextPosition.length; Aument++){
 
             }else if(IndexOf == 2){
 
-                console.log('ya');
+
+                const SendProviderForCustomReport = document.querySelector('.SendProviderForCustomReport');
+                const SendFirstDate = document.querySelector('.SendFirstDate');
+                const SendSecondDate = document.querySelector('.SendSecondDate');
+                const SelectForCustomReports = document.querySelector('.SelectForCustomReports');
+
+                class Report{
+
+                    constructor(Provider, DateOne, DateTwo, User){
+
+                        this.Provider = Provider;
+                        this.DateOne = DateOne;
+                        this.DateTwo = DateTwo;
+                        this.User = User;
+
+                    }
+
+                }
+
+                const Prepare = new Report(SendProviderForCustomReport.value, SendFirstDate.value, SendSecondDate.value, SelectForCustomReports.value);
+
+                const Route = `com.reports/Custom/All?Provider=${Prepare.Provider}&From=${Prepare.DateOne}&Until=${Prepare.DateTwo}&User=${Prepare.User}`;
+
+                window.open(Route)
 
             }
 
@@ -327,10 +350,30 @@ for(let Aument = 0; Aument < ReportNextPosition.length; Aument++){
                 document.querySelector('.SelectDateForCustomReport').style.display = "none";
                 document.querySelector('.SelectUserForCustomReport').style.display = "flex";
 
+
             }else if(IndexOf == 2){
 
-                console.log('ya');
-                alert('')
+                const SendFirstDate = document.querySelector('.SendFirstDate');
+                const SendSecondDate = document.querySelector('.SendSecondDate');
+                const SelectForCustomReports = document.querySelector('.SelectForCustomReports');
+
+                class Report{
+
+                    constructor(DateOne, DateTwo, User){
+
+                        this.DateOne = DateOne;
+                        this.DateTwo = DateTwo;
+                        this.User = User;
+
+                    }
+
+                }
+
+                const Prepare = new Report(SendFirstDate.value, SendSecondDate.value, SelectForCustomReports.value);
+
+                const Route = `com.reports/Custom/Var/DateAndUser?From=${Prepare.DateOne}&Until=${Prepare.DateTwo}&User=${Prepare.User}`;
+
+                window.open(Route)
 
             }
 
@@ -343,7 +386,27 @@ for(let Aument = 0; Aument < ReportNextPosition.length; Aument++){
 
             }else if(IndexOf == 1){
 
-                console.log('ya');
+                const SendFirstDate = document.querySelector('.SendFirstDate');
+                const SendSecondDate = document.querySelector('.SendSecondDate');
+                const SendProviderForCustomReport = document.querySelector('.SendProviderForCustomReport');
+
+                class Report{
+
+                    constructor(DateOne, DateTwo, Provider){
+
+                        this.DateOne = DateOne;
+                        this.DateTwo = DateTwo;
+                        this.Provider = Provider;
+
+                    }
+
+                }
+
+                const Prepare = new Report(SendFirstDate.value, SendSecondDate.value, SendProviderForCustomReport.value);
+
+                const Route = `com.reports/Custom/Var/ProviderAndDate?From=${Prepare.DateOne}&Until=${Prepare.DateTwo}&Provider=${Prepare.Provider}`;
+
+                window.open(Route)
 
             }
 
@@ -356,7 +419,25 @@ for(let Aument = 0; Aument < ReportNextPosition.length; Aument++){
 
             }else if(IndexOf == 2){
 
-                console.log('ya');
+                const SendProviderForCustomReport = document.querySelector('.SendProviderForCustomReport');
+                const SelectForCustomReports = document.querySelector('.SelectForCustomReports');
+
+                class Report{
+
+                    constructor(Provider, User){
+
+                        this.Provider = Provider;
+                        this.User = User;
+
+                    }
+
+                }
+
+                const Prepare = new Report(SendProviderForCustomReport.value, SelectForCustomReports.value);
+
+                const Route = `com.reports/Custom/Var/ProviderAndUser?Provider=${Prepare.Provider}&User=${Prepare.User}`;
+
+                window.open(Route)
 
             }
 
@@ -364,22 +445,21 @@ for(let Aument = 0; Aument < ReportNextPosition.length; Aument++){
 
             if(IndexOf == 0){
 
-                console.log('ya');
-
+                window.open("com.reports/Custom/Provider?Value="+document.querySelector('.SendProviderForCustomReport').value)
 
             }
         }else if(Stat == 6){
 
             if(IndexOf == 1){
 
-                console.log('ya');
+                window.open("com.reports/Custom/Date?From="+document.querySelector('.SendFirstDate').value+"&Until="+document.querySelector('.SendSecondDate').value);
 
             }
         }else if(Stat == 7){
 
             if(IndexOf == 2){
 
-                console.log('ya');
+                window.open("com.reports/Custom/User?Value="+document.querySelector('.SelectForCustomReports').value)
 
             }
         }

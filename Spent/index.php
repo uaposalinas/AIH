@@ -919,7 +919,7 @@
 
                         <div class="Icon"></div>
 
-                        <t>Selecciona un entre que fechas quieres filtrar</t>
+                        <t>Selecciona entre que fechas quieres filtrar</t>
 
                         <p style="margin-top:30px;">Desde:</p>
                         <input type="date" class="SendFirstDate">
@@ -940,7 +940,7 @@
 
                         <div class="CountableCount Selectable ThisNas" style="background-color:#4b4848; color:#1c1c1c; width:90%; position:relative; margin:20px;">
         
-                            <select name="Realice" class="Realice ThisValue SelectValue">
+                            <select name="Realice" class="Realice ThisValue SelectValue SelectForCustomReports">
 
                                 <option value="default">¿Quién realizó el gasto?</option>
                                 <option value="AIH S DE RL">AIH S DE RL</option>
