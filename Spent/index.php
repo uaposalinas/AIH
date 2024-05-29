@@ -1075,7 +1075,7 @@
             "Vendor/com.js/com.filter.js",
             "Vendor/com.js/com.return.js",
             "Vendor/com.js/com.do.month.js",
-            "vendor/com.js/com.custom.report.js"
+            "Vendor/com.js/com.custom.report.js"
         ];
 
         files.forEach(file => {
