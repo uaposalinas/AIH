@@ -38,11 +38,11 @@
 
             if($Connection -> query($SetNewLog)){
 
-                echo "Operación exitosa";
+                echo "<script> localStorage.setItem('NewLogStatus', 'Passed'); window.location.href = '../' </script>";
 
             }else{
 
-                echo "Error al guardar";
+                echo "<script> localStorage.setItem('NewLogStatus', 'Failed'); window.location.href = '../' </script>";
 
             }
 

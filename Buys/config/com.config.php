@@ -3,12 +3,12 @@
     $UserName = "root";
     $ServerName = "localhost";
     $Password = "";
-    $DatabaseName = "aihspends";
+    $DatabaseName = "aihbuys";
 
    # $UserName = "devlabsc_root";
    # $ServerName = "sv18.byethost18.org";
    # $Password = "Dv229011000";
-   # $DatabaseName = "devlabsc_aihspends";
+   # $DatabaseName = "devlabsc_aihbuys";
 
 
    $Connection = new mysqli($ServerName, $UserName, $Password, $DatabaseName);

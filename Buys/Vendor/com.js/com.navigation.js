@@ -50,8 +50,22 @@ for(let Aument = 0; Aument < BackToNewLog.length; Aument++){
 
     function BackToNewLogNow(){
 
+        document.querySelector('.ProvidersPopup').style.display = "none";
         document.querySelector('.SoftModals').style.display = "none";
         document.querySelector('.BackModal').style.display = "none";
+        document.querySelector('.HideWhileSelectProvider').style.display = "flex";
+
+
+        document.querySelector('.ProvidersPopup').classList.add('HideProviders');
+
+        setTimeout(() => {
+
+            document.querySelector('.ProvidersPopup').style.display = "none";
+            document.querySelector('.ProvidersPopup').classList.remove('HideProviders');
+
+
+        }, 300);
+
 
     }
 

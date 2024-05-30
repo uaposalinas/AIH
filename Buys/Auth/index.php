@@ -36,6 +36,9 @@
 </head>
 <body style="overflow:hidden;">
 
+<p class="SelectedUser" hidden>none</p>
+<p class="UserName" hidden>none</p>
+
 <div class="NotificationIslandParent">
 
 <div class="NotificationIsland">
@@ -89,7 +92,10 @@
                 <?php
 
                     require '../config/com.config.php';
-            
+
+                    $Connection->set_charset("utf8");
+
+                    
                     $DoQuery = "SELECT * FROM authusers WHERE 1";
                     $QueryResults = $Connection -> query($DoQuery);
 
@@ -148,7 +154,7 @@
 
         <div class="GetPasswordCont">
 
-            <input type="password" class="GetUserPassword" placeholder="Ingresa tu contraseña de Acceso">
+            <input autocomplete="off" type="password" class="GetUserPassword" placeholder="Ingresa tu contraseña de Acceso">
             <i class="fi fi-br-angle-small-right"></i>
 
         </div>
@@ -179,6 +185,7 @@
 </script>
 
 <script src="../Vendor/com.js/com.island.config.js"></script>
+<script src="../Vendor/com.js/com.versions.js"></script>
 
 
 </html>

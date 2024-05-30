@@ -42,10 +42,91 @@
 
     </script>
 
-    <title>AIH's Bills</title>
+    <title>AIH's Buys</title>
 </head>
 
 <body class="Spent" style="overflow:hidden">
+
+    <div class="ProvidersPopup" style="display:none">
+
+    <div class="BackButtonPack BackToNewLog">
+
+        <i class="fi fi-sr-angle-left"></i>
+        <p>Nuevo Registro</p>
+
+        </div>
+
+        <div class="PopupContent">
+
+            <header>
+
+                <t>Proveedores</t>
+                <div class="SearchLog" style="position:relative; right:0px; left:0px; margin-left:0px; margin-right:0px; margin-top:20px">
+
+                    <input autocomplete="off" type="text" class="SearchByProvider" placeholder="Escribe una palabra clave para buscar">
+                    <i class="fi fi-br-search"></i>
+
+                </div>
+
+            </header>
+
+            <content class="Scroll">
+
+            <div class="NoResults2" style="display:none;">
+
+                <div class="NoResultsIcon2"></div>
+                <t>Este proveedor no existe, debes crearlo tú.</t>
+
+            </div>
+
+
+
+                <?php
+
+                    require 'config/com.config.php';
+                    $Connection -> set_charset("utf8");
+
+                    $DoQuery = "SELECT Provider FROM providers WHERE 1";
+                    $QueryResults = $Connection -> query($DoQuery);
+
+                    if($QueryResults -> num_rows > 0){
+
+                        while($Row = $QueryResults -> fetch_assoc()){
+
+                            $GetProvider = $Row["Provider"];
+
+
+                            $Image = "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.providers/$GetProvider.png";
+
+                            echo "
+                                
+                                <provider class='ThisProvider' provider='$GetProvider'>
+
+                                    <div class='ShowProviderLogoToSearch' slot='$Image'></div>
+                                    <div class='Name'>$GetProvider</div>
+                            
+                                </provider>
+                        
+
+
+                            ";
+
+                        }
+
+                    }else{
+
+                        echo "!OK";
+
+                    }
+
+                ?>
+
+
+            </content>
+
+        </div>
+
+    </div>
 
     <div class="NotificationIslandParent">
 
@@ -91,12 +172,12 @@
             <div class="PrincipalLogo"></div>
             <t>Sistema de Gestión de Compras</t>
 
-            <div class="ThisNotificationsRender" style="display:none">
+            <div class="ThisNotificationsRender" style="display:flex">
 
                 <div class="Notification">
 
-                    <i class="fi fi-ts-newspaper Icon"></i>
-                    <div class="Message">Es hora de hacer el cierre del mes de abril, ve a "Ver Reportes" y pulsa en cierre de mes.</div>
+                <i class="fi fi-rr-file-medical-alt Icon"></i>
+                    <div class="Message">Se compagino el activo "reporte" en el directorio (protocol)(host)/{com.reports}</div>
                     <i class="fi fi-rs-circle-xmark Close"></i>
 
                 </div>
@@ -131,6 +212,14 @@
                 <div class="SelectOption"></div>
 
             </div>
+            <div class="SelectOptionParent">
+
+                <div class="Icon" style="background-image:url(https://cdn-icons-png.flaticon.com/512/839/839374.png);"></div>
+                <t>Configuración</t>
+
+                <div class="SelectOption"></div>
+
+            </div>
 
         </div>
     
@@ -145,7 +234,7 @@
 
     <div class="NewLog" style="overflow: hidden;">
 
-    <div class="BackButtonPack BackToHome">
+    <div class="BackButtonPack BackToHome HideWhileSelectProvider">
 
         <i class="fi fi-sr-angle-left BackToHome"></i>
         <p>Inicio</p>
@@ -163,7 +252,7 @@
 
                     <p class="Identifer">AIH</p>
                     <i class="fi fi-br-angle-small-right"></i>
-                    <p class="Identifer">Sistema de gastos</p>
+                    <p class="Identifer">Sistema de Compras</p>
                     <i class="fi fi-br-angle-small-right"></i>
                     <p class="Identifer">Nuevo reporte de Compra</p>
 
@@ -182,12 +271,12 @@
 
                 <div class="ExternalInputs" hidden>
 
-                    <input type="text" name ="GestID" class="GestID" slot="Private">
-                    <input type="text" name="Month" class="Month">
-                    <input type="text" name="Year" class="Year">
-                    <input type="text" name="CardUsed" class="CardUsedToPay">
-                    <input type="text" name="FullDate" class="FullDate">
-                    <input type="text" name="CurrentDay" class="CurrentDay">
+                    <input autocomplete="off" type="text" name ="GestID" class="GestID" slot="Private">
+                    <input autocomplete="off" type="text" name="Month" class="Month">
+                    <input autocomplete="off" type="text" name="Year" class="Year">
+                    <input autocomplete="off" type="text" name="CardUsed" class="CardUsedToPay">
+                    <input autocomplete="off" type="text" name="FullDate" class="FullDate">
+                    <input autocomplete="off" type="text" name="CurrentDay" class="CurrentDay">
 
                 </div>
                 
@@ -197,40 +286,14 @@
 
                         <div class="ProviderCont Selectable">
     
-                            <select name="SendProvider" class="Provider ThisValue SelectValue">
-    
-                                <option value="default">Proveedor</option>
+                            <input autocomplete="off" type="text" name="SendProvider" class="Provider ThisValue ProviderValue" style="width:100%; height:100%" placeholder="Proveedor">
 
-                                <?php
-
-                                    require 'config/com.config.php';
-
-                                    $DoQuery = "SELECT Provider FROM providers WHERE 1";
-                                    $QueryResults = $Connection -> query($DoQuery);
-
-                                    if($QueryResults -> num_rows > 0){
-
-                                        while($Row = $QueryResults -> fetch_assoc()){
-
-                                            $Provider = $Row["Provider"];
-
-                                            echo "<option value='$Provider'>$Provider</option>";
-
-                                        }
-
-                                    }
-
-                                ?>
-                                
-
-                            </select>
-    
                         </div>
     
                         <div class="AddMore AddAnotherProvider" style="cursor:pointer;"><i class="fi fi-rr-plus-small"></i></div>
     
-                        <input type="number" name="SendAmount" class="Amount ThisValue" placeholder="Cantidad">
-                        <input type="text" name="SendDescription" class="Description LogDescription ThisValue" placeholder="Descripción del gasto">
+                        <input autocomplete="off" type="number" name="SendAmount" class="Amount ThisValue" placeholder="Cantidad">
+                        <input autocomplete="off" type="text" name="SendDescription" class="Description LogDescription ThisValue" placeholder="Descripción del Compra">
                         
                     </div>
     
@@ -289,14 +352,14 @@
     
                             <select name="Realice" class="Realice ThisValue SelectValue">
     
-                                <option value="default">¿Quién realizó el gasto?</option>
+                                <option value="default">¿Quién realizó el Compra?</option>
                                 <option value="AIH S DE RL">AIH S DE RL</option>
                                 <option value="Alejandro Salinas">Alejandro Salinas</option>
                                 <option value="Marjorie Santos">Marjorie Santos</option>
                                 <option value="Paola Rivera">Paola Rivera</option>
                                 <option value="Gary Rivera">Gary Rivera</option>
                                 <option value="Mario Castellanos">Mario Castellanos</option>
-                                <option value="Yenelin Manchamé">Yenelin Manchamé</option>
+                                <option value="Yenilin Manchamé">Yenilin Manchamé</option>
                                 <option value="David Castellón">David Castellón</option>
                                 <option value="Brandon Zelaya">Brandon Zelaya</option>
                                 <option value="Nicolle Artica">Nicolle Artica</option>
@@ -313,35 +376,39 @@
     
                         </div>
 
-                        <input type="text" name="SendDate" class="ThisDate" placeholder="Fecha, ¿Es la de hoy? (00/00/0000)" style="display:flex; justify-content:left; text-align:left; padding-left:15px;" disabled>
-                        <input type="checkbox" name="SendDateConfirmation" class="DateConfirmation" checked="true">
-                        <input type="text" name="SendBillID" class="BillID ThisValue" placeholder="NO. de Factura"> 
+                        <input autocomplete="off" type="text" name="SendDate" class="ThisDate" placeholder="Fecha, ¿Es la de hoy? (00/00/0000)" style="display:flex; justify-content:left; text-align:left; padding-left:15px;" disabled>
+                        <input autocomplete="off" type="checkbox" name="SendDateConfirmation" class="DateConfirmation" checked="true">
+                        <input autocomplete="off" type="text" name="SendBillID" class="BillID ThisValue" placeholder="NO. de Factura"> 
     
                     </div>
     
                     <div class="Row Price" style="margin-top:20px; height:90px;">
     
-                        <label for="1">Subtotal</label>
-                        <label for="2">Exento </label>
-                        <label for="3">Otros impuestos</label>
-                        <label for="4">ISV 18%</label>
-                        <label for="5">ISV 15%</label>
+                        <div class="GitLabels">
+
+                        <label for="1" style="position:relative; left:0px;">Subtotal</label>
+                        <label for="2" style="position:relative; left:0px;">Exento </label>
+                        <label for="3" style="position:relative; left:0px;">Otros impuestos</label>
+                        <label for="4" style="position:relative; left:0px;">ISV 18%</label>
+                        <label for="5" style="position:relative; left:0px;">ISV 15%</label>
+
+                        </div>
     
-                        <input type="number" name="SendSubtotal" class="Subtotal ThisValue" placeholder="L 0.00" id="2" style="margin-left:0px;">
-                        <input type="text" name="SendExempt" class="Exempt" placeholder="L 0.00" id="1" style="background-color: #141414;" value="L 0.00" disabled>
-                        <input type="text" name="Other" class="Others" placeholder="L 0.00" id="3" disabled value="L 0.00">
-                        <input type="text" name="ISV18" class="ISV18" placeholder="L 0.00" id="4" disabled value="L 0.00">
-                        <input type="text" name="ISV15" class="ISV15" placeholder="L 0.00" id="5" disabled value="L 0.00">
+                        <input autocomplete="off" type="number" name="SendSubtotal" class="Subtotal ThisValue" placeholder=" 0.00" id="2" style="margin-left:0px;">
+                        <input autocomplete="off" type="text" name="SendExempt" class="Exempt" placeholder=" 0.00" id="1" style="background-color: #141414;" value=" 0.00" disabled>
+                        <input autocomplete="off" type="text" name="Other" class="Others" placeholder=" 0.00" id="3" disabled value=" 0.00">
+                        <input autocomplete="off" type="text" name="ISV18" class="ISV18" placeholder=" 0.00" id="4" disabled value=" 0.00">
+                        <input autocomplete="off" type="text" name="ISV15" class="ISV15" placeholder=" 0.00" id="5" disabled value=" 0.00">
     
                     </div>
 
                     <div class="Row checkboxs" style="height:13px;">
 
                         <div></div>
-                        <div style="margin:0px;"><input type="checkbox" class="ExentStatus"></div>
-                        <div><input type="checkbox" class="OtherStatus"></div>
-                        <div><input type="checkbox" class="ISV18Status"></div>
-                        <div><input type="checkbox" class="ISV15Status" checked></div>
+                        <div style="margin:0px;"><input autocomplete="off" type="checkbox" class="ExentStatus"></div>
+                        <div><input autocomplete="off" type="checkbox" class="OtherStatus"></div>
+                        <div><input autocomplete="off" type="checkbox" class="ISV18Status"></div>
+                        <div><input autocomplete="off" type="checkbox" class="ISV15Status" checked></div>
 
 
                     </div>
@@ -366,7 +433,7 @@
                     </div>
 
                     <p class="TotalLogTitle">Total del registro</p>
-                    <input type="text" name="SendTotal" class="Total" placeholder="L 0.00" disabled>
+                    <input autocomplete="off" type="text" name="SendTotal" class="Total" placeholder=" 0.00" disabled>
 
                 </div>
             
@@ -395,7 +462,7 @@
 
                     <p class="Identifer">AIH</p>
                     <i class="fi fi-br-angle-small-right"></i>
-                    <p class="Identifer">Sistema de gastos</p>
+                    <p class="Identifer">Sistema de Compras</p>
                     <i class="fi fi-br-angle-small-right"></i>
                     <p class="Identifer">Ver Reportes</p>
 
@@ -419,7 +486,7 @@
 
                 </div>
 
-                <input type="date" class="FilterByDate">
+                <input autocomplete="off" type="date" class="FilterByDate">
 
                 <div class="SwitchTable tooltip" data-text="Ver como tabla">
 
@@ -429,7 +496,7 @@
                 
                 <div class="SearchLog">
 
-                    <input type="text" class="SearchByLog" placeholder="Escribe el ID de Gestión para buscar.">
+                    <input autocomplete="off" type="text" class="SearchByLog" placeholder="Escribe el ID de Gestión para buscar.">
                     <i class="fi fi-br-search"></i>
 
                 </div>             
@@ -517,6 +584,7 @@
                     </cont>
                     ";
 
+                    
 
                     }
 
@@ -641,6 +709,273 @@
 
             </div>
 
+            <div class="ReportsPrincipalPage">
+
+                <div class="Icon"></div>
+                <t>Reporte de Compras</t>
+
+                <div class="Options">
+
+                    <div class="CreateANewReport ReportOptions">
+
+                        <ic class="Icons"></ic>
+                        <p>Crear Reporte</p>
+
+                    </div>
+                    <div class="ViewOldReports ReportOptions">
+
+                        <ic style="background-image:url(Assets/com.img/metric.png) !important;" class="Icons"></ic>
+                        <p>Ver los reportes</p>
+
+                    </div>
+
+                </div>
+            
+            </div>
+
+            <div class="ReportsPrincipalPage CreateReport ReportAnimationLeft" style="display:none !important">
+
+                <div class="Icon" ></div>
+                <t>Nuevo Reporte</t>
+
+                <div class="Options">
+
+                    <div class="CreateANewReport ReportOptions MensualReport">
+
+                    <ic style="background-image:url(Assets/com.img/Month.png) !important;" class="Icons"></ic>
+                        <p>Reporte Mensual</p>
+
+                    </div>
+                    <div class="CustomReportForm ReportOptions">
+
+                        <ic style="background-image:url(Assets/com.img/custom.png) !important;" class="Icons"></ic>
+                        <p>Reporte Personalizado</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="SelectMonth ReportAnimationLeft" style="display:none;">
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/1.png)"></divs>
+                    <t class="MonthID">Enero</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/2.png)"></divs>
+                    <t class="MonthID">Febrero</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/3.png)"></divs>
+                    <t class="MonthID">Marzo</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/5.png)"></divs>
+                    <t class="MonthID">Abril</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/5.png)"></divs>
+                    <t class="MonthID">Mayo</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/6.png)"></divs>
+                    <t class="MonthID">Junio</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/7.png)"></divs>
+                    <t class="MonthID">Julio</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/8.png)"></divs>
+                    <t class="MonthID">Agosto</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/9.png)"></divs>
+                    <t class="MonthID">Septiembre</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/10.png)"></divs>
+                    <t class="MonthID">Octubre</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/11.png)"></divs>
+                    <t class="MonthID">Noviembre</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+                <div>
+
+                    <divs class="Icn" style="background-image:url(Assets/com.img/Months/12.png)"></divs>
+                    <t class="MonthID">Diciembre</t>
+                    <ac class="Month"></ac>
+
+                </div>
+
+            </div>
+
+            <div class="CustomForm">
+
+                <div class="CustomFormAssistant">
+
+                    <div class="SelectForCustomReport ReportAnimationLeft" style="display:flex">
+
+                        <t>Selecciona una opción para el reporte</t>
+
+                        <div class="Options">
+
+                            <div class="SelectProvider">
+
+                                <i class="fi fi-rr-shop"></i>
+                                <ion-icon name="chevron-forward-outline" class="Chev"></ion-icon>
+                                <p1>Reportar por proveedor</p1>
+                                <p2>Selecciona un proveedor especifico</p2>
+                                <click class="ClickOption"></click>
+
+                            </div>
+                            <div class="SelectDate">
+
+                                <i class="fi fi-rr-clock-three"></i>
+                                <ion-icon name="chevron-forward-outline" class="Chev"></ion-icon>
+                                <p1>Reportar por Fecha</p1>
+                                <p2>Selecciona una entre fecha</p2>
+                                <click class="ClickOption"></click>
+
+                            </div>
+                            <div class="SelectUser">
+
+                                <i class="fi fi-rr-circle-user"></i>
+                                <ion-icon name="chevron-forward-outline" class="Chev"></ion-icon>
+                                <p1>Reportar por Comprador</p1>
+                                <p2>Filtra las compras por comprador</p2>
+                                <click class="ClickOption"></click>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="NextButton ActivateButton" style="display:flex;">Siguiente</div>
+
+                    <div class="SelectProviderForCustomReport ReportAnimationLeft" style="display:none">
+
+                        <div class="Icon"></div>
+
+                        <t>Selecciona un proveedor</t>
+
+                        <input type="text" class="SendProviderForCustomReport" hidden>
+
+                        <div class="SelectProviderNows">Buscar Proveedores</div>
+
+                        <div class="ReportNextPosition ThisPulseProvider"></div>
+
+                    </div>
+
+                    <div class="SelectDateForCustomReport ReportAnimationLeft" style="display:none">
+
+                        <div class="Icon"></div>
+
+                        <t>Selecciona entre que fechas quieres filtrar</t>
+
+                        <p style="margin-top:30px;">Desde:</p>
+                        <input type="date" class="SendFirstDate">
+                        <p>Hasta:</p>
+                        <input type="date" class="SendSecondDate">
+
+
+                        <div class="SendTimeForCustomReport ReportNextPosition">Siguiente</div>
+
+
+                    </div>
+
+                    <div class="SelectUserForCustomReport ReportAnimationLeft" style="display:none">
+
+                        <div class="Icon"></div>
+
+                        <t>Selecciona quien lo compro:</t>
+
+                        <div class="CountableCount Selectable ThisNas" style="background-color:#4b4848; color:#1c1c1c; width:90%; position:relative; margin:20px;">
+        
+                            <select name="Realice" class="Realice ThisValue SelectValue SelectForCustomReports">
+
+                                <option value="default">¿Quién realizó el Compra?</option>
+                                <option value="AIH S DE RL">AIH S DE RL</option>
+                                <option value="Alejandro Salinas">Alejandro Salinas</option>
+                                <option value="Marjorie Santos">Marjorie Santos</option>
+                                <option value="Paola Rivera">Paola Rivera</option>
+                                <option value="Gary Rivera">Gary Rivera</option>
+                                <option value="Mario Castellanos">Mario Castellanos</option>
+                                <option value="Yenilin Manchamé">Yenilin Manchamé</option>
+                                <option value="David Castellón">David Castellón</option>
+                                <option value="Brandon Zelaya">Brandon Zelaya</option>
+                                <option value="Nicolle Artica">Nicolle Artica</option>
+                                <option value="Alejandra Castro">Alejandra Castro</option>
+                                <option value="Delman Gallardo">Delman Gallardo</option>
+                                <option value="José Rogel">José Rogel</option>
+                                <option value="Jussely Serrano">Jussely Serrano</option>
+                                <option value="Nelly Ramirez">Nelly Ramirez</option>
+                                <option value="Kimberly Quiroz">Kimberly Quiroz</option>
+                                <option value="Victoria Rodriguez">Victoria Rodriguez</option>
+                                <option value="Josue Argueta">Josue Argueta</option>
+
+                            </select>
+
+                    </div>
+
+                        <div class="SelectUserNows ReportNextPosition">Siguiente</div>
+
+
+                    </div>
+                
+                </div>
+
+            </div>
+            
+
         </div>
 
     </div>
@@ -673,9 +1008,13 @@
         <t>Selecciona la tarjeta que se utilizó</t>
         <select class="SentCardUsed">
 
+        <option value="N/A">N/A</option>
+
         <?php
 
             require 'config/com.config.php';
+            $Connection->set_charset("utf8");
+
 
             $DoQuery = "SELECT ID FROM cards WHERE 1";
             $QueryResults = $Connection -> query($DoQuery);
@@ -727,11 +1066,29 @@
 
 </script>
 
-<script src="Vendor/com.js/com.island.config.js"></script>
-<script src="Vendor/com.js/com.navigation.js"></script>
-<script src="Vendor/com.js/com.frames.js"></script>
-<script src="Vendor/com.js/com.indexer.js"></script>
-<script src="Vendor/com.js/com.filter.js"></script>
+<script>
+        const files = [
+            "Vendor/com.js/com.island.config.js",
+            "Vendor/com.js/com.navigation.js",
+            "Vendor/com.js/com.frames.js",
+            "Vendor/com.js/com.indexer.js",
+            "Vendor/com.js/com.filter.js",
+            "Vendor/com.js/com.return.js",
+            "Vendor/com.js/com.do.month.js",
+            "Vendor/com.js/com.custom.report.js"
+        ];
+
+        files.forEach(file => {
+            const script = document.createElement("script");
+            script.src = `${file}?v=${Math.random() * Math.random() * Math.random()}`;
+            document.body.appendChild(script);
+        });
+    </script>
+
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 
 <style>
 
@@ -742,5 +1099,6 @@
     }
 
 </style>
+
 
 

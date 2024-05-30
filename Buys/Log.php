@@ -99,7 +99,7 @@
                 $PayTypeImage = "Assets/com.img/PayMethods/PayButton.png";   
                 $PayMethod = "Realizado con botón de pago";
 
-            }else if($PayType === "Pago en Linea"){
+            }else if($PayType ===  "Pago en línea"){
 
                 $PayTypeImage = "Assets/com.img/PayMethods/OnlinePay.png";
                 $PayMethod = "Pagado en linea";
@@ -128,9 +128,9 @@
             
                         <p class='Identifer'>AIH</p>
                         <i class='fi fi-br-angle-small-right'></i>
-                        <p class='Identifer'>Sistema de gastos</p>
+                        <p class='Identifer'>Sistema de Compras</p>
                         <i class='fi fi-br-angle-small-right'></i>
-                        <p class='Identifer'>Detalles del Gasto</p>
+                        <p class='Identifer'>Detalles del Compra</p>
             
                     </t>
             
@@ -139,6 +139,8 @@
             
                 <div class='ReportButtons'>
             
+                    <div class='RemoveReport tooltip' data-text='Eliminar'> <i class='fi fi-rr-trash'></i> </div>
+                    <div class='EditReport tooltip' data-text='Editar Registro'> <i class='fi fi-rr-pencil'></i> </div>       
                     <div class='ShareReport tooltip' data-text='Compartir reporte'> <i class='fi fi-ss-refer'></i> </div>
                     <div class='PrintReport tooltip' data-text='Imprimir Reporte'><i class='fi fi-rr-print'></i></div>
             
@@ -153,7 +155,7 @@
                     <div class='ProviderDetails'>
             
                         <div class='Logo' slot='$Image'></div>
-                        <div class='ProviderName'>Gasto realizado en $Provider</div>
+                        <div class='ProviderName'>Compra realizado en $Provider</div>
                         <div class='SpentType'>$CountableCount</div>
                         <div class='PaidDetail'>Pagado con:</div>
                         <div class='PaidResult tooltip' data-text='$PayMethod' style='background-image:url($PayTypeImage)'></div>
@@ -175,6 +177,15 @@
                         <div class='Row'>
             
                             <div class='GestID' style='width:300px;'>ID : $GestID</div>
+
+                            <form action='Print.php' method='get' class='PrintForm' hidden>
+
+                                <input type='text' name='GestID' value='$GestID' class='GestIDs'>
+                                <input type='text' name='From' class='PrinterUser'>
+
+                            </form>
+
+
                             <div class='Date'>Fecha: $Date</div>
                             <div class='Provider' style='width:300px;'>Proveedor: $Provider</div>
                             <div class='SpentedBy' style='width:360px;'>Gastado por: $SpendedBy</div>
@@ -191,7 +202,7 @@
                         <div class='Row Price Exents' style='margin-top:20px; height:80px; position:relative; '>
                     
                             <div style='width:385px; display:flex; justify-content:left; padding-left:15px; bottom:0px; position:relative '> 
-                            <label for='1' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>Descripción del gasto:</label>
+                            <label for='1' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>Descripción del Compra:</label>
                             $BillDescription
                             </div>
         
@@ -214,7 +225,7 @@
                         </div>
 
 
-                        <div class='Row Price Exents' style='margin-top:20px; height:80px; position:relative; display:flex; justify-content:left; padding-left:30px;'>
+                        <div class='Row Price Exents' style='width:90%; margin-top:20px; height:80px; position:relative; display:flex; justify-content:left; padding-left:30px;'>
                     
                             <div style='width:215px; position:relative; justify-content:left; padding-left:20px;'>
                             <label for='1' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>Subtotal</label>
@@ -258,6 +269,14 @@
 
 </body>
 
-<script src="Vendor/com.js/com.show.js"></script>
+<script>
+
+    const LocationFileForShow = "Vendor/com.js/com.show.js";
+    const NewShow = document.createElement("script");
+    NewShow.src = LocationFileForShow+"?v="+Math.random();
+    document.body.appendChild(NewShow);
+
+</script>
 
 </html>
+

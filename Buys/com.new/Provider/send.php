@@ -1,6 +1,7 @@
 <?php
 
     require '../../config/com.config.php';
+    $Connection->set_charset("utf8");
 
     if(isset($_POST["Provider"])){
 

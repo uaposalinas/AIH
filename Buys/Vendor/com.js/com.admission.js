@@ -129,7 +129,7 @@ function SetValueExempt(){
         ISV15Status.checked = false;
         ISV18Status.checked = false;
 
-        Exempt.placeholder = "L "+GetINT;
+        Exempt.placeholder = GetINT;
 
     }else if(this.checked == false){
 
@@ -200,110 +200,155 @@ function DetectKeyPressed(e){
 
     if(KeyPressed == 13){
 
-        if(Subtotal.value.trim() === ''){
+        const LogMutant = localStorage.getItem('LogMutant');
 
-            SendError('Debes ingresar un monto en subtotal.', "380px");
-    
-            setTimeout(() => {
-                
-                RemoveError()
-    
-            }, 2500);
-    
+        Exempt.value = Exempt.value
+        
+        if(LogMutant){
+
+            const GetSubtotalINT = parseFloat(Subtotal.value);
+            const GetExentINT = parseFloat(Exempt.value);
+          
+
+            let Tax = 0;
+            let OtherTax = 0;
+
+            if(ISV15Status.checked == true){
+
+                Tax = GetSubtotalINT * 0.15.toFixed(2);
+                ISV15.value = Tax;
+
+            }else if(ISV18Status.checked == true){
+
+                Tax =  GetSubtotalINT * 0.18.toFixed(2);
+                ISV18.value = Tax;
+          
+            }
+
+            if(OtherStatus.checked == true){
+
+                OtherTax = parseFloat(Others.value);
+
+            }
+
+            const Operation = GetSubtotalINT + GetExentINT + Tax + OtherTax;
+            const Round = Math.round(Operation);
+
+
+            Total.value = ` ${Round}`
+
+
         }else{
-            
-            
-        if(ExentStatus.checked == true){
 
-            Exempt.classList.add('UpdateTotals');
+            if(Subtotal.value.trim() === ''){
 
-            setTimeout(() => {
-                
-                Exempt.classList.remove('UpdateTotals');
-
-            }, 300);
-
-
-            Exempt.value = `L ${GetINT}`;
-            ISV15.value = "L 0.00";
-            ISV18.value = "L 0.00";
-
-            const SetTotal = GetINT;
-
-            Total.value = "L. " + Math.round(SetTotal);
-
-            Total.classList.add('UpdateTotals');
-    
-            setTimeout(() => {
-                
-                Total.classList.remove('UpdateTotals')
-
-            }, 300);
-
-
-        }else if(ISV18Status.checked == true){
-
-            ISV18.classList.add('UpdateTotals');
-
-            setTimeout(() => {
-                
-                ISV18.classList.remove('UpdateTotals');
-
-            }, 300);
-
-            const Operation = GetINT * 0.18;
-            const RoundOut = Operation.toFixed(2);
-
-            ISV18.value = `L ${RoundOut}`
-            Exempt.value = `L 0.00`;
-            ISV15.value = "L 0.00";
+                SendError('Debes ingresar un monto en subtotal.', "380px");
         
-            const SetTotal = parseFloat(RoundOut) + GetINT;
-
-            Total.value = "L." +Math.round(SetTotal);
-
-            Total.classList.add('UpdateTotals');
-    
-            setTimeout(() => {
-                
-                Total.classList.remove('UpdateTotals')
-
-            }, 300);
-
-
-
-        }else if(ISV15Status.checked == true){
-
-            ISV15.classList.add('UpdateTotals');
-
-            setTimeout(() => {
-                
-                ISV15.classList.remove('UpdateTotals');
-
-            }, 300);
-
-            const Operation = GetINT * 0.15;
-            const RoundOut = Operation.toFixed(2);
+                setTimeout(() => {
+                    
+                    RemoveError()
         
-            ISV15.value = `L. ${RoundOut}`
-            Exempt.value = `L 0.00`;
-            ISV18.value = "L 0.00";
-
-            const SetTotal = parseFloat(RoundOut) + GetINT;
-
-            Total.value = "L. " + Math.round(SetTotal);
-
-            Total.classList.add('UpdateTotals');
-    
-            setTimeout(() => {
+                }, 2500);
+        
+            }else{
                 
-                Total.classList.remove('UpdateTotals')
+                
+                if(ExentStatus.checked == true){
+    
+                    Exempt.classList.add('UpdateTotals');
+        
+                    setTimeout(() => {
+                        
+                        Exempt.classList.remove('UpdateTotals');
+        
+                    }, 300);
+        
+        
+                    Exempt.value = `${GetINT}`;
+                    ISV15.value = " 0.00";
+                    ISV18.value = " 0.00";
+        
+                    const SetTotal = GetINT;
+        
+                    Total.value = " " + Math.round(SetTotal);
+        
+                    Total.classList.add('UpdateTotals');
+            
+                    setTimeout(() => {
+                        
+                        Total.classList.remove('UpdateTotals')
+        
+                    }, 300);
+        
+        
+                }else if(ISV18Status.checked == true){
+        
+                    ISV18.classList.add('UpdateTotals');
+        
+                    setTimeout(() => {
+                        
+                        ISV18.classList.remove('UpdateTotals');
+        
+                    }, 300);
+        
+                    const Operation = GetINT * 0.18;
+                    const RoundOut = Operation.toFixed(2);
+        
+                    ISV18.value = `${RoundOut}`
+                    Exempt.value = `0.00`;
+                    ISV15.value = " 0.00";
+                
+                    const SetTotal = parseFloat(RoundOut) + GetINT;
+        
+                    Total.value = "" +Math.round(SetTotal);
+        
+                    Total.classList.add('UpdateTotals');
+            
+                    setTimeout(() => {
+                        
+                        Total.classList.remove('UpdateTotals')
+        
+                    }, 300);
+        
+        
+        
+                }else if(ISV15Status.checked == true){
+        
+                    ISV15.classList.add('UpdateTotals');
+        
+                    setTimeout(() => {
+                        
+                        ISV15.classList.remove('UpdateTotals');
+        
+                    }, 300);
+        
+                    const Operation = GetINT * 0.15;
+                    const RoundOut = Operation.toFixed(2);
+                
+                    ISV15.value = ` ${RoundOut}`
+                    Exempt.value = ` 0.00`;
+                    ISV18.value = " 0.00";
+        
+                    const SetTotal = parseFloat(RoundOut) + GetINT;
 
-            }, 300);
+                    const Parse = Math.round(SetTotal)
+        
+                    Total.value = " " + Parse;
+        
+                    Total.classList.add('UpdateTotals');
+            
+                    setTimeout(() => {
+                        
+                        Total.classList.remove('UpdateTotals')
+        
+                    }, 300);
+        
+                }
+        
+            }   
 
         }
-    
-        }   
+
     }
 
 }
@@ -329,7 +374,7 @@ function PrepareToSaveTheNewLog(){
     const BillID = document.querySelector('.BillID');
     const Subtotal = document.querySelector('.Subtotal');
 
-    if(Provider.value == "default" || Amount.value.trim() === '' || Description.value.trim() === '' || CountableCount.value == "default" || BuyType.value == "default" || PayType.value == "default" || Realice.value == "default" || BillID.value.trim() === '' || Subtotal.value.trim() === ''){
+    if(Provider.value.trim() === "" || Amount.value.trim() === '' || Description.value.trim() === '' || CountableCount.value == "default" || BuyType.value == "default" || PayType.value == "default" || Realice.value == "default" || BillID.value.trim() === '' || Subtotal.value.trim() === ''){
 
         SendError('Debes llenar todos los campos que están en rojo.', '450px');
 
@@ -382,15 +427,39 @@ function PrepareToSaveTheNewLog(){
                 Total.disabled = false;
                 ThisDate.disabled = false;
 
-                setTimeout(() => {
+                if(Total.value.trim() === ''){
+
+                    SendError("Ve al campo del subtotal y pulsa le tecla enter, luego vuelve a intentar guardar el registro", "750px");
+                    SendError("Ve al campo del subtotal y pulsa le tecla enter, luego vuelve a intentar guardar el registro", "750px");
+                    SendError("Ve al campo del subtotal y pulsa le tecla enter, luego vuelve a intentar guardar el registro", "750px");
+                    SendError("Ve al campo del subtotal y pulsa le tecla enter, luego vuelve a intentar guardar el registro", "750px");
+                    SendError("Ve al campo del subtotal y pulsa le tecla enter, luego vuelve a intentar guardar el registro", "750px");
+
+                    setTimeout(() => {
+                        
+                        RemoveError()
+
+                    }, 3000);
+
+                }else{
+
+                    setTimeout(() => {
                     
-                    ControlForm.submit()
+                        ControlForm.submit()
+    
+                    }, 1000);
 
-                }, 1000);
+                }
 
-            }, 6000);
+                if(Others.value.trim() === ''){
 
-        }, 2000);
+                    Others.value = " 0.00";
+
+                }
+
+            }, 2000);
+
+        }, 1000);
 
     }
 
@@ -399,6 +468,12 @@ function PrepareToSaveTheNewLog(){
 
     const GetAllSelectables = document.querySelectorAll('.SelectValue');
     const LimitSelect = GetAllSelectables.length;
+
+    if(document.querySelector('.ProviderValue').value.trim() === ''){
+
+        document.querySelector('.ProviderCont').style.backgroundColor = "#980721";
+
+    }
 
     for(let InputsAument = 0; InputsAument < LimitInputs; InputsAument++){
 
@@ -436,3 +511,36 @@ function PrepareToSaveTheNewLog(){
 
 }
 
+let Siml = false;
+
+Exempt.addEventListener('contextmenu', e=>{
+
+    if(Siml == false){
+
+        Exempt.disabled = false;
+        e.preventDefault();
+        Exempt.focus();
+        Exempt.value = "";
+        localStorage.setItem('LogMutant', true);
+        Exempt.style.backgroundColor = "#2A2A2A";
+        Exempt.style.border = "1px solid #1ED761";
+        ExentStatus.checked = true;
+
+        Siml = true;
+
+    }else{
+
+        Exempt.disabled = true;
+        e.preventDefault();
+        Exempt.blur();
+        Exempt.value = " 0.00";
+        localStorage.removeItem('LogMutant');
+        Exempt.style.backgroundColor = "#141414";
+        Exempt.style.border = "none";
+        ExentStatus.checked = false;
+
+        Siml = false
+
+    }
+
+})

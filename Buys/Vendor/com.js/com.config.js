@@ -1,3 +1,36 @@
+
+
+function openCenteredWindow(url, title, width, height) {
+    // Obtener dimensiones de la pantalla
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+
+    // Calcular posición para centrar la ventana
+    const left = (screenWidth / 2) - (width / 2);
+    const top = (screenHeight / 2) - (height / 2);
+
+    // Crear parámetros para la nueva ventana
+    const windowParams = `width=${width},height=${height},top=${top},left=${left}`;
+
+    // Abrir la nueva ventana centrada
+   // window.open(url, title, windowParams);
+}
+
+// Llamar a la función para abrir la ventana centrada
+openCenteredWindow("../com.activation", "NewWindowForAddCard", 500, 400);
+
+
+
+
+/* Reset */
+
+        localStorage.removeItem('NewTax');
+        localStorage.removeItem('NewTaxValue');
+        localStorage.removeItem('LogMutant')
+
+    /* Reset */
+
+
     const SpentSelectMenu = document.querySelector('.SpentSelectMenu');
     const NewLog = document.querySelector('.NewLog');
     const ViewLogs = document.querySelector('.ViewLogs');
@@ -5,21 +38,14 @@
     const GenerateANewReport = document.querySelector('.GenerateANewReport');
     const SearchByLog = document.querySelector('.SearchByLog');
     const ShowFilterFrame = document.querySelector('.ShowFilterFrame');
+    const AddCardsButton = document.querySelector('.AddCardsButton');
+    const EditReport = document.querySelector('.EditReport');
 
 //Select an option from the spents menu
 
 const SelectOption = document.querySelectorAll('.SelectOption');
 const SelectOptionTotalElements = SelectOption.length;
 
-const GetHelp = document.querySelector('.GetHelp');
-
-GetHelp.addEventListener('click', GetHelpNow);
-
-function GetHelpNow(){
-
-    
-
-}
 
 for(let Aument = 0; Aument < SelectOptionTotalElements; Aument++){
 
@@ -64,6 +90,16 @@ for(let Aument = 0; Aument < SelectOptionTotalElements; Aument++){
                 document.querySelector('.AssistantPreloader').style.display = "none";
 
             }, 3000);
+
+        }else if(IndexOf == 3){
+
+            SendError('Esta caracterisitica no está disponible para usuarios comúnes aún.', "560px");
+
+            setTimeout(() => {
+                
+                RemoveError()
+
+            }, 5000);
 
         }
 
@@ -162,14 +198,52 @@ function SetLogosInLogs(){
 
         const ImageForSend = GetAttr.replace(/ /g, "%20");
 
+         try {
             
+               
             Logos.style.backgroundImage = `url(${ImageForSend})`;
 
+
+         } catch (error) {
+
+            alert(0)
+
+         }
 
     }
 
 }
 
+window.addEventListener('load', SetLogosInLogsForProvider)
+
+function SetLogosInLogsForProvider(){
+
+    const ThisProviderLogo = document.querySelectorAll('.ShowProviderLogoToSearch');
+    const Limit = ThisProviderLogo.length;
+
+    for(let Aument = 0; Aument < Limit; Aument++){
+
+        const Logos = ThisProviderLogo[Aument];
+        
+        const GetAttr = Logos.getAttribute('slot');
+
+        const ImageForSend = GetAttr.replace(/ /g, "%20");
+
+         try {
+            
+               
+            Logos.style.backgroundImage = `url(${ImageForSend})`;
+
+
+         } catch (error) {
+
+            alert(0)
+
+         }
+
+    }
+
+}
 
 const ThisLog = document.querySelectorAll('.ThisLog');
 const Limit = ThisLog.length;
@@ -184,7 +258,7 @@ for(let Aument = 0; Aument < Limit; Aument++){
 
     function ExecuteThisLog(){
 
-        SendNewMessage("Acá están los detalles de ese registro", "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/Show.png", "Low", "400px")
+        SendNewMessage("Acá están los detalles de ese registro", "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/Show.png", "Low", "360px")
 
         const GetGestID = Logs.getAttribute('GestID');
 
@@ -233,6 +307,14 @@ function NewProvider(){
 
 }
 
+AddCardsButton.addEventListener('click', NewCard);
+
+function NewCard(){
+
+    window.open("com.new/Card/", "NewWindowForAddCard", "width=500,height=400")
+
+}
+
 let ActivateFilter = false
 
 TimeFilter.addEventListener('click', InitFilter);
@@ -253,3 +335,226 @@ function InitFilter(){
 
 
 }
+
+
+const PressProvider = document.querySelector('.Provider');
+
+PressProvider.addEventListener('click', OpenPopupProvider);
+
+function OpenPopupProvider(e){
+
+    e.preventDefault();
+    this.blur();
+    document.querySelector('.HideWhileSelectProvider').style.display = "none";
+    document.querySelector('.ProvidersPopup').style.display = "flex";
+    
+    setTimeout(() => {
+        
+        document.querySelector('.SearchByProvider').focus()
+
+    }, 1000);
+
+}
+
+const ThisProvider = document.querySelectorAll('.ThisProvider');
+
+for(let Aument = 0; Aument < ThisProvider.length; Aument++){
+
+    const Provider = ThisProvider[Aument];
+    const GetAttr = Provider.getAttribute('provider');
+
+    Provider.addEventListener('click', SelectThisProvider);
+
+
+    function SelectThisProvider(){
+
+        PressProvider.value = GetAttr;
+        document.querySelector('.SendProviderForCustomReport').value = GetAttr;
+        document.querySelector('.ProvidersPopup').style.display = "none";
+        document.querySelector('.SelectProviderForCustomReport').style.display = "none";
+
+        if(document.querySelector('.CustomForm').style.display == "flex"){
+
+            document.querySelector('.ThisPulseProvider').click()
+
+        }
+
+
+    }
+
+}
+
+
+let OtherISV = false;
+
+document.querySelector('.OtherStatus').addEventListener('change', SwitchAttemp);
+
+function SwitchAttemp(){
+
+    if(OtherISV == false){
+
+        Others.disabled = false;
+        OtherISV = true;
+        Others.focus();
+        Others.value = "";
+
+        const NewTax = localStorage.getItem('NewTax');
+
+        if(NewTax){
+
+            const TaxValue = parseFloat(localStorage.getItem('NewTaxValue'));
+            const GetTotalINT = parseFloat(Total.value);
+            const Operation = GetTotalINT - TaxValue;
+
+            Total.value = `${Operation}`;
+
+        }
+
+    }else{
+
+        OtherISV.disabled = true;
+        OtherISV = false;
+
+    }
+
+}
+
+
+
+document.querySelector('.Others').addEventListener('keyup', SendOthers);
+
+function SendOthers(e){
+
+    const KeyPressed = e.keyCode;
+
+    if(KeyPressed == 13){
+
+            const INT = parseFloat(Total.value);
+            const Taxes = parseFloat(Others.value);
+            const Operation = INT + Taxes;
+
+            Total.value = `${Operation}`;
+
+            Others.disabled = true;
+
+
+            localStorage.setItem('NewTax', true);
+            localStorage.setItem('NewTaxValue', Taxes);
+
+
+    }
+
+}
+
+
+
+
+
+setInterval(() => {
+        
+    const Key = localStorage.getItem('EditKey');
+
+    if(Key && Key === "true"){
+
+        localStorage.removeItem('EditKey');
+
+        SendNewMessage("Se editó el registro con éxito", "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/check.png", "Low", "320px")
+
+        setTimeout(() => {
+            
+            window.location.reload();
+
+        }, 6000);
+
+    }else if(Key && Key === 'false'){
+
+        SendError("No se editó el registro", "230px")
+
+    }
+
+}, 1000);
+
+
+setInterval(() => {
+        
+    const DeleteKey = localStorage.getItem('DeleteKey');
+
+    if(DeleteKey && DeleteKey === "true"){
+
+        localStorage.removeItem('DeleteKey');
+
+        SendNewMessage("Se eliminó el registro con éxito", "https://cdn-icons-png.flaticon.com/512/7625/7625624.png", "Low", "320px")
+
+        setTimeout(() => {
+            
+            window.location.reload();
+
+        }, 6000);
+
+    }else if(DeleteKey && DeleteKey === 'false'){
+
+        SendError("No se eliminó el registro", "230px")
+
+    }
+
+}, 1000);
+
+
+
+const ReportOptions = document.querySelectorAll('.ReportOptions');
+
+for(let Aument = 0; Aument < ReportOptions.length; Aument++){
+
+    const Reports = ReportOptions[Aument];
+    Reports.addEventListener('click', SelectOptionInReport);
+
+    function SelectOptionInReport(e){
+
+        const IndexOf = Array.from(ReportOptions).indexOf(e.target);
+
+        console.log(IndexOf)
+
+    }
+    
+}
+
+
+
+
+
+setInterval(() => {
+        
+    const NoLogKey = localStorage.getItem('NoLogKey');
+
+    if(NoLogKey && NoLogKey === "true"){
+
+        localStorage.removeItem('NoLogKey');
+
+        SendError("No se encontró el reporte", "250px");
+
+        setTimeout(() => {
+            
+            RemoveError()
+
+        }, 3000);
+
+    }
+
+}, 1000);
+
+
+const AllInputs = document.getElementsByName("input");
+
+for(let Aument = 0; Aument < AllInputs.length; Aument++){
+
+    const Input = AllInputs[Aument];
+    
+    Input.setAttribute("autocomplete", "off");
+
+}
+document.addEventListener("DOMContentLoaded", function() {
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach(function(input) {
+        input.setAttribute("autocomplete", "off");
+    });
+});

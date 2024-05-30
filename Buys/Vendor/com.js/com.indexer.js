@@ -1,5 +1,5 @@
 const ShowInformationJust = document.querySelector('.ShowInformationJust');
-const ShowInformation = document.querySelectorAll('.ShowInformation');
+const ShowInformation = document.querySelectorAll('.ThisLog');
 const SearchByLogs = document.querySelector('.SearchByLog');
 const ShowBarResults = document.querySelector('.ShowBarResults');
 const SearchBarIndex = document.querySelector('.SearchBarIndex');
@@ -12,6 +12,14 @@ function InitIndex(){
     ShowBarResults.style.display = "flex";
     NoResults.style.display = "none";
     SearchBarIndex.style.display = "flex";
+
+    for(let Hide = 0; Hide < ShowInformation.length; Hide++){
+
+        const Hides = ShowInformation[Hide];
+
+        Hides.style.display = "none";
+
+    }
 
 }
 
@@ -26,7 +34,8 @@ function SearchNow(){
         ShowInformation[Aument].style.display = "none";
         NoResults.style.display = "none";
 
-        if(SearchByLogs.value.length <= 25 && SearchByLogs.value == SearchKey){
+        if(SearchByLogs.value.length <= 25 && SearchByLogs.value === SearchKey){
+
 
             AllLogs.style.display = "flex";
             ShowBarResults.style.display = "none";
@@ -65,13 +74,6 @@ window.addEventListener('keydown', ExitToSearcher);
 
 function ExitToSearcher(e){
 
-    for(let Logs = 0; Logs < ShowInformation.length; Logs++){
-
-        const Log = ShowInformation[Logs];
-        Log.style.display = "flex";
-
-    }
-
     const KeyPressed = e.keyCode;
 
     if(KeyPressed == 27 && ShowBarResults.style.display == "flex"){
@@ -89,6 +91,38 @@ function ExitToSearcher(e){
 
         }, 300);
 
+        for(let Logs = 0; Logs < ShowInformation.length; Logs++){
+
+            const Log = ShowInformation[Logs];
+            Log.style.display = "flex";
+    
+        }
+
     }
 
 }
+
+
+
+
+
+//Proveedores
+
+document.querySelector('.SearchByProvider').addEventListener('keyup', function() {
+    const filter = this.value.toLowerCase();
+    const providers = document.querySelectorAll('.ThisProvider');
+    
+    providers.forEach(provider => {
+        const providerName = provider.getAttribute('provider').toLowerCase();
+        if (providerName.includes(filter)) {
+            provider.style.display = "flex";
+            document.querySelector('.NoResults2').style.display = "none";
+
+        } else {
+
+            provider.style.display = "none";
+            document.querySelector('.NoResults2').style.display = "flex";
+
+        }
+    });
+});

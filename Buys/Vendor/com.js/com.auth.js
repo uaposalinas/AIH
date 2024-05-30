@@ -7,6 +7,8 @@ const GetUserPassword = document.querySelector('.GetUserPassword');
 const ChangeAccount = document.querySelector('.ChangeAccount');
 const AuthButton = document.querySelector('.AuthButton');
 const NotificationIsland = document.querySelector('.NotificationIsland');
+const SelectedUser = document.querySelector('.SelectedUser');
+const UserName = document.querySelector('.UserName');
 const Limit = AllUsers.length;
 
 
@@ -16,7 +18,7 @@ for(let Aument = 0; Aument < Limit; Aument++){
     const GetName = User.getAttribute('data-name');
     const GetPass = User.getAttribute('data-password');
 
-
+    console.log(Aument)
 
     User.addEventListener('click', AuthNow);
 
@@ -25,6 +27,8 @@ for(let Aument = 0; Aument < Limit; Aument++){
         UserNameToShow.innerHTML = GetName
         UsersList.style.display = "none";
         LoginPage.style.display = "flex";
+        SelectedUser.innerHTML = GetPass;
+        UserName.innerHTML = GetName;
 
         setTimeout(() => {
             
@@ -54,19 +58,39 @@ for(let Aument = 0; Aument < Limit; Aument++){
 
     function ValidatePassword(){
 
-        if(GetUserPassword.value == GetPass){
+        if(GetUserPassword.value == SelectedUser.innerHTML){
 
             sessionStorage.setItem('AuthStatus', 'Allowed');
-            window.location.href = "../";
+            sessionStorage.setItem('UserName', UserNameToShow.innerHTML)
+           
+            SendPreloader(`Iniciando sesión con el usuario: ${UserName.innerHTML}`, "450px");
+
+            setTimeout(() => {
+                
+                 window.location.href = "../";
+
+            }, 1500);
 
         }else if(GetUserPassword.value.trim() === ''){
 
-            SendError('Debes escribir la contraseña para acceder.', '400px')
+            SendError('Debes escribir la contraseña para acceder.', '400px');
+
+            setTimeout(() => {
+                
+                RemoveError()
+
+            }, 2000);
 
 
         }else if(GetUserPassword.value != GetPass){
 
             SendError('La contraseña no coinicide con la correcta.', '400px')
+            
+            setTimeout(() => {
+                
+                RemoveError()
+
+            }, 2000);
 
 
         }
