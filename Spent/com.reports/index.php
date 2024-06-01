@@ -102,7 +102,6 @@
                             $ISV15 = $Row["ISV15"];
                             $ISV18 = $Row["ISV18"];
                             $Total = $Row["Total"];
-                            $Number++;
 
 
                             //FormattedValues 
@@ -155,7 +154,7 @@
 
                             if($Exempt == "0.00"){
 
-                                                            echo "
+                                 echo "
 
                                 <div class='ThisRes'>
 
@@ -180,6 +179,8 @@
                             </div>
                             
                             ";
+
+                            $Number++;
 
                             }
 
