@@ -155,7 +155,7 @@
 
                             if($Exempt == "0.00"){
 
-                                echo "
+                                                            echo "
 
                                 <div class='ThisRes'>
 
@@ -252,19 +252,11 @@
                     $ExemptAdd += floatval($row["Exempt"]);
                 }
                 
-                if($Exempt == "0.00"){
-
-                    echo "<res class='ScapeExempt'>$ExemptAdd</res>";
-
-                }
+                echo "<res class='ScapeExempt'>$ExemptAdd</res>";
 
             } else {
 
-                if($Exempt == "0.00"){
-
-                    echo "<res class='ScapeExempt'>$ExemptAdd</res>";
-
-                }
+                echo "<res class='ScapeExempt'>$ExemptAdd</res>";
 
             }
 
@@ -305,19 +297,11 @@
                         $ISV15Add += floatval($row["ISV15"]);
                     }
                     
-                    if($Exempt == "0.00"){
-
-                        echo "<res class='ScapeISV15'>$ISV15Add</res>";
-
-                    }
+                    echo "<res class='ScapeISV15'>$ISV15Add</res>";
 
                 } else {
 
-                    if($Exempt == "0.00"){
-
-                        echo "<res class='ScapeISV15'>$ISV15Add</res>";
-
-                    }
+                    echo "<res class='ScapeISV15'>$ISV15Add</res>";
 
                 }
 
@@ -358,19 +342,11 @@
                             $ISV18Add += floatval($row["ISV18"]);
                         }
                         
-                        if($Exempt == "0.00"){
-
-                            echo "<res class='ScapeISV18'>$ISV18Add</res>";
-
-                        }
+                        echo "<res class='ScapeISV18'>$ISV18Add</res>";
 
                     } else {
 
-                        if($Exempt == "0.00"){
-
-                            echo "<res class='ScapeISV18'>$ISV18Add</res>";
-
-                        }
+                        echo "<res class='ScapeISV18'>$ISV18Add</res>";
 
                     }
 
@@ -410,12 +386,7 @@
                         $OtherISVAdd += floatval($row["OtherISV"]);
                     }
                     
-
-                    if($Exempt == "0.00"){
-
-                        echo "<res class='ScapeOtherISV'>$OtherISVAdd</res>";
-
-                    }
+                    echo "<res class='ScapeOtherISV'>$OtherISVAdd</res>";
 
                 } else {
 
@@ -457,19 +428,11 @@
                     $TotalAdd += floatval($row["Total"]);
                 }
                 
-                if($Exempt == "0.00"){
-
-                    echo "<res class='ScapeTotal'>$TotalAdd</res>";
-
-                }
+                echo "<res class='ScapeTotal'>$TotalAdd</res>";
 
             } else {
 
-                if($Exempt == "0.00"){
-
-                    echo "<res class='ScapeTotal'>$TotalAdd</res>";
-
-                }
+                echo "<res class='ScapeTotal'>$TotalAdd</res>";
 
             }
 
