@@ -52,14 +52,19 @@ for(let Aument = 0; Aument < Month.length; Aument++){
         if(IndexOf <= 9){
 
             const Route = `com.reports?MonthID=0${IndexOf}`;
+            const Route2 = `com.reports/com.exempt.php?MonthID=0${IndexOf}`;
             
+            window.open(Route2);
             window.open(Route);
+
 
         }else{
 
           const Route = `com.reports?MonthID=${IndexOf}`;
+          const Route2 = `com.reports/com.exempt.php?MonthID=${IndexOf}`
     
           window.open(Route);
+          window.open(Route2);
 
         }
 
