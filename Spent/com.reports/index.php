@@ -153,7 +153,14 @@
                             }
                             
 
-                            echo "
+                            if($Exempt == "0.00"){
+
+
+
+
+                            }else{
+
+                                echo "
 
                                 <div class='ThisRes'>
 
@@ -178,6 +185,10 @@
                             </div>
                             
                             ";
+
+                            }
+
+
 
                         }
 
