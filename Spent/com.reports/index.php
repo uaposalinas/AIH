@@ -153,7 +153,7 @@
                             }
                             
 
-                            if($Exempt == "0.00"){
+                            if($Exempt == "0.00" || $CountableCount == "Combustible"){
 
 
 
