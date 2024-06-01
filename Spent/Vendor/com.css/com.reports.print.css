@@ -27,57 +27,26 @@
     }
 
     .ThisRes:nth-child(179){
-
         margin-top: 80px !important;
-
     }
-
-
-
-    .ThisRes:nth-child(167){
-
+    
+    .ThisRes:nth-child(217){
         margin-top: 80px !important;
-
     }
-
-    .ThisRes:nth-child(192){
-
-        margin-top: 40px !important;
-
+    
+    .ThisRes:nth-child(255){
+        margin-top: 100px !important;
     }
-
-
-    .ThisRes:nth-child(218){
-
-        margin-top: 40px !important;
-
-    }
-
-    .ThisRes:nth-child(244){
-
-        margin-top: 40px !important;
-
-    }
-
-    .ThisRes:nth-child(269){
-
+    
+    .ThisRes:nth-child(293){
         margin-top: 80px !important;
-
     }
-
-    .ThisRes:nth-child(294){
-
-        margin-top: 60px !important;
-
+    
+    .ThisRes:nth-child(331){
+        margin-top: 80px !important;
     }
-
-
-    .ThisRes:nth-child(319){
-
-        margin-top: 60px !important;
-
-    }
-
+    
+   
     .ShowExempts{
 
         margin-top:300px;
