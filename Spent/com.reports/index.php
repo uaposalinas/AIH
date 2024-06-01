@@ -153,30 +153,38 @@
                             }
                             
 
-                            echo "
-                            <div class='ThisRes'>
+                            if($Exempt == "0.00"){
+
+                                echo "
+
+                                <div class='ThisRes'>
+
                                 <divs class='ThisNone'><p>$Number</p></divs>
                                 <divs><p class='MountDate'>$Date</p></divs>
                                 <divs><p>$BillNumber</p></divs>
                                 <divs><p>$Provider</p></divs>           
                                 <divs><p>$Amount</p></divs>
                                 <divs class='ThisCount'><p>$CountableCount</p></divs>
-                                <divs><p class='Subtotals'>$Subtotal</p></divs>";
-                        
-                        if ($Exempt == "0.00") {
-                            echo "<divs><p class='Exempts'>$Exempt</p></divs>";
-                        }
-                        
-                        echo "
+                                <divs><p class='Subtotals'>$Subtotal</p></divs>
+                                <divs><p class='Exempts'>$Exempt</p></divs>
                                 <divs><p class='ISV15'>$ISV15</p></divs>
                                 <divs><p class='ISV18'>$ISV18</p></divs>
                                 <divs><p class='Others'>$OtherISV</p></divs>
                                 <divs><p class='Totals'>$Total</p></divs>
                                 <divs class='ThisPayType'><p>$PayType</p></divs>
                                 <divs class='ThisBuyType'><p>$BuyType</p></divs>
+                                
+                             
+                                
+            
                             </div>
-                        ";
-                        
+                            
+                            ";
+
+                            }
+
+
+
                         }
 
                     }else{
