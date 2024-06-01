@@ -401,44 +401,37 @@
 
         <!--OtherISV-->
 
-            <?php
+        <?php
+require '../config/com.config.php';
 
-            require '../config/com.config.php';
+// Verifica si la variable $Exempt es igual a 0.00
+if ($Exempt === '0.00') {
+    if(isset($_GET["MonthID"])){
+        $Month = $_GET["MonthID"];
+    } else {
+        echo "<script> window.location.href = '../' </script>";
+    }
 
-            if(isset($_GET["MonthID"])){
+    $DoQuery = "SELECT Total FROM logs WHERE Month = '$Month'";
+    $QueryResults = $Connection->query($DoQuery);
+    $TotalAdd = 0;
 
-                $Month = $_GET["MonthID"];
+    if ($QueryResults->num_rows > 0) {
+        while($row = $QueryResults->fetch_assoc()) {
+            $TotalAdd += floatval($row["Total"]);
+        }
+        echo "<res class='ScapeTotal'>$TotalAdd</res>";
+    } else {
+        echo "<res class='ScapeTotal'>$TotalAdd</res>";
+    }
+} else {
+    // Si $Exempt no es igual a 0.00, no se ejecuta el código y se muestra un mensaje de error o se redirige
+    echo "Error: La variable \$Exempt no es igual a 0.00.";
+}
 
-            }else{
+$Connection->close();
+?>
 
-                echo "<script> window.location.href = '../' </script>";
-
-            }
-
-
-            $DoQuery = "SELECT Total FROM logs WHERE Month = '$Month'";
-
-            $QueryResults = $Connection->query($DoQuery);
-
-            $TotalAdd = 0;
-
-            if ($QueryResults->num_rows > 0) {
-                
-                while($row = $QueryResults->fetch_assoc()) {
-                
-                    $TotalAdd += floatval($row["Total"]);
-                }
-                
-                echo "<res class='ScapeTotal'>$TotalAdd</res>";
-
-            } else {
-
-                echo "<res class='ScapeTotal'>$TotalAdd</res>";
-
-            }
-
-            $Connection->close();
-            ?>
         </div>
 
         </div>
