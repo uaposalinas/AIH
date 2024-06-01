@@ -438,7 +438,7 @@
                     
     </div>
 
-    <div class="ShowReportsPerMonth ShowExempts">
+    <div class="ShowReportsPerMonth ShowExempts" style="display:none">
 
         <t class="PerMonthsLogTitle" style="width:auto;">Registros exentos del mes de Mayo</t>
         <div class="TitleBorder"></div>
