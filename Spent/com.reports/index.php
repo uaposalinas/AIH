@@ -157,7 +157,7 @@
 
                                 <div class='ThisRes'>
 
-                                <divs class='ThisNone'><n>$Number</n></divs>
+                                <divs class='ThisNone'><p>$Number</p></divs>
                                 <divs><p class='MountDate'>$Date</p></divs>
                                 <divs><p>$BillNumber</p></divs>
                                 <divs><p>$Provider</p></divs>           

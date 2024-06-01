@@ -1,5 +1,24 @@
 @media print{
 
+    .ThisRes:nth-child(37) n{
+
+        width:100%;
+        height:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+
+
+    }
+
+     .ThisRes:nth-child(37) p{
+
+        position:absolute;
+        top:27%;
+      
+    }
+
     .ThisRes:nth-child(27){
         margin-top: 80px !important;
     }
@@ -352,6 +371,7 @@
         margin-top: 80px !important;
     }
     
+
     .ThisRes:nth-child(3371){
         margin-top: 80px !important;
     }
