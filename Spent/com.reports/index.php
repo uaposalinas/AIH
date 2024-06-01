@@ -438,7 +438,7 @@
                     
     </div>
 
-    <div class="ShowReportsPerMonth ShowExempts" style="display:none">
+    <div class="ShowReportsPerMonth ShowExempts" style="">
 
         <t class="PerMonthsLogTitle" style="width:auto;">Registros exentos del mes de Mayo</t>
         <div class="TitleBorder"></div>
@@ -561,7 +561,7 @@
 
                                 echo "
 
-                                <div class='ThisRes ThisResExempts'>
+                                <div class='ThisRes'>
 
                                 <divs><n>$Number</n></divs>
                                 <divs><p class='MountDate'>$Date</p></divs>
