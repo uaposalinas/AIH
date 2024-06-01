@@ -32,7 +32,7 @@
             $ISV15 = $_GET["ISV15"];
             $SendTotal = $_GET["SendTotal"];
 
-            $UpdateLog = "UPDATE `logs` SET `Provider`='$SendProvider',`SpendedBy`='$Realice',`PayType`='$SendPayType',`CardUsed`='$CardUsed',`CountableCount`='$SendCountableCount',`BuyType`='$SendBuyType',`BillDescription`='$SendDescription',`BillNumber`='$SendBillID',`Amount`='$SendAmount',`Exempt`='$SendExempt',`Subtotal`='$SendSubtotal',`OtherISV`='$Other',`ISV18`='$ISV18',`ISV15`='$ISV15',`Total`='$SendTotal' WHERE GestID = '$GetGestID' ";
+            $UpdateLog = "UPDATE `logs` SET `Provider`='$SendProvider',`SpendedBy`='$Realice',`PayType`='$SendPayType',`CardUsed`='$CardUsed',`CountableCount`='$SendCountableCount',`BuyType`='$SendBuyType',`BillDescription`='$SendDescription',`BillNumber`='$SendBillID',`Amount`='$SendAmount',`Exempt`='$SendExempt',`Subtotal`='$SendSubtotal',`OtherISV`='$Other',`ISV18`='$ISV18',`ISV15`='$ISV15',`Total`='$SendTotal', `Date`='$SendDate' WHERE GestID = '$GetGestID' ";
 
             if($Connection -> query($UpdateLog)){
 
