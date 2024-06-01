@@ -440,7 +440,7 @@
 
     <div class="ShowReportsPerMonth ShowExempts">
 
-        <t class="PerMonthsLogTitle" style="width: 10px;">Registros exentos del mes de Mayo</t>
+        <t class="PerMonthsLogTitle" style="width:auto;">Registros exentos del mes de Mayo</t>
         <div class="TitleBorder"></div>
 
         <div class="Table" style="position:relative; left:calc(50% - 37%)">
