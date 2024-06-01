@@ -88,4 +88,24 @@
 
     }
 
+    .ThisPayType,
+    .ThisBuyType,
+    .ThisCount{
+
+        display:none !important;
+
+    }
+
+    .ThisNone{
+
+        width:200px !important;
+
+    }
+
+    .ThisTableToPrint{
+
+        width:1183px !important;
+
+    }
+
 }

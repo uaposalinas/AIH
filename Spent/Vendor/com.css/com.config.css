@@ -2449,6 +2449,8 @@ div.spinner {
 .ReportsBody{
 
     background-color: #FFFFFF !important;
+    overflow-y:scroll;
+    overflow-x:hidden;
 
 }
 
@@ -2834,6 +2836,11 @@ p2 b{
     left:0px;
     padding:20px;
     padding-left:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction: column;
 
 
 }
@@ -2854,6 +2861,10 @@ p2 b{
 .PerMonthsLogTitle{
 
     font-family:caviarDreamsBold;
+    position: absolute;
+    left:50px;
+    top:0px;
+    width:auto;;
 
 }
 
@@ -2863,7 +2874,9 @@ p2 b{
     height:5px;
     background-color: #85c6fe;
     margin-top:7px;
-    position:relative;
+    position:absolute;
+    left:50px;
+    top:20px;
 
 }
 
@@ -2886,8 +2899,9 @@ p2 b{
     border:2px solid #000000;
     margin-top:0px;
     position:relative;
-    top:20px;
+    top:40px;
     border-radius:10px;
+
 
 }
 

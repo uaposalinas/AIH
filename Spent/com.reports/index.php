@@ -39,10 +39,10 @@
 
     <div class="ShowReportsPerMonth">
 
-        <t class="PerMonthsLogTitle" style="width: 10px;">Registros completos del mes de Mayo</t>
+        <t class="PerMonthsLogTitle">Registros completos del mes de Mayo</t>
         <div class="TitleBorder"></div>
 
-        <div class="Table">
+        <div class="Table ThisTableToPrint">
 
             <div class="Identifers">
 
@@ -52,15 +52,15 @@
                 <columns style="137.4px !important">No. de Factura</columns>
                 <columns style="width:164.36px">Nombre de Proveedor</columns>
                 <columns>Cnt.</columns>
-                <columns>Cuenta Cont.</columns>
+                <columns class='ThisCount'>Cuenta Cont.</columns>
                 <columns>Subtotal</columns>
                 <columns>Exento</columns>
                 <columns>ISV 15%</columns>
                 <columns>ISV 18%</columns>
                 <columns>Otros</columns>
                 <columns>Total de Gasto</columns>
-                <columns>Pago</columns>
-                <columns>Fin</columns>
+                <columns class="ThisPayType">Pago</columns>
+                <columns class="ThisBuyType">Fin</columns>
             </div>
 
             <div class="Logs">
@@ -157,20 +157,20 @@
 
                                 <div class='ThisRes'>
 
-                                <divs><n>$Number</n></divs>
+                                <divs class='ThisNone'><n>$Number</n></divs>
                                 <divs><p class='MountDate'>$Date</p></divs>
                                 <divs><p>$BillNumber</p></divs>
                                 <divs><p>$Provider</p></divs>           
                                 <divs><p>$Amount</p></divs>
-                                <divs><p>$CountableCount</p></divs>
+                                <divs class='ThisCount'><p>$CountableCount</p></divs>
                                 <divs><p class='Subtotals'>$Subtotal</p></divs>
                                 <divs><p class='Exempts'>$Exempt</p></divs>
                                 <divs><p class='ISV15'>$ISV15</p></divs>
                                 <divs><p class='ISV18'>$ISV18</p></divs>
                                 <divs><p class='Others'>$OtherISV</p></divs>
                                 <divs><p class='Totals'>$Total</p></divs>
-                                <divs><p>$PayType</p></divs>
-                                <divs><p>$BuyType</p></divs>
+                                <divs class='ThisPayType'><p>$PayType</p></divs>
+                                <divs class='ThisBuyType'><p>$BuyType</p></divs>
                                 
                              
                                 
