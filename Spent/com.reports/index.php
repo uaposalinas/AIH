@@ -213,7 +213,7 @@
 
             <div class="Identifers">
 
-                    <columns>Exentos</columns>
+
                     <columns>ISV 15%</columns>
                     <columns>ISV 18%</columns>
                     <columns>Otros Impuestos</columns>
@@ -225,47 +225,7 @@
 
         <!--Exentos-->
 
-        <?php
-
-            require '../config/com.config.php';
-
-            if(isset($_GET["MonthID"])){
-
-                $Month = $_GET["MonthID"];
-
-            }else{
-
-                echo "<script> window.location.href = '../' </script>";
-
-            }
-
-
-            $DoQuery = "SELECT Exempt FROM logs WHERE Month = '$Month'";
-
-            $QueryResults = $Connection->query($DoQuery);
-
-            $ExemptAdd = 0;
-
-            if ($QueryResults->num_rows > 0) {
-                
-                while($row = $QueryResults->fetch_assoc()) {
-                
-                    $ExemptAdd += floatval($row["Exempt"]);
-                }
-                
-                echo "<res class='ScapeExempt'>$ExemptAdd</res>";
-
-            } else {
-
-                echo "<res class='ScapeExempt'>$ExemptAdd</res>";
-
-            }
-
-            $Connection->close();
-
-            ?>
-
-            <!--Exentos-->
+                 <!--Exentos-->
 
 
             <!--ISV 15-->
@@ -401,37 +361,52 @@
 
         <!--OtherISV-->
 
-        <?php
-require '../config/com.config.php';
+            <?php
 
-// Verifica si la variable $Exempt es igual a 0.00
-if ($Exempt === '0.00') {
-    if(isset($_GET["MonthID"])){
-        $Month = $_GET["MonthID"];
-    } else {
-        echo "<script> window.location.href = '../' </script>";
-    }
+            require '../config/com.config.php';
 
-    $DoQuery = "SELECT Total FROM logs WHERE Month = '$Month'";
-    $QueryResults = $Connection->query($DoQuery);
-    $TotalAdd = 0;
+            if(isset($_GET["MonthID"])){
 
-    if ($QueryResults->num_rows > 0) {
-        while($row = $QueryResults->fetch_assoc()) {
-            $TotalAdd += floatval($row["Total"]);
-        }
-        echo "<res class='ScapeTotal'>$TotalAdd</res>";
-    } else {
-        echo "<res class='ScapeTotal'>$TotalAdd</res>";
-    }
-} else {
-    // Si $Exempt no es igual a 0.00, no se ejecuta el código y se muestra un mensaje de error o se redirige
-    echo "Error: La variable \$Exempt no es igual a 0.00.";
-}
+                $Month = $_GET["MonthID"];
 
-$Connection->close();
-?>
+            }else{
 
+                echo "<script> window.location.href = '../' </script>";
+
+            }
+
+
+            $DoQuery = "SELECT Total, Exempt FROM logs WHERE Month = '$Month'";
+
+            $QueryResults = $Connection->query($DoQuery);
+
+            $TotalAdd = 0;
+
+            if ($QueryResults-> num_rows > 0) {
+                
+                while($row = $QueryResults->fetch_assoc()) {
+
+                    $Exempt = $row["Exempt"];
+
+                    if($Exempt == "0.00"){
+
+                        echo "<script> console.log('$Exempt') </script>";
+                        $TotalAdd += floatval($row["Total"]);
+
+                    }
+                
+                }
+                
+                echo "<res class='ScapeTotal'>$TotalAdd</res>";
+
+            } else {
+
+                echo "<res class='ScapeTotal'>$TotalAdd</res>";
+
+            }
+
+            $Connection->close();
+            ?>
         </div>
 
         </div>

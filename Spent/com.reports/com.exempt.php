@@ -248,12 +248,12 @@
                $ExemptAdd += floatval($row["Exempt"]);
            }
            
-           echo "<res class='ScapeExempts'>$ExemptAdd</res>";
-           echo "<res class='ScapeExemptS'>$ExemptAdd</res>";
+           echo "<res class='ScapeExempts GetScapeTotal'>$ExemptAdd</res>";
+           echo "<res class='ScapeExemptS GetScapeTotal'>$ExemptAdd</res>";
 
        } else {
 
-           echo "<res class='ScapeExempts'>$ExemptAdd</res>";
+           echo "<res class='ScapeExempts GetScapeTotal'>$ExemptAdd</res>";
 
        }
 
