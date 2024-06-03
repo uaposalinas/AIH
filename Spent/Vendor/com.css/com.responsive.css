@@ -9,9 +9,42 @@
     
     }
 
-    body{
+    .ThisNotificationsRender{
 
-        background-color: aqua;
+        width:90% !important;
+
+    }
+
+    .ThisNotificationsRender .Message{
+
+        width:270px !important;
+        position: relative !important;
+        left:25px !important;
+
+    }
+
+    .SpentSelectMenu header .ThisNotificationsRender .Notification{
+
+        height:auto;
+        padding-top:10px;
+        padding-bottom:10px;
+
+    }
+
+    .Menu{
+
+        flex-direction: column !important;
+        top:320px !important;
+        position:relative !important;
+        overflow: scroll !important;
+
+    }
+
+    .SelectOptionParent{
+
+        width:350px !important;
+        height:350px !important;
+        margin-top:10px;
 
     }
 
