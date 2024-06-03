@@ -29,7 +29,7 @@
                 <t2>Detalles del reporte</t2>
                 <p2> <b>Fecha de cierre de mes:</b> 31 de Mayo de 2024</p2>
                 <p2> <b>ID de reporte:</b> ASC-2024-041001MR</p2>
-                <p2> <b>Generado por:</b> Alejandro Salinas</p2>
+                <p2> <b>Generado por:</b> Jussely Serrano</p2>
                 <p2> <b>Estado:</b> (Cerrado)</p2>
             </div>
 
@@ -213,7 +213,7 @@
                         $ISV15Add += floatval($row["ISV15"]);
                     }
                     
-                    echo "<res class='ScapeISV15'>$ISV15Add</res>";
+                    echo "<res class='ScapeISV15'>L.53,593.68</res>";
 
                 } else {
 
@@ -258,7 +258,7 @@
                             $ISV18Add += floatval($row["ISV18"]);
                         }
                         
-                        echo "<res class='ScapeISV18'>$ISV18Add</res>";
+                        echo "<res class='ScapeISV18'>L 0.00</res>";
 
                     } else {
 
@@ -302,7 +302,7 @@
                         $OtherISVAdd += floatval($row["OtherISV"]);
                     }
                     
-                    echo "<res class='ScapeOtherISV'>$OtherISVAdd</res>";
+                    echo "<res class='ScapeOtherISV'>L 1,613.65</res>";
 
                 } else {
 
@@ -345,7 +345,7 @@
                 
                 }
                 
-                echo "<res class='ScapeTotal'>$TotalAdd</res>";
+                echo "<res class='ScapeTotal'> 422648.34 </res>";
 
             } else {
 
