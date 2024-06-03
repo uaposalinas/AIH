@@ -145,11 +145,7 @@
                             }
                             
 
-                            if($Exempt == "0.00" || $CountableCount == "Combustible"){
-
-                             
-
-                            }else{
+                            if($ISV15 == "0.00" && $ISV18 == "0.00"){
 
                                 $Number++;
 
@@ -168,6 +164,7 @@
                             </div>
                             
                             ";
+                            
 
                             }
 
