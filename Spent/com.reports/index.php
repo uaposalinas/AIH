@@ -62,7 +62,7 @@
                 <columns>Total de Gasto</columns>
                 <columns class="ThisPayType">Pago</columns>
                 <columns class="ThisBuyType">Fin</columns>
-                
+
             </div>
 
             <div class="Logs">
@@ -123,7 +123,7 @@
                 $OtherISV = "L 0.00";
             }
 
-            if($Exempt == "0.00"){
+            if($Exempt == "0.00" || $CountableCount != "Combustible"){
 
                 echo "
                 <div class='ThisRes'>
