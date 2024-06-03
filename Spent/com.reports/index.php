@@ -346,8 +346,7 @@
                 
                 while($row = $QueryResults->fetch_assoc()) {
 
-                    $Exempt = $row["Exempt"];
-
+                   
                     if($ISV15 == "0.00" && $ISV18 == "0.00"){
 
                         
