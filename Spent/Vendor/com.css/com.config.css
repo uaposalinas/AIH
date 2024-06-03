@@ -1,5 +1,7 @@
 
 
+
+
 .Scroll::-webkit-scrollbar{
 
     width:5px;
@@ -2901,11 +2903,6 @@ p2 b{
     position:relative;
     top:40px;
     border-radius:10px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-
 
 }
 
@@ -3914,5 +3911,11 @@ p2 b{
 .ShowExempts .Table{
 
     width:1170px !important;
+
+}
+
+.ExemptsTable .Logs .ThisRes:nth-child(1){
+
+    display: none;
 
 }

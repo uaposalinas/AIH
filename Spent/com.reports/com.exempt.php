@@ -42,11 +42,11 @@
         <t class="PerMonthsLogTitle" style="width:auto;">Registros exentos del mes de Mayo</t>
         <div class="TitleBorder"></div>
 
-        <div class="Table ExemptsTable" style="position:relative; width:1207px !important;">
+        <div class="Table ExemptsTable" style="position:relative; width:700px !important;">
 
-            <div class="Identifers">
+            <div class="Identifers" style="display:flex; justify-content:left;">
 
-            <columns>NO.</columns>
+                <columns style="width:86.99px !important">NO.</columns>
                 <columns>Fecha</columns>
                 <columns style="137.4px !important">No. de Factura</columns>
                 <columns style="width:164.36px">Nombre de Proveedor</columns>
@@ -158,8 +158,7 @@
                                 <divs><p>$BillNumber</p></divs>
                                 <divs><p>$Provider</p></divs>           
                                 <divs><p>$Amount</p></divs>
-                                <divs><p class='ExemptsNow'>$Exempt</p></divs>
-                                <divs><p class='Totals GetExentTotals'>$Exempt</p></divs>                              
+                                <divs><p class='Totals GetExentTotals' style='width:152.36px !important; border-right:none;'>$Exempt</p></divs>                              
             
                             </div>
                             
