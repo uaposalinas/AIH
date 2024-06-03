@@ -333,7 +333,7 @@
             }
 
 
-            $DoQuery = "SELECT Total, Exempt FROM logs WHERE Month = '$Month'";
+            $DoQuery = "SELECT Total, Exempt, IsExempt FROM logs WHERE Month = '$Month'";
 
             $QueryResults = $Connection->query($DoQuery);
 
@@ -344,14 +344,9 @@
                 while($row = $QueryResults->fetch_assoc()) {
 
                    
-                    if($ISV15 == "0.00" && $ISV18 == "0.00"){
-
+                    if($IsExempt == "false"){
                         
-
-                    }else{
-
-                        echo "<script> console.log('$Exempt') </script>";
-                        $TotalAdd += floatval($row["Total"]);
+                        $TotalAdd += floatval($row["Total"]);                        
 
                     }
                 
