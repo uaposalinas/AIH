@@ -62,6 +62,7 @@
                 <columns>Total de Gasto</columns>
                 <columns class="ThisPayType">Pago</columns>
                 <columns class="ThisBuyType">Fin</columns>
+                
             </div>
 
             <div class="Logs">
