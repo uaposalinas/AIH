@@ -237,7 +237,7 @@
     }
 
 
-       $DoQuery = "SELECT Exempt FROM logs WHERE Month = '$Month'";
+       $DoQuery = "SELECT Exempt FROM logs WHERE Month = '$Month' ORDER BY Date ASC";
 
        $QueryResults = $Connection->query($DoQuery);
 
