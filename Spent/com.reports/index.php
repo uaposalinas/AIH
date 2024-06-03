@@ -123,7 +123,11 @@
                 $OtherISV = "L 0.00";
             }
 
-            if($Exempt == "0.00" || $CountableCount != "Combustible"){
+            if($ISV15 == "0.00" && $ISV18 == "0.00"){
+
+             
+
+            }else{
 
                 echo "
                 <div class='ThisRes'>
