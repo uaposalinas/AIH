@@ -14,6 +14,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-solid-straight/css/uicons-solid-straight.css'>
 
     <script>
 
@@ -176,8 +177,8 @@
 
                 <div class="Notification">
 
-                <i class="fi fi-rr-file-medical-alt Icon"></i>
-                    <div class="Message">Se compagino el activo "reporte" en el directorio (protocol)(host)/{com.reports}</div>
+                <i class="fi fi-ss-badge-check Icon"></i>
+                    <div class="Message">Mayo ha concluido. A partir de ahora, todos los registros se registrarán bajo junio.</div>
                     <i class="fi fi-rs-circle-xmark Close"></i>
 
                 </div>
