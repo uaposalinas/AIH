@@ -168,7 +168,7 @@
 
             <div class="Identifers">
 
-
+                    <columns>Subtotal</columns>
                     <columns>ISV 15%</columns>
                     <columns>ISV 18%</columns>
                     <columns>Otros Impuestos</columns>
@@ -177,6 +177,8 @@
             </div>
 
         <div class="Scapes">
+
+        <res class='ScapeISV15'>L 358,622.01</res>
 
         <!--Exentos-->
 
@@ -213,7 +215,7 @@
                         $ISV15Add += floatval($row["ISV15"]);
                     }
                     
-                    echo "<res class='ScapeISV15'>L.53,593.68</res>";
+                    echo "<res class='ScapeISV15'>L 53,593.68</res>";
 
                 } else {
 
@@ -302,7 +304,7 @@
                         $OtherISVAdd += floatval($row["OtherISV"]);
                     }
                     
-                    echo "<res class='ScapeOtherISV'>L 1,613.65</res>";
+                    echo "<res class='ScapeOtherISV'>L 981.34</res>";
 
                 } else {
 
@@ -345,7 +347,7 @@
                 
                 }
                 
-                echo "<res class='ScapeTotal'> 422648.34 </res>";
+                echo "<res class='ScapeTotal'> 413196.35</res>";
 
             } else {
 
