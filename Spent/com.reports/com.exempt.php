@@ -51,12 +51,7 @@
                 <columns style="137.4px !important">No. de Factura</columns>
                 <columns style="width:164.36px">Nombre de Proveedor</columns>
                 <columns>Cnt.</columns>
-                <columns class='ThisCount'>Cuenta Cont.</columns>
                 <columns>Subtotal</columns>
-                <columns>Exento</columns>
-                <columns>ISV 15%</columns>
-                <columns>ISV 18%</columns>
-                <columns>Otros</columns>
                 <columns>Total de Gasto</columns>
                 <columns class="ThisPayType">Pago</columns>
                 <columns class="ThisBuyType">Fin</columns>
