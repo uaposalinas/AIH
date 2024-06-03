@@ -30,6 +30,18 @@
 
     <script>
 
+     const LocationFiles = "Vendor/com.css/com.responsive.css";
+
+        const NewResponsive = document.createElement('link');
+        NewResponsive.rel = "stylesheet";
+        NewResponsive.type = "text/css";
+        NewResponsive.href = LocationFiles+"?v"+Math.random();
+        document.head.appendChild(NewResponsive);
+
+    </script>
+
+    <script>
+
     
         if(sessionStorage.getItem('AuthStatus') === 'Allowed'){
 
