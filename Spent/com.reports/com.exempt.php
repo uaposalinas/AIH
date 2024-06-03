@@ -29,7 +29,7 @@
                 <t2>Detalles del reporte</t2>
                 <p2> <b>Fecha de cierre de mes:</b> 31 de Mayo de 2024</p2>
                 <p2> <b>ID de reporte:</b> ASC-2024-041001MR</p2>
-                <p2> <b>Generado por:</b> Alejandro Salinas</p2>
+                <p2> <b>Generado por:</b> Jussely Serrano</p2>
             </div>
 
         </div>
@@ -76,7 +76,7 @@
                     }
 
 
-                    $DoQuery = "SELECT * FROM logs WHERE Month = '$Month' AND IsExempt = 'true'";
+                    $DoQuery = "SELECT * FROM logs WHERE Month = '$Month' AND IsExempt = 'true' ORDER BY Date ASC";
                     $QueryResults = $Connection -> query($DoQuery);
 
                     if($QueryResults -> num_rows > 0){
