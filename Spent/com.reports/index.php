@@ -95,6 +95,7 @@
             $ISV15 = $Row["ISV15"];
             $ISV18 = $Row["ISV18"];
             $Total = $Row["Total"];
+            $IsExempt = $Row["IsExempt"];
 
             // FormattedValues
             if($PayType == "Efectivo"){
@@ -123,11 +124,7 @@
                 $OtherISV = "L 0.00";
             }
 
-            if($ISV15 == "0.00" && $ISV18 == "0.00"){
-
-             
-
-            }else{
+            if($IsExempt == "false"){
 
                 echo "
                 <div class='ThisRes'>
