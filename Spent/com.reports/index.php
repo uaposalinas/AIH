@@ -27,9 +27,10 @@
             <div class="ReportDetails">
 
                 <t2>Detalles del reporte</t2>
-                <p2> <b>Fecha de cierre de mes:</b> 31 de Mayo de 2024 OFT = Closed 23:59:59 !Logged</p2>
+                <p2> <b>Fecha de cierre de mes:</b> 31 de Mayo de 2024</p2>
                 <p2> <b>ID de reporte:</b> ASC-2024-041001MR</p2>
                 <p2> <b>Generado por:</b> Alejandro Salinas</p2>
+                <p2> <b>Estado:</b> (Cerrado)</p2>
             </div>
 
         </div>
@@ -37,7 +38,7 @@
     </header>
 
 
-    <div class="ShowReportsPerMonth">
+    <div class="ShowReportsPerMonth" style="top:">
 
         <t class="PerMonthsLogTitle">Registros completos del mes de Mayo</t>
         <div class="TitleBorder"></div>
