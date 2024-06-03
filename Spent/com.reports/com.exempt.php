@@ -164,8 +164,7 @@
                                 <divs><p>$BillNumber</p></divs>
                                 <divs><p>$Provider</p></divs>           
                                 <divs><p>$Amount</p></divs>
-                                <divs><p>$CountableCount</p></divs>
-                                <divs><p class='Subtotals'>$Subtotal</p></divs>
+                                <divs><p class='Subtotals ExemptSubtotal'>$Subtotal</p></divs>
                                 <divs><p class='ExemptsNow'>$Exempt</p></divs>
                                 <divs><p class='Totals GetExentTotals'>$Exempt</p></divs>
                                 <divs><p>$PayType</p></divs>

@@ -1097,4 +1097,11 @@
 
     }
 
+    .ExemptSubtotal{
+
+        display: none !important;
+
+    }
+
 }
+
