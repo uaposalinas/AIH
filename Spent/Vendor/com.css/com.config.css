@@ -2901,6 +2901,10 @@ p2 b{
     position:relative;
     top:40px;
     border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 
 
 }
