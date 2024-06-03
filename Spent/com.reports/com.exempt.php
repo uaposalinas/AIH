@@ -51,7 +51,6 @@
                 <columns style="137.4px !important">No. de Factura</columns>
                 <columns style="width:164.36px">Nombre de Proveedor</columns>
                 <columns>Cnt.</columns>
-                <columns>Subtotal</columns>
                 <columns>Total de Gasto</columns>
                 <columns class="ThisPayType">Pago</columns>
                 <columns class="ThisBuyType">Fin</columns>
@@ -164,7 +163,6 @@
                                 <divs><p>$BillNumber</p></divs>
                                 <divs><p>$Provider</p></divs>           
                                 <divs><p>$Amount</p></divs>
-                                <divs><p class='Subtotals ExemptSubtotal'>$Subtotal</p></divs>
                                 <divs><p class='ExemptsNow'>$Exempt</p></divs>
                                 <divs><p class='Totals GetExentTotals'>$Exempt</p></divs>
                                 <divs><p>$PayType</p></divs>
