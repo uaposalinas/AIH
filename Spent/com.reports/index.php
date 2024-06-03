@@ -77,7 +77,7 @@
         echo "<script> window.location.href = '../' </script>";
     }
 
-    $DoQuery = "SELECT * FROM logs WHERE Month = '$Month' ORDER BY Date ASC";
+    $DoQuery = "SELECT * FROM logs WHERE Month = '$Month' AND IsExempt = 'false' ORDER BY Date ASC";
     $QueryResults = $Connection->query($DoQuery);
 
     if($QueryResults->num_rows > 0){
@@ -124,8 +124,6 @@
                 $OtherISV = "L 0.00";
             }
 
-            if($IsExempt == "false"){
-
                 echo "
                 <div class='ThisRes'>
                     <divs class='ThisNone'><p>$Number</p></divs>
@@ -146,7 +144,7 @@
                 ";
                 $Number++;
 
-            }
+            
 
         }
     } else {
