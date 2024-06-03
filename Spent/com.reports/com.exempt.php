@@ -52,8 +52,7 @@
                 <columns style="width:164.36px">Nombre de Proveedor</columns>
                 <columns>Cnt.</columns>
                 <columns>Total de Gasto</columns>
-                <columns class="ThisPayType">Pago</columns>
-                <columns class="ThisBuyType">Fin</columns>
+
             </div>
 
             <div class="Logs">
@@ -164,12 +163,7 @@
                                 <divs><p>$Provider</p></divs>           
                                 <divs><p>$Amount</p></divs>
                                 <divs><p class='ExemptsNow'>$Exempt</p></divs>
-                                <divs><p class='Totals GetExentTotals'>$Exempt</p></divs>
-                                <divs><p>$PayType</p></divs>
-                                <divs><p>$BuyType</p></divs>    
-                                
-                             
-                                
+                                <divs><p class='Totals GetExentTotals'>$Exempt</p></divs>                              
             
                             </div>
                             
