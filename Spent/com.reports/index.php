@@ -348,7 +348,11 @@
 
                     $Exempt = $row["Exempt"];
 
-                    if($Exempt == "0.00"){
+                    if($ISV15 == "0.00" && $ISV18 == "0.00"){
+
+                        
+
+                    }else{
 
                         echo "<script> console.log('$Exempt') </script>";
                         $TotalAdd += floatval($row["Total"]);
