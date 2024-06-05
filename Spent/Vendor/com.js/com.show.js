@@ -1,5 +1,16 @@
 
 
+
+function FormatNumberNows(Number){
+
+    var Parts = Number.toString().split(".");
+
+    Parts[0] = Parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    return Parts.join(".");
+
+}
+
 window.addEventListener('load', StartFirmware);
 
 function StartFirmware(){
@@ -95,5 +106,20 @@ function RemoveReportNow(){
         alert('no')
 
     }
+
+}
+
+
+const TotalToShow = document.querySelectorAll('.Result');
+
+for(let Aument = 0; Aument < TotalToShow.length; Aument++){
+
+    const Total = TotalToShow[Aument];
+    const GetTotal = Total.innerHTML;
+    const INT = parseFloat(GetTotal);
+
+    const Result = FormatNumberNows(INT);
+
+    Total.innerHTML = `L ${Result}.00`;
 
 }

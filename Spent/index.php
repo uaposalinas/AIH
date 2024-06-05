@@ -769,7 +769,7 @@
                                     <p class='BuyedIn'>$Date</p>
                                     <p class='BuyType'>$BuyType</p>
                                     <p class='CardUsed'>$CardUsed</p>
-                                    <p class='Total'>$Total</p>
+                                    <p class='TotalToShow'>$Total</p>
                             
                                 </log>
                             
