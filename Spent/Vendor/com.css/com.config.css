@@ -1,7 +1,4 @@
 
-
-
-
 .Scroll::-webkit-scrollbar{
 
     width:5px;
@@ -927,7 +924,7 @@ input{
 .ShowLogs{
 
     width:100%;
-    height:calc(100% - 160px);
+    height:calc(100% - 180px);
     position:absolute;
     bottom:0px;
     background-color: #000000;
@@ -4028,4 +4025,39 @@ p2 b{
     bottom:0px;
     background-color: #85c6fe;
 
+}
+
+.SendMonthForView{
+
+    width:130px;
+    height: 40px;
+    position:absolute;
+    top:42px;
+    left:520px;
+    background-color: #000000;
+    color:#1ED761;
+    -webkit-appearance: none;  /* Safari y Chrome */
+    -moz-appearance: none;     /* Firefox */
+    appearance: none;          /* Navegadores modernos */   /* Puedes estilizar el borde como prefieras */
+    padding: 5px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#FFFFFF;
+    font-family:caviarDreamsBold;
+    font-size:20px;
+    cursor: pointer;
+
+}
+
+.SendMonthForView option{
+
+    font-size:14px;
+    height:25px;
+    display:flex;
+    justify-content:left;
+    align-items:start;
+    position:absolute;
+  
 }

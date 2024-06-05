@@ -11,6 +11,18 @@ const SelectedUser = document.querySelector('.SelectedUser');
 const UserName = document.querySelector('.UserName');
 const Limit = AllUsers.length;
 
+function ReturnMonth(){
+
+    const CurrentDate = new Date();
+    const GetMonth = CurrentDate.getMonth();
+    const MonthID = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+
+    const String = MonthID[GetMonth];
+
+    return String;
+
+}
+
 
 for(let Aument = 0; Aument < Limit; Aument++){
 
@@ -67,7 +79,7 @@ for(let Aument = 0; Aument < Limit; Aument++){
 
             setTimeout(() => {
                 
-                 window.location.href = "../";
+                 window.location.href = `../?ForceFilterByMonth=${ReturnMonth()}`;
 
             }, 1500);
 

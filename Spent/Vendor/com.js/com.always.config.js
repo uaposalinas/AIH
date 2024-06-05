@@ -47,8 +47,4 @@ const DoDate = `${WeekDay[GetDays]}, ${GetDates} de ${Months[GetMonths]}`;
 
 WiriteHourIn.innerHTML = DoHour;
 WiriteDateIn.innerHTML = DoDate;
-
-console.log(DoDate)
-
-
 }, 0);

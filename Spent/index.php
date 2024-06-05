@@ -507,11 +507,81 @@
                     <p class="Identifer">Sistema de gastos</p>
                     <i class="fi fi-br-angle-small-right"></i>
                     <p class="Identifer">Ver Reportes</p>
+                    <i class="fi fi-br-angle-small-right"></i>
+                    <p class="Identifer" style="cursor:pointer">Diciembrewss</p>
+                    <i class="fi fi-br-angle-small-right" style="z-index:99999;"></i>
+                    <p class="Identifer" style="cursor:pointer">2024</p>
 
                 </t>
     
 
             </div>
+
+            <select class="SendMonthForView">
+
+            <?php
+
+                $MonthUsed = $_GET["ForceFilterByMonth"];
+                $StringMonth = "NoDef";
+                if ($MonthUsed == "01") {
+                    $StringMonth = "Enero";
+                    echo "<option class='$StringMonth' value='Enero'>$StringMonth</option>";
+                } else if ($MonthUsed == "02") {
+                    $StringMonth = "Febrero";
+                    echo "<option class='$StringMonth' value='Febrero'>$StringMonth</option>";
+                } else if ($MonthUsed == "03") {
+                    $StringMonth = "Marzo";
+                    echo "<option class='$StringMonth' value='Marzo'>$StringMonth</option>";
+                } else if ($MonthUsed == "04") {
+                    $StringMonth = "Abril";
+                    echo "<option class='$StringMonth' value='Abril'>$StringMonth</option>";
+                } else if ($MonthUsed == "05") {
+                    $StringMonth = "Mayo";
+                    echo "<option class='$StringMonth' value='Mayo'>$StringMonth</option>";
+                } else if ($MonthUsed == "06") {
+                    $StringMonth = "Junio";
+                    echo "<option class='$StringMonth' value='Junio'>$StringMonth</option>";
+                } else if ($MonthUsed == "07") {
+                    $StringMonth = "Julio";
+                    echo "<option class='$StringMonth' value='Julio'>$StringMonth</option>";
+                } else if ($MonthUsed == "08") {
+                    $StringMonth = "Agosto";
+                    echo "<option class='$StringMonth' value='Agosto'>$StringMonth</option>";
+                } else if ($MonthUsed == "09") {
+                    $StringMonth = "Septiembre";
+                    echo "<option class='$StringMonth' value='Septiembre'>$StringMonth</option>";
+                } else if ($MonthUsed == "10") {
+                    $StringMonth = "Octubre";
+                    echo "<option class='$StringMonth' value='Octubre'>$StringMonth</option>";
+                } else if ($MonthUsed == "11") {
+                    $StringMonth = "Noviembre";
+                    echo "<option class='$StringMonth' value='Noviembre'>$StringMonth</option>";
+                } else if ($MonthUsed == "12") {
+                    $StringMonth = "Diciembre";
+                    echo "<option class='$StringMonth' value='Diciembre'>$StringMonth</option>";
+                } else {
+                    $StringMonth = "Mes no válido";
+                    echo "<option class='$StringMonth' value=''>$StringMonth</option>";
+                }
+                
+
+            ?>
+
+            <option class="UpdateMonth" value="Enero">Enero</option>
+            <option class="UpdateMonth" value="Febrero">Febrero</option>
+            <option class="UpdateMonth" value="Marzo">Marzo</option>
+            <option class="UpdateMonth" value="Abril">Abril</option>
+            <option class="UpdateMonth" value="Mayo">Mayo</option>
+            <option class="UpdateMonth" value="Junio">Junio</option>
+            <option class="UpdateMonth" value="Julio">Julio</option>
+            <option class="UpdateMonth" value="Agosto">Agosto</option>
+            <option class="UpdateMonth" value="Septiembre">Septiembre</option>
+            <option class="UpdateMonth" value="Octubre">Octubre</option>
+            <option class="UpdateMonth" value="Noviembre">Noviembre</option>
+            <option class="UpdateMonth" value="Diciembre">Diciembre</option>
+
+
+            </select>
 
 
             <div class="RightBar">
