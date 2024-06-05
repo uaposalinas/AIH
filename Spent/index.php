@@ -653,7 +653,7 @@
 
                 }
 
-                $DoQuery = "SELECT * FROM logs WHERE Month = '$ForceFilterByMonth'";
+                $DoQuery = "SELECT * FROM logs WHERE Month = '$ForceFilterByMonth' ORDER BY Date DESC";
                 $QueryResults = $Connection -> query($DoQuery);
 
                 if($QueryResults -> num_rows > 0){
