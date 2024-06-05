@@ -3919,3 +3919,113 @@ p2 b{
     display: none;
 
 }
+
+.AlwaysOnDisplay{
+
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index: 9999999999999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    background-image:url(../../Assets/com.img/defaults/background.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    display: none;
+
+}
+
+.AlwaysOnDisplay .Shadow{
+
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;  
+    backdrop-filter:blur(2px);
+    -webkit-backdrop-filter:blur(1px);
+    background-color:rgba(9, 18, 27, 0.520);
+
+}
+
+.Shadow .Clock{
+
+    width:500px;
+    height:200px;
+    position:absolute;
+    top:100px;
+
+}
+
+.Clock .Date{
+
+    width:100%;
+    height:60px;
+    position:absolute;
+    bottom:0px;
+    font-size:20px;
+    color:#c4c3c3;
+    font-family:caviarDreamsBold;
+
+}
+
+
+.Clock .Hour{
+
+    width:100%;
+    height:calc(100% - 60px);
+    position:absolute;
+    top:0px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-family:tecno;
+    font-size:105px;
+    color:#FFFFFF;
+
+}
+
+
+.Instructions{
+
+    font-size:20px;
+    color:#FFFFFF;
+    font-family:caviarDreamsBold;
+    position:absolute;
+    bottom:45px;
+
+}
+
+.UnlockBar{
+
+    width:200px;
+    height:7px;
+    background-color: #1ED761;
+    border-radius:20px;
+    background-color: #9b9b9b;
+    bottom:15px;
+    position: absolute;
+
+}
+
+.ShowLogsNow{
+
+    width:100%;
+    height:calc(100% - 300px);
+    position:absolute;
+    bottom:0px;
+    background-color: #85c6fe;
+
+}

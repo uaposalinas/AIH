@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="Assets/com.img/com.icon.png" type="image/x-icon">
     <link rel="stylesheet" href="Fonts/IndexFontsCaviarDreams.css">
+    <link rel="stylesheet" href="Fonts/IndexFontsTecno.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-thin-straight/css/uicons-thin-straight.css'>  
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -57,6 +58,28 @@
 
     <title>AIH's Bills</title>
 </head>
+
+<div class="AlwaysOnDisplay">
+
+        <div class="Shadow">
+
+            <div class="Clock">
+
+                <div class="Hour">
+
+                    <div class="Hours WiriteHourIn">00:00</div>
+
+                </div>
+                <div class="WiriteDateIn Date">none</div>
+
+            </div>
+
+            <div class="Instructions">Desliza la barra o pulsa espacio para continuar</div>
+            <div class="UnlockBar"></div>
+
+        </div>
+
+</div>
 
 <body class="Spent" style="overflow:hidden">
 
@@ -465,6 +488,12 @@
 
     </div>
 
+    <div class="ShowLogsNow">
+
+        
+
+    </div>
+
         
         <header style="height:105px; top:35px;">
 
@@ -548,7 +577,13 @@
 
                 $Connection->set_charset("utf8");
 
-                $DoQuery = "SELECT * FROM logs WHERE 1";
+                if(isset($_GET["ForceFilterByMonth"])){
+
+                    $ForceFilterByMonth = $_GET["ForceFilterByMonth"];
+
+                }
+
+                $DoQuery = "SELECT * FROM logs WHERE Month = '$ForceFilterByMonth'";
                 $QueryResults = $Connection -> query($DoQuery);
 
                 if($QueryResults -> num_rows > 0){
@@ -632,8 +667,14 @@
                         require 'config/com.config.php';
 
                         $Connection->set_charset("utf8");
+                        
+                if(isset($_GET["ForceFilterByMonth"])){
 
-                        $DoQuery = "SELECT GestID ,Provider, SpendedBy, Date, BuyType, CardUsed, Total FROM logs WHERE 1";
+                    $ForceFilterByMonth = $_GET["ForceFilterByMonth"];
+
+                }
+
+                        $DoQuery = "SELECT GestID ,Provider, SpendedBy, Date, BuyType, CardUsed, Total FROM logs WHERE Month = '$ForceFilterByMonth'";
                         $QueryResults = $Connection -> query($DoQuery);
 
                         if($QueryResults -> num_rows > 0){
@@ -667,6 +708,11 @@
 
                             }
 
+                        }else{
+
+                            echo "<NFC style='width:100%; height:100%; position:absolute; display:flex; justify-content:center; align-items:center;text-align:center;color:#FFFFFF; font-family:caviarDreamsBold; font-size:20px;animation:fadeInUp 0.5s'>Hmm... No hay nada por aquí</NFC>";
+
+
                         }
 
                     ?>
@@ -675,7 +721,7 @@
 
             </div>
 
-    </div>
+        </div>
 
     <div class="ShowInfo" style="display:none;">
 
@@ -693,6 +739,7 @@
     </div>
 
     <div class="GenerateANewReport" style="display: none; position:absolute; top:0px; height:100vh">
+
 
     <div class="BackButtonPack BackToHome">
 
@@ -1088,7 +1135,8 @@
             "Vendor/com.js/com.filter.js",
             "Vendor/com.js/com.return.js",
             "Vendor/com.js/com.do.month.js",
-            "Vendor/com.js/com.custom.report.js"
+            "Vendor/com.js/com.custom.report.js",
+            "Vendor/com.js/com.always.config.js"
         ];
 
         files.forEach(file => {
