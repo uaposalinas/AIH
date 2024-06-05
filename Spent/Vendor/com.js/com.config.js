@@ -1,6 +1,13 @@
 
+function FormatNumberNows(Number){
 
+    var Parts = Number.toString().split(".");
 
+    Parts[0] = Parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    return Parts.join(".");
+
+}
 
 function openCenteredWindow(url, title, width, height) {
     // Obtener dimensiones de la pantalla
@@ -612,8 +619,28 @@ function IdentifyTheMonth(){
     } else if (Selected == "Diciembre") {
         MonthSelected = 11;
     } else {
-        MonthSelected = -1; // Valor por defecto para un mes no válido
+        MonthSelected = -1; 
     }
+
+
 
     
 }
+
+
+const TotalToShow = document.querySelectorAll('.TotalToShow');
+const Total = document.querySelector('.Total');
+
+for(let Aument = 0; Aument < TotalToShow.length; Aument++){
+
+    const Total = TotalToShow[Aument];
+    const GetTotal = Total.innerHTML;
+    const INT = parseFloat(GetTotal);
+
+    const Result = FormatNumberNows(INT);
+
+    Total.innerHTML = `L ${Result}.00`;
+
+}
+
+
