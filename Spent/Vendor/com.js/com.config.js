@@ -628,7 +628,7 @@ function IdentifyTheMonth(){
 }
 
 
-const TotalToShow = document.querySelectorAll('.TotalToShow     ');
+const TotalToShow = document.querySelectorAll('.TotalToShow');
 const Total = document.querySelector('.Total');
 
 for(let Aument = 0; Aument < TotalToShow.length; Aument++){
