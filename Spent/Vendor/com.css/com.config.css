@@ -2892,14 +2892,13 @@ p2 b{
 
 .ShowReportsPerMonth .Table{
 
-    width:1481.2px;
+    width:1281.2px;
     height:auto;
     min-height:50px;
     border:2px solid #000000;
     margin-top:0px;
     position:relative;
     top:40px;
-    border-radius:10px;
 
 }
 
@@ -2914,8 +2913,6 @@ p2 b{
     justify-content:center;
     align-items:center;
     text-align:center;
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
 
 }
 
@@ -2934,7 +2931,10 @@ p2 b{
     padding-right:20px;
     padding-top:10px;
     padding-bottom:10px;
-    font-family:caviarDreams;
+    font-family:"Roboto";
+    font-style: normal;
+    font-weight:300;
+    font-size:14px;
 
 }
 
@@ -2993,7 +2993,7 @@ p2 b{
 
 .ThisRes divs:nth-child(1){
 
-    width:87.5px !important;
+    width:64.44px !important;
 
 }
 
@@ -3037,7 +3037,7 @@ p2 b{
 
 .ThisRes divs:nth-child(7){
 
-    width:102.28px !important;
+    width:95.28px !important;
     display:flex;
     justify-content:end;
     align-items:center;
@@ -3065,7 +3065,7 @@ p2 b{
 
 .ThisRes divs:nth-child(10){
 
-    width:96.99px !important;
+    width:92.90px !important;
     display:flex;
     justify-content:end;
     align-items:center;
@@ -3075,7 +3075,7 @@ p2 b{
 
 .ThisRes divs:nth-child(11){
 
-    width:81.75px !important;
+    width:81.60px !important;
     display:flex;
     justify-content:end;
     align-items:center;
@@ -3085,7 +3085,7 @@ p2 b{
 
 .ThisRes divs:nth-child(12){
 
-    width:153.16px !important;
+    width:93.5px !important;
     display:flex;
     justify-content:end;
     align-items:center;
@@ -3106,7 +3106,7 @@ p2 b{
 
 .ThisRes divs:nth-child(14){
 
-    width:50px !important;
+    width:57px !important;
     border: none;
     display:flex;
     justify-content:start;
@@ -4061,3 +4061,4 @@ p2 b{
     position:absolute;
   
 }
+
