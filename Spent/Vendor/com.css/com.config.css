@@ -4075,3 +4075,13 @@ p2 b{
     font-weight:300;
 
 }
+
+.TotalLogs{
+
+    color:#1ED761;
+    position:absolute;
+    top:110px;
+    left:50px;
+    font-family:caviarDreamsBold;
+
+}

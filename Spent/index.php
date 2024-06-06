@@ -517,6 +517,22 @@
 
             </div>
 
+            <?php 
+            
+                require "config/com.config.php";
+
+                $Month = $_GET["ForceFilterByMonth"];
+
+                $DoQuery = "SELECT * FROM logs WHERE Month = '$Month'";
+                $QueryResults = $Connection -> query($DoQuery);
+                
+                $Nums = $QueryResults -> num_rows;
+
+                echo "<div class='TotalLogs'>$Nums</div>"
+
+
+            ?>
+
             <select class="SendMonthForView">
 
             <?php
