@@ -4061,3 +4061,17 @@ p2 b{
   
 }
 
+.ReportTitle{
+
+    width:100vw; 
+    position:absolute; 
+    left:0px; 
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    text-align:center; 
+    font-family:'Roboto' !important; 
+    font-style:normal; 
+    font-weight:300;
+
+}

@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="../Fonts/IndexFontsCaviarDreams.css">
     <link rel="stylesheet" href="../Fonts/IndexFontsRoboto.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body class="ReportsBody Scroll">
 
@@ -19,18 +19,46 @@
 
         <div class="LeftZoneHeader">
 
-         <?php
+            <t class="ReportTitle">Reporte Mensual de gastos Variables del Mes de
 
-            $Month = $_GET["Month"];
+            <?php
 
-            if($Month == "01"){
+                $Month = $_GET["MonthID"];
+                
+                if($Month == "01"){
+                    echo "Enero";   
+                } else if($Month == "02"){
+                    echo "Febrero";   
+                } else if($Month == "03"){
+                    echo "Marzo";   
+                } else if($Month == "04"){
+                    echo "Abril";   
+                } else if($Month == "05"){
+                    echo "Mayo";   
+                } else if($Month == "06"){
+                    echo "Junio";   
+                } else if($Month == "07"){
+                    echo "Julio";   
+                } else if($Month == "08"){
+                    echo "Agosto";   
+                } else if($Month == "09"){
+                    echo "Septiembre";   
+                } else if($Month == "10"){
+                    echo "Octubre";   
+                } else if($Month == "11"){
+                    echo "Noviembre";   
+                } else if($Month == "12"){
+                    echo "Diciembre";   
+                } else {
+                    echo "Mes no válido";
+                }
+                ?>
+    
 
-                echo `<t style='width:100vw; position:absolute; left:0px; display:flex; justify-content:center; align-items:center; text-align:center; font-family:'Roboto'; font-style:normal; font-weight:500;'>Reporte Mensual de Gastos del Mes de Mayo</t>`;
 
-            }
+            </t>
 
-          ?>
-
+         
         </div>
 
     </header>
@@ -40,25 +68,7 @@
 
         <div class="Table ThisTableToPrint">
 
-            <div class="Identifers">
-
-                
-                <columns style="width:44.44px !important; font-size:12px">No.</columns>
-                <columns style="width:85.71px !important;">Fecha</columns>
-                <columns style="width:151.45px !important;">No. de Factura</columns>
-                <columns style="width:164.35px !important;">Proveedor</columns>
-                <columns style="width:49.84px !important;">Cnt.</columns>
-                <columns style="width:139.82px !important;" class='ThisCount'>Cuenta Cont.</columns>
-                <columns style="width:95.28px !important;">Subtotal</columns>
-                <columns style="width:88.79px !important;">Exento</columns>
-                <columns style="width:96.99px !important;">ISV 15%</columns>
-                <columns style="width:92.90px !important;">ISV 18%</columns>
-                <columns style="width:81.60px !important;">Otros</columns>
-                <columns style="width:93.5px !important;">Totales</columns>
-                <columns style="width:50.58px !important;" class="ThisPayType">Pago</columns>
-                <columns style="width:50px !important;" class="ThisBuyType">TC</columns>
-
-            </div>
+           
 
             <div class="Logs">
     <?php
@@ -156,8 +166,7 @@
     <div class="ShowAllResults">
 
     
-     <t class="PerMonthsLogTitle" style="width: 10000px;">Totalizaciones mes de mayo</t>
-        <div class="TitleBorder2"></div>
+     <t class="PerMonthsLogTitle" style="width: 10000px;"> </t>
 
         <div class="Totalizate">
 

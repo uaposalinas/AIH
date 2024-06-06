@@ -9,59 +9,48 @@
     <link rel="stylesheet" href="../../../Vendor/com.css/com.reports.print.css">
     <link rel="stylesheet" href="../../../Fonts/IndexFontsCaviarDreams.css">
     <link rel="stylesheet" href="../../../Fonts/IndexFontsRoboto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
 </head>
 <body class="ReportsBody Scroll">
 
 <header>
 
-<div class="HeaderDecoration"></div>
-
-    <div class="QrCode"></div>
-
 
 <div class="LeftZoneHeader">
 
-    <t>Reporte Personalizado de Gastos</t>
-    <p>Filtrar por Proveedor</p>
-
-    <div class="ReportDetails">
-
-        <t2>Detalles del reporte</t2>
-        <p2> <b>Realizado el:</b> 31 de Mayo de 2024</p2>
-        <p2> <b>ID de reporte:</b> ASC-2024-041001MR</p2>
-        <p2> <b>Generado por:</b> Alejandro Salinas</p2>
-    </div>
 
 </div>
 
 </header>
 
 
-    <div class="ShowReportsPerMonth">
+    <div class="ShowReportsPerMonth" style="top:0px;">
 
-        <t class="PerMonthsLogTitle" style="width: 10px;">Registros del Reporte Personalizado</t>
-        <div class="TitleBorder"></div>
+        <t class="PerMonthsLogTitle" class="ReportTitle">Registros del Reporte Personalizado</t>
+
 
         <div class="Table">
-
-            <div class="Identifers">
-
+        <div class="Identifers">
                 
-                <columns>NO.</columns>
-                <columns>Fecha</columns>
-                <columns style="137.4px !important">No. de Factura</columns>
-                <columns style="width:164.36px">Nombre de Proveedor</columns>
-                <columns>Cnt.</columns>
-                <columns>Cuenta Cont.</columns>
-                <columns>Subtotal</columns>
-                <columns>Exento</columns>
-                <columns>ISV 15%</columns>
-                <columns>ISV 18%</columns>
-                <columns>Otros</columns>
-                <columns>Total de Gasto</columns>
-                <columns>Pago</columns>
-                <columns>Fin</columns>
-            </div>
+            <columns style="width:44.44px !important; font-size:12px">No.</columns>
+            <columns style="width:85.71px !important;">Fecha</columns>
+            <columns style="width:151.45px !important;">No. de Factura</columns>
+            <columns style="width:164.35px !important;">Proveedor</columns>
+            <columns style="width:49.84px !important;">Cnt.</columns>
+            <columns style="width:139.82px !important;" class='ThisCount'>Cuenta Cont.</columns>
+            <columns style="width:95.28px !important;">Subtotal</columns>
+            <columns style="width:88.79px !important;">Exento</columns>
+            <columns style="width:96.99px !important;">ISV 15%</columns>
+            <columns style="width:92.90px !important;">ISV 18%</columns>
+            <columns style="width:81.60px !important;">Otros</columns>
+            <columns style="width:93.5px !important;">Totales</columns>
+            <columns style="width:50.58px !important;" class="ThisPayType">Pago</columns>
+            <columns style="width:50px !important;" class="ThisBuyType">TC</columns>
+
+        </div>
 
             <div class="Logs">
                 

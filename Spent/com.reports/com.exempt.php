@@ -22,7 +22,44 @@
 
     <div class="LeftZoneHeader">
 
-    <t style="width:100vw; position:absolute; left:0px; display:flex; justify-content:center; align-items:center; text-align:center; font-family:'Roboto'; font-style:normal; font-weight:500;">Reporte Mensual de Gastos del Mes de Mayo</t>
+    <t class="ReportTitle">Reporte Mensual de gastos Exentos del Mes de
+
+<?php
+
+    $Month = $_GET["MonthID"];
+    
+    if($Month == "01"){
+        echo "Enero";   
+    } else if($Month == "02"){
+        echo "Febrero";   
+    } else if($Month == "03"){
+        echo "Marzo";   
+    } else if($Month == "04"){
+        echo "Abril";   
+    } else if($Month == "05"){
+        echo "Mayo";   
+    } else if($Month == "06"){
+        echo "Junio";   
+    } else if($Month == "07"){
+        echo "Julio";   
+    } else if($Month == "08"){
+        echo "Agosto";   
+    } else if($Month == "09"){
+        echo "Septiembre";   
+    } else if($Month == "10"){
+        echo "Octubre";   
+    } else if($Month == "11"){
+        echo "Noviembre";   
+    } else if($Month == "12"){
+        echo "Diciembre";   
+    } else {
+        echo "Mes no válido";
+    }
+    ?>
+
+
+
+</t>
 
 
     </div>
