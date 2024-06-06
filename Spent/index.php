@@ -528,7 +528,7 @@
                 
                 $Nums = $QueryResults -> num_rows;
 
-                echo "<div class='TotalLogs'>$Nums</div>"
+                echo "<div class='TotalLogs'>Total de registros: $Nums</div>"
 
 
             ?>
