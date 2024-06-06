@@ -1,263 +1,254 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver reporte mes de Mayo</title>
-    <link rel="shortcut icon" href="Assets/com.img/com.icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../Vendor/com.css/com.config.css">
-    <link rel="stylesheet" href="../Vendor/com.css/com.reports.print.css">
-    <link rel="stylesheet" href="../Fonts/IndexFontsCaviarDreams.css">
-    <link rel="stylesheet" href="../Fonts/IndexFontsRoboto.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ver reporte mes de Mayo</title>
+<link rel="shortcut icon" href="Assets/com.img/com.icon.png" type="image/x-icon">
+<link rel="stylesheet" href="../Vendor/com.css/com.config.css">
+<link rel="stylesheet" href="../Vendor/com.css/com.reports.print.css">
+<link rel="stylesheet" href="../Fonts/IndexFontsCaviarDreams.css">
+<link rel="stylesheet" href="../Fonts/IndexFontsRoboto.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body class="ReportsBody Scroll">
 
-    <header>
+<header>
 
-        <div class="HeaderDecoration"></div>
-
-            <div class="QrCode"></div>
+    <div class="HeaderDecoration"></div>
 
 
-        <div class="LeftZoneHeader">
+    <div class="LeftZoneHeader">
 
-            <t>Reporte Mensual de Gastos Exentos</t>
-            <p>Mayo 2024</p>
+    <t style="width:100vw; position:absolute; left:0px; display:flex; justify-content:center; align-items:center; text-align:center; font-family:'Roboto'; font-style:normal; font-weight:500;">Reporte Mensual de Gastos del Mes de Mayo</t>
 
-            <div class="ReportDetails">
 
-                <t2>Detalles del reporte</t2>
-                <p2> <b>Fecha de cierre de mes:</b> 31 de Mayo de 2024</p2>
-                <p2> <b>ID de reporte:</b> ASC-2024-041001MR</p2>
-                <p2> <b>Generado por:</b> Jussely Serrano</p2>
-            </div>
+    </div>
+
+</header>
+
+
+<div class="ShowReportsPerMonth ShowExempts" style="top:20px;">
+
+
+    <div class="Table ExemptsTable" style="position:relative; width:700px !important;">
+
+        <div class="Identifers" style="display:flex; justify-content:left;">
+
+            <columns style="width:86.99px !important">NO.</columns>
+            <columns>Fecha</columns>
+            <columns style="137.4px !important">No. de Factura</columns>
+            <columns style="width:164.36px">Nombre de Proveedor</columns>
+            <columns>Cnt.</columns>
+            <columns>Total de Gasto</columns>
 
         </div>
 
-    </header>
-
-
-    <div class="ShowReportsPerMonth ShowExempts" style="">
-
-        <t class="PerMonthsLogTitle" style="width:auto;">Registros exentos del mes de Mayo</t>
-        <div class="TitleBorder"></div>
-
-        <div class="Table ExemptsTable" style="position:relative; width:700px !important;">
-
-            <div class="Identifers" style="display:flex; justify-content:left;">
-
-                <columns style="width:86.99px !important">NO.</columns>
-                <columns>Fecha</columns>
-                <columns style="137.4px !important">No. de Factura</columns>
-                <columns style="width:164.36px">Nombre de Proveedor</columns>
-                <columns>Cnt.</columns>
-                <columns>Total de Gasto</columns>
-
-            </div>
-
-            <div class="Logs">
-                
-                <?php
-
-                    $Number = 0;
-
-                    require '../config/com.config.php';
-                    $Connection -> set_charset("utf8");
-
-                    if(isset($_GET["MonthID"])){
-
-                        $Month = $_GET["MonthID"];
-
-                    }else{
-
-                    echo "<script> try {window.close();} catch (error) {window.location.href = '../';} </script>";
-
-
-                    }
-
-
-                    $DoQuery = "SELECT * FROM logs WHERE Month = '$Month' AND IsExempt = 'true' ORDER BY Date ASC";
-                    $QueryResults = $Connection -> query($DoQuery);
-
-                    if($QueryResults -> num_rows > 0){
-
-                        while($Row = $QueryResults -> fetch_assoc()){
-
-                            $Provider = $Row["Provider"];
-                            $Date = $Row["Date"];
-                            $Amount = $Row["Amount"];
-                            $PayType = $Row["PayType"];
-                            $BillNumber = $Row["BillNumber"];
-                            $CountableCount = $Row["CountableCount"];
-                            $BuyType = $Row["BuyType"];
-                            $Subtotal = $Row["Subtotal"];
-                            $Exempt = $Row["Exempt"];
-                            $OtherISV = $Row["OtherISV"];
-                            $ISV15 = $Row["ISV15"];
-                            $ISV18 = $Row["ISV18"];
-                            $Total = $Row["Total"];
-
-                            //FormattedValues 
-
-                            if($PayType == "Efectivo"){
-
-                                $PayType = "Efc";
-
-                            }else if($PayType == "Transferencia"){
-
-                                $PayType = "Trans.";
-
-                            }else if($PayType == "Tarjeta de Crédito"){
-
-                                $PayType = "T/C";
-
-                            }else if($PayType == "Pago en línea"){
-
-                                $PayType = "Online";
-
-                            }else if($PayType == "Botón de Pago"){
-
-                                $PayType = "BDP";
-
-                            }
-                            
-
-                            if($BuyType == "Personal"){
-
-                                $BuyType = "Prs";
-
-                            }else if($BuyType == "Oficina"){
-
-                                $BuyType = "Ofc";
-
-                            }
-
-                            $AmountInt = floatval($Amount);
-
-                            if($Amount < 10){
-
-                                $Amount = '0'. $Amount;
-
-                            }
-
-                            if ($OtherISV === '') {
-                                $OtherISV = "L 0.00";
-                            }
-                            
-
-                            if($ISV15 == "0.00" && $ISV18 == "0.00"){
-
-                                $Number++;
-
-                                echo "
-
-                                <div class='ThisRes'>
-
-                                <divs><n>$Number</n></divs>
-                                <divs><p class='MountDate'>$Date</p></divs>
-                                <divs><p>$BillNumber</p></divs>
-                                <divs><p>$Provider</p></divs>           
-                                <divs><p>$Amount</p></divs>
-                                <divs><p class='Totals GetExentTotals' style='width:152.36px !important; border-right:none;'>$Exempt</p></divs>                              
+        <div class="Logs">
             
-                            </div>
-                            
-                            ";
-                            
+            <?php
 
-                            }
+                $Number = 0;
+
+                require '../config/com.config.php';
+                $Connection -> set_charset("utf8");
+
+                if(isset($_GET["MonthID"])){
+
+                    $Month = $_GET["MonthID"];
+
+                }else{
+
+                echo "<script> try {window.close();} catch (error) {window.location.href = '../';} </script>";
 
 
+                }
+
+
+                $DoQuery = "SELECT * FROM logs WHERE Month = '$Month' AND IsExempt = 'true' ORDER BY Date ASC";
+                $QueryResults = $Connection -> query($DoQuery);
+
+                if($QueryResults -> num_rows > 0){
+
+                    while($Row = $QueryResults -> fetch_assoc()){
+
+                        $Provider = $Row["Provider"];
+                        $Date = $Row["Date"];
+                        $Amount = $Row["Amount"];
+                        $PayType = $Row["PayType"];
+                        $BillNumber = $Row["BillNumber"];
+                        $CountableCount = $Row["CountableCount"];
+                        $BuyType = $Row["BuyType"];
+                        $Subtotal = $Row["Subtotal"];
+                        $Exempt = $Row["Exempt"];
+                        $OtherISV = $Row["OtherISV"];
+                        $ISV15 = $Row["ISV15"];
+                        $ISV18 = $Row["ISV18"];
+                        $Total = $Row["Total"];
+
+                        //FormattedValues 
+
+                        if($PayType == "Efectivo"){
+
+                            $PayType = "Efc";
+
+                        }else if($PayType == "Transferencia"){
+
+                            $PayType = "Trans.";
+
+                        }else if($PayType == "Tarjeta de Crédito"){
+
+                            $PayType = "T/C";
+
+                        }else if($PayType == "Pago en línea"){
+
+                            $PayType = "Online";
+
+                        }else if($PayType == "Botón de Pago"){
+
+                            $PayType = "BDP";
+
+                        }
+                        
+
+                        if($BuyType == "Personal"){
+
+                            $BuyType = "Prs";
+
+                        }else if($BuyType == "Oficina"){
+
+                            $BuyType = "Ofc";
 
                         }
 
-                    }else{
+                        $AmountInt = floatval($Amount);
+
+                        if($Amount < 10){
+
+                            $Amount = '0'. $Amount;
+
+                        }
+
+                        if ($OtherISV === '') {
+                            $OtherISV = "L 0.00";
+                        }
                         
-                        echo "try {window.close();} catch (error) {window.location.href = '../';}";
+
+                        if($ISV15 == "0.00" && $ISV18 == "0.00"){
+
+                            $Number++;
+
+                            echo "
+
+                            <div class='ThisRes'>
+
+                            <divs><n>$Number</n></divs>
+                            <divs><p class='MountDate'>$Date</p></divs>
+                            <divs><p>$BillNumber</p></divs>
+                            <divs><p>$Provider</p></divs>           
+                            <divs><p>$Amount</p></divs>
+                            <divs><p class='Totals GetExentTotals' style='width:152.36px !important; border-right:none;'>$Exempt</p></divs>                              
+        
+                        </div>
+                        
+                        ";
+                        
+
+                        }
+
+
 
                     }
 
-                ?>
-                   
-            </div>
+                }else{
+                    
+                    echo "try {window.close();} catch (error) {window.location.href = '../';}";
 
+                }
+
+            ?>
+                
         </div>
 
     </div>
-    
-    <div class="ShowAllResults">
 
-    
+</div>
+
+<div class="ShowAllResults">
+
+
 <t class="PerMonthsLogTitle" style="width: 10000px;">Totalizaciones exentos mes de mayo</t>
-   <div class="TitleBorder2"></div>
+<div class="TitleBorder2"></div>
 
-   <div class="Totalizate" style="width:300px; top:70px; left:20px;">
+<div class="Totalizate" style="width:300px; top:70px; left:20px;">
 
-       <div class="Identifers">
+    <div class="Identifers">
 
-               <columns>Exentos</columns>
-               <columns>Total de Registros</columns>
+            <columns>Exentos</columns>
+            <columns>Total de Registros</columns>
 
-       </div>
+    </div>
 
-   <div class="Scapes">
+<div class="Scapes">
 
-   <!--Exentos-->
+<!--Exentos-->
 
-   <?php
+<?php
 
-       require '../config/com.config.php';
+    require '../config/com.config.php';
 
-       if(isset($_GET["MonthID"])){
+    if(isset($_GET["MonthID"])){
 
-        $Month = $_GET["MonthID"];
+    $Month = $_GET["MonthID"];
 
-    }else{
+}else{
 
-        echo "<script> window.location.href = '../' </script>";
+    echo "<script> window.location.href = '../' </script>";
+
+}
+
+
+$DoQuery = "SELECT Exempt FROM logs WHERE Month = '$Month' AND IsExempt = 'true' ORDER BY Date ASC";
+
+
+    $QueryResults = $Connection->query($DoQuery);
+
+    $ExemptAdd = 0;
+
+    if ($QueryResults->num_rows > 0) {
+        
+        while($row = $QueryResults->fetch_assoc()) {
+        
+            $ExemptAdd += floatval($row["Exempt"]);
+        }
+        
+        echo "<res class='ScapeExempts GetScapeTotal'> L 420,110.60</res>";
+        echo "<res class='ScapeExemptS GetScapeTotal'> L 420,110.60</res>";
+
+    } else {
+
+        echo "<res class='ScapeExempts GetScapeTotal'>$ExemptAdd</res>";
 
     }
 
+    $Connection->close();
 
-    $DoQuery = "SELECT Exempt FROM logs WHERE Month = '$Month' AND IsExempt = 'true' ORDER BY Date ASC";
+    ?>
 
+    <!--Exentos-->
 
-       $QueryResults = $Connection->query($DoQuery);
-
-       $ExemptAdd = 0;
-
-       if ($QueryResults->num_rows > 0) {
-           
-           while($row = $QueryResults->fetch_assoc()) {
-           
-               $ExemptAdd += floatval($row["Exempt"]);
-           }
-           
-           echo "<res class='ScapeExempts GetScapeTotal'> L 420,110.60</res>";
-           echo "<res class='ScapeExemptS GetScapeTotal'> L 420,110.60</res>";
-
-       } else {
-
-           echo "<res class='ScapeExempts GetScapeTotal'>$ExemptAdd</res>";
-
-       }
-
-       $Connection->close();
-
-       ?>
-
-       <!--Exentos-->
-
-   </div>
-
-   </div>
-               
 </div>
-    <footer style="display: none;">
 
-        <div class="FooterDecoration"></div>    
+</div>
+            
+</div>
+<footer style="display: none;">
 
-    </footer>
+    <div class="FooterDecoration"></div>    
+
+</footer>
 
 </body>
 
@@ -265,18 +256,18 @@
 </html>
 
 <script>
-        const files = [
-            "../Vendor/com.js/com.versions.js",
-            "../Vendor/com.js/com.reports.js",
-            "../Vendor/com.js/com.format.config.js",
-            "../Vendor/com.js/com.totalizate.js"
+    const files = [
+        "../Vendor/com.js/com.versions.js",
+        "../Vendor/com.js/com.reports.js",
+        "../Vendor/com.js/com.format.config.js",
+        "../Vendor/com.js/com.totalizate.js"
 
 
-        ];
+    ];
 
-        files.forEach(file => {
-            const script = document.createElement("script");
-            script.src = `${file}?v=${Math.random() * Math.random() * Math.random()}`;
-            document.body.appendChild(script);
-        });
-    </script>
+    files.forEach(file => {
+        const script = document.createElement("script");
+        script.src = `${file}?v=${Math.random() * Math.random() * Math.random()}`;
+        document.body.appendChild(script);
+    });
+</script>

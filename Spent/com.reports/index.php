@@ -19,7 +19,17 @@
 
         <div class="LeftZoneHeader">
 
-            <t style="width:100vw; position:absolute; left:0px; display:flex; justify-content:center; align-items:center; text-align:center; font-family:'Roboto'; font-style:normal; font-weight:500;">Reporte Mensual de Gastos del Mes de Mayo</t>
+         <?php
+
+            $Month = $_GET["Month"];
+
+            if($Month == "01"){
+
+                echo `<t style='width:100vw; position:absolute; left:0px; display:flex; justify-content:center; align-items:center; text-align:center; font-family:'Roboto'; font-style:normal; font-weight:500;'>Reporte Mensual de Gastos del Mes de Mayo</t>`;
+
+            }
+
+          ?>
 
         </div>
 
@@ -33,11 +43,11 @@
             <div class="Identifers">
 
                 
-                <columns style="width:64.44px !important;">NO.</columns>
+                <columns style="width:44.44px !important; font-size:12px">No.</columns>
                 <columns style="width:85.71px !important;">Fecha</columns>
                 <columns style="width:151.45px !important;">No. de Factura</columns>
                 <columns style="width:164.35px !important;">Proveedor</columns>
-                <columns style="width:69.84px !important;">Cnt.</columns>
+                <columns style="width:49.84px !important;">Cnt.</columns>
                 <columns style="width:139.82px !important;" class='ThisCount'>Cuenta Cont.</columns>
                 <columns style="width:95.28px !important;">Subtotal</columns>
                 <columns style="width:88.79px !important;">Exento</columns>
@@ -45,8 +55,8 @@
                 <columns style="width:92.90px !important;">ISV 18%</columns>
                 <columns style="width:81.60px !important;">Otros</columns>
                 <columns style="width:93.5px !important;">Totales</columns>
-                <columns style="width:80.58px !important;" class="ThisPayType">Pago</columns>
-                <columns style="width:57px !important;" class="ThisBuyType">TC</columns>
+                <columns style="width:50.58px !important;" class="ThisPayType">Pago</columns>
+                <columns style="width:50px !important;" class="ThisBuyType">TC</columns>
 
             </div>
 
@@ -84,9 +94,9 @@
 
             // FormattedValues
             if($PayType == "Efectivo"){
-                $PayType = "Efc";
+                $PayType = "EFC";
             } else if($PayType == "Transferencia"){
-                $PayType = "Trans.";
+                $PayType = "TRANS";
             } else if($PayType == "Tarjeta de Crédito"){
                 $PayType = "T/C";
             } else if($PayType == "Pago en línea" || $PayType == "Botón de Pago"){
@@ -94,9 +104,9 @@
             }
 
             if($BuyType == "Personal"){
-                $BuyType = "Prs";
+                $BuyType = "PRS";
             } else if($BuyType == "Oficina"){
-                $BuyType = "Ofc";
+                $BuyType = "OFC";
             }
 
             $AmountInt = floatval($Amount);

@@ -2895,7 +2895,7 @@ p2 b{
     width:1281.2px;
     height:auto;
     min-height:50px;
-    border:2px solid #000000;
+    border:1px solid #000000;
     margin-top:0px;
     position:relative;
     top:40px;
@@ -2958,9 +2958,8 @@ p2 b{
     height:30px;
     position: relative;
     display:flex;
-    border:1px solid #000000;
+    border-bottom:1px solid #000000;
     border-left:0px;
-    border-right:0px;
 
 }
 
@@ -2968,7 +2967,7 @@ p2 b{
 
     width:50px;
     height:30px;
-    border-right:1px solid #000000;;
+    border-right:1px solid transparent;;
     overflow: hidden;
     display:flex;
     justify-content:center;
@@ -2993,7 +2992,7 @@ p2 b{
 
 .ThisRes divs:nth-child(1){
 
-    width:64.44px !important;
+    width:44.44px !important;
 
 }
 
@@ -3096,9 +3095,9 @@ p2 b{
 
 .ThisRes divs:nth-child(13){
 
-    width:80.58px !important;
+    width:50.58px !important;
     display:flex;
-    justify-content:start;
+    justify-content:center;
     align-items:center;
     padding-left:10px;
 
@@ -3106,7 +3105,7 @@ p2 b{
 
 .ThisRes divs:nth-child(14){
 
-    width:57px !important;
+    width:50px !important;
     border: none;
     display:flex;
     justify-content:start;
