@@ -83,6 +83,8 @@
 
 <body class="Spent" style="overflow:hidden">
 
+
+
     <div class="ProvidersPopup" style="display:none">
 
     <div class="BackButtonPack BackToNewLog">
@@ -202,6 +204,8 @@
     </div>
     
     <div class="SpentSelectMenu" style="animation:fadeInUp 0.5s">
+
+    <div class="UserSelectedProfilePhoto" title></div>
 
         <header style="position:absolute; top:70px;">
 
