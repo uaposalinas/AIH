@@ -13,7 +13,9 @@
         $QueryResults = $Connection->query($DoUpdate);
 
         if ($QueryResults === TRUE) {
-            echo "$WorkUserName, y $GetANewPass";
+         
+            echo "<script> try {window.close();} catch (error) {window.location.href = '../';} </script>";
+
         } else {
             echo "Error: " . $Connection->error;
         }
