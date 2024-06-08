@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguridad de la Cuenta</title>
+</head>
+<body>
+    
+    <form action="save.php" method="post" class="ControlForm">
+
+        <h1>Crea una nueva contraseña</h1>
+
+        <input type="text" name="RevName" class="WriteUserName">
+        <input type="password" placeholder="Ingresala Aca" class="GetANewPass" name="GetANewPass">
+
+        <bt class="SendForm">Enviar</bt>
+        
+
+    </form>
+
+    <script>
+
+        window.addEventListener('load', e=>{
+
+            const GetTemporalyKey = localStorage.getItem('SetUpTemporalyKey');
+            const ConvertToUseObj = JSON.parse(GetTemporalyKey);
+
+            document.querySelector('.WriteUserName').value = ConvertToUseObj.UserName
+
+   
+        const ControlForm = document.querySelector('.ControlForm');
+        const GetANewPass = document.querySelector('.GetANewPass');
+        const SendForm = document.querySelector('.SendForm');
+
+        SendForm.addEventListener('click', e=>{
+            
+            if(GetANewPass.value == ConvertToUseObj.UserPass){
+
+                alert('Es la misma contraseña')
+
+            }else{
+    
+                ControlForm.submit();
+
+            }
+
+        })
+
+    })
+
+
+    </script>
+
+
+</body>
+</html>

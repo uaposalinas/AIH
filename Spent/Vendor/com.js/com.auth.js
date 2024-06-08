@@ -72,16 +72,45 @@ for(let Aument = 0; Aument < Limit; Aument++){
 
         if(GetUserPassword.value == SelectedUser.innerHTML){
 
-            sessionStorage.setItem('AuthStatus', 'Allowed');
-            sessionStorage.setItem('UserName', UserNameToShow.innerHTML)
-           
-            SendPreloader(`Iniciando sesión con el usuario: ${UserName.innerHTML}`, "450px");
+     
 
-            setTimeout(() => {
+
+            if(GetUserPassword.value == "@IH2024$"){
+
+                SendPreloader(`Espera un momento, debemos configurar algo antes...`, "450px");
+
                 
-                 window.location.href = `../?ForceFilterByMonth=${ReturnMonth()}`;
+                const CurrentAccountObj = {
 
-            }, 1500);
+                    UserName: UserNameToShow.innerHTML,
+                    UserPass: SelectedUser.innerHTML,
+
+                }
+
+                const PackElement = JSON.stringify(CurrentAccountObj);
+
+                localStorage.setItem('SetUpTemporalyKey', PackElement)<
+
+                setTimeout(() => {
+                    
+                    window.location.href = "../Security/Password/Change"
+
+                }, 3000);
+
+            }else{
+
+                sessionStorage.setItem('AuthStatus', 'Allowed');
+                sessionStorage.setItem('UserName', UserNameToShow.innerHTML)
+               
+                SendPreloader(`Iniciando sesión con el usuario: ${UserName.innerHTML}`, "450px");
+    
+                setTimeout(() => {
+                    
+                     window.location.href = `../?ForceFilterByMonth=${ReturnMonth()}`;
+    
+                }, 1500);
+
+            }
 
         }else if(GetUserPassword.value.trim() === ''){
 
