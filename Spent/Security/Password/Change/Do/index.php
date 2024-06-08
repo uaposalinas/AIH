@@ -14,7 +14,7 @@
 
         if ($QueryResults === TRUE) {
          
-            echo "<script> try {window.close();} catch (error) {window.location.href = '../';} </script>";
+            echo "<script> window.location.href = '../../../../' </script>";
 
         } else {
             echo "Error: " . $Connection->error;
