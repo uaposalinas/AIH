@@ -13,6 +13,6 @@
 
    $Connection = new mysqli($ServerName, $UserName, $Password, $DatabaseName);
 
-   echo "<script> console.log('Archivo de conexión iniciado correctamente.') </script>";
+   echo "<script> console.log('Archivo de conexión iniciado correctamente.') </script>";;
 
 ?>
