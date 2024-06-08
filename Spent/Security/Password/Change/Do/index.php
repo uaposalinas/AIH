@@ -1,23 +1,24 @@
 <?php
-    $UserName = $_POST["WorkUserName"];
-    $GetANewPass = $_POST["GetANewPass"];
+
+    $WorkUserName = $_GET["WorkUserName"];
+    $GetANewPass = $_GET["GetANewPass"];
 
     require "../../../../config/com.config.php";
 
-    if (isset($UserName) && isset($GetANewPass)) {
-        // Escapar las variables para evitar inyección SQL
-        $UserName = $Connection->real_escape_string($UserName);
+    if (isset($WorkUserName) && isset($GetANewPass)) {
+        $WorkUserName = $Connection->real_escape_string($WorkUserName);
         $GetANewPass = $Connection->real_escape_string($GetANewPass);
 
-        $DoUpdate = "UPDATE `authusers` SET `Password`='229011000' WHERE UserName = '$UserName'";
+        $DoUpdate = "UPDATE `authusers` SET `Password`='229011000' WHERE UserName = '$WorkUserName'";
         $QueryResults = $Connection->query($DoUpdate);
 
         if ($QueryResults === TRUE) {
-            echo "$UserName, y $GetANewPass";
+            echo "$WorkUserName, y $GetANewPass";
         } else {
             echo "Error: " . $Connection->error;
         }
     } else {
         echo "Error: Datos incompletos.";
     }
+
 ?>
