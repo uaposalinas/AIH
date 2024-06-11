@@ -62,12 +62,12 @@ function EditReportNow(){
 
         if(window.location.hostname == "localhost"){
 
-            Routes = "http://localhost/AIH/Spent/Edit/";
+            Routes = "http://localhost/AIHS/Buys/Edit/";
             return Routes;
 
         }else{
 
-            Routes = window.location.origin + "/AIH/Gateway/Spent/Edit/";
+            Routes = window.location.origin + "/AIHS/Buys/Edit/";
             return Routes
 
         }
