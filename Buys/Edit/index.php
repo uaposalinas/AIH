@@ -252,7 +252,7 @@
 
         }else{
 
-            echo "<script> window.location.href = 'https://partners.devlabsco.space/AIH/Gateway/Spent/' </script>";
+           //echo "<script> window.location.href = 'https://partners.devlabsco.space/AIH/Gateway/Spent/' </script>";
 
         }
 
