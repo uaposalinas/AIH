@@ -399,7 +399,7 @@
                         <input autocomplete="off" type="text" name="SendExempt" class="Exempt" placeholder=" 0.00" id="1" style="background-color: #141414;" value=" 0.00" disabled>
                         <input autocomplete="off" type="text" name="Other" class="Others" placeholder=" 0.00" id="3" disabled value=" 0.00">
                         <input autocomplete="off" type="text" name="ISV15" class="ISV15" placeholder=" 0.00" id="5" disabled value=" 0.00">
-                        <input autocomplete="off" type="text" name="ISV18" class="ISV18" id="4" placeholder="Escribe algo">
+                        <input autocomplete="off" type="text" name="ISV18" class="ISV18" id="4" placeholder="Escribe algo" required>
     
                     </div>
 
