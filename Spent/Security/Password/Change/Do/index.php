@@ -9,7 +9,7 @@
         $WorkUserName = $Connection->real_escape_string($WorkUserName);
         $GetANewPass = $Connection->real_escape_string($GetANewPass);
 
-        $DoUpdate = "UPDATE `authusers` SET `Password`='229011000' WHERE UserName = '$WorkUserName'";
+        $DoUpdate = "UPDATE `authusers` SET `Password`='$GetANewPass' WHERE UserName = '$WorkUserName'";
         $QueryResults = $Connection->query($DoUpdate);
 
         if ($QueryResults === TRUE) {
