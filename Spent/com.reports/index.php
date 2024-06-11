@@ -219,7 +219,7 @@
                         $ISV15Add += floatval($row["ISV15"]);
                     }
                     
-                    echo "<res class='ScapeISV15'>L 53,593.68</res>";
+                    echo "<res class='ScapeISV15'>$ISV15Add</res>";
 
                 } else {
 
@@ -264,7 +264,7 @@
                             $ISV18Add += floatval($row["ISV18"]);
                         }
                         
-                        echo "<res class='ScapeISV18'>L 0.00</res>";
+                        echo "<res class='ScapeISV18'>$ISV18Add</res>";
 
                     } else {
 
@@ -308,7 +308,7 @@
                         $OtherISVAdd += floatval($row["OtherISV"]);
                     }
                     
-                    echo "<res class='ScapeOtherISV'>L 981.34</res>";
+                    echo "<res class='ScapeOtherISV'>$OtherISVAdd</res>";
 
                 } else {
 
@@ -351,7 +351,7 @@
                 
                 }
                 
-                echo "<res class='ScapeTotal'>413196.35</res>";
+                echo "<res class='ScapeTotal'>$TotalAdd</res>";
 
             } else {
 
