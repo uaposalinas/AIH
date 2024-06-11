@@ -408,7 +408,7 @@
                         <div></div>
                         <div style="margin:0px;"><input autocomplete="off" type="checkbox" class="ExentStatus"></div>
                         <div><input autocomplete="off" type="checkbox" class="OtherStatus"></div>
-                        <div><input autocomplete="off" type="checkbox" class="ISV18Status" hidden></div>
+                        <div><input autocomplete="off" type="checkbox" class="ISV18Status" style="opacity:0;"></div>
                         <div><input autocomplete="off" type="checkbox" class="ISV15Status" checked></div>
 
 
