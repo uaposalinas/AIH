@@ -64,7 +64,6 @@ if ($result->num_rows > 0) {
     }
 
     file_put_contents($file_path, $sql_content);
-    echo "<script> window.close(); </script>";
 } else {
     echo "No se encontraron resultados.";
 }
