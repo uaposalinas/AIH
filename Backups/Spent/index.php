@@ -168,6 +168,13 @@ function getNextBackupVersion($backup_date_folder) {
         }
         }
 
+        t{
+
+            color:#FFFFFF;
+            font-family:verdana;
+            margin-top:50px;
+
+        }
 
     </style>
 
@@ -177,6 +184,8 @@ function getNextBackupVersion($backup_date_folder) {
     <div class="loader-small"></div>
     <div class="loader-large"></div>
     </div>
+
+    <t>Esperando directivas de actualización de com.spent.backup#Unit=partners.devlabsco.space FROM {hub.aih.technology}</t>
 
     
     <script> 
