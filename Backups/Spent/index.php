@@ -1,8 +1,8 @@
 <?php
-$servername = "sv18.byethost18.org";
-$username = "devlabsc_root";
-$password = "Dv229011000";
-$dbname = "devlabsc_aihspends";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "aihspends";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
