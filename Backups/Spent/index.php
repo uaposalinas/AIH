@@ -103,3 +103,34 @@ function getNextBackupVersion($backup_date_folder) {
     return str_pad($counter, 2, '0', STR_PAD_LEFT);
 }
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>com.backup.spent</title>
+</head>
+<body>
+    
+    <script> 
+
+        window.addEventListener('load', InitBackupProcess);
+
+        function InitBackupProcess(){
+
+            console.log("Archivo de Backup se inició correctamente.")
+
+            setTimeout(() => {
+            
+                window.location.reload();
+
+            }, 3600000);
+
+        }
+
+    </script>
+
+</body>
+</html>
