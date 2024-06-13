@@ -14,7 +14,7 @@ if ($Connection->connect_error) {
 $sql = "SELECT * FROM logs";
 $result = $Connection->query($sql);
 
-$backup_folder = 'C:/Network/htdocs/Backups/Spent/';
+$backup_folder = 'Spent/';
 
 $backup_date = date('d-m-Y');
 
