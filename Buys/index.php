@@ -83,7 +83,7 @@
 
                 <?php
 
-                    require 'config/com.config.php';
+                    require 'config/com.server.config.php';
                     $Connection -> set_charset("utf8");
 
                     $DoQuery = "SELECT Provider FROM providers WHERE 1";
@@ -533,7 +533,7 @@
 
                 <?php
 
-                require 'config/com.config.php';
+                require 'config/com.server.config.php';
 
                 $Connection->set_charset("utf8");
 
@@ -618,7 +618,7 @@
 
                     <?php
 
-                        require 'config/com.config.php';
+                        require 'config/com.server.config.php';
 
                         $Connection->set_charset("utf8");
 
@@ -1014,7 +1014,7 @@
 
         <?php
 
-            require 'config/com.config.php';
+            require 'config/com.server.config.php';
             $Connection->set_charset("utf8");
 
 

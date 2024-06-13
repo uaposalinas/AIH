@@ -119,7 +119,7 @@
 
         <?php
 
-        require "../../../Config/com.config.php";
+        require "../../../Config/com.server.config.php";
 
         $GetAllDevTestResults = "SELECT TestID, Brand, Model, Serial, ScreenTest, TouchPadTest, TouchScreenTest, LeftSpeakerTest, RightSpeakerTest, UsbPortsTest, HdmiPortTest, BatteryLifePercentage, ChargerTest, MicrophoneTest, CameraTest, KeyboardTest, TestStatus, TestCode FROM DevTestResults ";
         $GetDevTestConsult = $DevTestConnection->query($GetAllDevTestResults);

@@ -3,7 +3,7 @@
     $WorkUserName = $_GET["WorkUserName"];
     $GetANewPass = $_GET["GetANewPass"];
 
-    require "../../../../config/com.config.php";
+    require "../../../../config/com.server.config.php";
 
     if (isset($WorkUserName) && isset($GetANewPass)) {
         $WorkUserName = $Connection->real_escape_string($WorkUserName);

@@ -17,7 +17,7 @@
 
     <?php
 
-require "../../../../Config/com.config.php";
+require "../../../../Config/com.server.config.php";
 
 $GETMethodSerial = $_POST["search"];
 

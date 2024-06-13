@@ -89,7 +89,7 @@
 
                 $Number = 0;
 
-                require '../config/com.config.php';
+                require '../config/com.server.config.php';
                 $Connection -> set_charset("utf8");
 
                 if(isset($_GET["MonthID"])){
@@ -234,7 +234,7 @@
 
 <?php
 
-    require '../config/com.config.php';
+    require '../config/com.server.config.php';
 
     if(isset($_GET["MonthID"])){
 

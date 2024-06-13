@@ -1,6 +1,6 @@
 <?php
 
-    require '../config/com.config.php';
+    require '../config/com.server.config.php';
 
     if(isset($_GET["GestID"])){
 
