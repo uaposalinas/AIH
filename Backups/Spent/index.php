@@ -1,6 +1,6 @@
 <?php
 
-# require "../../Spent/config/com.local.config.php";
+ require "../../Spent/config/com.local.config.php";
 # require "../../Spent/config/com.server.config.php";
 # require "../../Spent/config/com.aih.config.php";
 
@@ -110,47 +110,74 @@ function getNextBackupVersion($backup_date_folder) {
 
     <style>
 
-.spinner {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
 
-.spinner::before,
-.spinner::after {
-  content: "";
-  position: absolute;
-  border-radius: inherit;
-}
+        body{
 
-.spinner::before {
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(0deg, #ff00cc 0%, #212121 50%);
-  animation: spin .8s infinite linear;
-}
+            width:100%;
+            height: 100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            flex-direction:column;
+            background-color:#212121;
+            overflow:hidden;
 
-.spinner::after {
-  width: 85%;
-  height: 85%;
-  background-color: #212121;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+        }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
+        .loader {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        }
+
+        .loader-large {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        background-color: #D4ADFC;
+        border-radius: 10px;
+        animation: loading 2s infinite;
+        }
+
+        .loader-small {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        inset: 0;
+        margin: auto;
+        background-color: #5C469C;
+        z-index: 2;
+        border-radius: 6px;
+        animation: loading 2s infinite reverse;
+        }
+
+        @keyframes loading {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotateY(180deg);
+        }
+
+        100% {
+            transform: rotateX(180deg);
+        }
+        }
+
 
     </style>
 
 <body>
 
-<div class="spinner"></div>
+    <div class="loader">
+    <div class="loader-small"></div>
+    <div class="loader-large"></div>
+    </div>
+
     
     <script> 
 
