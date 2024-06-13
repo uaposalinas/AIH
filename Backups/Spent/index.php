@@ -1,22 +1,18 @@
 <?php
 
-echo "Hola";
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "aihspends";
+# require "../../Spent/config/com.local.config.php";
+# require "../../Spent/config/com.server.config.php";
+# require "../../Spent/config/com.aih.config.php";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-$conn->set_charset("utf8");
+$Connection->set_charset("utf8");
 
 
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+if ($Connection->connect_error) {
+    die("Conexión fallida: " . $Connection->connect_error);
 }
 
 $sql = "SELECT * FROM logs";
-$result = $conn->query($sql);
+$result = $Connection->query($sql);
 
 $backup_folder = 'C:/Network/htdocs/Backups/Spent/';
 
@@ -58,7 +54,7 @@ if ($result->num_rows > 0) {
         $sql_content .= ") VALUES (";
         $i = 0;
         foreach ($row as $value) {
-            $sql_content .= "'" . $conn->real_escape_string($value) . "'";
+            $sql_content .= "'" . $Connection->real_escape_string($value) . "'";
             if ($i < count($row) - 1) {
                 $sql_content .= ", ";
             }
@@ -73,7 +69,7 @@ if ($result->num_rows > 0) {
     echo "No se encontraron resultados.";
 }
 
-$conn->close();
+$Connection->close();
 
 function getColumnType($column) {
     switch ($column->type) {
