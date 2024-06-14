@@ -2519,6 +2519,28 @@ div.spinner {
 
 }
 
+.ItemsPopup{
+
+    animation:fadeInUp 0.5s;
+    width:100%;
+    height:100vh;
+    position: absolute;
+    top:0px;
+    left:0px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    background-color:rgba(9, 18, 27, 0.527);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+}
+
 .PopupContent{
 
     width:500px;
@@ -3881,3 +3903,183 @@ p2 b{
 
 }
 
+
+.ItemsList{
+
+    width:40px;
+    height:40px;
+    bottom:30px;
+    position: absolute;
+    right:320px;
+    cursor: pointer;
+    background-image:url(../../Assets/com.img/items.png);
+    background-position:center;
+    background-size:cover;
+
+}
+
+.ItemsListContainer{
+
+    width:500px;
+    height:700px;
+    background-color: #2A2A2A;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    position:relative;
+
+}
+
+.ItemsListContainer header{
+
+    width:100%;
+    height:80px;
+    position:absolute;
+    top:0px;
+    left:0px;
+
+}
+
+.ItemsListContainer header t{
+
+    position:absolute;
+    top:15px;
+    left:20px;
+    font-family:50px !important;
+
+
+}
+
+.ItemsListContainer header i{
+
+    position:absolute;
+    top:30px;
+    right:20px;
+    color:#85c6fe;
+    cursor: pointer;
+
+}
+
+.ItemsListContainer bodys{
+
+    width:100%;
+    height:490px;
+    position:absolute;
+    top:80px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+
+}
+
+.Identifers{
+
+    width:100%;
+    height:50px;
+    position:absolute;
+    top:0px;
+    left:0px;
+
+
+}
+
+.Identifers ID:nth-child(1){
+
+    width:70px;
+    height:50px;
+    position:absolute;
+    left:5px;;
+    border-top-left-radius:20px;
+
+
+}
+
+.Identifers ID:nth-child(2){
+
+    width:calc(100% - 75px);
+    height:50px;
+    position:absolute;
+    top:0px;
+    right:0px;
+    border-top-right-radius:20px;
+
+
+
+}
+
+.Identifers ID{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#FFFFFF;
+    border:1px solid #FFFFFF;;
+    font-family:caviarDreamsBold;
+
+}
+
+.Identifers{
+
+    border: radius 20px;;
+
+
+}
+
+.AddItemResults{
+
+    width:100%;
+    height:auto;
+    min-height:40px;
+    position:absolute;
+    top:50px;
+    left:5px;
+
+}
+
+.AddItemResults item{
+
+    width:100%;
+    height:40px;
+
+}
+
+.AddItemResults item input{
+
+    background-color: transparent;
+    color:#FFFFFF;
+    font-family:caviarDreams;
+
+}
+
+.AddItemResults item input:nth-child(1){
+
+    width:70px;
+    height:40px;
+    position:absolute;
+    left:0px;
+    border:1px ;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    border:1px solid #FFFFFF;
+
+
+}
+
+.AddItemResults item input:nth-child(2){
+
+    width:calc(100% - 70px);
+    height:40px;
+    position:absolute;
+    left:70px;
+    border:1px;
+    padding-left:20px;
+    border-top:none;
+    border:1px solid #FFFFFF;
+    border-right:1px solid #FFFFFF;
+
+}

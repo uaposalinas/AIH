@@ -558,3 +558,23 @@ document.addEventListener("DOMContentLoaded", function() {
         input.setAttribute("autocomplete", "off");
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('.AddNewItemToList').addEventListener('click', function() {
+        const container = document.querySelector('.AddItemResults');
+        const newItem = document.createElement('item');
+        const inputAmount = document.createElement('input');
+        inputAmount.type = 'text';
+        inputAmount.className = 'GetThisAmount';
+        
+        const inputProductName = document.createElement('input');
+        inputProductName.type = 'text';
+        inputProductName.className = 'GetThisProductName';
+        
+        newItem.appendChild(inputAmount);
+        newItem.appendChild(inputProductName);
+        
+        container.appendChild(newItem);
+    });
+});

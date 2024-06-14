@@ -128,6 +128,44 @@
 
     </div>
 
+    <div class="ItemsPopup">
+
+        <div class="ItemsListContainer">
+
+                <header>
+
+                    <t>Items</t>
+                    <i class="fi fi-br-plus AddNewItemToList"></i>
+                    <i class="fi fi-rr-disk" style="right:50px;"></i>
+
+                </header>
+
+                <bodys class="Scroll">
+
+                    <div class="Identifers">
+
+                        <ID>Cant.</ID>
+                        <ID>Producto</ID>
+                    
+                    </div>
+
+                    <div class="AddItemResults">
+
+                        <item>
+
+                            <input type="text" class="GetThisAmount">
+                            <input type="text" class="GetThisProductName">
+
+                        </item>
+
+                    </div>
+
+                </bodys>
+                    
+        </div>
+
+    </div>
+
     <div class="NotificationIslandParent">
 
         <div class="NotificationIsland">
@@ -433,6 +471,8 @@
                         <p class="CVV"> </p>
 
                     </div>
+
+                    <div class="ItemsList tooltip" data-text="Lista de Items"></div>
 
                     <p class="TotalLogTitle">Total del registro</p>
                     <input autocomplete="off" type="text" name="SendTotal" class="Total" placeholder=" 0.00" disabled>
