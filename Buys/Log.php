@@ -53,7 +53,7 @@
     <?php
 
 
-        require 'config/com.config.php';
+        require 'config/com.server.config.php';
         $Connection->set_charset("utf8");
 
 
@@ -128,9 +128,9 @@
             
                         <p class='Identifer'>AIH</p>
                         <i class='fi fi-br-angle-small-right'></i>
-                        <p class='Identifer'>Sistema de Compras</p>
+                        <p class='Identifer'>Sistema de gastos</p>
                         <i class='fi fi-br-angle-small-right'></i>
-                        <p class='Identifer'>Detalles del Compra</p>
+                        <p class='Identifer'>Detalles del Gasto</p>
             
                     </t>
             
@@ -155,7 +155,7 @@
                     <div class='ProviderDetails'>
             
                         <div class='Logo' slot='$Image'></div>
-                        <div class='ProviderName'>Compra realizado en $Provider</div>
+                        <div class='ProviderName'>Gasto realizado en $Provider</div>
                         <div class='SpentType'>$CountableCount</div>
                         <div class='PaidDetail'>Pagado con:</div>
                         <div class='PaidResult tooltip' data-text='$PayMethod' style='background-image:url($PayTypeImage)'></div>
@@ -202,7 +202,7 @@
                         <div class='Row Price Exents' style='margin-top:20px; height:80px; position:relative; '>
                     
                             <div style='width:385px; display:flex; justify-content:left; padding-left:15px; bottom:0px; position:relative '> 
-                            <label for='1' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>Descripción del Compra:</label>
+                            <label for='1' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>Descripción del gasto:</label>
                             $BillDescription
                             </div>
         
@@ -236,14 +236,12 @@
                             $OtherISV</div>
         
                             <div style='width:215px; position:relative; justify-content:left; padding-left:20px;'>
-                            <label for='4' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>ISV 15%</label>
-                            $ISV15</div>
-
-                            
-                            <div style='width:415px; position:relative; justify-content:left; padding-left:20px;'>
-                            <label for='3' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>Observaciones</label>
+                            <label for='3' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>ISV 18%</label>
                             $ISV18</div>
         
+                            <div style='width:215px; position:relative; justify-content:left; padding-left:20px;'>
+                            <label for='4' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>ISV 15%</label>
+                            $ISV15</div>
             
             
                         </div>
