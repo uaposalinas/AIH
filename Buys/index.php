@@ -606,7 +606,7 @@
                             <logo class='ProviderLogo' slot='$Image' style='background-image:url(Assets/com.img/defaults/nologo.png)'></logo>
                     
                     
-                            <t class='CountableCountShow' style='font-size:16px;'>$GetCountableCount</t>
+                            <t class='CountableCountShow' style='font-size:16px;'>$Provider</t>
                             <p class='Date' style='font-size:13px;'>$GetSaveDay • $GetFullDate</p>
                     
                         </header>
