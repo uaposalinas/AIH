@@ -473,7 +473,7 @@
 
                     </div>
 
-                    <div class="ItemsList tooltip" data-text="Lista de Items"></div>
+                    <div class="ItemsList ActivateItemsList tooltip" data-text="Lista de Items"></div>
 
                     <p class="TotalLogTitle">Total del registro</p>
                     <input autocomplete="off" type="text" name="SendTotal" class="Total" placeholder=" 0.00" disabled>

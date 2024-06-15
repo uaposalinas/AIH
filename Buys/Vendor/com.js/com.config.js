@@ -606,3 +606,12 @@ document.querySelector('.SaveAllInputs').addEventListener('click', function() {
 
 
 });
+
+
+document.querySelector('.ActivateItemsList').addEventListener('click', RunActivateItemsList);
+
+function RunActivateItemsList(){
+
+    document.querySelector('.ItemsPopup').style.display = "flex";
+
+}
