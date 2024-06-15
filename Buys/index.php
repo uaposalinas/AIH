@@ -215,7 +215,7 @@
                 <div class="Notification">
 
                 <i class="fi fi-rr-file-medical-alt Icon"></i>
-                    <div class="Message">Se compagino el activo "reporte" en el directorio (protocol)(host)/{com.reports}</div>
+                    <div class="Message">Se compagino el activo "reporte" en el directorio (protocol)(host)/{com.reports}/R</div>
                     <i class="fi fi-rs-circle-xmark Close"></i>
 
                 </div>
