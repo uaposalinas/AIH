@@ -10,7 +10,7 @@
 
     if($Connection){
 
-        if(isset($_POST["FullDate"]) && isset($_POST["CurrentDay"]) && isset($_POST["GestID"]) && isset($_POST["Month"]) && isset($_POST["Year"]) && isset($_POST["SendProvider"]) && isset($_POST["SendAmount"]) && isset($_POST["SendDescription"]) && isset($_POST["SendCountableCount"]) && isset($_POST["SendBuyType"])  && isset($_POST["SendPayType"]) && isset($_POST["Realice"])  && isset($_POST["SendDate"])  && isset($_POST["SendBillID"]) && isset($_POST["SendSubtotal"]) && isset($_POST["SendExempt"]) && isset($_POST["Other"]) && isset($_POST["ISV18"]) && isset($_POST["ISV15"]) && isset($_POST["SendTotal"]) && isset($_POST["CardUsed"])){
+        if(isset($_POST["FullDate"]) && isset($_POST["CurrentDay"]) && isset($_POST["GestID"]) && isset($_POST["Month"]) && isset($_POST["Year"]) && isset($_POST["SendProvider"]) && isset($_POST["SendAmount"]) && isset($_POST["SendDescription"]) && isset($_POST["SendCountableCount"]) && isset($_POST["SendBuyType"])  && isset($_POST["SendPayType"]) && isset($_POST["Realice"])  && isset($_POST["SendDate"])  && isset($_POST["SendBillID"]) && isset($_POST["SendSubtotal"]) && isset($_POST["SendExempt"]) && isset($_POST["Other"]) && isset($_POST["ISV18"]) && isset($_POST["ISV15"]) && isset($_POST["SendTotal"]) && isset($_POST["CardUsed"]) && isset($_POST["Items"])){
 
             $GestID = $_POST["GestID"];
             $Month = $_POST["Month"];
@@ -33,8 +33,9 @@
             $SendTotal = $_POST["SendTotal"];
             $FullDate = $_POST["FullDate"];
             $CurrentDay = $_POST["CurrentDay"];
+            $Items = $_POST["Items"];
 
-            $SetNewLog = "INSERT INTO `logs`(`GestID`, `Date`, `FullDate`, `SavedDay`, `Month`, `Year`, `Provider`, `SpendedBy`, `PayType`, `CardUsed`, `CountableCount`, `BuyType`, `BillDescription`, `BillNumber`, `Amount`, `Exempt`, `Subtotal`, `OtherISV`, `ISV18`, `ISV15`, `Total`) VALUES ('$GestID', '$SendDate','$FullDate', '$CurrentDay','$Month', '$Year', '$SendProvider','$Realice','$SendPayType','$CardUsed','$SendCountableCount','$SendBuyType','$SendDescription','$SendBillID','$SendAmount','$SendExempt','$SendSubtotal','$Other','$ISV18','$ISV15','$SendTotal')";
+            $SetNewLog = "INSERT INTO `logs`(`GestID`, `Date`, `FullDate`, `SavedDay`, `Month`, `Year`, `Provider`, `SpendedBy`, `PayType`, `CardUsed`, `CountableCount`, `BuyType`, `BillDescription`, `BillNumber`, `Amount`, `Exempt`, `Subtotal`, `OtherISV`, `ISV18`, `ISV15`, `Total`, `Items`) VALUES ('$GestID', '$SendDate','$FullDate', '$CurrentDay','$Month', '$Year', '$SendProvider','$Realice','$SendPayType','$CardUsed','$SendCountableCount','$SendBuyType','$SendDescription','$SendBillID','$SendAmount','$SendExempt','$SendSubtotal','$Other','$ISV18','$ISV15','$SendTotal', '$Items')";
 
             if($Connection -> query($SetNewLog)){
 

@@ -567,6 +567,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const inputAmount = document.createElement('input');
         inputAmount.type = 'text';
         inputAmount.className = 'GetThisAmount';
+        newItem.classList.add('NewItemStyles')
         
         const inputProductName = document.createElement('input');
         inputProductName.type = 'text';
@@ -577,4 +578,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
         
         container.appendChild(newItem);
     });
+});
+
+
+document.querySelector('.SaveAllInputs').addEventListener('click', function() {
+
+    document.querySelector('.ItemsPopup').style.display = "none";
+
+    let productNames = document.querySelectorAll('.GetThisProductName');
+    let amounts = document.querySelectorAll('.GetThisAmount');
+
+    let products = [];
+
+    for (let i = 0; i < productNames.length; i++) {
+        let product = {
+            Amount: amounts[i].value,
+            Product: productNames[i].value
+        };
+        products.push(product);
+    }
+
+    let productsString = JSON.stringify(products);
+
+    document.querySelector('.SendItems').value = productsString;
+
+    console.log(productsString);
+
+
 });

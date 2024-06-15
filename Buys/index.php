@@ -136,7 +136,7 @@
 
                     <t>Items</t>
                     <i class="fi fi-br-plus AddNewItemToList"></i>
-                    <i class="fi fi-rr-disk" style="right:50px;"></i>
+                    <i class="fi fi-rr-disk SaveAllInputs" style="right:50px;"></i>
 
                 </header>
 
@@ -315,6 +315,7 @@
                     <input autocomplete="off" type="text" name="CardUsed" class="CardUsedToPay">
                     <input autocomplete="off" type="text" name="FullDate" class="FullDate">
                     <input autocomplete="off" type="text" name="CurrentDay" class="CurrentDay">
+                    <input autocomplete="off" type="text" name="Items" class="SendItems">
 
                 </div>
                 
