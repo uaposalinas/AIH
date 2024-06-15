@@ -2531,7 +2531,7 @@ div.spinner {
     top:0px;
     left:0px;
     z-index:999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
-    display:flex;
+    display:none;
     justify-content:right;
     align-items:center;
     text-align:center;
