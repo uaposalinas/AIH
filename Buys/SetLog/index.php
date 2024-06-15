@@ -1,6 +1,6 @@
 <?php
 
-    require "../config/com.server.config.php";
+    require "../config/com.config.php";
 
     $Connection = new mysqli($ServerName, $UserName, $Password, $DatabaseName);
 
