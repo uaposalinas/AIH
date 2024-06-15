@@ -567,7 +567,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const inputAmount = document.createElement('input');
         inputAmount.type = 'text';
         inputAmount.className = 'GetThisAmount';
-        newItem.classList.add('NewItemStyles')
         
         const inputProductName = document.createElement('input');
         inputProductName.type = 'text';
@@ -579,6 +578,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         container.appendChild(newItem);
     });
 });
+
 
 
 document.querySelector('.SaveAllInputs').addEventListener('click', function() {
