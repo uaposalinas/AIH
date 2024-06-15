@@ -268,7 +268,7 @@
 
         }else{
 
-            echo "<script> alert('no') </script>";
+            echo "<script>  </script>";
 
         }
 
