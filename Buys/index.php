@@ -1080,6 +1080,8 @@
         </select>
 
         <div class="CardUsedConfirm">Siguiente</div>
+        <input type="text" name="" class="ISV18" hidden>
+
 
     </div>
 
