@@ -560,7 +560,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', (event) => {
+
     document.querySelector('.AddNewItemToList').addEventListener('click', function() {
         const container = document.querySelector('.AddItemResults');
         const newItem = document.createElement('item');
@@ -577,7 +577,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         
         container.appendChild(newItem);
     });
-});
+
 
 
 
