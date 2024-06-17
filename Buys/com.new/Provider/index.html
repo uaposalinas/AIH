@@ -114,7 +114,7 @@ function formatProviderName(name) {
 
         let input = document.querySelector('.Provider').value;
         let formatted = formatProviderName(input);
-        console.log(formatted);
+        document.querySelector('.Provider').value = formatted;
 
         const Provider = document.querySelector('.Provider');
         const Validate = document.querySelector('.Validate');
