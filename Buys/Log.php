@@ -66,7 +66,7 @@
 
         $GestID = $_GET["GestID"];
 
-        $DoQuery = "SELECT Date, Provider, SpendedBy, PayType, CardUsed, CountableCount, BuyType, BillDescription, BillNumber, Amount, Subtotal, Exempt, ISV18, ISV15, OtherISV, Total FROM logs WHERE GestID = '$GestID'";
+        $DoQuery = "SELECT Date, Provider, SpendedBy, PayType, CardUsed, CountableCount, BuyType, BillDescription, BillNumber, Amount, Subtotal, Exempt, Observations, ISV15, OtherISV, Total FROM logs WHERE GestID = '$GestID'";
         $QueryResults = $Connection -> query($DoQuery);
 
         if($QueryResults){
@@ -85,7 +85,7 @@
             $Amount = $Row["Amount"];
             $Subtotal = $Row["Subtotal"];
             $Exempt = $Row["Exempt"];
-            $ISV18 = $Row["ISV18"];
+            $Observations = $Row["Observations"];
             $ISV15 = $Row["ISV15"];
             $OtherISV = $Row["OtherISV"];
             $Total = $Row["Total"];
@@ -244,7 +244,7 @@
         
                             <div style='width:215px; position:relative; justify-content:left; padding-left:20px;'>
                             <label for='3' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>ISV 18%</label>
-                            $ISV18</div>
+                            $Observations</div>
         
                             <div style='width:215px; position:relative; justify-content:left; padding-left:20px;'>
                             <label for='4' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>ISV 15%</label>
