@@ -615,3 +615,61 @@ function RunActivateItemsList(){
     document.querySelector('.ItemsPopup').style.display = "flex";
 
 }
+
+const SendMonthForView = document.querySelector('.SendMonthForView');
+const UpdateMonth = document.querySelectorAll('.UpdateMonth');
+
+const MonthID = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+let MonthSelected = 0;
+
+SendMonthForView.addEventListener('change', ChangeTheMonth);
+
+function ChangeTheMonth(){
+
+    IdentifyTheMonth()
+
+    const SendNow = MonthID[MonthSelected];
+
+    const Route = `?ForceFilterByMonth=${SendNow}`;
+
+    window.location.href = Route;
+
+}
+
+
+function IdentifyTheMonth(){
+
+    const Selected = SendMonthForView.value;
+
+    if (Selected == "Enero") {
+        MonthSelected = 0;
+    } else if (Selected == "Febrero") {
+        MonthSelected = 1;
+    } else if (Selected == "Marzo") {
+        MonthSelected = 2;
+    } else if (Selected == "Abril") {
+        MonthSelected = 3;
+    } else if (Selected == "Mayo") {
+        MonthSelected = 4;
+    } else if (Selected == "Junio") {
+        MonthSelected = 5;
+    } else if (Selected == "Julio") {
+        MonthSelected = 6;
+    } else if (Selected == "Agosto") {
+        MonthSelected = 7;
+    } else if (Selected == "Septiembre") {
+        MonthSelected = 8;
+    } else if (Selected == "Octubre") {
+        MonthSelected = 9;
+    } else if (Selected == "Noviembre") {
+        MonthSelected = 10;
+    } else if (Selected == "Diciembre") {
+        MonthSelected = 11;
+    } else {
+        MonthSelected = -1; 
+    }
+
+
+
+    
+}

@@ -488,224 +488,334 @@
 
     <div class="ViewLogs" style="animation:fadeIn 0.5s;">
 
-    <div class="BackButtonPack BackToHome">
-
-        <i class="fi fi-sr-angle-left BackToHome"></i>
-        <p>Inicio</p>
-
-    </div>
-
-        
-        <header style="height:105px; top:35px;">
-
-            <div class="Path" style="left:30px;">
-
-                <div class="Icon" style="background-image:url(Assets/com.img/ViewReport.png);"></div>
-                <t class="Position">
-
-                    <p class="Identifer">AIH</p>
-                    <i class="fi fi-br-angle-small-right"></i>
-                    <p class="Identifer">Sistema de Compras</p>
-                    <i class="fi fi-br-angle-small-right"></i>
-                    <p class="Identifer">Ver Reportes</p>
-
-                </t>
+        <div class="BackButtonPack BackToHome">
     
-
-            </div>
-
-
-            <div class="RightBar">
-
-                <div class="ReloadTable tooltip" data-text="Refrescar">
-
-                    <i class="fi fi-br-rotate-right"></i>
-
-                </div>
-
-                <div class="TimeFilter tooltip" data-text="Filtrar por Fecha">
-
-                    <i class="fi fi-rr-time-past"></i>
-
-                </div>
-
-                <input autocomplete="off" type="date" class="FilterByDate">
-
-                <div class="SwitchTable tooltip" data-text="Ver como tabla">
-
-                    <i class="fi fi-rr-table-list"></i>
-
-                </div>
-                
-                <div class="SearchLog">
-
-                    <input autocomplete="off" type="text" class="SearchByLog" placeholder="Escribe el ID de Gestión para buscar.">
-                    <i class="fi fi-br-search"></i>
-
-                </div>             
-
-            </div>
-
-        </header>
-
-        <div class="ShowBarResults">
-
-            <div class="SearchBarIndex">
-
-                <div class="Icon"></div>
-                <t>Escribe en la barra para buscar</t>
-                                    
-            </div>
-
-            <div class="NoResults" style="display:none;">
-
-                <div class="Icon"></div>
-                <t>No hay resultados para este ID de gestión</t>
-
-            </div>
-
+            <i class="fi fi-sr-angle-left BackToHome"></i>
+            <p>Inicio</p>
+    
         </div>
-
-        <div class="ShowLogs">
-
+    
+        <div class="ShowLogsNow">
+    
+            
+    
+        </div>
+    
+            
+            <header style="height:105px; top:35px;">
+    
+                <div class="Path" style="left:30px;">
+    
+                    <div class="Icon" style="background-image:url(Assets/com.img/ViewReport.png);"></div>
+                    <t class="Position">
+    
+                        <p class="Identifer">AIH</p>
+                        <i class="fi fi-br-angle-small-right"></i>
+                        <p class="Identifer">Sistema de gastos</p>
+                        <i class="fi fi-br-angle-small-right"></i>
+                        <p class="Identifer">Ver Reportes</p>
+                        <i class="fi fi-br-angle-small-right"></i>
+                        <p class="Identifer" style="cursor:pointer">Diciembrewss</p>
+                        <i class="fi fi-br-angle-small-right" style="z-index:99999;"></i>
+                        <p class="Identifer" style="cursor:pointer">2024</p>
+    
+                    </t>
         
-
-            <div class="GridShow" style="display:flex;">
-
+    
+                </div>
+    
+                <?php 
+                
+                    require "config/com.config.php";
+    
+                    $Month = $_GET["ForceFilterByMonth"];
+    
+                    $DoQuery = "SELECT * FROM logs WHERE Month = '$Month'";
+                    $QueryResults = $Connection -> query($DoQuery);
+                    
+                    $Nums = $QueryResults -> num_rows;
+    
+                    echo "<div class='TotalLogs'>Total de registros: $Nums</div>"
+    
+    
+                ?>
+    
+                <select class="SendMonthForView">
+    
                 <?php
-
-                require 'config/com.config.php';
-
-                $Connection->set_charset("utf8");
-
-                $DoQuery = "SELECT * FROM logs WHERE 1";
-                $QueryResults = $Connection -> query($DoQuery);
-
-                if($QueryResults -> num_rows > 0){
-
-                    while($Row = $QueryResults -> fetch_assoc()){
-
-                        $GestID = $Row["GestID"];
-                        $GetCountableCount = $Row["CountableCount"];
-                        $GetDate = $Row["Date"];
-                        $GetSaveDay = $Row["SavedDay"];
-                        $GetFullDate = $Row["FullDate"];
-                        $SpendedBy = $Row["SpendedBy"];
-                        $BillID = $Row["BillNumber"];
-                        $BuyType = $Row["BuyType"];
-                        $PayType = $Row["PayType"];
-                        $CardUsed = $Row["CardUsed"];
-                        $Total = $Row["Total"];
-                        $Provider = $Row["Provider"];
-                        $Image = "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.providers/$Provider.png";
-
-                        echo "<cont slot='Show' GestID='$GestID' class='ShowInformation ThisLog' date='$GetDate'>
-
-                        <header>
-                    
-                            <logo class='ProviderLogo' slot='$Image' style='background-image:url(Assets/com.img/defaults/nologo.png)'></logo>
-                    
-                    
-                            <t class='CountableCountShow' style='font-size:16px;'>$Provider</t>
-                            <p class='Date' style='font-size:13px;'>$GetSaveDay • $GetFullDate</p>
-                    
-                        </header>
-                    
-                        <div class='Contents'>
-                    
-                            <p>Realizado por: $SpendedBy</p>
-                            <p>Realizado el: $GetFullDate</p>
-                            <p>NO. de Factura: $BillID</p>
-                            <p>Tipo de compra: $BuyType</p>
-                            <p>Tipo de Pago: $PayType</p>
-                            <p>Tarjeta usada: $CardUsed</p>
-                    
-                            <div class='TotalToShow'>$Total</div>
-                    
-                        </div>
-                    
-                    </cont>
-                    ";
-
-                    
-
+    
+                    $MonthUsed = $_GET["ForceFilterByMonth"];
+                    $StringMonth = "NoDef";
+                    if ($MonthUsed == "01") {
+                        $StringMonth = "Enero";
+                        echo "<option class='$StringMonth' value='Enero'>$StringMonth</option>";
+                    } else if ($MonthUsed == "02") {
+                        $StringMonth = "Febrero";
+                        echo "<option class='$StringMonth' value='Febrero'>$StringMonth</option>";
+                    } else if ($MonthUsed == "03") {
+                        $StringMonth = "Marzo";
+                        echo "<option class='$StringMonth' value='Marzo'>$StringMonth</option>";
+                    } else if ($MonthUsed == "04") {
+                        $StringMonth = "Abril";
+                        echo "<option class='$StringMonth' value='Abril'>$StringMonth</option>";
+                    } else if ($MonthUsed == "05") {
+                        $StringMonth = "Mayo";
+                        echo "<option class='$StringMonth' value='Mayo'>$StringMonth</option>";
+                    } else if ($MonthUsed == "06") {
+                        $StringMonth = "Junio";
+                        echo "<option class='$StringMonth' value='Junio'>$StringMonth</option>";
+                    } else if ($MonthUsed == "07") {
+                        $StringMonth = "Julio";
+                        echo "<option class='$StringMonth' value='Julio'>$StringMonth</option>";
+                    } else if ($MonthUsed == "08") {
+                        $StringMonth = "Agosto";
+                        echo "<option class='$StringMonth' value='Agosto'>$StringMonth</option>";
+                    } else if ($MonthUsed == "09") {
+                        $StringMonth = "Septiembre";
+                        echo "<option class='$StringMonth' value='Septiembre'>$StringMonth</option>";
+                    } else if ($MonthUsed == "10") {
+                        $StringMonth = "Octubre";
+                        echo "<option class='$StringMonth' value='Octubre'>$StringMonth</option>";
+                    } else if ($MonthUsed == "11") {
+                        $StringMonth = "Noviembre";
+                        echo "<option class='$StringMonth' value='Noviembre'>$StringMonth</option>";
+                    } else if ($MonthUsed == "12") {
+                        $StringMonth = "Diciembre";
+                        echo "<option class='$StringMonth' value='Diciembre'>$StringMonth</option>";
+                    } else {
+                        $StringMonth = "Mes no válido";
+                        echo "<option class='$StringMonth' value=''>$StringMonth</option>";
                     }
-
-                }else{
-
-                    echo "<NFC style='width:100%; height:100%; position:absolute; display:flex; justify-content:center; align-items:center;text-align:center;color:#FFFFFF; font-family:caviarDreamsBold; font-size:20px;animation:fadeInUp 0.5s'>Hmm... No hay nada por aquí</NFC>";
-
-                }
-
-            ?>
-
-            </div>
-
-            <div class="TableShow" style="display:none;">
-
-                <div class="TableContents">
-
-                    <p style="left:15px; font-family:GIB;"></p>
-                    <p style="left:40px;">Proveedor</p>
-                    <p style="left:190px;">Comprado por</p>
-                    <p style="left:370px;">Comprado el</p>
-                    <p style="left:560px;">Tipo de compra</p>
-                    <p style="left:790px;">Tarjeta usada</p>
-                    <p style="right:40px;">Total Gastado</p>
-
+                    
+    
+                ?>
+    
+                <option class="UpdateMonth" value="Enero">Enero</option>
+                <option class="UpdateMonth" value="Febrero">Febrero</option>
+                <option class="UpdateMonth" value="Marzo">Marzo</option>
+                <option class="UpdateMonth" value="Abril">Abril</option>
+                <option class="UpdateMonth" value="Mayo">Mayo</option>
+                <option class="UpdateMonth" value="Junio">Junio</option>
+                <option class="UpdateMonth" value="Julio">Julio</option>
+                <option class="UpdateMonth" value="Agosto">Agosto</option>
+                <option class="UpdateMonth" value="Septiembre">Septiembre</option>
+                <option class="UpdateMonth" value="Octubre">Octubre</option>
+                <option class="UpdateMonth" value="Noviembre">Noviembre</option>
+                <option class="UpdateMonth" value="Diciembre">Diciembre</option>
+    
+    
+                </select>
+    
+    
+                <div class="RightBar">
+    
+                    <div class="ReloadTable tooltip" data-text="Refrescar">
+    
+                        <i class="fi fi-br-rotate-right"></i>
+    
+                    </div>
+    
+                    <div class="TimeFilter tooltip" data-text="Filtrar por Fecha">
+    
+                        <i class="fi fi-rr-time-past"></i>
+    
+                    </div>
+    
+                    <input autocomplete="off" type="date" class="FilterByDate">
+    
+                    <div class="SwitchTable tooltip" data-text="Ver como tabla">
+    
+                        <i class="fi fi-rr-table-list"></i>
+    
+                    </div>
+                    
+                    <div class="SearchLog">
+    
+                        <input autocomplete="off" type="text" class="SearchByLog" placeholder="Escribe el ID de Gestión para buscar.">
+                        <i class="fi fi-br-search"></i>
+    
+                    </div>             
+    
                 </div>
-
-                <divs class="ShowResults">
-
+    
+            </header>
+    
+            <div class="ShowBarResults">
+    
+                <div class="SearchBarIndex">
+    
+                    <div class="Icon"></div>
+                    <t>Escribe en la barra para buscar</t>
+                                        
+                </div>
+    
+                <div class="NoResults" style="display:none;">
+    
+                    <div class="Icon"></div>
+                    <t>No hay resultados para este ID de gestión</t>
+    
+                </div>
+    
+            </div>
+    
+            <div class="ShowLogs">
+    
+            
+    
+                <div class="GridShow" style="display:flex;">
+    
                     <?php
-
-                        require 'config/com.config.php';
-
-                        $Connection->set_charset("utf8");
-
-                        $DoQuery = "SELECT GestID ,Provider, SpendedBy, Date, BuyType, CardUsed, Total FROM logs WHERE 1";
-                        $QueryResults = $Connection -> query($DoQuery);
-
-                        if($QueryResults -> num_rows > 0){
-
-                            while($Row = $QueryResults -> fetch_assoc()){
-
-                                $GestID = $Row["GestID"];
-                                $Provider = $Row["Provider"];
-                                $SpendedBy = $Row["SpendedBy"];
-                                $Date = $Row["Date"];
-                                $BuyType = $Row["BuyType"];
-                                $CardUsed = $Row["CardUsed"];
-                                $Total = $Row["Total"];
-
-                                echo "
-                                
-                                <log class='ThisLog' GestID='$GestID'>
-
-                                    <p class='ListNumber'></p>
-                                    <p class='Provider'>$Provider</p>
-                                    <p class='BuyedBy'>$SpendedBy</p>
-                                    <p class='BuyedIn'>$Date</p>
-                                    <p class='BuyType'>$BuyType</p>
-                                    <p class='CardUsed'>$CardUsed</p>
-                                    <p class='Total'>$Total</p>
-                            
-                                </log>
-                            
-
-                                ";
-
-                            }
-
+    
+                    require 'config/com.config.php';
+    
+                    $Connection->set_charset("utf8");
+    
+                    if(isset($_GET["ForceFilterByMonth"])){
+    
+                        $ForceFilterByMonth = $_GET["ForceFilterByMonth"];
+    
+                    }
+    
+                    $DoQuery = "SELECT * FROM logs WHERE Month = '$ForceFilterByMonth'";
+                    $QueryResults = $Connection -> query($DoQuery);
+    
+                    if($QueryResults -> num_rows > 0){
+    
+                        while($Row = $QueryResults -> fetch_assoc()){
+    
+                            $GestID = $Row["GestID"];
+                            $GetCountableCount = $Row["CountableCount"];
+                            $GetDate = $Row["Date"];
+                            $GetSaveDay = $Row["SavedDay"];
+                            $GetFullDate = $Row["FullDate"];
+                            $SpendedBy = $Row["SpendedBy"];
+                            $BillID = $Row["BillNumber"];
+                            $BuyType = $Row["BuyType"];
+                            $PayType = $Row["PayType"];
+                            $CardUsed = $Row["CardUsed"];
+                            $Total = $Row["Total"];
+                            $Provider = $Row["Provider"];
+                            $Image = "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.providers/$Provider.png";
+    
+                            echo "<cont slot='Show' GestID='$GestID' class='ShowInformation ThisLog' date='$GetDate'>
+    
+                            <header>
+                        
+                                <logo class='ProviderLogo' slot='$Image' style='background-image:url(Assets/com.img/defaults/nologo.png)'></logo>
+                        
+                        
+                                <t class='CountableCountShow' style='font-size:16px;'>$GetCountableCount</t>
+                                <p class='Date' style='font-size:13px;'>$GetSaveDay • $GetFullDate</p>
+                        
+                            </header>
+                        
+                            <div class='Contents'>
+                        
+                                <p>Realizado por: $SpendedBy</p>
+                                <p>Realizado el: $GetFullDate</p>
+                                <p>NO. de Factura: $BillID</p>
+                                <p>Tipo de compra: $BuyType</p>
+                                <p>Tipo de Pago: $PayType</p>
+                                <p>Tarjeta usada: $CardUsed</p>
+                        
+                                <div class='TotalToShow'>$Total</div>
+                        
+                            </div>
+                        
+                        </cont>
+                        ";
+    
+                        
+    
                         }
-
-                    ?>
-                 
+    
+                    }else{
+    
+                        echo "<NFC style='width:100%; height:100%; position:absolute; display:flex; justify-content:center; align-items:center;text-align:center;color:#FFFFFF; font-family:caviarDreamsBold; font-size:20px;animation:fadeInUp 0.5s'>Hmm... No hay nada por aquí</NFC>";
+    
+                    }
+    
+                ?>
+    
                 </div>
-
+    
+                <div class="TableShow" style="display:none;">
+    
+                    <div class="TableContents">
+    
+                        <p style="left:15px; font-family:GIB;"></p>
+                        <p style="left:40px;">Proveedor</p>
+                        <p style="left:190px;">Comprado por</p>
+                        <p style="left:370px;">Comprado el</p>
+                        <p style="left:560px;">Tipo de compra</p>
+                        <p style="left:790px;">Tarjeta usada</p>
+                        <p style="right:40px;">Total Gastado</p>
+    
+                    </div>
+    
+                    <divs class="ShowResults">
+    
+                        <?php
+    
+                            require 'config/com.config.php';
+    
+                            $Connection->set_charset("utf8");
+                            
+                    if(isset($_GET["ForceFilterByMonth"])){
+    
+                        $ForceFilterByMonth = $_GET["ForceFilterByMonth"];
+    
+                    }
+    
+                            $DoQuery = "SELECT GestID ,Provider, SpendedBy, Date, BuyType, CardUsed, Total FROM logs WHERE Month = '$ForceFilterByMonth'";
+                            $QueryResults = $Connection -> query($DoQuery);
+    
+                            if($QueryResults -> num_rows > 0){
+    
+                                while($Row = $QueryResults -> fetch_assoc()){
+    
+                                    $GestID = $Row["GestID"];
+                                    $Provider = $Row["Provider"];
+                                    $SpendedBy = $Row["SpendedBy"];
+                                    $Date = $Row["Date"];
+                                    $BuyType = $Row["BuyType"];
+                                    $CardUsed = $Row["CardUsed"];
+                                    $Total = $Row["Total"];
+    
+                                    echo "
+                                    
+                                    <log class='ThisLog' GestID='$GestID'>
+    
+                                        <p class='ListNumber'></p>
+                                        <p class='Provider'>$Provider</p>
+                                        <p class='BuyedBy'>$SpendedBy</p>
+                                        <p class='BuyedIn'>$Date</p>
+                                        <p class='BuyType'>$BuyType</p>
+                                        <p class='CardUsed'>$CardUsed</p>
+                                        <p class='TotalToShow'>$Total</p>
+                                
+                                    </log>
+                                
+    
+                                    ";
+    
+                                }
+    
+                            }else{
+    
+                                echo "<NFC style='width:100%; height:100%; position:absolute; display:flex; justify-content:center; align-items:center;text-align:center;color:#FFFFFF; font-family:caviarDreamsBold; font-size:20px;animation:fadeInUp 0.5s'>Hmm... No hay nada por aquí</NFC>";
+    
+    
+                            }
+    
+                        ?>
+                     
+                    </div>
+    
+                </div>
+    
             </div>
-
-    </div>
+    
 
     <div class="ShowInfo" style="display:none;">
 
