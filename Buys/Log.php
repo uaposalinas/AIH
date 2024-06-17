@@ -243,7 +243,7 @@
                             $OtherISV</div>
         
                             <div style='width:215px; position:relative; justify-content:left; padding-left:20px;'>
-                            <label for='3' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>ISV 18%</label>
+                            <label for='3' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>Observaciones</label>
                             $Observations</div>
         
                             <div style='width:215px; position:relative; justify-content:left; padding-left:20px;'>
