@@ -4095,3 +4095,12 @@ p2 b{
     border-right:1px solid #FFFFFF;
 
 }
+
+.CenterRow{
+
+    display:flex;
+    justify-content:center !important;
+    align-items:center;
+    text-align:center;
+
+}

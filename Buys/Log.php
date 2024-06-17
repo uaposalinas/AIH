@@ -208,7 +208,7 @@
                         </div>
                         <div class='Row Price Exents' style='margin-top:20px; height:80px; position:relative; '>
                     
-                            <div style='width:385px; display:flex; justify-content:left; padding-left:15px; bottom:0px; position:relative '> 
+                            <div style='width:385px; display:flex; justify-content:left; padding-left:15px; bottom:0px; position:relative; display:none;'> 
                             <label for='1' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>Descripción del gasto:</label>
                             $BillDescription
                             </div>
@@ -219,7 +219,7 @@
                             $BillNumber</div>
         
         
-                            <div style='width:105px; bottom:0px; position:relative'>
+                            <div style='width:105px; bottom:0px; position:relative; display:none;'>
                             <label for='3' style='color:#9b9b9b; font-family: GI; position:absolute; left:18px; top:-25px;'>Cantidad</label>
         
                             $Amount</div>
@@ -232,7 +232,7 @@
                         </div>
 
 
-                        <div class='Row Price Exents' style='width:90%; margin-top:20px; height:80px; position:relative; display:flex; justify-content:left; padding-left:30px;'>
+                        <div class='Row Price Exents CenterRow' style='width:90%; margin-top:20px; height:80px; position:relative; display:flex; justify-content:left; padding-left:30px;'>
                     
                             <div style='width:215px; position:relative; justify-content:left; padding-left:20px;'>
                             <label for='1' style='color:#9b9b9b; font-family: GI; position:absolute; left:10px; top:-25px;'>Subtotal</label>
