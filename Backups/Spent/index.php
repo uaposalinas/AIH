@@ -1,7 +1,7 @@
 <?php
 
 # require "../../Spent/config/com.local.config.php";
- require "../../Spent/config/com.server.config.php";
+ require "../../Spent/config/com.config.php";
 # require "../../Spent/config/com.aih.config.php";
 
 $Connection->set_charset("utf8");

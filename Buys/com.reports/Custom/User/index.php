@@ -69,7 +69,7 @@
 
                     $Number = 0;
 
-                    require '../../../config/com.server.config.php';
+                    require '../../../config/com.config.php';
                     $Connection -> set_charset("utf8");
 
                     if(isset($_GET["Value"])){
@@ -222,7 +222,7 @@
 
         <?php
 
-            require '../../../config/com.server.config.php';
+            require '../../../config/com.config.php';
 
                     if(isset($_GET["Value"])){
                 
@@ -267,7 +267,7 @@
 
             <?php
 
-                require '../../../config/com.server.config.php';
+                require '../../../config/com.config.php';
 
                 if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["Provider"])){
                 
@@ -314,7 +314,7 @@
 
                 <?php
 
-                    require '../../../config/com.server.config.php';
+                    require '../../../config/com.config.php';
 
                     if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["Provider"])){
                 
@@ -359,7 +359,7 @@
 
             <?php
 
-                require '../../../config/com.server.config.php';
+                require '../../../config/com.config.php';
 
                 if(isset($_GET["From"]) && isset($_GET["Until"]) && isset($_GET["Provider"])){
                 
@@ -403,7 +403,7 @@
 
             <?php
 
-            require '../../../config/com.server.config.php';
+            require '../../../config/com.config.php';
 
                     if(isset($_GET["Value"])){
                 
