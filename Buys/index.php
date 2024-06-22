@@ -330,9 +330,7 @@
                         </div>
     
                         <div class="AddMore AddAnotherProvider" style="cursor:pointer;"><i class="fi fi-rr-plus-small"></i></div>
-    
-                        <input autocomplete="off" type="number" name="SendAmount" class="Amount ThisValue" placeholder="Cantidad" style="display:none">
-                        <input autocomplete="off" type="text" name="SendDescription" class="Description LogDescription ThisValue" placeholder="Descripción del Compra" style="display:none">
+
                         
                     </div>
     
