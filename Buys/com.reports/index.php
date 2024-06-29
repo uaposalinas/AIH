@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver reporte mes de Mayo</title>
+    <title>Ver reporte mes de Junio</title>
     <link rel="shortcut icon" href="Assets/com.img/com.icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../Vendor/com.css/com.config.css">
     <link rel="stylesheet" href="../Vendor/com.css/com.reports.print.css">
@@ -22,12 +22,12 @@
         <div class="LeftZoneHeader">
 
             <t>Reporte Mensual de Compras</t>
-            <p>Mayo 2024</p>
+            <p>Junio 2024</p>
 
             <div class="ReportDetails">
 
                 <t2>Detalles del reporte</t2>
-                <p2> <b>Fecha de cierre de mes:</b> 31 de Mayo de 2024</p2>
+                <p2> <b>Fecha de cierre de mes:</b> 31 de Junio de 2024</p2>
                 <p2> <b>ID de reporte:</b> ASC-2024-041001MR</p2>
                 <p2> <b>Generado por:</b> Alejandro Salinas</p2>
             </div>
@@ -39,7 +39,7 @@
 
     <div class="ShowReportsPerMonth">
 
-        <t class="PerMonthsLogTitle" style="width: 10px;">Registros completos del mes de Mayo</t>
+        <t class="PerMonthsLogTitle" style="width: 10px;">Registros completos del mes de Junio</t>
         <div class="TitleBorder"></div>
 
         <div class="Table">
@@ -199,7 +199,7 @@
     <div class="ShowAllResults">
 
     
-     <t class="PerMonthsLogTitle" style="width: 10000px;">Totalizaciones mes de mayo</t>
+     <t class="PerMonthsLogTitle" style="width: 10000px;">Totalizaciones mes de Junio</t>
         <div class="TitleBorder2"></div>
 
         <div class="Totalizate">
@@ -440,7 +440,7 @@
 
     <div class="ShowReportsPerMonth ShowExempts">
 
-        <t class="PerMonthsLogTitle" style="width: 10px;">Registros exentos del mes de Mayo</t>
+        <t class="PerMonthsLogTitle" style="width: 10px;">Registros exentos del mes de Junio</t>
         <div class="TitleBorder"></div>
 
         <div class="Table" style="position:relative; left:calc(50% - 37%)">
@@ -605,7 +605,7 @@
     <div class="ShowAllResults">
 
     
-<t class="PerMonthsLogTitle" style="width: 10000px;">Totalizaciones exentos mes de mayo</t>
+<t class="PerMonthsLogTitle" style="width: 10000px;">Totalizaciones exentos mes de Junio</t>
    <div class="TitleBorder2"></div>
 
    <div class="Totalizate" style="width:300px; top:70px; left:20px;">
