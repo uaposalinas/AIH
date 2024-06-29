@@ -281,7 +281,7 @@
                             $ISV18Add += floatval($row["ISV18"]);
                         }
                         
-                        echo "<res class='ScapeISV18'>0</res>";
+                        echo "<res class='ScapeISV18'>L 0.00</res>";
 
                     } else {
 
@@ -325,7 +325,7 @@
                         $OtherISVAdd += floatval($row["OtherISV"]);
                     }
                     
-                    echo "<res class='ScapeOtherISV'>2843.07</res>";
+                    echo "<res class='ScapeOtherISV'>L 2,843.07</res>";
 
                 } else {
 
