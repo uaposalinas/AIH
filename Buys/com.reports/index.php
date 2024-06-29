@@ -39,7 +39,7 @@
 
     <div class="ShowReportsPerMonth">
 
-        <t class="PerMonthsLogTitle" style="width: 10px;">Registros completos del mes de Junio</t>
+        <t class="PerMonthsLogTitle" style="width: 500px;">Registros completos del mes de Junio</t>
         <div class="TitleBorder"></div>
 
         <div class="Table">
