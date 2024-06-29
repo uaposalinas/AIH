@@ -78,7 +78,7 @@
 
                     }else{
 
-                        echo "<script> window.location.href = '../' </script>";
+                      //  echo "<script> window.location.href = '../' </script>";
 
                     }
 
@@ -273,7 +273,7 @@
 
                 }else{
 
-                    echo "<script> window.location.href = '../' </script>";
+                  //  echo "<script> window.location.href = '../' </script>";
 
                 }
 
@@ -318,7 +318,7 @@
 
                     }else{
 
-                        echo "<script> window.location.href = '../' </script>";
+                      //  echo "<script> window.location.href = '../' </script>";
 
                     }
 
@@ -362,7 +362,7 @@
 
                 }else{
 
-                    echo "<script> window.location.href = '../' </script>";
+                  //  echo "<script> window.location.href = '../' </script>";
 
                 }
 
