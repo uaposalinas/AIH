@@ -68,7 +68,7 @@
 
         <div class="Table ThisTableToPrint">
 
-           
+            <div class="Identifers"></div>
 
             <div class="Logs">
     <?php
