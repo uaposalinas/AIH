@@ -193,7 +193,7 @@
     <div class="ShowAllResults">
 
     
-     <t class="PerMonthsLogTitle" style="width: 10000px;">Totalizaciones mes de Junio</t>
+     <t class="PerMonthsLogTitle" style="width: 10000px; top:20px;">Totalizaciones mes de Junio</t>
         <div class="TitleBorder2"></div>
 
         <div class="Totalizate">
