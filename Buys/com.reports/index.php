@@ -384,7 +384,7 @@ $Number = 0;
 require '../config/com.config.php';
 $Connection -> set_charset("utf8");
 
-if(isset($_GET["MonthID"])){
+if(isset($_GET["MonthID"])) {
 
     $Month = $_GET["MonthID"];
 
@@ -395,12 +395,13 @@ if(isset($_GET["MonthID"])){
 
 }
 
-$DoQuery = "SELECT * FROM logs WHERE Month = '$Month' ORDER BY Date ASC";
+// Modificar la consulta para convertir y ordenar por fecha
+$DoQuery = "SELECT * FROM logs WHERE Month = '$Month' ORDER BY STR_TO_DATE(Date, '%Y-%m-%d') ASC";
 $QueryResults = $Connection -> query($DoQuery);
 
-if($QueryResults -> num_rows > 0){
+if($QueryResults -> num_rows > 0) {
 
-    while($Row = $QueryResults -> fetch_assoc()){
+    while($Row = $QueryResults -> fetch_assoc()) {
 
         $Provider = $Row["Provider"];
         $Date = $Row["Date"];
