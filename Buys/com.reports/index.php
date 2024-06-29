@@ -438,7 +438,7 @@
                     
     </div>
 
-    <div class="ShowReportsPerMonth ShowExempts">
+    <div class="ShowReportsPerMonth ShowExempts" style="display:none">
 
         <t class="PerMonthsLogTitle" style="width: 10px;">Registros exentos del mes de Junio</t>
         <div class="TitleBorder"></div>
@@ -602,7 +602,7 @@
 
     </div>
     
-    <div class="ShowAllResults">
+    <div class="ShowAllResults" style="display:none">
 
     
 <t class="PerMonthsLogTitle" style="width: 10000px;">Totalizaciones exentos mes de Junio</t>
