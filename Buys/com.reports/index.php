@@ -396,7 +396,7 @@ if(isset($_GET["MonthID"])) {
 }
 
 // Modificar la consulta para convertir y ordenar por fecha
-$DoQuery = "SELECT * FROM logs WHERE Month = '$Month' ORDER BY STR_TO_DATE(Date, '%Y-%m-%d') ASC";
+$DoQuery = "SELECT * FROM `logs` WHERE Month = '$Month' ORDER BY `logs`.`Date` ASC";
 $QueryResults = $Connection -> query($DoQuery);
 
 if($QueryResults -> num_rows > 0) {
