@@ -68,7 +68,24 @@
 
         <div class="Table ThisTableToPrint">
 
-            <div class="Identifers"></div>
+            <div class="Identifers">
+
+                <columns>No.</columns>
+                <columns>Fecha</columns>
+                <columns>No de Factura</columns>
+                <columns>Proveedor</columns>
+                <columns>Cant</columns>
+                <columns>Cuenta Cont.</columns>
+                <columns>Subtotal</columns>
+                <columns>Exento</columns>
+                <columns>ISV 15%</columns>
+                <columns>ISv 18%</columns>
+                <columns>Otros Impuestos</columns>
+                <columns>Total</columns>
+                <columns>Pago</columns>
+                <columns>Fin</columns>
+
+            </div>
 
             <div class="Logs">
     <?php
