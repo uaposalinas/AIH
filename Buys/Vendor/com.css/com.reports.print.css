@@ -18,32 +18,11 @@
         top:27%;
       
     }
-/* Cada 76 elementos se alterna el margen */
-.ThisRes:nth-child(76n+37) {
-    margin-top: 80px !important;
-}
 
-.ThisRes:nth-child(76n+75) {
-    margin-top: 80px !important;
-}
-
-/* Caso especial para el primer conjunto de 38 elementos */
-.ThisRes:nth-child(37) {
-    margin-top: 80px !important;
-}
-
-.ThisRes:nth-child(75) {
-    margin-top: 80px !important;
-}
-
-/* Aseguramos que el patrón se mantenga */
-.ThisRes:nth-child(38n+114) {
-    margin-top: 80px !important;
-}
-
-.ThisRes:nth-child(38n+152) {
-    margin-top: 80px !important;
-}
+    .ThisRes:nth-child(27) {
+        margin-top: 80px !important;
+    }
+    
 
 
 
