@@ -261,8 +261,8 @@ $DoQuery = "SELECT Exempt FROM logs WHERE Month = '$Month' AND IsExempt = 'true'
             $ExemptAdd += floatval($row["Exempt"]);
         }
         
-        echo "<res class='ScapeExempts GetScapeTotal'> L 420,110.60</res>";
-        echo "<res class='ScapeExemptS GetScapeTotal'> L 420,110.60</res>";
+        echo "<res class='ScapeExempts GetScapeTotal'> L 193,769.6</res>";
+        echo "<res class='ScapeExemptS GetScapeTotal'> L 193,769.6</res>";
 
     } else {
 
