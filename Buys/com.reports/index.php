@@ -377,138 +377,112 @@
 
             <div class="Logs">
                 
-                <?php
+            <?php
 
-                    $Number = 0;
+$Number = 0;
 
-                    require '../config/com.config.php';
-                    $Connection -> set_charset("utf8");
+require '../config/com.config.php';
+$Connection -> set_charset("utf8");
 
-                    if(isset($_GET["MonthID"])){
+if(isset($_GET["MonthID"])){
 
-                        $Month = $_GET["MonthID"];
+    $Month = $_GET["MonthID"];
 
-                    }else{
+} else {
 
-                    echo "<script> try {window.close();} catch (error) {window.location.href = '../';} </script>";
+    echo "<script> try {window.close();} catch (error) {window.location.href = '../';} </script>";
+    exit;
 
+}
 
-                    }
+$DoQuery = "SELECT * FROM logs WHERE Month = '$Month' ORDER BY Date ASC";
+$QueryResults = $Connection -> query($DoQuery);
 
+if($QueryResults -> num_rows > 0){
 
-                    $DoQuery = "SELECT * FROM logs WHERE Month = '$Month' ORDER BY Date ASC";
-                    $QueryResults = $Connection -> query($DoQuery);
+    while($Row = $QueryResults -> fetch_assoc()){
 
-                    if($QueryResults -> num_rows > 0){
+        $Provider = $Row["Provider"];
+        $Date = $Row["Date"];
+        $Amount = $Row["Amount"];
+        $PayType = $Row["PayType"];
+        $BillNumber = $Row["BillNumber"];
+        $CountableCount = $Row["CountableCount"];
+        $BuyType = $Row["BuyType"];
+        $Subtotal = $Row["Subtotal"];
+        $Exempt = $Row["Exempt"];
+        $OtherISV = $Row["OtherISV"];
+        $ISV15 = $Row["ISV15"];
+        $ISV18 = $Row["ISV18"];
+        $Total = $Row["Total"];
 
-                        while($Row = $QueryResults -> fetch_assoc()){
+        // Formateando valores
+        switch ($PayType) {
+            case "Efectivo":
+                $PayType = "Efc";
+                break;
+            case "Transferencia":
+                $PayType = "Trans.";
+                break;
+            case "Tarjeta de Crédito":
+                $PayType = "T/C";
+                break;
+            case "Pago en línea":
+                $PayType = "Online";
+                break;
+            case "Botón de Pago":
+                $PayType = "BDP";
+                break;
+        }
 
-                            $Provider = $Row["Provider"];
-                            $Date = $Row["Date"];
-                            $Amount = $Row["Amount"];
-                            $PayType = $Row["PayType"];
-                            $BillNumber = $Row["BillNumber"];
-                            $CountableCount = $Row["CountableCount"];
-                            $BuyType = $Row["BuyType"];
-                            $Subtotal = $Row["Subtotal"];
-                            $Exempt = $Row["Exempt"];
-                            $OtherISV = $Row["OtherISV"];
-                            $ISV15 = $Row["ISV15"];
-                            $ISV18 = $Row["ISV18"];
-                            $Total = $Row["Total"];
+        switch ($BuyType) {
+            case "Personal":
+                $BuyType = "Prs";
+                break;
+            case "Oficina":
+                $BuyType = "Ofc";
+                break;
+        }
 
-                            //FormattedValues 
+        $AmountInt = floatval($Amount);
 
-                            if($PayType == "Efectivo"){
+        if($Amount < 10){
+            $Amount = '0'. $Amount;
+        }
 
-                                $PayType = "Efc";
+        if ($OtherISV === '') {
+            $OtherISV = "L 0.00";
+        }
 
-                            }else if($PayType == "Transferencia"){
+        if($Exempt == "0.00"){
+            // No hacer nada si el Exempt es 0.00
+        } else {
+            $Number++;
+            echo "
+                <div class='ThisRes ThisResExempts'>
+                    <divs><n>$Number</n></divs>
+                    <divs><p class='MountDate'>$Date</p></divs>
+                    <divs><p>$BillNumber</p></divs>
+                    <divs><p>$Provider</p></divs>
+                    <divs><p>$Amount</p></divs>
+                    <divs><p>$CountableCount</p></divs>
+                    <divs><p class='Subtotals'>$Subtotal</p></divs>
+                    <divs><p class='ExemptsNow'>$Exempt</p></divs>
+                    <divs><p class='Totals GetExentTotals'>$Exempt</p></divs>
+                    <divs><p>$PayType</p></divs>
+                    <divs><p>$BuyType</p></divs>
+                </div>
+            ";
+        }
 
-                                $PayType = "Trans.";
+    }
 
-                            }else if($PayType == "Tarjeta de Crédito"){
+} else {
+    echo "<script> try {window.close();} catch (error) {window.location.href = '../';} </script>";
+}
 
-                                $PayType = "T/C";
+?>
 
-                            }else if($PayType == "Pago en línea"){
-
-                                $PayType = "Online";
-
-                            }else if($PayType == "Botón de Pago"){
-
-                                $PayType = "BDP";
-
-                            }
-                            
-
-                            if($BuyType == "Personal"){
-
-                                $BuyType = "Prs";
-
-                            }else if($BuyType == "Oficina"){
-
-                                $BuyType = "Ofc";
-
-                            }
-
-                            $AmountInt = floatval($Amount);
-
-                            if($Amount < 10){
-
-                                $Amount = '0'. $Amount;
-
-                            }
-
-                            if ($OtherISV === '') {
-                                $OtherISV = "L 0.00";
-                            }
-                            
-
-                            if($Exempt == "0.00"){
-
-                             
-
-                            }else{
-
-                                $Number++;
-
-                                echo "
-
-                                <div class='ThisRes ThisResExempts'>
-
-                                <divs><n>$Number</n></divs>
-                                <divs><p class='MountDate'>$Date</p></divs>
-                                <divs><p>$BillNumber</p></divs>
-                                <divs><p>$Provider</p></divs>           
-                                <divs><p>$Amount</p></divs>
-                                <divs><p>$CountableCount</p></divs>
-                                <divs><p class='Subtotals'>$Subtotal</p></divs>
-                                <divs><p class='ExemptsNow'>$Exempt</p></divs>
-                                <divs><p class='Totals GetExentTotals'>$Exempt</p></divs>
-                                <divs><p>$PayType</p></divs>
-                                <divs><p>$BuyType</p></divs>    
-                                
-                             
-                                
-            
-                            </div>
-                            
-                            ";
-
-                            }
-
-
-
-                        }
-
-                    }else{
-                        
-                        echo "try {window.close();} catch (error) {window.location.href = '../';}";
-
-                    }
-
-                ?>
                    
             </div>
 
