@@ -27,7 +27,7 @@
             <div class="ReportDetails">
 
                 <t2>Detalles del reporte</t2>
-                <p2> <b>Fecha de cierre de mes:</b> 31 de Junio de 2024</p2>
+                <p2> <b>Fecha de cierre de mes:</b> 30 de Junio de 2024</p2>
                 <p2> <b>ID de reporte:</b> ASC-2024-041001MR</p2>
                 <p2> <b>Generado por:</b> Alejandro Salinas</p2>
             </div>
