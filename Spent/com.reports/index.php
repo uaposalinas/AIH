@@ -199,7 +199,7 @@
 
         <div class="Scapes">
 
-        <res class='ScapeISV15'>L 358,622.01</res>
+        <res class='ScapeISV15'>L 277,490.587</res>
 
         <!--Exentos-->
 
