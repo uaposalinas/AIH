@@ -396,7 +396,7 @@
                     }
 
 
-                    $DoQuery = "SELECT * FROM logs WHERE Month = '$Month' AND ORDER BY Date ASC";
+                    $DoQuery = "SELECT * FROM logs WHERE Month = '$Month' ORDER BY Date ASC";
                     $QueryResults = $Connection -> query($DoQuery);
 
                     if($QueryResults -> num_rows > 0){
