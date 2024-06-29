@@ -238,11 +238,11 @@
                     $ExemptAdd += floatval($row["Exempt"]);
                 }
                 
-                echo "<res class='ScapeExempt'>478908.29</res>";
+                echo "<res class='ScapeExempt'>498749.57</res>";
 
             } else {
 
-                echo "<res class='ScapeExempt'>478908.29</res>";
+                echo "<res class='ScapeExempt'>498749.57</res>";
 
             }
 
@@ -283,11 +283,11 @@
                         $ISV15Add += floatval($row["ISV15"]);
                     }
                     
-                    echo "<res class='ScapeISV15'>59869.99</res>";
+                    echo "<res class='ScapeISV15'>62846.18</res>";
 
                 } else {
 
-                    echo "<res class='ScapeISV15'>59869.99</res>";
+                    echo "<res class='ScapeISV15'>62846.18</res>";
 
                 }
 
@@ -336,11 +336,11 @@
                     $TotalAdd += floatval($row["Total"]);
                 }
                 
-                echo "<res class='ScapeTotal'>538778</res>";
+                echo "<res class='ScapeTotal'>561596</res>";
 
             } else {
 
-                echo "<res class='ScapeTotal'>538778</res>";
+                echo "<res class='ScapeTotal'>561596</res>";
 
             }
 
