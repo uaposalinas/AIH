@@ -2901,7 +2901,7 @@ p2 b{
 
 .ShowReportsPerMonth .Table{
 
-    width:1481.2px;
+    width:1020.2px;
     height:auto;
     min-height:50px;
     border:2px solid #000000;
@@ -3180,12 +3180,6 @@ p2 b{
     text-align:center;
     flex-direction:column;
     font-family:calibri;
-
-}
-
-.Totalizate .Identifers columns:last-child{
-
-    border-right:0px;
 
 }
 
