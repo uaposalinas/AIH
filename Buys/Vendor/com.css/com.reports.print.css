@@ -1,91 +1,77 @@
 @media print{
 
-    .ThisRes:nth-child(14){
+    .ThisRes:nth-child(37) n{
 
-        margin-top: 20px !important;
+        width:100%;
+        height:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+
 
     }
 
-    .ThisRes:nth-child(40){
+     .ThisRes:nth-child(37) p{
 
-        margin-top: 40px !important;
+        position:absolute;
+        top:27%;
+      
+    }
+/* Cada 76 elementos se alterna el margen */
+.ThisRes:nth-child(76n+37) {
+    margin-top: 80px !important;
+}
+
+.ThisRes:nth-child(76n+75) {
+    margin-top: 80px !important;
+}
+
+/* Caso especial para el primer conjunto de 38 elementos */
+.ThisRes:nth-child(37) {
+    margin-top: 80px !important;
+}
+
+.ThisRes:nth-child(75) {
+    margin-top: 80px !important;
+}
+
+/* Aseguramos que el patrón se mantenga */
+.ThisRes:nth-child(38n+114) {
+    margin-top: 80px !important;
+}
+
+.ThisRes:nth-child(38n+152) {
+    margin-top: 80px !important;
+}
+
+
+
+    .ThisPayType,
+    .ThisBuyType,
+    .ThisCount{
+
+        display:none !important;
 
     }
 
+    .ThisNone{
 
-    .ThisRes:nth-child(66){
-
-        margin-top: 40px !important;
-
-    }
-
-    .ThisRes:nth-child(92){
-
-        margin-top: 40px !important;
+        width:200px !important;
 
     }
 
+    .ThisTableToPrint{
 
-    .ThisRes:nth-child(117){
-
-        margin-top: 80px !important;
-
-    }
-
-    .ThisRes:nth-child(142){
-
-        margin-top: 60px !important;
+        width:1183px !important;
 
     }
 
-    .ThisRes:nth-child(167){
+    .ExemptSubtotal{
 
-        margin-top: 80px !important;
-
-    }
-
-    .ThisRes:nth-child(192){
-
-        margin-top: 40px !important;
-
-    }
-
-
-    .ThisRes:nth-child(218){
-
-        margin-top: 40px !important;
-
-    }
-
-    .ThisRes:nth-child(244){
-
-        margin-top: 40px !important;
-
-    }
-
-    .ThisRes:nth-child(269){
-
-        margin-top: 80px !important;
-
-    }
-
-    .ThisRes:nth-child(294){
-
-        margin-top: 60px !important;
-
-    }
-
-
-    .ThisRes:nth-child(319){
-
-        margin-top: 60px !important;
-
-    }
-
-    .ShowExempts{
-
-        margin-top:300px;
+        display: none !important;
 
     }
 
 }
+
