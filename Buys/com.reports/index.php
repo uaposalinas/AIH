@@ -200,7 +200,7 @@
 
             <div class="Identifers">
 
-                    <columns>Exentos</columns>
+                    <columns>Subtotal</columns>
                     <columns>ISV 15%</columns>
                     <columns>Total de Registros</columns>
 
