@@ -300,91 +300,13 @@
 
             <!--ISV 18-->
 
-                <?php
-
-                    require '../config/com.config.php';
-
-                    if(isset($_GET["MonthID"])){
-
-                        $Month = $_GET["MonthID"];
-
-                    }else{
-
-                        echo "<script> window.location.href = '../' </script>";
-
-                    }
-
-
-                    $DoQuery = "SELECT ISV18 FROM logs WHERE Month = '$Month'";
-
-                    $QueryResults = $Connection->query($DoQuery);
-
-                    $ISV18Add = 0;
-
-                    if ($QueryResults->num_rows > 0) {
-                        
-                        while($row = $QueryResults->fetch_assoc()) {
-                        
-                            $ISV18Add += floatval($row["ISV18"]);
-                        }
-                        
-                        echo "<res class='ScapeISV18'>$ISV18Add</res>";
-
-                    } else {
-
-                        echo "<res class='ScapeISV18'>$ISV18Add</res>";
-
-                    }
-
-                    $Connection->close();
-
-                    ?>
+        
 
             <!--ISV18-->
 
             <!--OtherISV-->
 
-            <?php
-
-                require '../config/com.config.php';
-
-                if(isset($_GET["MonthID"])){
-
-                    $Month = $_GET["MonthID"];
-
-                }else{
-
-                    echo "<script> window.location.href = '../' </script>";
-
-                }
-
-
-                $DoQuery = "SELECT OtherISV FROM logs WHERE Month = '$Month'";
-
-                $QueryResults = $Connection->query($DoQuery);
-
-                $OtherISVAdd = 0;
-
-                if ($QueryResults->num_rows > 0) {
-                    
-                    while($row = $QueryResults->fetch_assoc()) {
-                    
-                        $OtherISVAdd += floatval($row["OtherISV"]);
-                    }
-                    
-                    echo "<res class='ScapeOtherISV'>$OtherISVAdd</res>";
-
-                } else {
-
-                    echo "<res class='ScapeOtherISV'>0</res>";
-
-                }
-
-                $Connection->close();
-
-        ?>
-
-        <!--OtherISV-->
+         
 
             <?php
 
