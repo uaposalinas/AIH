@@ -113,7 +113,7 @@
             <div class="NoResults2" style="display:none;">
 
                 <div class="NoResultsIcon2"></div>
-                <t>Este proveedor no existe, debes crearlo tú.</t>
+                <t>Este proveedor no existe, debes crearlo vos.</t>
 
             </div>
 
@@ -217,7 +217,7 @@
                 <div class="Notification">
 
                 <i class="fi fi-ss-badge-check Icon"></i>
-                    <div class="Message">Mayo ha concluido. A partir de ahora, todos los registros se registrarán bajo junio.</div>
+                    <div class="Message">El sistema de reportería no estará disponible por reprogramación del mismo.</div>
                     <i class="fi fi-rs-circle-xmark Close"></i>
 
                 </div>
