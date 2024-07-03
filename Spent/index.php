@@ -216,7 +216,7 @@
 
                 <div class="Notification">
 
-                <i class="fi fi-ss-badge-check Icon"></i>
+                <i class="fi fi-ss-exclamation Icon"></i>
                     <div class="Message">El sistema de reportería no estará disponible por reprogramación del mismo.</div>
                     <i class="fi fi-rs-circle-xmark Close"></i>
 
