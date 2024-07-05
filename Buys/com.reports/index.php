@@ -165,7 +165,7 @@
                         return 'T/C';
                     case 'Transferencia':
                         return 'Trans';
-                    case 'Botón de pago':
+                    case 'Botón de Pago':
                         return 'BDP';
                     case 'Efectivo':
                         return 'EFC';
