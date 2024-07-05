@@ -127,8 +127,8 @@
         </thead>
         <tbody>
             <?php
-            $servername = "devlabsc_root";
-            $username = "sv18.byethost18.org";
+            $servername = "sv18.byethost18.org";
+            $username = "devlabsc_root";
             $password = "Dv229011000";
             $dbname = "devlabsc_aihbuys"; 
 
