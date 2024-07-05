@@ -127,10 +127,10 @@
         </thead>
         <tbody>
             <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "aihbuys"; // Cambiado el nombre de la base de datos
+            $servername = "devlabsc_root";
+            $username = "sv18.byethost18.org";
+            $password = "Dv229011000";
+            $dbname = "devlabsc_aihbuys"; 
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 
