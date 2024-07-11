@@ -83,8 +83,8 @@
         }
 
         #modalItemsTable {
-            width: calc(100% - 30px); /* 100% width minus 15px margin on each side */
-            margin: 0 15px; /* 15px margin on each side */
+            width: calc(100% - 30px);
+            margin: 0 15px; 
         }
 
         @media print{
@@ -106,7 +106,28 @@
     </style>
 </head>
 <body>
-    <h1>REPORTE MENSUAL DE COMPRAS</h1>
+<?php
+if (isset($_GET["MonthID"])) {
+    $MonthID = $_GET["MonthID"];
+    $monthNames = [
+        "01" => "ENERO",
+        "02" => "FEBRERO",
+        "03" => "MARZO",
+        "04" => "ABRIL",
+        "05" => "MAYO",
+        "06" => "JUNIO",
+        "07" => "JULIO",
+        "08" => "AGOSTO",
+        "09" => "SEPTIEMBRE",
+        "10" => "OCTUBRE",
+        "11" => "NOVIEMBRE",
+        "12" => "DICIEMBRE";
+    ];
+
+    $monthName = isset($monthNames[$MonthID]) ? $monthNames[$MonthID] : "";
+    echo "<h1>REPORTE DE COMPRAS MES DE $monthName</h1>";
+}
+?>
     <table>
         <thead>
             <tr>
@@ -161,7 +182,7 @@
 
             function abreviatePay($type) {
                 switch ($type) {
-                    case 'Tarjeta de Crédito':
+                    case 'Tarjeta de Crédito';
                         return 'T/C';
                     case 'Transferencia':
                         return 'Trans';

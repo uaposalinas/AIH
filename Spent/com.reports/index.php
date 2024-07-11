@@ -96,9 +96,30 @@
 </head>
 <body>
 
-        
+<?php
+if (isset($_GET["MonthID"])) {
+    $MonthID = $_GET["MonthID"];
+    $monthNames = [
+        "01" => "ENERO",
+        "02" => "FEBRERO",
+        "03" => "MARZO",
+        "04" => "ABRIL",
+        "05" => "MAYO",
+        "06" => "JUNIO",
+        "07" => "JULIO",
+        "08" => "AGOSTO",
+        "09" => "SEPTIEMBRE",
+        "10" => "OCTUBRE",
+        "11" => "NOVIEMBRE",
+        "12" => "DICIEMBRE"
+    ];
 
-    <h1>REPORTE DE GASTOS VARIABLES MES DE JUNIO</h1>
+    $monthName = isset($monthNames[$MonthID]) ? $monthNames[$MonthID] : "";
+    echo "<h1>REPORTE DE GASTOS VARIABLES MES DE $monthName</h1>";
+}
+?>
+
+
     <table>
         <thead>
             <tr>

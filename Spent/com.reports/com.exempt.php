@@ -95,7 +95,29 @@
     </style>
 </head>
 <body>
-    <h1>REPORTE DE GASTOS VARIABLES MES DE JUNIO</h1>
+<?php
+if (isset($_GET["MonthID"])) {
+    $MonthID = $_GET["MonthID"];
+    $monthNames = [
+        "01" => "ENERO",
+        "02" => "FEBRERO",
+        "03" => "MARZO",
+        "04" => "ABRIL",
+        "05" => "MAYO",
+        "06" => "JUNIO",
+        "07" => "JULIO",
+        "08" => "AGOSTO",
+        "09" => "SEPTIEMBRE",
+        "10" => "OCTUBRE",
+        "11" => "NOVIEMBRE",
+        "12" => "DICIEMBRE"
+    ];
+
+    $monthName = isset($monthNames[$MonthID]) ? $monthNames[$MonthID] : "";
+    echo "<h1>REPORTE DE GASTOS EXENTOS MES DE $monthName</h1>";
+}
+?>
+
     <table>
         <thead>
             <tr>
@@ -105,14 +127,11 @@
                 <th>Proveedor</th>
                 <th>Cant.</th>
                 <th class="no-print">Cuenta Cont.</th>
-                <th>Subtotal</th>
                 <th>Exento</th>
-                <th>ISV 15%</th>
-                <th>ISV 18%</th>
-                <th>Otros Imp.</th>
+                <th>Subtotal</th>
                 <th>Total</th>
-                <th class="no-print">Pago</th>
                 <th class="no-print">Tipo</th>
+                <th class="no-print">Pago</th>
                 <th class="no-print">Descripción</th> 
             </tr>
         </thead>
@@ -177,9 +196,6 @@
                     echo "<td class='no-print'>" . $row["CountableCount"] . "</td>";
                     echo "<td class='subtotal'>" . formatCurrency($row["Subtotal"]) . "</td>";
                     echo "<td class='exempt'>" . formatCurrency($row["Exempt"]) . "</td>";
-                    echo "<td class='isv15'>" . formatCurrency($row["ISV15"]) . "</td>";
-                    echo "<td class='isv18'>" . formatCurrency($row["ISV18"]) . "</td>";
-                    echo "<td class='otherisv'>" . formatCurrency($row["OtherISV"]) . "</td>";
                     echo "<td class='total'>" . formatCurrency($row["Total"]) . "</td>";
                     echo "<td class='no-print'>" . abreviatePay($row["PayType"]) . "</td>";
                     echo "<td class='no-print'>" . $row["BuyType"] . "</td>";
