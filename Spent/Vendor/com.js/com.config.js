@@ -87,20 +87,20 @@ for(let Aument = 0; Aument < SelectOptionTotalElements; Aument++){
 
         }else if(IndexOf == 2){
 
-            //SpentSelectMenu.style.display = "none";
-            //GenerateANewReport.style.display = "flex";
+            SpentSelectMenu.style.display = "none";
+            GenerateANewReport.style.display = "flex";
 
-            //SendPreloader("Preparando caracteristicas y motor de impresión", "450px");
+            SendPreloader("Preparando caracteristicas y motor de impresión", "450px");
 
             setTimeout(() => {
                 
-                //RemovePreloader();
-                //SendNewMessage("Todo listo", "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/check.png", "Low", "160px")
-                //document.querySelector('.AssistantPreloader').style.display = "none";
+                RemovePreloader();
+                SendNewMessage("Todo listo", "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.notifications/check.png", "Low", "160px")
+                document.querySelector('.AssistantPreloader').style.display = "none";
 
             }, 3000);
 
-            SendError('Esta caracterisitica no está disponible para usuarios comúnes aún.', "560px");
+//            SendError('Esta caracterisitica no está disponible para usuarios comúnes aún.', "560px");
 
         }else if(IndexOf == 3){
 
