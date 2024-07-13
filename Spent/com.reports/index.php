@@ -133,7 +133,6 @@ if (isset($_GET["MonthID"])) {
                 <th>Exento</th>
                 <th>ISV 15%</th>
                 <th>ISV 18%</th>
-                <th>Otros Imp.</th>
                 <th>Total</th>
                 <th class="no-print">Pago</th>
                 <th class="no-print">Tipo</th>
@@ -203,7 +202,6 @@ if (isset($_GET["MonthID"])) {
                     echo "<td class='exempt'>" . formatCurrency($row["Exempt"]) . "</td>";
                     echo "<td class='isv15'>" . formatCurrency($row["ISV15"]) . "</td>";
                     echo "<td class='isv18'>" . formatCurrency($row["ISV18"]) . "</td>";
-                    echo "<td class='otherisv'>" . formatCurrency($row["OtherISV"]) . "</td>";
                     echo "<td class='total'>" . formatCurrency($row["Total"]) . "</td>";
                     echo "<td class='no-print'>" . abreviatePay($row["PayType"]) . "</td>";
                     echo "<td class='no-print'>" . $row["BuyType"] . "</td>";
