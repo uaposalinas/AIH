@@ -121,7 +121,7 @@ if (isset($_GET["MonthID"])) {
         "09" => "SEPTIEMBRE",
         "10" => "OCTUBRE",
         "11" => "NOVIEMBRE",
-        "12" => "DICIEMBRE";
+        "12" => "DICIEMBRE"
     ];
 
     $monthName = isset($monthNames[$MonthID]) ? $monthNames[$MonthID] : "";
