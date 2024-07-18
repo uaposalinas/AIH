@@ -156,7 +156,7 @@ if (isset($_GET["MonthID"])) {
                 $MonthID = $_GET["MonthID"];
             }
 
-            $sql = "SELECT Date, BillNumber, Provider, Amount, CountableCount, Subtotal, Exempt, ISV15, ISV18, OtherISV, Total, PayType, BuyType, BillDescription FROM logs WHERE Month = '$MonthID' AND IsExempt = 'false' ORDER BY Date ASC";
+            $sql = "SELECT Date, BillNumber, Provider, Amount, CountableCount, Subtotal, Exempt, ISV15, ISV18, OtherISV, Total, PayType, BuyType, BillDescription FROM logs WHERE Month = '$MonthID' ORDER BY Date ASC";
             $result = $conn->query($sql);
 
             function formatCurrency($number) {
