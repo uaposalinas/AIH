@@ -132,17 +132,18 @@ if (isset($_GET["MonthID"])) {
                 <th>Total</th>
                 <th class="no-print">Tipo</th>
                 <th class="no-print">Pago</th>
-                <th class="no-print">Descripción</th> 
-            </tr>
+                </tr>
         </thead>
         <tbody>
             <?php
             $servername = "sv18.byethost18.org";
             $username = "devlabsc_root";
             $password = "Dv229011000";
-            $dbname = "devlabsc_aihbuys"; 
+            $dbname = "devlabsc_aihspends"; 
 
             $conn = new mysqli($servername, $username, $password, $dbname);
+
+            $conn -> set_charset("utf8");
 
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
@@ -152,7 +153,7 @@ if (isset($_GET["MonthID"])) {
                 $MonthID = $_GET["MonthID"];
             }
 
-            $sql = "SELECT Date, BillNumber, Provider, Amount, CountableCount, Subtotal, Exempt, ISV15, ISV18, OtherISV, Total, PayType, BuyType, BillDescription FROM logs WHERE Month = '$MonthID' AND IsExempt = 'true' ORDER BY Date ASC";
+            $sql = "SELECT Date, BillNumber, Provider, Amount, CountableCount, Subtotal, Exempt, ISV15, OtherISV, Total, PayType, BuyType, BillDescription FROM logs WHERE Month = '$MonthID' ORDER BY Date ASC";
             $result = $conn->query($sql);
 
             function formatCurrency($number) {
@@ -199,7 +200,6 @@ if (isset($_GET["MonthID"])) {
                     echo "<td class='total'>" . formatCurrency($row["Total"]) . "</td>";
                     echo "<td class='no-print'>" . abreviatePay($row["PayType"]) . "</td>";
                     echo "<td class='no-print'>" . $row["BuyType"] . "</td>";
-                    echo "<td class='description no-print' onclick='openModal(\"" . $row["BillDescription"] . "\")'>" . $row["BillDescription"] . "</td>";
                     echo "</tr>";
                     $number++;
                 }

@@ -628,7 +628,7 @@
                 
                 <div class="SearchLog">
 
-                    <input autocomplete="off" type="text" class="SearchByLog" placeholder="Escribe el ID de Gestión para buscar.">
+                    <input autocomplete="off" type="text" class="SearchByLog" placeholder="Escribe el No. de factura para buscar.">
                     <i class="fi fi-br-search"></i>
 
                 </div>             
@@ -649,7 +649,7 @@
             <div class="NoResults" style="display:none;">
 
                 <div class="Icon"></div>
-                <t>No hay resultados para este ID de gestión</t>
+                <t>No hay resultados para este Número de Factura</t>
 
             </div>
 
@@ -694,7 +694,7 @@
                         $Provider = $Row["Provider"];
                         $Image = "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.providers/$Provider.png";
 
-                        echo "<cont slot='Show' GestID='$GestID' class='ShowInformation ThisLog' date='$GetDate'>
+                        echo "<cont slot='Show' GestID='$BillID' class='ShowInformation ThisLog' date='$GetDate'>
 
                         <header>
                     
