@@ -53,7 +53,7 @@
     <?php
 
 
-        require 'config/com.local.config.php';
+        require 'config/com.server.config.php';
         $Connection->set_charset("utf8");
 
 
