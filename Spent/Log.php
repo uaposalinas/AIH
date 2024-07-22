@@ -57,9 +57,9 @@
         $Connection->set_charset("utf8");
 
 
-        $GestIDs = $_GET["GestID"];
+        $GestID = $_GET["GestID"];
 
-        $DoQuery = "SELECT Date, Provider, SpendedBy, PayType, CardUsed, CountableCount, BuyType, BillDescription, BillNumber, Amount, Subtotal, Exempt, ISV18, ISV15, OtherISV, Total FROM logs WHERE GestID = '$GestIDs'";
+        $DoQuery = "SELECT Date, Provider, SpendedBy, PayType, CardUsed, CountableCount, BuyType, BillDescription, BillNumber, Amount, Subtotal, Exempt, ISV18, ISV15, OtherISV, Total FROM logs WHERE GestID = '$GestID'";
         $QueryResults = $Connection -> query($DoQuery);
 
         if($QueryResults){
