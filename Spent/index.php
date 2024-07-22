@@ -694,7 +694,7 @@
                         $Provider = $Row["Provider"];
                         $Image = "https://www.static.devlabsco.space/Public/Assets/Images/Projects/Partners/aih/com.providers/$Provider.png";
 
-                        echo "<cont slot='Show' GestID='$BillID' class='ShowInformation ThisLog' date='$GetDate'>
+                        echo "<cont slot='Show' GestID='$GestID' class='ShowInformation ThisLog' date='$GetDate'>
 
                         <header>
                     
