@@ -53,13 +53,13 @@
     <?php
 
 
-        require 'config/com.server.config.php';
+        require 'config/com.local.config.php';
         $Connection->set_charset("utf8");
 
 
-        $GestID = $_GET["GestID"];
+        $GestIDs = $_GET["GestID"];
 
-        $DoQuery = "SELECT Date, Provider, SpendedBy, PayType, CardUsed, CountableCount, BuyType, BillDescription, BillNumber, Amount, Subtotal, Exempt, ISV18, ISV15, OtherISV, Total FROM logs WHERE GestID = '$GestID'";
+        $DoQuery = "SELECT Date, Provider, SpendedBy, PayType, CardUsed, CountableCount, BuyType, BillDescription, BillNumber, Amount, Subtotal, Exempt, ISV18, ISV15, OtherISV, Total FROM logs WHERE GestID = '$GestIDs'";
         $QueryResults = $Connection -> query($DoQuery);
 
         if($QueryResults){
@@ -261,7 +261,7 @@
 
         }else{
 
-            echo "!!ERROR!!";
+            echo "!!Error!!";
 
         }
 
