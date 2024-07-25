@@ -315,7 +315,7 @@ if (isset($_GET["MonthID"])) {
         </tbody>
     </table>
 
-    <table style="width:92%; height:20px" class="TotalTable">
+    <table style="width:100%; height:20px" class="TotalTable">
         <thead style="height:20px">
             <tr>
                 <th>Total Subtotal</th>
