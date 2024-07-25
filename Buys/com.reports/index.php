@@ -27,6 +27,7 @@
         }
         td.provider {
             width: 180px;
+            text-align:left;
         }
         td.exempt {
             width: 40px;
@@ -91,18 +92,81 @@
             .no-print{
                 display:none !important;
             }
-        }
+            .print{
+                display:flex !important;
+            }
+            .print table {
+                width: 350px !important;
+                border-collapse: collapse;
+        
+            }
+            .print th, .print td {
+                border: 0.5px solid black;
+                padding: 5px;
+                text-align: left;
+            }
 
-        button{
+            .minitable{
 
-            width:120px;
-            height:40px;
-            background-color:#85c6fe;
-            border:1px #9b9b9b;
-            border-radius:20px;
+                padding:0px;
+
+            }
+
+            .TableCont{
+
+                background-color:#000000 !important;
+
+            }
+    }
+
+        button {
+            width: 120px;
+            height: 40px;
+            background-color: #85c6fe;
+            border: 1px #9b9b9b;
+            border-radius: 20px;
             cursor: pointer;
+        }
+
+        .TableHead{
+
+            position:relative;
+            width:350px;
+            left:0px;
+            display:none;
+            justify-content:center;
+            text-align:center;
+            align-items:center;
+            text-align:center;
+                    
+        }
+
+        .TableHead div:nth-child(1){
+
+            border-right:1px solid 1px;
+            color:#000000;
+            width:60px;
+            display:flex;
+            justify-content:center;
+            text-align:center;
+            align-items:center;
+            position:absolute;
+            left:0px;
 
         }
+
+        .TableHead div:nth-child(2){
+
+            border-right:1px solid 1px;
+            color:#000000;
+            width:200px;
+            display:flex;
+            justify-content:center;
+            text-align:center;
+            align-items:center;
+        }
+
+
     </style>
 </head>
 <body>
@@ -135,9 +199,9 @@ if (isset($_GET["MonthID"])) {
                 <th>Fecha</th>
                 <th>No. de Factura</th>
                 <th>Proveedor</th>
-                <th class="no-print">Productos</th>
-                <th>Subtotal</th>
+                <th class=""><div class="TableHead print"> <div class="Amount">Cant</div> <div class="Description">Descripción</div> </div> <p class="no-print">Productos</p> </th>
                 <th>Exento</th>
+                <th>Subtotal</th>
                 <th>ISV 15%</th>
                 <th>Otros Imp.</th>
                 <th>Total</th>
@@ -155,7 +219,7 @@ if (isset($_GET["MonthID"])) {
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 
-            $conn-> set_charset("utf8");
+            $conn->set_charset("utf8");
 
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
@@ -204,17 +268,35 @@ if (isset($_GET["MonthID"])) {
             echo '}';
             echo '</script>';
 
+            $totalSubtotal = 0;
+            $totalISV15 = 0;
+            $totalTotal = 0;
+
             if ($result->num_rows > 0) {
                 $number = 1;
                 while($row = $result->fetch_assoc()) {
+                    $totalSubtotal += (float)$row["Subtotal"];
+                    $totalISV15 += (float)$row["ISV15"];
+                    $totalTotal += (float)$row["Total"];
+
                     echo "<tr>";
                     echo "<td>" . $number . "</td>";
                     echo "<td>" . formatDate($row["Date"]) . "</td>";
                     echo "<td>" . $row["BillNumber"] . "</td>";
                     echo "<td class='provider'>" . $row["Provider"] . "</td>";
-                    echo "<td class='no-print'><button onclick='openItemsModal(" . htmlspecialchars(json_encode($row["Items"]), ENT_QUOTES, 'UTF-8') . ")'>Ver Items</button></td>";
-                    echo "<td class='subtotal'>" . formatCurrency($row["Subtotal"]) . "</td>";
+                    echo "<td class='print minitable'><button class='no-print' onclick='openItemsModal(" . htmlspecialchars(json_encode($row["Items"]), ENT_QUOTES, 'UTF-8') . ")'>Ver Items</button>";
+                    echo "<div class='print' style='display: none;' class='TableCont' style='background-color:#000000 !important'>";
+                    echo "<table style='width:350px !important; border:2px solid #FFFFFF !important; position:relative; left:10px'>";
+                    echo "<tbody>";
+                    $items = json_decode($row["Items"], true);
+                    if (is_array($items)) {
+                        foreach ($items as $item) {
+                            echo "<tr><td>" . $item["Amount"] . "</td><td>" . ucfirst(strtolower($item["Product"])) . "</td></tr>";
+                        }
+                    }
+                    echo "</tbody></table></div></td>";
                     echo "<td class='exempt'>" . formatCurrency($row["Exempt"]) . "</td>";
+                    echo "<td class='subtotal'>" . formatCurrency($row["Subtotal"]) . "</td>";
                     echo "<td class='isv15'>" . formatCurrency($row["ISV15"]) . "</td>";
                     echo "<td class='otherisv'>" . formatCurrency($row["OtherISV"]) . "</td>";
                     echo "<td class='total'>" . formatCurrency($row["Total"]) . "</td>";
@@ -230,6 +312,23 @@ if (isset($_GET["MonthID"])) {
             }
             $conn->close();
             ?>
+        </tbody>
+    </table>
+
+    <table style="width:92%; height:20px" class="TotalTable">
+        <thead style="height:20px">
+            <tr>
+                <th>Total Subtotal</th>
+                <th>Total ISV 15%</th>
+                <th>Total General</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><?php echo formatCurrency($totalSubtotal); ?></td>
+                <td><?php echo formatCurrency($totalISV15); ?></td>
+                <td><?php echo formatCurrency($totalTotal); ?></td>
+            </tr>
         </tbody>
     </table>
 
