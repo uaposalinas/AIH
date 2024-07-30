@@ -26,9 +26,10 @@
             background-color: #85c6fe;
         }
         td.provider {
-            width: 180px;
+            width: 130px;
             text-align:left;
         }
+
         td.exempt {
             width: 40px;
             text-align: right; 
@@ -203,7 +204,7 @@ if (isset($_GET["MonthID"])) {
                 <th>Exento</th>
                 <th>Subtotal</th>
                 <th>ISV 15%</th>
-                <th>Otros Imp.</th>
+                <th class="no-print">Otros Imp.</th>
                 <th>Total</th>
                 <th class="no-print">Pago</th>
                 <th class="no-print">Observaciones</th>
@@ -298,7 +299,7 @@ if (isset($_GET["MonthID"])) {
                     echo "<td class='exempt'>" . formatCurrency($row["Exempt"]) . "</td>";
                     echo "<td class='subtotal'>" . formatCurrency($row["Subtotal"]) . "</td>";
                     echo "<td class='isv15'>" . formatCurrency($row["ISV15"]) . "</td>";
-                    echo "<td class='otherisv'>" . formatCurrency($row["OtherISV"]) . "</td>";
+                    echo "<td class='otherisv no-print'>" . formatCurrency($row["OtherISV"]) . "</td>";
                     echo "<td class='total'>" . formatCurrency($row["Total"]) . "</td>";
                     echo "<td class='no-print'>" . abreviatePay($row["PayType"]) . "</td>";
                     echo "<td class='description no-print' onclick='openDescriptionModal(\"" . $row["Observations"] . "\")'>" . $row["Observations"] . "</td>";
