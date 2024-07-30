@@ -29,6 +29,24 @@
             width: 150px;
             text-align:left;
         }
+
+        .Subtotal{
+
+           width:100px;
+
+        }
+
+        .Total{
+
+            width:90px;
+
+        }
+
+        .ISV15{
+
+            width:80px;   
+
+        }
         td.exempt {
             width: 40px;
             text-align: right; 
@@ -123,16 +141,16 @@ if (isset($_GET["MonthID"])) {
             <th>No. de Factura</th>
             <th>Proveedor</th>
             <th>Cant.</th>
-            <th class="no-print">Cuenta Cont.</th>
-            <th>Subtotal</th>
+            <th class="">Descripción</th> 
             <th>Exento</th>
-            <th>ISV 15%</th>
+            <th class="Subtotal">Subtotal</th>
+            <th class="ISV15">ISV 15%</th>
             <th>ISV 18%</th>
             <th>Otros Imp.</th>
-            <th>Total</th>
+            <th class="Total">Total</th>
+            <th class="no-print">Cuenta Cont.</th>
             <th class="no-print">Pago</th>
             <th class="no-print">Tipo</th>
-            <th class="no-print">Descripción</th> 
         </tr>
     </thead>
     <tbody>
@@ -200,16 +218,16 @@ if (isset($_GET["MonthID"])) {
                 echo "<td>" . $row["BillNumber"] . "</td>";
                 echo "<td class='provider'>" . $row["Provider"] . "</td>";
                 echo "<td>" . $row["Amount"] . "</td>";
-                echo "<td class='no-print'>" . $row["CountableCount"] . "</td>";
-                echo "<td class='subtotal'>" . formatCurrency($row["Subtotal"]) . "</td>";
+                echo "<td class='description ' style='white-space:normal' onclick='openModal(\"" . $row["BillDescription"] . "\")'>" . $row["BillDescription"] . "</td>";
                 echo "<td class='exempt'>" . formatCurrency($row["Exempt"]) . "</td>";
+                echo "<td class='subtotal'>" . formatCurrency($row["Subtotal"]) . "</td>";
                 echo "<td class='isv15'>" . formatCurrency($row["ISV15"]) . "</td>";
                 echo "<td class='isv18'>" . formatCurrency($row["ISV18"]) . "</td>";
                 echo "<td class='otherISV'>" . formatCurrency($row["OtherISV"]) . "</td>";
                 echo "<td class='total'>" . formatCurrency($row["Total"]) . "</td>";
+                echo "<td class='no-print'>" . $row["CountableCount"] . "</td>";
                 echo "<td class='no-print'>" . abreviatePay($row["PayType"]) . "</td>";
                 echo "<td class='no-print'>" . $row["BuyType"] . "</td>";
-                echo "<td class='description no-print' onclick='openModal(\"" . $row["BillDescription"] . "\")'>" . $row["BillDescription"] . "</td>";
                 echo "</tr>";
 
                 $totalSubtotal += $row["Subtotal"];
