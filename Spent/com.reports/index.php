@@ -215,10 +215,10 @@ if (isset($_GET["MonthID"])) {
                 echo "<tr>";
                 echo "<td>" . $number . "</td>";
                 echo "<td>" . formatDate($row["Date"]) . "</td>";
-                echo "<td>" . $row["BillNumber"] . "</td>";
+                echo "<td style='text-align:left;'>" . $row["BillNumber"] . "</td>";
                 echo "<td class='provider'>" . $row["Provider"] . "</td>";
                 echo "<td>" . $row["Amount"] . "</td>";
-                echo "<td class='description ' style='white-space:normal' onclick='openModal(\"" . $row["BillDescription"] . "\")'>" . $row["BillDescription"] . "</td>";
+                echo "<td class='description ' style='white-space:normal; text-align:left;' onclick='openModal(\"" . $row["BillDescription"] . "\")'>" . $row["BillDescription"] . "</td>";
                 echo "<td class='exempt'>" . formatCurrency($row["Exempt"]) . "</td>";
                 echo "<td class='subtotal'>" . formatCurrency($row["Subtotal"]) . "</td>";
                 echo "<td class='isv15'>" . formatCurrency($row["ISV15"]) . "</td>";
