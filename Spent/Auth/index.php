@@ -18,19 +18,10 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel="stylesheet" href="../Vendor/com.css/com.config.css">
 
 
-    <script>
-
-        const LocationFile = "../Vendor/com.css/com.config.css";
-
-        const NewStyles = document.createElement('link');
-        NewStyles.rel = "stylesheet";
-        NewStyles.type = "text/css";
-        NewStyles.href = LocationFile+"?v"+Math.random();
-        document.head.appendChild(NewStyles);
-
-    </script>
+   
 
     <title>Auth • AIH's Expenses</title>
 </head>
