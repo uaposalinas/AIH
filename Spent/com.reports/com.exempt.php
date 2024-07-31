@@ -217,7 +217,7 @@ if (isset($_GET["MonthID"])) {
     </tbody>
 </table>
 
-<table style="width:90%">
+<table style="width:68%">
     <thead>
         <tr>
             <th>Total Exento</th>
