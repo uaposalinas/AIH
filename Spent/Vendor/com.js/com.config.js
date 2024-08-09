@@ -10,19 +10,14 @@ function FormatNumberNows(Number){
 }
 
 function openCenteredWindow(url, title, width, height) {
-    // Obtener dimensiones de la pantalla
     const screenWidth = window.screen.width;
     const screenHeight = window.screen.height;
 
-    // Calcular posición para centrar la ventana
     const left = (screenWidth / 2) - (width / 2);
     const top = (screenHeight / 2) - (height / 2);
 
-    // Crear parámetros para la nueva ventana
     const windowParams = `width=${width},height=${height},top=${top},left=${left}`;
 
-    // Abrir la nueva ventana centrada
-   // window.open(url, title, windowParams);
 }
 
 // Llamar a la función para abrir la ventana centrada
@@ -643,6 +638,8 @@ for(let Aument = 0; Aument < TotalToShow.length; Aument++){
     Total.innerHTML = `L ${Result}.00`;
 
 }
+
+
 
 
 

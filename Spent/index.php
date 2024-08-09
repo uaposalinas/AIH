@@ -427,6 +427,7 @@
                         <div class="GitLabels">
 
                         <label for="1" style="position:relative; left:0px;">Subtotal</label>
+                        <label for="1" style="position:relative; left:0px;">Subtotal 18%</label>
                         <label for="2" style="position:relative; left:0px;">Exento </label>
                         <label for="3" style="position:relative; left:0px;">Otros impuestos</label>
                         <label for="4" style="position:relative; left:0px;">ISV 18%</label>
@@ -435,6 +436,7 @@
                         </div>
     
                         <input autocomplete="off" type="number" name="SendSubtotal" class="Subtotal ThisValue" placeholder=" 0.00" id="2" style="margin-left:0px;">
+                        <input autocomplete="off" type="number" name="SendSubtotal18" class="Subtotal18 ThisValue" placeholder=" 0.00" id="2" style="margin-left:25px;" disabled>
                         <input autocomplete="off" type="text" name="SendExempt" class="Exempt" placeholder=" 0.00" id="1" style="background-color: #141414;" value=" 0.00" disabled>
                         <input autocomplete="off" type="text" name="Other" class="Others" placeholder=" 0.00" id="3" disabled value=" 0.00">
                         <input autocomplete="off" type="text" name="ISV18" class="ISV18" placeholder=" 0.00" id="4" disabled value=" 0.00">
@@ -442,8 +444,9 @@
     
                     </div>
 
-                    <div class="Row checkboxs" style="height:13px;">
+                    <div class="Row checkboxs" style="height:13px; width:100%; left:20px;">
 
+                        <div></div>
                         <div></div>
                         <div style="margin:0px;"><input autocomplete="off" type="checkbox" class="ExentStatus"></div>
                         <div><input autocomplete="off" type="checkbox" class="OtherStatus"></div>
